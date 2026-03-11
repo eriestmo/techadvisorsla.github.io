@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Advisors LA | Asesoría Tecnológica & Networking</title>
+    <title>Tech Advisors LA | Asesoria Tecnologica & Networking</title>
     <style>
         * {
             margin: 0;
@@ -18,7 +18,6 @@
             background: #fafafa;
         }
 
-        /* Header */ 
         header {
             background: white;
             padding: 1rem 0;
@@ -55,14 +54,8 @@
             color: #0078d4;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #005a9e;
-        }
-
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
             color: white;
@@ -74,7 +67,6 @@
         .hero h1 {
             font-size: 2.8rem;
             margin-bottom: 1rem;
-            font-weight: 700;
         }
 
         .hero p {
@@ -92,15 +84,8 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        /* Services Section */
         .services {
             padding: 5rem 0;
             background: white;
@@ -117,7 +102,6 @@
             text-align: center;
             color: #666;
             margin-bottom: 3rem;
-            font-size: 1.1rem;
         }
 
         .services-grid {
@@ -132,19 +116,7 @@
             padding: 2.5rem;
             border-radius: 15px;
             border: 2px solid #e9ecef;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #0078d4;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .service-card:hover {
@@ -164,12 +136,6 @@
             margin-bottom: 1rem;
         }
 
-        .service-card p {
-            color: #555;
-            line-height: 1.8;
-        }
-
-        /* Networking Highlight */
         .networking-highlight {
             background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
             padding: 4rem 0;
@@ -189,35 +155,6 @@
             margin-bottom: 1rem;
         }
 
-        .highlight-text p {
-            color: #555;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .stats {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            color: #0078d4;
-            font-weight: 700;
-        }
-
-        .stat-label {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* Contact Section */
         .contact {
             padding: 5rem 0;
             background: #0078d4;
@@ -240,24 +177,6 @@
             padding: 2rem;
             border-radius: 10px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: transform 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.25);
-        }
-
-        .contact-card h3 {
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-
-        .contact-card p {
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 0.5rem;
         }
 
         .contact-card a {
@@ -265,14 +184,8 @@
             text-decoration: none;
             font-size: 1.1rem;
             font-weight: 600;
-            transition: color 0.3s;
         }
 
-        .contact-card a:hover {
-            color: #e0f0ff;
-        }
-
-        /* Footer */
         footer {
             background: #005a9e;
             color: white;
@@ -280,39 +193,14 @@
             padding: 2rem 0;
         }
 
-        footer p {
-            margin: 0.5rem 0;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .highlight-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .highlight-content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
     <header>
         <div class="container">
             <nav>
@@ -325,134 +213,96 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Conectamos Tecnología con Resultados de Negocio</h1>
-            <p>Asesoría tecnológica especializada, networking estratégico y representación de soluciones innovadoras para transformar su empresa.</p>
+            <h1>Conectamos Tecnologia con Resultados de Negocio</h1>
+            <p>Asesoria tecnologica especializada, networking estrategico y representacion de soluciones innovadoras para transformar su empresa.</p>
             <a href="#contacto" class="cta-button">Consulte su Proyecto</a>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="servicios">
         <div class="container">
             <h2 class="section-title">Nuestros Servicios</h2>
-            <p class="section-subtitle">Soluciones reales respaldadas por nuestra red de partners tecnológicos</p>
+            <p class="section-subtitle">Soluciones reales respaldadas por nuestra red de partners tecnologicos</p>
             
             <div class="services-grid">
-                <!-- Service 1: Networking -->
                 <div class="service-card">
                     <div class="service-icon">🌐</div>
-                    <h3>Networking Estratégico</h3>
-                    <p>Conectamos a su empresa con las soluciones tecnológicas exactas que necesita mediante nuestra red curada de proveedores, partners y especialistas del sector.</p>
+                    <h3>Networking Estrategico</h3>
+                    <p>Conectamos a su empresa con las soluciones tecnologicas exactas que necesita mediante nuestra red curada de proveedores y especialistas.</p>
                 </div>
 
-                <!-- Service 2: Asesoría Tecnología -->
                 <div class="service-card">
                     <div class="service-icon">💡</div>
-                    <h3>Asesoría Tecnológica</h3>
-                    <p>Evaluación experta de su infraestructura actual, identificación de oportunidades de mejora y roadmap tecnológico alineado a sus objetivos de negocio.</p>
+                    <h3>Asesoria Tecnologica</h3>
+                    <p>Evaluacion experta de su infraestructura actual e identificacion de oportunidades de mejora alineadas a sus objetivos de negocio.</p>
                 </div>
 
-                <!-- Service 3: Analítica de Cámaras -->
                 <div class="service-card">
                     <div class="service-icon">📹</div>
-                    <h3>Representación de Analítica de Cámaras</h3>
-                    <p>Representamos soluciones avanzadas de videovigilancia inteligente con análisis de video en tiempo real, detección de comportamientos y seguridad perimetral.</p>
+                    <h3>Representacion de Analitica de Camaras</h3>
+                    <p>Representamos soluciones avanzadas de videovigilancia inteligente con analisis de video en tiempo real y deteccion de comportamientos.</p>
                 </div>
 
-                <!-- Service 4: Soluciones IoT -->
                 <div class="service-card">
                     <div class="service-icon">📡</div>
                     <h3>Soluciones de IoT</h3>
-                    <p>Implementación de redes de sensores, dispositivos conectados y plataformas de gestión para optimizar operaciones, monitoreo remoto y automatización industrial.</p>
+                    <p>Implementacion de redes de sensores, dispositivos conectados y plataformas de gestion para optimizar operaciones y monitoreo remoto.</p>
                 </div>
 
-                <!-- Service 5: Firma Digital -->
                 <div class="service-card">
                     <div class="service-icon">✍️</div>
-                    <h3>Solución de Firma Digital</h3>
-                    <p>Implementación de plataformas de firma electrónica certificada, flujos de aprobación digital y gestión documental segura para agilizar sus procesos.</p>
+                    <h3>Solucion de Firma Digital</h3>
+                    <p>Implementacion de plataformas de firma electronica certificada y flujos de aprobacion digital para agilizar sus procesos.</p>
                 </div>
 
-                <!-- Service 6: Transformación Digital -->
                 <div class="service-card">
                     <div class="service-icon">🚀</div>
-                    <h3>Asesoría y Soluciones de Transformación Digital</h3>
-                    <p>Acompañamiento integral en la digitalización de procesos, adopción de nuevas tecnologías y evolución hacia modelos operativos modernos y eficientes.</p>
+                    <h3>Asesoria y Soluciones de Transformacion Digital</h3>
+                    <p>Acompanamiento integral en la digitalizacion de procesos y adopcion de nuevas tecnologias hacia modelos operativos modernos.</p>
                 </div>
 
-                <!-- Service 7: Representación de Marcas -->
                 <div class="service-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
                     <div class="service-icon">🤝</div>
-                    <h3>Representación de Marcas y Desarrollo de Modelos de Negocio</h3>
-                    <p>Representamos marcas tecnológicas líderes en el mercado y desarrollamos modelos de negocio adaptados a las necesidades específicas de cada cliente y sector, asegurando la viabilidad y escalabilidad de las soluciones implementadas.</p>
+                    <h3>Representacion de Marcas y Desarrollo de Modelos de Negocio</h3>
+                    <p>Representamos marcas tecnologicas lideres y desarrollamos modelos de negocio adaptados a las necesidades especificas de cada cliente.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Networking Highlight -->
     <section class="networking-highlight">
         <div class="container">
             <div class="highlight-content">
                 <div class="highlight-text">
-                    <h2>¿Por qué trabajar con Tech Advisors LA?</h2>
-                    <p>No vendemos tecnología por vender. <strong>Analizamos su necesidad real</strong>, movilizamos nuestra red de contactos validados y le conectamos con la solución exacta, negociando las mejores condiciones y asegurando implementaciones exitosas.</p>
-                    <p>Somos su socio estratégico, no solo un proveedor.</p>
-                    
-                    <div class="stats">
-                        <div class="stat">
-                            <div class="stat-number">7+</div>
-                            <div class="stat-label">Áreas de Especialización</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">Red</div>
-                            <div class="stat-label">de Partners Validados</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Enfoque en Resultados</div>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 8rem; opacity: 0.3;">🔗</div>
+                    <h2>Por que trabajar con Tech Advisors LA?</h2>
+                    <p>No vendemos tecnologia por vender. Analizamos su necesidad real, movilizamos nuestra red de contactos validados y le conectamos con la solucion exacta.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contacto">
         <div class="container">
-            <h2 class="section-title">Inicie su Transformación</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Contáctenos directamente para una consulta inicial sin compromiso</p>
-            
+            <h2 class="section-title">Inicie su Transformacion</h2>
             <div class="contact-grid">
                 <div class="contact-card">
-                    <h3>📧 Eric Estrada</h3>
-                    <p>Director de Consultoría</p>
+                    <h3>Eric Estrada</h3>
                     <a href="mailto:eric.estrada@techadvisorsla.com">eric.estrada@techadvisorsla.com</a>
                 </div>
-                
                 <div class="contact-card">
-                    <h3>📧 Mario Estrada</h3>
-                    <p>Director de Operaciones</p>
+                    <h3>Mario Estrada</h3>
                     <a href="mailto:mario.estrada@techadvisorsla.com">mario.estrada@techadvisorsla.com</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2024 Tech Advisors LA. Todos los derechos reservados.</p>
-            <p style="opacity: 0.8; font-size: 0.9rem;">Asesoría Tecnológica, Networking & Representación de Soluciones</p>
         </div>
     </footer>
-
 </body>
 </html>
