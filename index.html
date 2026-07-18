@@ -3,200 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Advisors LA | Asesoría Tecnológica & Networking</title>
+    <meta name="description" content="Tech Advisors LA: asesoría en transformación digital, inteligencia artificial (IA), ciberseguridad y networking tecnológico para empresas del sector público y privado en Costa Rica y Latinoamérica.">
+    <meta name="keywords" content="transformación digital, inteligencia artificial, IA, innovación tecnológica, asesoría tecnológica, consultoría tecnológica, networking, IoT, firma digital, videovigilancia inteligente, Costa Rica">
+    <title>Tech Advisors LA | Asesoría en Transformación Digital e Inteligencia Artificial</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root{
+            --bg:#080D22;
+            --bg-2:#0A1128;
+            --panel:#0F1938;
+            --panel-2:#111D42;
+            --accent:#2E86F5;
+            --accent-2:#4FD8EB;
+            --text:#EDEEF3;
+            --text-muted:#8B93AC;
+            --border: rgba(255,255,255,0.09);
+            --radius: 16px;
         }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior:smooth; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fafafa;
+            font-family:'Inter', sans-serif;
+            line-height:1.65;
+            color:var(--text);
+            background:var(--bg);
+            overflow-x:hidden;
         }
 
+        h1,h2,h3 { font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; }
+
+        .mono { font-family:'IBM Plex Mono', monospace; }
+
+        .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+
+        .eyebrow {
+            font-family:'IBM Plex Mono', monospace;
+            text-transform:uppercase;
+            letter-spacing:0.14em;
+            font-size:0.75rem;
+            color:var(--accent-2);
+            display:inline-block;
+            margin-bottom:1rem;
+        }
+
+        /* ---------- HEADER ---------- */
         header {
-            background: white;
+            background: rgba(8,13,34,0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+        nav { display:flex; justify-content:space-between; align-items:center; }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .logo { height:42px; }
 
-        .logo {
-            height: 50px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+        .nav-links { display:flex; gap:2.25rem; list-style:none; align-items:center; }
 
         .nav-links a {
-            color: #0078d4;
-            text-decoration: none;
-            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration:none;
+            font-weight:500;
+            font-size:0.95rem;
+            transition: color 0.25s ease;
         }
 
+        .nav-links a:hover { color: var(--accent-2); }
+
+        .nav-cta {
+            border:1px solid var(--accent);
+            color:var(--text) !important;
+            padding:0.55rem 1.3rem;
+            border-radius:50px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-cta:hover { background:var(--accent); box-shadow:0 0 24px rgba(46,134,245,0.55); }
+
+        .nav-toggle {
+            display:none;
+            width:26px; height:20px;
+            position:relative;
+            background:none; border:none; cursor:pointer;
+        }
+        .nav-toggle span {
+            position:absolute; left:0; width:100%; height:2px; background:var(--text);
+            transition: all 0.25s ease;
+        }
+        .nav-toggle span:nth-child(1){ top:0; }
+        .nav-toggle span:nth-child(2){ top:9px; }
+        .nav-toggle span:nth-child(3){ top:18px; }
+
+        /* ---------- HERO ---------- */
         .hero {
-            background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
-            color: white;
-            padding: 10rem 0 6rem;
-            text-align: center;
-            margin-top: 0;
+            position:relative;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            padding-top:6rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 60% 55% at 82% 28%, rgba(46,134,245,0.16), transparent 60%),
+                radial-gradient(ellipse 50% 45% at 10% 85%, rgba(79,216,235,0.09), transparent 60%),
+                var(--bg);
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
+        .hero-grid-overlay{
+            position:absolute; inset:0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 20%, transparent 75%);
+            pointer-events:none;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.95;
+        .hero-network {
+            position:absolute;
+            top:0; right:-4%;
+            width:62%;
+            height:100%;
+            z-index:1;
+            opacity:0.9;
+        }
+
+        .network-line { stroke:var(--accent); stroke-width:1.4; fill:none; opacity:0.55; }
+        .network-node {
+            fill:var(--accent-2);
+            filter:url(#nodeGlow);
+            transform-box:fill-box;
+            transform-origin:center;
+            opacity:0;
+            transform:scale(0.3);
+        }
+
+        .hero-content { position:relative; z-index:2; max-width:620px; }
+
+        .hero-title {
+            font-size:3.1rem;
+            line-height:1.12;
+            margin-bottom:1.4rem;
+        }
+        .hero-title .hl { color:var(--accent-2); }
+
+        .hero-sub {
+            font-size:1.15rem;
+            color:var(--text-muted);
+            max-width:520px;
+            margin-bottom:2.4rem;
         }
 
         .cta-button {
-            display: inline-block;
-            background: white;
-            color: #0078d4;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
+            display:inline-flex;
+            align-items:center;
+            gap:0.6rem;
+            background:var(--accent);
+            color:#08112b;
+            font-weight:600;
+            padding:1rem 2.2rem;
+            border-radius:50px;
+            text-decoration:none;
+            box-shadow: 0 0 0 rgba(46,134,245,0);
+            transition: all 0.3s ease;
         }
+        .cta-button:hover { box-shadow: 0 0 34px rgba(46,134,245,0.6); transform:translateY(-2px); }
 
-        .services {
-            padding: 5rem 0;
-            background: white;
+        .cta-ghost{
+            display:inline-flex;
+            align-items:center;
+            color:var(--text-muted);
+            text-decoration:none;
+            margin-left:1.4rem;
+            font-size:0.95rem;
+            border-bottom:1px solid var(--border);
+            padding-bottom:2px;
+            transition:color 0.25s ease, border-color 0.25s ease;
         }
+        .cta-ghost:hover{ color:var(--text); border-color:var(--accent-2); }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #0078d4;
-            margin-bottom: 1rem;
-        }
+        /* ---------- SECTIONS SHARED ---------- */
+        section { padding:6.5rem 0; position:relative; }
 
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-        }
+        .section-head { max-width:640px; margin-bottom:3.5rem; }
+        .section-title-dark { font-size:2.3rem; margin-bottom:1rem; }
+        .section-sub { color:var(--text-muted); font-size:1.05rem; }
 
+        /* ---------- SERVICES ---------- */
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+            gap:1.5rem;
         }
 
         .service-card {
-            background: #f8f9fa;
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 2px solid #e9ecef;
-            transition: transform 0.3s, box-shadow 0.3s;
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.2rem;
+            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+            position:relative;
+            overflow:hidden;
+        }
+        .service-card::before{
+            content:"";
+            position:absolute; inset:0;
+            background:radial-gradient(circle at 85% -10%, rgba(46,134,245,0.16), transparent 55%);
+            opacity:0; transition:opacity 0.35s ease;
+        }
+        .service-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.55); background:var(--panel-2); }
+        .service-card:hover::before{ opacity:1; }
+
+        .node-tag {
+            width:46px; height:46px;
+            display:inline-flex; align-items:center; justify-content:center;
+            border:1px solid var(--accent);
+            border-radius:10px;
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.8rem;
+            font-weight:500;
+            color:var(--accent-2);
+            margin-bottom:1.3rem;
+            position:relative; z-index:1;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-color: #0078d4;
-        }
+        .service-card h3 { font-size:1.2rem; margin-bottom:0.8rem; position:relative; z-index:1; }
+        .service-card p { color:var(--text-muted); font-size:0.96rem; position:relative; z-index:1; }
 
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            color: #0078d4;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
+        /* ---------- HIGHLIGHT ---------- */
         .networking-highlight {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8f4f8 100%);
-            padding: 4rem 0;
-            margin: 3rem 0;
+            background: linear-gradient(180deg, var(--bg-2), var(--bg));
+            border-top:1px solid var(--border);
+            border-bottom:1px solid var(--border);
         }
 
         .highlight-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:3rem;
+            position:relative;
         }
 
-        .highlight-text h2 {
-            color: #0078d4;
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .highlight-connector {
+            position:absolute;
+            top:50%; left:50%;
+            transform:translate(-50%,-50%);
+            width:1px; height:70%;
+            background: linear-gradient(180deg, transparent, var(--accent), transparent);
+            opacity:0.5;
         }
 
+        .highlight-text h2 { font-size:1.55rem; margin-bottom:1rem; color:var(--text); }
+        .highlight-text p { color:var(--text-muted); }
+
+        /* ---------- PROCESS ---------- */
+        .process-track {
+            position:relative;
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:2.5rem;
+            margin-top:1rem;
+        }
+        .process-line-track{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:rgba(255,255,255,0.08);
+            z-index:0;
+        }
+        .process-line-fill{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:linear-gradient(90deg, var(--accent), var(--accent-2));
+            transform-origin:left center;
+            transform:scaleX(0);
+            z-index:0;
+        }
+
+        .process-node { position:relative; z-index:1; }
+
+        .process-num {
+            display:inline-flex; align-items:center; justify-content:center;
+            width:44px; height:44px;
+            border-radius:50%;
+            background:var(--bg);
+            border:2px solid var(--accent-2);
+            color:var(--accent-2);
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.85rem;
+            margin-bottom:1.1rem;
+        }
+
+        .process-node h3 { font-size:1.15rem; margin-bottom:0.6rem; }
+        .process-node p { color:var(--text-muted); font-size:0.95rem; }
+
+        /* ---------- CONTACT ---------- */
         .contact {
-            padding: 5rem 0;
-            background: #0078d4;
-            color: white;
-        }
-
-        .contact .section-title {
-            color: white;
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(46,134,245,0.12), transparent 65%), var(--bg);
         }
 
         .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+            gap:1.75rem;
+            margin-top:2.5rem;
         }
 
         .contact-card {
-            background: rgba(255,255,255,0.15);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.4rem 2rem;
+            text-align:center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
         }
+        .contact-card:hover{ border-color:var(--accent-2); transform:translateY(-4px); }
+
+        .contact-card h3 { font-size:1.1rem; margin-bottom:0.6rem; color:var(--text); }
 
         .contact-card a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
+            color: var(--accent-2);
+            text-decoration:none;
+            font-size:1.02rem;
+            font-weight:500;
+            font-family:'IBM Plex Mono', monospace;
+            display:block;
+        }
+
+        .contact-card .contact-phone {
+            color: var(--text);
+            font-size:1.05rem;
+            margin-bottom:0.6rem;
         }
 
         footer {
-            background: #005a9e;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
+            border-top:1px solid var(--border);
+            color:var(--text-muted);
+            text-align:center;
+            padding:2.4rem 0;
+            font-size:0.9rem;
+        }
+
+        /* ---------- REVEAL DEFAULTS (JS controls the animated state) ---------- */
+        .reveal, .reveal-stagger > * { will-change: transform, opacity; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior:auto; }
+        }
+
+        @media (max-width: 900px) {
+            .hero-network{ width:100%; right:0; opacity:0.22; }
+            .hero-title{ font-size:2.3rem; }
+            .highlight-content{ grid-template-columns:1fr; }
+            .highlight-connector{ display:none; }
+            .process-track{ grid-template-columns:1fr; }
+            .process-line-track, .process-line-fill{ display:none; }
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; }
-            .highlight-content { grid-template-columns: 1fr; }
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
         }
     </style>
 </head>
@@ -204,69 +391,121 @@
     <header>
         <div class="container">
             <nav>
-                <img src="logo.png" alt="Tech Advisors LA" class="logo">
+                <img src="logo-final.png" alt="Tech Advisors LA" class="logo">
                 <ul class="nav-links">
                     <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#modelo">Modelo de Servicio</a></li>
+                    <li><a href="#proceso">Cómo trabajamos</a></li>
+                    <li><a href="#contacto" class="nav-cta">Contáctenos</a></li>
                 </ul>
+                <button class="nav-toggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
         </div>
     </header>
 
     <section class="hero">
+        <div class="hero-grid-overlay"></div>
+
+        <svg class="hero-network" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="nodeGlow" x="-150%" y="-150%" width="400%" height="400%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+            </defs>
+
+            <g id="netLines">
+                <line class="network-line" x1="120" y1="120" x2="330" y2="80" />
+                <line class="network-line" x1="330" y1="80" x2="540" y2="150" />
+                <line class="network-line" x1="540" y1="150" x2="700" y2="90" />
+                <line class="network-line" x1="120" y1="120" x2="150" y2="330" />
+                <line class="network-line" x1="330" y1="80" x2="360" y2="300" />
+                <line class="network-line" x1="540" y1="150" x2="560" y2="350" />
+                <line class="network-line" x1="700" y1="90" x2="720" y2="320" />
+                <line class="network-line" x1="150" y1="330" x2="360" y2="300" />
+                <line class="network-line" x1="360" y1="300" x2="560" y2="350" />
+                <line class="network-line" x1="560" y1="350" x2="720" y2="320" />
+                <line class="network-line" x1="150" y1="330" x2="220" y2="530" />
+                <line class="network-line" x1="360" y1="300" x2="440" y2="520" />
+                <line class="network-line" x1="560" y1="350" x2="640" y2="540" />
+                <line class="network-line" x1="220" y1="530" x2="440" y2="520" />
+                <line class="network-line" x1="440" y1="520" x2="640" y2="540" />
+            </g>
+
+            <g id="netNodes">
+                <circle class="network-node" cx="120" cy="120" r="6" />
+                <circle class="network-node" cx="330" cy="80" r="7" />
+                <circle class="network-node" cx="540" cy="150" r="6" />
+                <circle class="network-node" cx="700" cy="90" r="6" />
+                <circle class="network-node" cx="150" cy="330" r="6" />
+                <circle class="network-node" cx="360" cy="300" r="8" />
+                <circle class="network-node" cx="560" cy="350" r="7" />
+                <circle class="network-node" cx="720" cy="320" r="6" />
+                <circle class="network-node" cx="220" cy="530" r="6" />
+                <circle class="network-node" cx="440" cy="520" r="7" />
+                <circle class="network-node" cx="640" cy="540" r="6" />
+            </g>
+        </svg>
+
         <div class="container">
-            <h1>Conectamos Tecnología con Resultados de Negocio</h1>
-            <p>Asesoría tecnológica especializada, networking estratégico y representación de soluciones innovadoras para transformar su empresa.</p>
-            <a href="#contacto" class="cta-button">Consulte su Proyecto</a>
+            <div class="hero-content">
+                <span class="eyebrow">Asesoría · IA · Transformación Digital</span>
+                <h1 class="hero-title">No vendemos tecnología. Conectamos su empresa con la <span class="hl">solución exacta</span>.</h1>
+                <p class="hero-sub">Desde inteligencia artificial hasta videovigilancia inteligente e IoT, evaluamos su infraestructura, activamos nuestra red de especialistas y lo acompañamos hasta la implementación — con resultados medibles, no promesas genéricas.</p>
+                <a href="#contacto" class="cta-button">Diagnostique su Proyecto →</a>
+                <a href="#proceso" class="cta-ghost">Ver cómo trabajamos</a>
+            </div>
         </div>
     </section>
 
     <section class="services" id="servicios">
         <div class="container">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <p class="section-subtitle">Soluciones reales respaldadas por nuestra red de partners tecnológicos</p>
-            
-            <div class="services-grid">
+            <div class="section-head">
+                <span class="eyebrow">Servicios</span>
+                <h2 class="section-title-dark reveal">Capacidades tecnológicas, sin ataduras a una sola marca</h2>
+                <p class="section-sub reveal">Evaluamos su necesidad y movilizamos la tecnología de punta correcta — no la que más nos conviene vender.</p>
+            </div>
+
+            <div class="services-grid reveal-stagger">
                 <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>Networking Estrategico</h3>
-                    <p>Conectamos a su empresa con las soluciones tecnológicas exactas que necesita mediante nuestra red curada de proveedores y especialistas.</p>
+                    <div class="node-tag">IA</div>
+                    <h3>Inteligencia Artificial e Innovación</h3>
+                    <p>IA aplicada con criterio de negocio: automatización inteligente de procesos, análisis predictivo de datos y asistentes virtuales que generan resultados medibles, no solo titulares.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">💡</div>
-                    <h3>Asesoría Tecnologica</h3>
-                    <p>Evaluación experta de su infraestructura actual e identificacion de oportunidades de mejora alineadas a sus objetivos de negocio.</p>
+                    <div class="node-tag">NW</div>
+                    <h3>Networking Estratégico y Asesoría</h3>
+                    <p>Evaluamos su infraestructura actual y activamos nuestra red curada de proveedores y especialistas para conectarlo exactamente con lo que su empresa necesita.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">📹</div>
-                    <h3>Representación de Analítica de Cámaras</h3>
-                    <p>Representamos soluciones avanzadas de videovigilancia inteligente con análisis de video en tiempo real y detección de comportamientos.</p>
+                    <div class="node-tag">CV</div>
+                    <h3>Analítica de Cámaras y Videovigilancia Inteligente</h3>
+                    <p>Soluciones avanzadas de video con análisis en tiempo real y detección de comportamientos, para una seguridad que anticipa en lugar de solo grabar.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">📡</div>
-                    <h3>Soluciones de IoT</h3>
-                    <p>Implementación de redes de sensores, dispositivos conectados y plataformas de gestión para optimizar operaciones y monitoreo remoto.</p>
+                    <div class="node-tag">IoT</div>
+                    <h3>Soluciones IoT</h3>
+                    <p>Redes de sensores y plataformas de gestión que conectan sus operaciones, habilitando monitoreo remoto y decisiones en tiempo real.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">✍️</div>
-                    <h3>Solución de Firma Digital</h3>
-                    <p>Implementación de plataformas de firma electronica certificada y flujos de aprobacion digital para agilizar sus procesos.</p>
+                    <div class="node-tag">FD</div>
+                    <h3>Transformación y Firma Digital</h3>
+                    <p>Digitalizamos procesos, flujos de aprobación y adopción de firma electrónica certificada, para que su empresa opere sin fricciones ni papel.</p>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3>Asesoría y Soluciones de Transformación Digital</h3>
-                    <p>Acompañamiento integral en la digitalización de procesos y adopción de nuevas tecnologías hacia modelos operativos modernos.</p>
-                </div>
-
-                <div class="service-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
-                    <div class="service-icon">🤝</div>
-                    <h3>Representación de Marcas y Desarrollo de Modelos de Negocio</h3>
-                    <p>Representamos marcas tecnologicas lideres y desarrollamos modelos de negocio adaptados a las necesidades específicas de cada cliente.</p>
+                    <div class="node-tag">RM</div>
+                    <h3>Representación de Modelos de Negocio</h3>
+                    <p>Traemos tecnología líder al mercado y la adaptamos al modelo de negocio específico de cada cliente — nunca una solución genérica.</p>
                 </div>
             </div>
         </div>
@@ -275,9 +514,69 @@
     <section class="networking-highlight">
         <div class="container">
             <div class="highlight-content">
-                <div class="highlight-text">
-                    <h2>Por qué trabajar con Tech Advisors LA?</h2>
-                    <p>No vendemos tecnología por vender. Analizamos su necesidad real, movilizamos nuestra red de contactos validados y le conectamos con la solución exacta.</p>
+                <div class="highlight-connector"></div>
+                <div class="highlight-text reveal">
+                    <h2>La neutralidad es nuestra ventaja</h2>
+                    <p>No trabajamos para un fabricante, trabajamos para usted. Analizamos su necesidad real y le conectamos con la solución exacta de nuestra red validada de partners — sin sesgos comerciales de por medio.</p>
+                </div>
+                <div class="highlight-text reveal">
+                    <h2>IA con resultados, no solo tendencia</h2>
+                    <p>Ayudamos a organizaciones públicas y privadas a identificar oportunidades reales de inteligencia artificial, con un enfoque práctico y medible desde el primer día.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-model" id="modelo">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Modelo de Servicio</span>
+                <h2 class="section-title-dark reveal">CAPEX, OPEX, o 100% como servicio — usted decide</h2>
+                <p class="section-sub reveal">Operamos como una firma de servicios administrados (Managed Services): estructuramos cada proyecto según cómo su empresa necesita manejar el presupuesto, no al revés.</p>
+            </div>
+
+            <div class="services-grid reveal-stagger">
+                <div class="service-card">
+                    <div class="node-tag">MS</div>
+                    <h3>Modelo Híbrido (CAPEX + OPEX)</h3>
+                    <p>Para organizaciones que prefieren invertir en infraestructura propia, complementada con soporte, gestión y servicios continuos a cargo de nuestra red de especialistas.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="node-tag">aaS</div>
+                    <h3>100% OPEX — Todo como Servicio</h3>
+                    <p>Convierta la inversión en gasto operativo: soluciones de IA, IoT, videovigilancia y firma digital administradas de forma eficiente, sin desembolsos de capital iniciales ni gestión técnica interna.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Cómo trabajamos</span>
+                <h2 class="section-title-dark reveal">De la necesidad real a la solución conectada</h2>
+                <p class="section-sub reveal">Un proceso simple, en tres pasos, respaldado por nuestra red de partners.</p>
+            </div>
+
+            <div class="process-track">
+                <div class="process-line-track"></div>
+                <div class="process-line-fill"></div>
+
+                <div class="process-node reveal">
+                    <span class="process-num mono">01</span>
+                    <h3>Diagnóstico</h3>
+                    <p>Entendemos a fondo su necesidad real y el estado actual de su infraestructura tecnológica.</p>
+                </div>
+                <div class="process-node reveal">
+                    <span class="process-num mono">02</span>
+                    <h3>Conexión</h3>
+                    <p>Activamos nuestra red curada de partners y especialistas para encontrar la solución exacta — en IA, IoT, ciberseguridad o transformación digital.</p>
+                </div>
+                <div class="process-node reveal">
+                    <span class="process-num mono">03</span>
+                    <h3>Implementación</h3>
+                    <p>Acompañamos la puesta en marcha y medimos resultados, para que la transformación digital sea real, no solo un proyecto más.</p>
                 </div>
             </div>
         </div>
@@ -285,14 +584,20 @@
 
     <section class="contact" id="contacto">
         <div class="container">
-            <h2 class="section-title">Inicie su Transformación</h2>
-            <div class="contact-grid">
+            <div class="section-head">
+                <span class="eyebrow">Contacto</span>
+                <h2 class="section-title-dark reveal">Inicie su Transformación Digital</h2>
+                <p class="section-sub reveal">Conversemos sobre su proyecto de IA, transformación digital o innovación tecnológica — sin compromiso.</p>
+            </div>
+            <div class="contact-grid reveal-stagger">
                 <div class="contact-card">
-                    <h3>Eric Estrada</h3>
+                    <h3>Eric Estrada Montero</h3>
+                    <a href="tel:+50687032711" class="contact-phone">+506 8703-2711</a>
                     <a href="mailto:eric.estrada@techadvisorsla.com">eric.estrada@techadvisorsla.com</a>
                 </div>
                 <div class="contact-card">
-                    <h3>Mario Estrada</h3>
+                    <h3>Mario Estrada Solano</h3>
+                    <a href="tel:+50683835646" class="contact-phone">+506 8383-5646</a>
                     <a href="mailto:mario.estrada@techadvisorsla.com">mario.estrada@techadvisorsla.com</a>
                 </div>
             </div>
@@ -304,5 +609,59 @@
             <p>&copy; 2026 Tech Advisors LA. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // mobile nav toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+                navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+            }
+
+            if (typeof gsap === 'undefined') return;
+            gsap.registerPlugin(ScrollTrigger);
+
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // prep network line draw effect
+            document.querySelectorAll('.network-line').forEach(line => {
+                const len = line.getTotalLength ? line.getTotalLength() : 300;
+                line.style.strokeDasharray = len;
+                line.style.strokeDashoffset = reduceMotion ? 0 : len;
+            });
+
+            if (reduceMotion) {
+                gsap.set('.network-node', { opacity: 0.8, scale: 1 });
+                return;
+            }
+
+            const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+            tl.to('.network-line', { strokeDashoffset: 0, duration: 1.3, stagger: 0.05 })
+              .to('.network-node', { opacity: 0.9, scale: 1, duration: 0.5, stagger: 0.04 }, '-=0.9');
+
+            gsap.utils.toArray('.reveal').forEach(el => {
+                gsap.fromTo(el, { opacity: 0, y: 26 }, {
+                    opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+                    scrollTrigger: { trigger: el, start: 'top 88%' }
+                });
+            });
+
+            gsap.utils.toArray('.reveal-stagger').forEach(group => {
+                gsap.fromTo(group.children, { opacity: 0, y: 24 }, {
+                    opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out',
+                    scrollTrigger: { trigger: group, start: 'top 88%' }
+                });
+            });
+
+            gsap.to('.process-line-fill', {
+                scaleX: 1, ease: 'none',
+                scrollTrigger: { trigger: '.process-track', start: 'top 75%', end: 'bottom 65%', scrub: true }
+            });
+        });
+    </script>
 </body>
 </html>
