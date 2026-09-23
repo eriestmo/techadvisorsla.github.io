@@ -7,7 +7,7 @@
     <!-- SEO Básico -->
     <title>Agricultura Inteligente con Sensores IoT y LoRaWAN en Costa Rica | Tech Advisors LA</title>
     <meta name="description" content="Sensores IoT de suelo, clima y agua, redes LoRaWAN y plataformas de monitoreo para fincas en Costa Rica. Experiencia real en campo, junto con Lain Holdings.">
-    <meta name="keywords" content="agricultura inteligente, agricultura de precisión, sensores IoT, LoRaWAN, sensores de suelo, estaciones meteorológicas, riego inteligente, Costa Rica, Lain Holdings">
+    <meta name="keywords" content="AgroBoost 4.0, AgroBoost, MICITT, caficultores, Dota, agricultura inteligente, agricultura de precisión, sensores IoT, LoRaWAN, sensores de suelo, estaciones meteorológicas, riego inteligente, Costa Rica, Lain Holdings">
     <link rel="canonical" href="https://techadvisorsla.com/agricultura.html">
 
     <!-- Vista Previa para WhatsApp, LinkedIn y Redes Sociales (Open Graph) -->
@@ -638,6 +638,8 @@
         }
         @media (max-width: 600px){ .impact-label{ min-height:0; } .container{ padding:0 1.25rem; } }
 
+        .mini-label { font-family:'IBM Plex Mono', monospace; text-transform:uppercase; letter-spacing:0.12em; font-size:0.72rem; color:var(--text-muted); margin-bottom:1rem; }
+        .agro-role { margin-top:1.4rem; padding-left:1rem; border-left:2px solid var(--accent-2); color:var(--text); font-size:0.98rem; }
         .case { display:grid; grid-template-columns:repeat(4, 1fr); gap:1.25rem; }
         .case-step { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem; display:flex; flex-direction:column; gap:0.5rem; }
         .case-tag { font-family:'IBM Plex Mono', monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent-2); }
@@ -647,7 +649,20 @@
         .result p { font-size:1.05rem; color:var(--text); max-width:900px; }
         .result strong { color:var(--accent-2); }
         #beneficios-campo .pain-grid { grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); }
-        @media (max-width: 900px) { .case { grid-template-columns:1fr 1fr; } }
+        .video-row { margin-top:1.25rem; display:grid; grid-template-columns:1fr auto; gap:2.5rem; align-items:center; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:2rem 2.2rem; }
+        .video-text h3 { font-size:1.45rem; margin-bottom:0.6rem; }
+        .video-text p { color:var(--text-muted); max-width:520px; font-size:1.02rem; }
+        .video-list { display:flex; gap:1.25rem; justify-content:flex-end; }
+        .video-card { width:360px; margin:0; }
+        .ig-card { display:flex; flex-direction:column; gap:0.6rem; }
+        .ig-card .instagram-media { margin:0 !important; min-width:0 !important; width:100% !important; max-width:100% !important; border-radius:12px !important; overflow:hidden; background:#000; border:1px solid var(--border) !important; }
+        .ig-fallback { position:relative; display:block; }
+        .ig-fallback img { width:100%; height:auto; display:block; aspect-ratio:4 / 5; object-fit:cover; }
+        .ig-fallback span { position:absolute; left:0; right:0; bottom:0; padding:1rem; background:linear-gradient(transparent, rgba(0,0,0,0.8)); color:#fff; font-weight:600; font-size:0.95rem; }
+        .ig-card p.ig-source { color:var(--text-muted); font-size:0.82rem; line-height:1.5; text-align:right; }
+        .ig-source a { color:var(--accent-2); text-decoration:none; font-weight:500; }
+        .video-card video { width:100%; height:auto; aspect-ratio:4 / 5; display:block; border-radius:12px; border:1px solid var(--border); background:#000; object-fit:cover; }
+        @media (max-width: 900px) { .case { grid-template-columns:1fr 1fr; } .video-row { grid-template-columns:1fr; } .video-list { flex-wrap:wrap; justify-content:center; } .video-card { width:min(360px, 100%); } }
         @media (max-width: 600px) { .case { grid-template-columns:1fr; } .result { padding:1.6rem; } }
     </style>
 </head>
@@ -699,12 +714,12 @@
                 <h1 class="hero-title">Decisiones en el campo <span class="hl">basadas en datos</span>, no en suposiciones.</h1>
                 <p class="hero-sub">Sensores IoT que miden el suelo, el clima y el agua de su finca, conectados por redes de largo alcance y bajo consumo, con la información disponible en el celular del productor. Lo implementamos junto con Lain Holdings, empresa latinoamericana de soluciones IoT con presencia en Costa Rica, México, Chile, Perú, Panamá, Argentina y España.</p>
                 <a href="contacto.html" class="cta-button">Solicite una evaluación →</a>
-                <a href="#experiencia" class="cta-ghost">Ver nuestra experiencia</a>
+                <a href="#agroboost" class="cta-ghost">Conozca AgroBoost 4.0</a>
 
                 <div class="stat-strip">
                     <div><strong>Suelo, clima y agua</strong><span>medidos de forma continua</span></div>
                     <div><strong>LoRaWAN</strong><span>largo alcance y bajo consumo</span></div>
-                    <div><strong>Experiencia en campo</strong><span>en fincas de montaña en Costa Rica</span></div>
+                    <div><strong>AgroBoost 4.0</strong><span>experiencia en campo con caficultores</span></div>
                 </div>
             </div>
         </div>
@@ -786,12 +801,36 @@
         </div>
     </section>
 
+    <section class="alt-bg" id="agroboost">
+        <div class="container">
+            <div class="two-col">
+                <div class="section-head">
+                    <span class="eyebrow">Proyecto AgroBoost 4.0</span>
+                    <h2 class="section-title-dark reveal">¿Qué es AgroBoost 4.0 y qué significa para el agricultor?</h2>
+                    <p class="section-sub reveal">AgroBoost 4.0 nace como una iniciativa del MICITT para llevar la ciencia y la tecnología al campo. El programa instala sensores en las fincas y los conecta por una red inalámbrica de largo alcance. Así, los productores pueden usar el análisis de datos, y en adelante la inteligencia artificial, para conocer mejor sus cultivos y mejorar su producción.</p>
+                    <p class="section-sub reveal" style="margin-top:1rem;">Comenzó con caficultores de la zona de Dota y la meta es que más productores, en otras zonas del país, se beneficien, para mejorar los procesos productivos y la competitividad de Costa Rica.</p>
+                    <p class="agro-role reveal">Tech Advisors LA, junto con Lain Holdings, participa en el diagnóstico, la estabilización y el fortalecimiento de la red del proyecto.</p>
+                </div>
+                <div>
+                    <p class="mini-label reveal">Qué recibe el agricultor</p>
+                    <ul class="list-cards reveal-stagger">
+                        <li><strong>Un sensor de suelo en su finca</strong><span>Mide temperatura, humedad, conductividad eléctrica, pH y nutrientes del suelo en forma automática.</span></li>
+                        <li><strong>Datos del clima de la zona</strong><span>Estaciones meteorológicas que registran las condiciones del clima local.</span></li>
+                        <li><strong>La información en una plataforma</strong><span>Los datos de su finca quedan disponibles para decidir mejor cuándo regar y cómo fertilizar.</span></li>
+                        <li><strong>Acompañamiento y capacitación</strong><span>Charlas y soporte técnico para sacarle provecho a la tecnología en el día a día.</span></li>
+                        <li><strong>Un camino hacia la inteligencia artificial</strong><span>Con los datos acumulados, el objetivo es entender mejor las plantas de café y aumentar la productividad.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="experiencia">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Nuestra experiencia</span>
-                <h2 class="section-title-dark reveal">Caso real: red agrícola LoRaWAN en una zona cafetalera de montaña</h2>
-                <p class="section-sub reveal">Junto con Lain Holdings, diagnosticamos y estabilizamos una red de sensores de suelo, estaciones meteorológicas y gateways que da servicio a productores en un valle montañoso de Costa Rica.</p>
+                <h2 class="section-title-dark reveal">Caso real: la red LoRaWAN de AgroBoost 4.0 en Dota</h2>
+                <p class="section-sub reveal">Junto con Lain Holdings, diagnosticamos y estabilizamos la red de sensores de suelo, estaciones meteorológicas y gateways que da servicio a los caficultores del programa, en un valle de montaña donde el relieve es el mayor reto.</p>
             </div>
 
             <div class="case reveal-stagger">
@@ -822,6 +861,25 @@
                     <span class="eyebrow">Resultado</span>
                     <p>Los sensores intervenidos volvieron a reportar temperatura, humedad, conductividad, pH y nutrientes del suelo. Con los nuevos emplazamientos en altura, el estudio proyecta <strong>casi duplicar la cobertura del valle habitado</strong>. Además, quedó un plan de fortalecimiento que incluye capacitar a personal local como primer nivel de soporte.</p>
                 </div>
+
+            <div class="video-row reveal">
+                <div class="video-text">
+                    <span class="eyebrow">En video</span>
+                    <h3>El proyecto en campo</h3>
+                    <p>Conozca AgroBoost 4.0 en palabras del MICITT: sensores en las fincas, análisis de datos y acompañamiento a los caficultores para mejorar su producción.</p>
+                </div>
+                <div class="video-list">
+<div class="video-card ig-card">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcPR691hLCX/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+                            <a href="https://www.instagram.com/reel/DcPR691hLCX/" target="_blank" rel="noopener" class="ig-fallback">
+                                <img src="agricultura-video-1.jpg" alt="Sensor IoT instalado en una finca" width="720" height="900" loading="lazy">
+                                <span>Ver el video en Instagram →</span>
+                            </a>
+                        </blockquote>
+                        <p class="ig-source">Video publicado por el MICITT en <a href="https://www.instagram.com/micittcr/" target="_blank" rel="noopener">@micittcr</a> · <a href="https://www.instagram.com/reel/DcPR691hLCX/" target="_blank" rel="noopener">Ver en Instagram →</a></p>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -956,5 +1014,6 @@
             });
         });
     </script>
+    <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
