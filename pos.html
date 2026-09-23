@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <title>Punto de Venta (POS) para Retail y PYMES en Costa Rica | Tech Advisors LA</title>
+    <meta name="description" content="Sistema POS como servicio: facturación, inventario, inteligencia de negocios, factura electrónica conforme a Hacienda y lealtad. Solución de ASP Software Company en Costa Rica.">
+    <meta name="keywords" content="POS, punto de venta, sistema POS Costa Rica, factura electrónica, inventario, retail, PYMES, ASP Software Company, software como servicio">
+    <link rel="canonical" href="https://techadvisorsla.com/pos.html">
+
+    <!-- Vista Previa para WhatsApp, LinkedIn y Redes Sociales (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techadvisorsla.com/pos.html">
+    <meta property="og:title" content="POS como servicio | Su punto de venta como ventaja competitiva">
+    <meta property="og:description" content="Punto de venta, inventario, analíticas y factura electrónica con pago mensual. ASP Software Company, representada por Tech Advisors LA.">
+    <meta property="og:image" content="https://techadvisorsla.com/logo-final.png">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Datos Estructurados Schema.org -->
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Sistema de Punto de Venta (POS) como servicio — ASP Software Company",
+      "serviceType": "Software de punto de venta, inventario y factura electrónica para retail y PYMES",
+      "description": "Punto de venta para PYMES y cadenas de retail en Costa Rica: facturación, apartados, compras, cierres de caja, inventario, inteligencia de negocios, factura electrónica conforme a Hacienda y programas de lealtad, con pago mensual. Solución de ASP Software Company representada por Tech Advisors LA.",
+      "provider": {
+            "@type": "ProfessionalService",
+            "name": "Tech Advisors LA",
+            "url": "https://techadvisorsla.com",
+            "telephone": "+50687032711"
+      },
+      "areaServed": [
+            "Costa Rica",
+            "Centroamérica"
+      ],
+      "url": "https://techadvisorsla.com/pos.html"
+}
+    </script>
+
+    <style>
+        :root{
+            --bg:#080D22;
+            --bg-2:#0A1128;
+            --panel:#0F1938;
+            --panel-2:#111D42;
+            --accent:#2E86F5;
+            --accent-2:#4FD8EB;
+            --text:#EDEEF3;
+            --text-muted:#8B93AC;
+            --border: rgba(255,255,255,0.09);
+            --radius: 16px;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior:smooth; }
+
+        body {
+            font-family:'Inter', sans-serif;
+            line-height:1.65;
+            color:var(--text);
+            background:var(--bg);
+            overflow-x:hidden;
+        }
+
+        h1,h2,h3 { font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; }
+
+        .mono { font-family:'IBM Plex Mono', monospace; }
+
+        .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+
+        .eyebrow {
+            font-family:'IBM Plex Mono', monospace;
+            text-transform:uppercase;
+            letter-spacing:0.14em;
+            font-size:0.75rem;
+            color:var(--accent-2);
+            display:inline-block;
+            margin-bottom:1rem;
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            background: rgba(8,13,34,0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav { display:flex; justify-content:space-between; align-items:center; }
+
+        .logo { height:42px; }
+
+        .nav-links { display:flex; gap:2.25rem; list-style:none; align-items:center; }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration:none;
+            font-weight:500;
+            font-size:0.95rem;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover { color: var(--accent-2); }
+
+        .nav-cta {
+            border:1px solid var(--accent);
+            color:var(--text) !important;
+            padding:0.55rem 1.3rem;
+            border-radius:50px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-cta:hover { background:var(--accent); box-shadow:0 0 24px rgba(46,134,245,0.55); }
+
+        .nav-toggle {
+            display:none;
+            width:26px; height:20px;
+            position:relative;
+            background:none; border:none; cursor:pointer;
+        }
+        .nav-toggle span {
+            position:absolute; left:0; width:100%; height:2px; background:var(--text);
+            transition: all 0.25s ease;
+        }
+        .nav-toggle span:nth-child(1){ top:0; }
+        .nav-toggle span:nth-child(2){ top:9px; }
+        .nav-toggle span:nth-child(3){ top:18px; }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            position:relative;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            padding-top:6rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 60% 55% at 82% 28%, rgba(46,134,245,0.16), transparent 60%),
+                radial-gradient(ellipse 50% 45% at 10% 85%, rgba(79,216,235,0.09), transparent 60%),
+                var(--bg);
+        }
+
+        .hero-grid-overlay{
+            position:absolute; inset:0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 20%, transparent 75%);
+            pointer-events:none;
+        }
+
+        .hero-network {
+            position:absolute;
+            top:0; right:-4%;
+            width:62%;
+            height:100%;
+            z-index:1;
+            opacity:0.9;
+        }
+
+        .network-line { stroke:var(--accent); stroke-width:1.4; fill:none; opacity:0.55; }
+        .network-node {
+            fill:var(--accent-2);
+            filter:url(#nodeGlow);
+            transform-box:fill-box;
+            transform-origin:center;
+            opacity:0;
+            transform:scale(0.3);
+        }
+
+        .hero-content { position:relative; z-index:2; max-width:620px; }
+
+        .hero-title {
+            font-size:3.1rem;
+            line-height:1.12;
+            margin-bottom:1.4rem;
+        }
+        .hero-title .hl { color:var(--accent-2); }
+
+        .hero-sub {
+            font-size:1.15rem;
+            color:var(--text-muted);
+            max-width:520px;
+            margin-bottom:2.4rem;
+        }
+
+        .cta-button {
+            display:inline-flex;
+            align-items:center;
+            gap:0.6rem;
+            background:var(--accent);
+            color:#08112b;
+            font-weight:600;
+            padding:1rem 2.2rem;
+            border-radius:50px;
+            text-decoration:none;
+            box-shadow: 0 0 0 rgba(46,134,245,0);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover { box-shadow: 0 0 34px rgba(46,134,245,0.6); transform:translateY(-2px); }
+
+        .cta-ghost{
+            display:inline-flex;
+            align-items:center;
+            color:var(--text-muted);
+            text-decoration:none;
+            margin-left:1.4rem;
+            font-size:0.95rem;
+            border-bottom:1px solid var(--border);
+            padding-bottom:2px;
+            transition:color 0.25s ease, border-color 0.25s ease;
+        }
+        .cta-ghost:hover{ color:var(--text); border-color:var(--accent-2); }
+
+        /* ---------- SECTIONS SHARED ---------- */
+        section { padding:6.5rem 0; position:relative; }
+
+        .section-head { max-width:640px; margin-bottom:3.5rem; }
+        .section-title-dark { font-size:2.3rem; margin-bottom:1rem; line-height:1.2; }
+        .section-sub { color:var(--text-muted); font-size:1.05rem; }
+
+        /* ---------- SERVICES ---------- */
+        .services-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+            gap:1.5rem;
+        }
+
+        .service-card {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.2rem;
+            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+            position:relative;
+            overflow:hidden;
+        }
+        .service-card::before{
+            content:"";
+            position:absolute; inset:0;
+            background:radial-gradient(circle at 85% -10%, rgba(46,134,245,0.16), transparent 55%);
+            opacity:0; transition:opacity 0.35s ease;
+        }
+        .service-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.55); background:var(--panel-2); }
+        .service-card:hover::before{ opacity:1; }
+
+        .node-tag {
+            width:46px; height:46px;
+            display:inline-flex; align-items:center; justify-content:center;
+            border:1px solid var(--accent);
+            border-radius:10px;
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.8rem;
+            font-weight:500;
+            color:var(--accent-2);
+            margin-bottom:1.3rem;
+            position:relative; z-index:1;
+        }
+
+        .service-card h3 { font-size:1.2rem; margin-bottom:0.8rem; position:relative; z-index:1; }
+        .service-card p { color:var(--text-muted); font-size:0.96rem; position:relative; z-index:1; }
+
+        .card-link{
+            display:inline-block; margin-top:1rem; position:relative; z-index:1;
+            color:var(--accent-2); text-decoration:none; font-size:0.9rem; font-weight:500;
+        }
+        .card-link:hover{ text-decoration:underline; }
+
+        /* ---------- FEATURED ---------- */
+        .featured { background: linear-gradient(180deg, var(--bg), var(--bg-2) 50%, var(--bg)); border-top:1px solid var(--border); }
+        .featured-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
+        .featured-card {
+            display:flex; flex-direction:column;
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:2.4rem; text-decoration:none; color:var(--text);
+            background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.16), transparent 55%);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+        .featured-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.6); }
+        .featured-card h3 { font-size:1.45rem; margin-bottom:0.8rem; line-height:1.25; }
+        .featured-card p { color:var(--text-muted); font-size:0.96rem; margin-bottom:1.6rem; }
+        .featured-stats { display:flex; gap:2rem; margin-bottom:1.8rem; flex-wrap:wrap; }
+        .featured-stats div { border-left:2px solid var(--accent); padding-left:0.9rem; }
+        .featured-stats strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.5rem; color:var(--accent-2); line-height:1.2; }
+        .featured-stats span { color:var(--text-muted); font-size:0.82rem; }
+        .featured-link { margin-top:auto; color:var(--accent-2); font-weight:600; font-size:0.95rem; }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
+
+        /* ---------- HIGHLIGHT ---------- */
+        .networking-highlight {
+            background: linear-gradient(180deg, var(--bg-2), var(--bg));
+            border-top:1px solid var(--border);
+            border-bottom:1px solid var(--border);
+        }
+
+        .highlight-content {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:3rem;
+            position:relative;
+        }
+
+        .highlight-connector {
+            position:absolute;
+            top:50%; left:50%;
+            transform:translate(-50%,-50%);
+            width:1px; height:70%;
+            background: linear-gradient(180deg, transparent, var(--accent), transparent);
+            opacity:0.5;
+        }
+
+        .highlight-text h2 { font-size:1.55rem; margin-bottom:1rem; color:var(--text); }
+        .highlight-text p { color:var(--text-muted); }
+
+        /* ---------- PROCESS ---------- */
+        .process-track {
+            position:relative;
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:2.5rem;
+            margin-top:1rem;
+        }
+        .process-line-track{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:rgba(255,255,255,0.08);
+            z-index:0;
+        }
+        .process-line-fill{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:linear-gradient(90deg, var(--accent), var(--accent-2));
+            transform-origin:left center;
+            transform:scaleX(0);
+            z-index:0;
+        }
+
+        .process-node { position:relative; z-index:1; }
+
+        .process-num {
+            display:inline-flex; align-items:center; justify-content:center;
+            width:44px; height:44px;
+            border-radius:50%;
+            background:var(--bg);
+            border:2px solid var(--accent-2);
+            color:var(--accent-2);
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.85rem;
+            margin-bottom:1.1rem;
+        }
+
+        .process-node h3 { font-size:1.15rem; margin-bottom:0.6rem; }
+        .process-node p { color:var(--text-muted); font-size:0.95rem; }
+
+        /* ---------- CONTACT ---------- */
+        .contact {
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(46,134,245,0.12), transparent 65%), var(--bg);
+        }
+
+        .contact-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+            gap:1.75rem;
+            margin-top:2.5rem;
+        }
+
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
+        .contact-card {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.4rem 2rem;
+            text-align:center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-card:hover{ border-color:var(--accent-2); transform:translateY(-4px); }
+
+        .contact-card h3 { font-size:1.1rem; margin-bottom:0.6rem; color:var(--text); }
+
+        .contact-card a {
+            color: var(--accent-2);
+            text-decoration:none;
+            font-size:1.02rem;
+            font-weight:500;
+            font-family:'IBM Plex Mono', monospace;
+            display:block;
+        }
+
+        .contact-card .contact-phone {
+            color: var(--text);
+            font-size:1.05rem;
+            margin-bottom:0.6rem;
+        }
+
+        footer {
+            border-top:1px solid var(--border);
+            color:var(--text-muted);
+            text-align:center;
+            padding:2.8rem 0;
+            font-size:0.88rem;
+            line-height:1.8;
+        }
+        .footer-links { display:flex; justify-content:center; flex-wrap:wrap; gap:0.4rem 1.6rem; margin-bottom:1.6rem; }
+        .footer-links a { color:var(--text-muted); text-decoration:none; font-size:0.88rem; transition:color 0.25s ease; }
+        .footer-links a:hover { color:var(--accent-2); }
+        .footer-brand { font-family:'Space Grotesk', sans-serif; font-weight:600; color:var(--text); font-size:1rem; }
+
+        /* ---------- REVEAL DEFAULTS (JS controls the animated state) ---------- */
+        .reveal, .reveal-stagger > * { will-change: transform, opacity; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior:auto; }
+        }
+
+        @media (max-width: 900px) {
+            .hero-network{ width:100%; right:0; opacity:0.22; }
+            .hero-title{ font-size:2.3rem; }
+            .highlight-content{ grid-template-columns:1fr; }
+            .featured-grid{ grid-template-columns:1fr; }
+            .highlight-connector{ display:none; }
+            .process-track{ grid-template-columns:1fr; }
+            .process-line-track, .process-line-fill{ display:none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
+        }
+        @media (max-width: 1100px) {
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
+        }
+    
+        /* ---------- SUBPAGE ---------- */
+        .logo-link { display:inline-flex; }
+        .sub-hero {
+            position:relative;
+            padding:10rem 0 5.5rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 55% 60% at 85% 20%, rgba(46,134,245,0.18), transparent 60%),
+                radial-gradient(ellipse 45% 45% at 5% 90%, rgba(79,216,235,0.08), transparent 60%),
+                var(--bg);
+            border-bottom:1px solid var(--border);
+        }
+        .sub-hero .hero-content { max-width:760px; }
+        .sub-hero .hero-title { font-size:2.9rem; }
+        .sub-hero .hero-sub { max-width:640px; }
+        .breadcrumb { font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--text-muted); margin-bottom:1.4rem; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; }
+        .breadcrumb a:hover { color:var(--accent-2); }
+
+        .stat-strip {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+            gap:1rem;
+            margin-top:3rem;
+            max-width:860px;
+        }
+        .stat-strip div {
+            border-left:2px solid var(--accent);
+            padding:0.2rem 0 0.2rem 1rem;
+        }
+        .stat-strip strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.7rem; color:var(--text); line-height:1.2; }
+        .stat-strip span { color:var(--text-muted); font-size:0.88rem; }
+
+        .alt-bg { background:linear-gradient(180deg, var(--bg-2), var(--bg)); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+
+        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+        .two-col .section-head { margin-bottom:0; }
+
+        .list-cards { list-style:none; display:grid; gap:1rem; }
+        .list-cards li {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:1.1rem 1.3rem;
+        }
+        .list-cards strong { display:block; font-family:'Space Grotesk', sans-serif; font-weight:600; margin-bottom:0.2rem; }
+        .list-cards span { color:var(--text-muted); font-size:0.93rem; }
+
+        .pain-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.25rem; }
+        .pain {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem;
+        }
+        .pain .before { font-size:0.9rem; color:var(--text-muted); margin-bottom:0.9rem; padding-bottom:0.9rem; border-bottom:1px dashed var(--border); }
+        .pain .before b { color:#F28B82; font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.75rem; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+        .pain .after { font-size:0.95rem; color:var(--text); }
+        .pain .after b { color:var(--accent-2); font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.75rem; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+
+        .modules-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+            gap:1.25rem;
+        }
+        .module-group {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:1.6rem;
+        }
+        .module-group h3 { font-size:1.02rem; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.6rem; }
+        .module-group h3::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 10px var(--accent-2); flex:none; }
+        .module-group > p { color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; }
+        .chips { display:flex; flex-wrap:wrap; gap:0.5rem; }
+        .chip {
+            font-size:0.85rem; color:var(--text);
+            background:rgba(255,255,255,0.04);
+            border:1px solid var(--border);
+            border-radius:50px;
+            padding:0.35rem 0.85rem;
+        }
+
+        .impact-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:1.25rem; }
+        .impact-card {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem 1.4rem; display:flex; flex-direction:column;
+        }
+        .impact-label { color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; min-height:4.8em; }
+        .impact-value { font-family:'Space Grotesk', sans-serif; font-size:2.1rem; font-weight:700; line-height:1.1; color:var(--accent-2); margin-bottom:0.5rem; }
+        .impact-delta { font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--text); }
+        .impact-delta .from { color:var(--text-muted); }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
+
+        .flow {
+            display:grid; grid-template-columns:repeat(4, 1fr); gap:1.25rem; position:relative;
+        }
+        .flow-step {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem; position:relative;
+        }
+        .flow-step:not(:last-child)::after{
+            content:"→"; position:absolute; right:-1.05rem; top:50%; transform:translateY(-50%);
+            color:var(--accent-2); font-family:'IBM Plex Mono', monospace; font-size:1.1rem; z-index:2;
+        }
+        .flow-step h3 { font-size:1.05rem; margin:0.9rem 0 0.5rem; }
+        .flow-step p { color:var(--text-muted); font-size:0.92rem; }
+
+        .q-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; }
+        .q-card {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem;
+        }
+        .q-card .q { font-family:'Space Grotesk', sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:0.6rem; }
+        .q-card .a { color:var(--text-muted); font-size:0.93rem; }
+
+        .cta-band {
+            background:var(--panel); border:1px solid rgba(46,134,245,0.4); border-radius:var(--radius);
+            padding:3rem; display:flex; justify-content:space-between; align-items:center; gap:2rem; flex-wrap:wrap;
+            background-image:radial-gradient(circle at 90% 0%, rgba(46,134,245,0.22), transparent 55%);
+        }
+        .cta-band h2 { font-size:1.8rem; margin-bottom:0.5rem; }
+        .cta-band p { color:var(--text-muted); max-width:560px; }
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
+        @media (max-width: 900px) {
+            .two-col{ grid-template-columns:1fr; }
+            .modules-grid{ grid-template-columns:1fr; }
+            .flow{ grid-template-columns:1fr; }
+            .flow-step:not(:last-child)::after{ content:"↓"; right:auto; left:50%; top:auto; bottom:-1.15rem; transform:translateX(-50%); }
+            .sub-hero .hero-title{ font-size:2.15rem; }
+            .cta-band{ padding:2rem; }
+        }
+        @media (max-width: 600px){ .impact-label{ min-height:0; } .container{ padding:0 1.25rem; } }
+
+        .pillars { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.25rem; }
+        .pillar { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.8rem; }
+        .pillar h3 { font-size:1.15rem; margin-bottom:0.5rem; }
+        .pillar p { color:var(--text-muted); font-size:0.93rem; }
+        .mini-label { font-family:'IBM Plex Mono', monospace; text-transform:uppercase; letter-spacing:0.12em; font-size:0.72rem; color:var(--text-muted); margin-bottom:0.8rem; }
+        .values { display:grid; grid-template-columns:repeat(4, 1fr); gap:1.25rem; margin-top:2.5rem; }
+        .values div { border-left:2px solid var(--accent); padding:0.2rem 0 0.2rem 1rem; }
+        .values strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.1rem; margin-bottom:0.2rem; }
+        .values span { color:var(--text-muted); font-size:0.9rem; }
+        @media (max-width: 900px) { .pillars, .values { grid-template-columns:1fr 1fr; } }
+        @media (max-width: 600px) { .pillars, .values { grid-template-columns:1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo-link"><img src="logo-final.png" alt="Tech Advisors LA" class="logo"></a>
+                <ul class="nav-links">
+                    <li><a href="#modulos">Módulos</a></li>
+                    <li><a href="#para-quien">Para quién</a></li>
+                    <li><a href="#modelo">Modelo</a></li>
+                    <li><a href="#aliados">Aliados</a></li>
+                    <li><a href="contacto.html" class="nav-cta">Contáctenos</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="sub-hero">
+        <div class="hero-grid-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb"><a href="index.html">Inicio</a> / Punto de Venta (POS)</div>
+                <span class="eyebrow">Punto de venta · Retail · PYMES</span>
+                <h1 class="hero-title">Su punto de venta como una <span class="hl">ventaja competitiva</span>, no como un gasto.</h1>
+                <p class="hero-sub">Un sistema integral de punto de venta, inventario, inteligencia de negocios y factura electrónica, pensado para el comercio costarricense y con pago mensual. Es una solución de ASP Software Company, representada por Tech Advisors LA.</p>
+                <a href="contacto.html" class="cta-button">Solicite una demostración →</a>
+                <a href="#modulos" class="cta-ghost">Ver módulos</a>
+
+                <div class="stat-strip">
+                    <div><strong>20 años</strong><span>de evolución en el mercado</span></div>
+                    <div><strong>Factura electrónica</strong><span>conforme a la normativa de Hacienda</span></div>
+                    <div><strong>Pago mensual</strong><span>sin inversión inicial en software</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="modulos">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Módulos</span>
+                <h2 class="section-title-dark reveal">Todo lo que su tienda necesita en una sola herramienta</h2>
+                <p class="section-sub reveal">Desde la venta en caja hasta el análisis de lo que más se vende, en todas sus sucursales.</p>
+            </div>
+            <div class="pillars reveal-stagger">
+                <div class="pillar"><div class="node-tag">OP</div><h3>Operación de tienda</h3><p>Facturación de contado, apartados, compras y cierres de caja.</p></div>
+                <div class="pillar"><div class="node-tag">INV</div><h3>Control de inventario</h3><p>Gestión física y en línea de las existencias de cada sucursal.</p></div>
+                <div class="pillar"><div class="node-tag">BI</div><h3>Inteligencia de negocios</h3><p>Análisis de ventas por producto, por marca y en hasta 15 categorías.</p></div>
+                <div class="pillar"><div class="node-tag">ADM</div><h3>Administración</h3><p>Seguridad por usuario y políticas de descuento centralizadas.</p></div>
+                <div class="pillar"><div class="node-tag">FE</div><h3>Factura electrónica y contabilidad</h3><p>Factura electrónica conforme a la normativa de Hacienda, integrada a la operación.</p></div>
+                <div class="pillar"><div class="node-tag">LOY</div><h3>Programas de lealtad</h3><p>Tarjetas de regalo y programa de cliente frecuente para que sus clientes vuelvan.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-bg" id="para-quien">
+        <div class="container">
+            <div class="two-col">
+                <div class="section-head">
+                    <span class="eyebrow">Experiencia comprobada</span>
+                    <h2 class="section-title-dark reveal">20 años evolucionando junto al comercio</h2>
+                    <p class="section-sub reveal">Es una solución con 20 años en el mercado. En ese tiempo ha evolucionado con las necesidades del comercio y se ha ganado la confianza de clientes del sector retail. Es ideal para PYMES que quieren profesionalizar su punto de venta y para cadenas con varias sucursales.</p>
+                </div>
+                <ul class="list-cards reveal-stagger">
+                    <li><strong>Supermercados</strong><span>Alto volumen de transacciones, varias cajas e inventario en constante movimiento.</span></li>
+                    <li><strong>Tiendas de ropa y zapaterías</strong><span>Control por marca, talla y categoría, con apartados y promociones.</span></li>
+                    <li><strong>Ferreterías</strong><span>Miles de artículos con existencias actualizadas en cada sucursal.</span></li>
+                    <li><strong>PYMES en crecimiento</strong><span>Una herramienta profesional sin la inversión de un sistema tradicional.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologia">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Tecnología</span>
+                <h2 class="section-title-dark reveal">Información siempre disponible y segura</h2>
+                <p class="section-sub reveal">La arquitectura está diseñada para que la información de todas las sucursales esté disponible en todo momento.</p>
+            </div>
+            <div class="flow reveal-stagger">
+                <div class="flow-step"><span class="process-num mono">01</span><h3>Puntos de venta</h3><p>Cada caja se conecta por Internet, sin infraestructura compleja en la tienda.</p></div>
+                <div class="flow-step"><span class="process-num mono">02</span><h3>Plataforma robusta</h3><p>Una base de datos empresarial que aporta solidez y seguridad a la información.</p></div>
+                <div class="flow-step"><span class="process-num mono">03</span><h3>Respaldo y replicación</h3><p>Los datos se respaldan y se replican en sitios alternos para garantizar la continuidad del negocio.</p></div>
+                <div class="flow-step"><span class="process-num mono">04</span><h3>Acceso en tiempo real</h3><p>El dueño del negocio y su contador consultan la información desde cualquier lugar.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-bg" id="modelo">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Modelo como servicio</span>
+                <h2 class="section-title-dark reveal">Sin inversión inicial: una suscripción mensual</h2>
+                <p class="section-sub reveal">Un modelo escalable según la demanda, que elimina la barrera de la inversión inicial (CAPEX).</p>
+            </div>
+            <div class="services-grid reveal-stagger">
+                <div class="service-card">
+                    <div class="node-tag">P1</div>
+                    <h3>Paquete Gestión</h3>
+                    <p>Sistema ERP, facturación, analíticas y factura electrónica.</p>
+                </div>
+                <div class="service-card">
+                    <div class="node-tag">P2</div>
+                    <h3>Paquete Gestión + Lealtad</h3>
+                    <p>Todo lo del Paquete Gestión, más el sistema de lealtad con tarjetas de regalo y cliente frecuente.</p>
+                </div>
+            </div>
+            <div class="values reveal-stagger">
+                <div><strong>Hardware flexible</strong><span>Use su propio equipo o adquiéralo también como servicio.</span></div>
+                <div><strong>Transparencia</strong><span>Acceso en tiempo real para el dueño y el contador.</span></div>
+                <div><strong>Escalable</strong><span>Crece con su número de cajas y sucursales.</span></div>
+                <div><strong>Regional</strong><span>Estandarice su operación en Costa Rica y Centroamérica.</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aliados">
+        <div class="container">
+            <div class="two-col">
+                <div class="section-head">
+                    <span class="eyebrow">Para aliados comerciales</span>
+                    <h2 class="section-title-dark reveal">Disponible también en marca blanca</h2>
+                    <p class="section-sub reveal">Los operadores de telecomunicaciones, proveedores de conectividad y otros aliados pueden ofrecer la solución con su propia marca. Así suman conectividad y software en un solo servicio, generan más valor y construyen relaciones de largo plazo con sus clientes PYME.</p>
+                </div>
+                <ul class="list-cards reveal-stagger">
+                    <li><strong>Su marca, su estrategia</strong><span>El aliado define la marca del servicio según su estrategia comercial.</span></li>
+                    <li><strong>Pago mensual por servicio</strong><span>Un esquema recurrente que incluye software, factura electrónica y lealtad.</span></li>
+                    <li><strong>Soporte compartido</strong><span>ASP Software Company y Tech Advisors LA atienden el soporte técnico especializado, las actualizaciones y las adecuaciones.</span></li>
+                    <li><strong>Gestión conjunta</strong><span>Instalación, capacitación del personal y revisión periódica de la estrategia comercial.</span></li>
+                </ul>
+            </div>
+
+            <div class="cta-band reveal" style="margin-top:4rem;">
+                <div>
+                    <h2>¿Listo para modernizar su punto de venta?</h2>
+                    <p>Le mostramos el sistema funcionando y le ayudamos a elegir el paquete adecuado para su negocio.</p>
+                </div>
+                <a href="contacto.html" class="cta-button">Solicitar demostración →</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-cta reveal">
+                <span class="eyebrow">Contacto</span>
+                <h2 class="section-title-dark">Hablemos de su punto de venta</h2>
+                <p class="section-sub">Cuéntenos cuántas cajas y sucursales tiene. Le preparamos una demostración, sin compromiso.</p>
+                <a href="contacto.html" class="cta-button">Contáctenos →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-links" aria-label="Páginas del sitio">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="asesoria.html">Asesoría</a>
+                <a href="humand.html">Humand</a>
+                <a href="imotion.html">Computer Vision</a>
+                <a href="firma-digital.html">Firma Digital</a>
+                <a href="pos.html">POS</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p class="footer-brand">Tech Advisors L.A.</p>
+            <p>Soluciones Integrales Sesenta Plus S.A. | Cédula Jurídica: 3-101-860439</p>
+            <p>&copy; 2026 Tech Advisors L.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+                navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+            }
+            if (typeof gsap === 'undefined') return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.utils.toArray('.reveal').forEach(el => {
+                gsap.fromTo(el, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+            });
+            gsap.utils.toArray('.reveal-stagger').forEach(group => {
+                gsap.fromTo(group.children, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out', scrollTrigger: { trigger: group, start: 'top 88%' } });
+            });
+        });
+    </script>
+</body>
+</html>

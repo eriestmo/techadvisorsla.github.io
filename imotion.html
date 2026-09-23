@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <title>Computer Vision para Retail en Costa Rica | iMotion Analytics — Tech Advisors LA</title>
+    <meta name="description" content="Computer vision para tiendas en Costa Rica: conteo de visitantes, filas en cajas, zonas de interés, prevención de pérdidas y análisis predictivo con sus cámaras actuales.">
+    <meta name="keywords" content="computer vision, computer vision retail, inteligencia artificial retail, analítica de video, visión artificial, iMotion Analytics, conteo de personas, prevención de pérdidas, análisis predictivo, tiendas, supermercados, Costa Rica">
+    <link rel="canonical" href="https://techadvisorsla.com/imotion.html">
+
+    <!-- Vista Previa para WhatsApp, LinkedIn y Redes Sociales (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techadvisorsla.com/imotion.html">
+    <meta property="og:title" content="Computer Vision para Retail | Sus cámaras ya ven su tienda, ahora pueden ayudarle a decidir">
+    <meta property="og:description" content="Conteo de visitantes, filas, zonas de interés y prevención de pérdidas con computer vision sobre sus cámaras actuales. Tech Advisors LA representa a iMotion Analytics en Costa Rica.">
+    <meta property="og:image" content="https://techadvisorsla.com/logo-final.png">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Datos Estructurados Schema.org -->
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Computer Vision para Retail — iMotion Analytics",
+      "serviceType": "Computer vision como servicio (AVaaS) para comercio minorista",
+      "description": "Computer vision (analítica de video con inteligencia artificial) para tiendas y supermercados: conteo de visitantes, filas en cajas, zonas de mayor interés, prevención de pérdidas y seguridad, sobre las cámaras existentes.",
+      "provider": {
+            "@type": "ProfessionalService",
+            "name": "Tech Advisors LA",
+            "url": "https://techadvisorsla.com",
+            "telephone": "+50687032711"
+      },
+      "areaServed": [
+            "Costa Rica",
+            "Latinoamérica"
+      ],
+      "url": "https://techadvisorsla.com/imotion.html"
+}
+    </script>
+
+    <style>
+        :root{
+            --bg:#080D22;
+            --bg-2:#0A1128;
+            --panel:#0F1938;
+            --panel-2:#111D42;
+            --accent:#2E86F5;
+            --accent-2:#4FD8EB;
+            --text:#EDEEF3;
+            --text-muted:#8B93AC;
+            --border: rgba(255,255,255,0.09);
+            --radius: 16px;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior:smooth; }
+
+        body {
+            font-family:'Inter', sans-serif;
+            line-height:1.65;
+            color:var(--text);
+            background:var(--bg);
+            overflow-x:hidden;
+        }
+
+        h1,h2,h3 { font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; }
+
+        .mono { font-family:'IBM Plex Mono', monospace; }
+
+        .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+
+        .eyebrow {
+            font-family:'IBM Plex Mono', monospace;
+            text-transform:uppercase;
+            letter-spacing:0.14em;
+            font-size:0.75rem;
+            color:var(--accent-2);
+            display:inline-block;
+            margin-bottom:1rem;
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            background: rgba(8,13,34,0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav { display:flex; justify-content:space-between; align-items:center; }
+
+        .logo { height:42px; }
+
+        .nav-links { display:flex; gap:2.25rem; list-style:none; align-items:center; }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration:none;
+            font-weight:500;
+            font-size:0.95rem;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover { color: var(--accent-2); }
+
+        .nav-cta {
+            border:1px solid var(--accent);
+            color:var(--text) !important;
+            padding:0.55rem 1.3rem;
+            border-radius:50px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-cta:hover { background:var(--accent); box-shadow:0 0 24px rgba(46,134,245,0.55); }
+
+        .nav-toggle {
+            display:none;
+            width:26px; height:20px;
+            position:relative;
+            background:none; border:none; cursor:pointer;
+        }
+        .nav-toggle span {
+            position:absolute; left:0; width:100%; height:2px; background:var(--text);
+            transition: all 0.25s ease;
+        }
+        .nav-toggle span:nth-child(1){ top:0; }
+        .nav-toggle span:nth-child(2){ top:9px; }
+        .nav-toggle span:nth-child(3){ top:18px; }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            position:relative;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            padding-top:6rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 60% 55% at 82% 28%, rgba(46,134,245,0.16), transparent 60%),
+                radial-gradient(ellipse 50% 45% at 10% 85%, rgba(79,216,235,0.09), transparent 60%),
+                var(--bg);
+        }
+
+        .hero-grid-overlay{
+            position:absolute; inset:0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 20%, transparent 75%);
+            pointer-events:none;
+        }
+
+        .hero-network {
+            position:absolute;
+            top:0; right:-4%;
+            width:62%;
+            height:100%;
+            z-index:1;
+            opacity:0.9;
+        }
+
+        .network-line { stroke:var(--accent); stroke-width:1.4; fill:none; opacity:0.55; }
+        .network-node {
+            fill:var(--accent-2);
+            filter:url(#nodeGlow);
+            transform-box:fill-box;
+            transform-origin:center;
+            opacity:0;
+            transform:scale(0.3);
+        }
+
+        .hero-content { position:relative; z-index:2; max-width:620px; }
+
+        .hero-title {
+            font-size:3.1rem;
+            line-height:1.12;
+            margin-bottom:1.4rem;
+        }
+        .hero-title .hl { color:var(--accent-2); }
+
+        .hero-sub {
+            font-size:1.15rem;
+            color:var(--text-muted);
+            max-width:520px;
+            margin-bottom:2.4rem;
+        }
+
+        .cta-button {
+            display:inline-flex;
+            align-items:center;
+            gap:0.6rem;
+            background:var(--accent);
+            color:#08112b;
+            font-weight:600;
+            padding:1rem 2.2rem;
+            border-radius:50px;
+            text-decoration:none;
+            box-shadow: 0 0 0 rgba(46,134,245,0);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover { box-shadow: 0 0 34px rgba(46,134,245,0.6); transform:translateY(-2px); }
+
+        .cta-ghost{
+            display:inline-flex;
+            align-items:center;
+            color:var(--text-muted);
+            text-decoration:none;
+            margin-left:1.4rem;
+            font-size:0.95rem;
+            border-bottom:1px solid var(--border);
+            padding-bottom:2px;
+            transition:color 0.25s ease, border-color 0.25s ease;
+        }
+        .cta-ghost:hover{ color:var(--text); border-color:var(--accent-2); }
+
+        /* ---------- SECTIONS SHARED ---------- */
+        section { padding:6.5rem 0; position:relative; }
+
+        .section-head { max-width:640px; margin-bottom:3.5rem; }
+        .section-title-dark { font-size:2.3rem; margin-bottom:1rem; line-height:1.2; }
+        .section-sub { color:var(--text-muted); font-size:1.05rem; }
+
+        /* ---------- SERVICES ---------- */
+        .services-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+            gap:1.5rem;
+        }
+
+        .service-card {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.2rem;
+            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+            position:relative;
+            overflow:hidden;
+        }
+        .service-card::before{
+            content:"";
+            position:absolute; inset:0;
+            background:radial-gradient(circle at 85% -10%, rgba(46,134,245,0.16), transparent 55%);
+            opacity:0; transition:opacity 0.35s ease;
+        }
+        .service-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.55); background:var(--panel-2); }
+        .service-card:hover::before{ opacity:1; }
+
+        .node-tag {
+            width:46px; height:46px;
+            display:inline-flex; align-items:center; justify-content:center;
+            border:1px solid var(--accent);
+            border-radius:10px;
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.8rem;
+            font-weight:500;
+            color:var(--accent-2);
+            margin-bottom:1.3rem;
+            position:relative; z-index:1;
+        }
+
+        .service-card h3 { font-size:1.2rem; margin-bottom:0.8rem; position:relative; z-index:1; }
+        .service-card p { color:var(--text-muted); font-size:0.96rem; position:relative; z-index:1; }
+
+        .card-link{
+            display:inline-block; margin-top:1rem; position:relative; z-index:1;
+            color:var(--accent-2); text-decoration:none; font-size:0.9rem; font-weight:500;
+        }
+        .card-link:hover{ text-decoration:underline; }
+
+        /* ---------- FEATURED ---------- */
+        .featured { background: linear-gradient(180deg, var(--bg), var(--bg-2) 50%, var(--bg)); border-top:1px solid var(--border); }
+        .featured-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
+        .featured-card {
+            display:flex; flex-direction:column;
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:2.4rem; text-decoration:none; color:var(--text);
+            background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.16), transparent 55%);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+        .featured-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.6); }
+        .featured-card h3 { font-size:1.45rem; margin-bottom:0.8rem; line-height:1.25; }
+        .featured-card p { color:var(--text-muted); font-size:0.96rem; margin-bottom:1.6rem; }
+        .featured-stats { display:flex; gap:2rem; margin-bottom:1.8rem; flex-wrap:wrap; }
+        .featured-stats div { border-left:2px solid var(--accent); padding-left:0.9rem; }
+        .featured-stats strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.5rem; color:var(--accent-2); line-height:1.2; }
+        .featured-stats span { color:var(--text-muted); font-size:0.82rem; }
+        .featured-link { margin-top:auto; color:var(--accent-2); font-weight:600; font-size:0.95rem; }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
+
+        /* ---------- HIGHLIGHT ---------- */
+        .networking-highlight {
+            background: linear-gradient(180deg, var(--bg-2), var(--bg));
+            border-top:1px solid var(--border);
+            border-bottom:1px solid var(--border);
+        }
+
+        .highlight-content {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:3rem;
+            position:relative;
+        }
+
+        .highlight-connector {
+            position:absolute;
+            top:50%; left:50%;
+            transform:translate(-50%,-50%);
+            width:1px; height:70%;
+            background: linear-gradient(180deg, transparent, var(--accent), transparent);
+            opacity:0.5;
+        }
+
+        .highlight-text h2 { font-size:1.55rem; margin-bottom:1rem; color:var(--text); }
+        .highlight-text p { color:var(--text-muted); }
+
+        /* ---------- PROCESS ---------- */
+        .process-track {
+            position:relative;
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:2.5rem;
+            margin-top:1rem;
+        }
+        .process-line-track{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:rgba(255,255,255,0.08);
+            z-index:0;
+        }
+        .process-line-fill{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:linear-gradient(90deg, var(--accent), var(--accent-2));
+            transform-origin:left center;
+            transform:scaleX(0);
+            z-index:0;
+        }
+
+        .process-node { position:relative; z-index:1; }
+
+        .process-num {
+            display:inline-flex; align-items:center; justify-content:center;
+            width:44px; height:44px;
+            border-radius:50%;
+            background:var(--bg);
+            border:2px solid var(--accent-2);
+            color:var(--accent-2);
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.85rem;
+            margin-bottom:1.1rem;
+        }
+
+        .process-node h3 { font-size:1.15rem; margin-bottom:0.6rem; }
+        .process-node p { color:var(--text-muted); font-size:0.95rem; }
+
+        /* ---------- CONTACT ---------- */
+        .contact {
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(46,134,245,0.12), transparent 65%), var(--bg);
+        }
+
+        .contact-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+            gap:1.75rem;
+            margin-top:2.5rem;
+        }
+
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
+        .contact-card {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.4rem 2rem;
+            text-align:center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-card:hover{ border-color:var(--accent-2); transform:translateY(-4px); }
+
+        .contact-card h3 { font-size:1.1rem; margin-bottom:0.6rem; color:var(--text); }
+
+        .contact-card a {
+            color: var(--accent-2);
+            text-decoration:none;
+            font-size:1.02rem;
+            font-weight:500;
+            font-family:'IBM Plex Mono', monospace;
+            display:block;
+        }
+
+        .contact-card .contact-phone {
+            color: var(--text);
+            font-size:1.05rem;
+            margin-bottom:0.6rem;
+        }
+
+        footer {
+            border-top:1px solid var(--border);
+            color:var(--text-muted);
+            text-align:center;
+            padding:2.8rem 0;
+            font-size:0.88rem;
+            line-height:1.8;
+        }
+        .footer-links { display:flex; justify-content:center; flex-wrap:wrap; gap:0.4rem 1.6rem; margin-bottom:1.6rem; }
+        .footer-links a { color:var(--text-muted); text-decoration:none; font-size:0.88rem; transition:color 0.25s ease; }
+        .footer-links a:hover { color:var(--accent-2); }
+        .footer-brand { font-family:'Space Grotesk', sans-serif; font-weight:600; color:var(--text); font-size:1rem; }
+
+        /* ---------- REVEAL DEFAULTS (JS controls the animated state) ---------- */
+        .reveal, .reveal-stagger > * { will-change: transform, opacity; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior:auto; }
+        }
+
+        @media (max-width: 900px) {
+            .hero-network{ width:100%; right:0; opacity:0.22; }
+            .hero-title{ font-size:2.3rem; }
+            .highlight-content{ grid-template-columns:1fr; }
+            .featured-grid{ grid-template-columns:1fr; }
+            .highlight-connector{ display:none; }
+            .process-track{ grid-template-columns:1fr; }
+            .process-line-track, .process-line-fill{ display:none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
+        }
+        @media (max-width: 1100px) {
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
+        }
+    
+        /* ---------- SUBPAGE ---------- */
+        .logo-link { display:inline-flex; }
+        .sub-hero {
+            position:relative;
+            padding:10rem 0 5.5rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 55% 60% at 85% 20%, rgba(46,134,245,0.18), transparent 60%),
+                radial-gradient(ellipse 45% 45% at 5% 90%, rgba(79,216,235,0.08), transparent 60%),
+                var(--bg);
+            border-bottom:1px solid var(--border);
+        }
+        .sub-hero .hero-content { max-width:760px; }
+        .sub-hero .hero-title { font-size:2.9rem; }
+        .sub-hero .hero-sub { max-width:640px; }
+        .breadcrumb { font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--text-muted); margin-bottom:1.4rem; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; }
+        .breadcrumb a:hover { color:var(--accent-2); }
+
+        .stat-strip {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+            gap:1rem;
+            margin-top:3rem;
+            max-width:860px;
+        }
+        .stat-strip div {
+            border-left:2px solid var(--accent);
+            padding:0.2rem 0 0.2rem 1rem;
+        }
+        .stat-strip strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.7rem; color:var(--text); line-height:1.2; }
+        .stat-strip span { color:var(--text-muted); font-size:0.88rem; }
+
+        .alt-bg { background:linear-gradient(180deg, var(--bg-2), var(--bg)); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+
+        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+        .two-col .section-head { margin-bottom:0; }
+
+        .list-cards { list-style:none; display:grid; gap:1rem; }
+        .list-cards li {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:1.1rem 1.3rem;
+        }
+        .list-cards strong { display:block; font-family:'Space Grotesk', sans-serif; font-weight:600; margin-bottom:0.2rem; }
+        .list-cards span { color:var(--text-muted); font-size:0.93rem; }
+
+        .pain-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.25rem; }
+        .pain {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem;
+        }
+        .pain .before { font-size:0.9rem; color:var(--text-muted); margin-bottom:0.9rem; padding-bottom:0.9rem; border-bottom:1px dashed var(--border); }
+        .pain .before b { color:#F28B82; font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.75rem; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+        .pain .after { font-size:0.95rem; color:var(--text); }
+        .pain .after b { color:var(--accent-2); font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.75rem; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+
+        .modules-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+            gap:1.25rem;
+        }
+        .module-group {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:1.6rem;
+        }
+        .module-group h3 { font-size:1.02rem; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.6rem; }
+        .module-group h3::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 10px var(--accent-2); flex:none; }
+        .module-group > p { color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; }
+        .chips { display:flex; flex-wrap:wrap; gap:0.5rem; }
+        .chip {
+            font-size:0.85rem; color:var(--text);
+            background:rgba(255,255,255,0.04);
+            border:1px solid var(--border);
+            border-radius:50px;
+            padding:0.35rem 0.85rem;
+        }
+
+        .impact-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:1.25rem; }
+        .impact-card {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem 1.4rem; display:flex; flex-direction:column;
+        }
+        .impact-label { color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; min-height:4.8em; }
+        .impact-value { font-family:'Space Grotesk', sans-serif; font-size:2.1rem; font-weight:700; line-height:1.1; color:var(--accent-2); margin-bottom:0.5rem; }
+        .impact-delta { font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--text); }
+        .impact-delta .from { color:var(--text-muted); }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
+
+        .flow {
+            display:grid; grid-template-columns:repeat(4, 1fr); gap:1.25rem; position:relative;
+        }
+        .flow-step {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem; position:relative;
+        }
+        .flow-step:not(:last-child)::after{
+            content:"→"; position:absolute; right:-1.05rem; top:50%; transform:translateY(-50%);
+            color:var(--accent-2); font-family:'IBM Plex Mono', monospace; font-size:1.1rem; z-index:2;
+        }
+        .flow-step h3 { font-size:1.05rem; margin:0.9rem 0 0.5rem; }
+        .flow-step p { color:var(--text-muted); font-size:0.92rem; }
+
+        .q-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; }
+        .q-card {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem;
+        }
+        .q-card .q { font-family:'Space Grotesk', sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:0.6rem; }
+        .q-card .a { color:var(--text-muted); font-size:0.93rem; }
+
+        .cta-band {
+            background:var(--panel); border:1px solid rgba(46,134,245,0.4); border-radius:var(--radius);
+            padding:3rem; display:flex; justify-content:space-between; align-items:center; gap:2rem; flex-wrap:wrap;
+            background-image:radial-gradient(circle at 90% 0%, rgba(46,134,245,0.22), transparent 55%);
+        }
+        .cta-band h2 { font-size:1.8rem; margin-bottom:0.5rem; }
+        .cta-band p { color:var(--text-muted); max-width:560px; }
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
+        @media (max-width: 900px) {
+            .two-col{ grid-template-columns:1fr; }
+            .modules-grid{ grid-template-columns:1fr; }
+            .flow{ grid-template-columns:1fr; }
+            .flow-step:not(:last-child)::after{ content:"↓"; right:auto; left:50%; top:auto; bottom:-1.15rem; transform:translateX(-50%); }
+            .sub-hero .hero-title{ font-size:2.15rem; }
+            .cta-band{ padding:2rem; }
+        }
+        @media (max-width: 600px){ .impact-label{ min-height:0; } .container{ padding:0 1.25rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo-link"><img src="logo-final.png" alt="Tech Advisors LA" class="logo"></a>
+                <ul class="nav-links">
+                    <li><a href="#preguntas">Análisis predictivo</a></li>
+                    <li><a href="#casos">Casos de uso</a></li>
+                    <li><a href="#como-funciona">Cómo funciona</a></li>
+                    <li><a href="#modelo">Modelo</a></li>
+                    <li><a href="contacto.html" class="nav-cta">Contáctenos</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="sub-hero">
+        <div class="hero-grid-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb"><a href="index.html">Inicio</a> / Computer Vision / iMotion Analytics</div>
+                <span class="eyebrow">Computer Vision · IA · Retail</span>
+                <h1 class="hero-title">Sus cámaras ya ven su tienda. Ahora pueden <span class="hl">ayudarle a decidir</span>.</h1>
+                <p class="hero-sub">Con la tecnología de computer vision de iMotion Analytics, las cámaras que su tienda ya tiene se convierten en sensores inteligentes. Cuentan visitantes, detectan filas, muestran las zonas de mayor interés y alertan sobre situaciones de riesgo. Con esos datos, usted puede anticipar la demanda, planificar mejor al personal y reducir pérdidas. Tech Advisors LA representa a iMotion Analytics en Costa Rica.</p>
+                <a href="contacto.html" class="cta-button">Solicite un diagnóstico →</a>
+                <a href="#casos" class="cta-ghost">Ver casos de uso</a>
+
+                <div class="stat-strip">
+                    <div><strong>+99%</strong><span>de fiabilidad en la medición de aforo en accesos</span></div>
+                    <div><strong>50+</strong><span>casos de uso de computer vision</span></div>
+                    <div><strong>Cualquier marca</strong><span>de cámara: se aprovecha su CCTV actual</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="preguntas">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Análisis predictivo</span>
+                <h2 class="section-title-dark reveal">Preguntas que su tienda puede responder con datos</h2>
+                <p class="section-sub reveal">La IA registra en forma continua lo que pasa en el piso de venta. Con el historial, usted identifica patrones y se anticipa, en lugar de reaccionar cuando el problema ya ocurrió.</p>
+            </div>
+            <div class="q-grid reveal-stagger">
+                <div class="q-card">
+                    <div class="q">¿A qué horas y qué días entra más gente?</div>
+                    <div class="a">Conteo de visitantes por hora, día y sucursal para ver las tendencias de afluencia y anticipar las horas pico.</div>
+                </div>
+                <div class="q-card">
+                    <div class="q">¿Cuántos cajeros necesito en cada turno?</div>
+                    <div class="a">Con el historial de afluencia y de filas, usted planifica los turnos antes de que se formen las filas.</div>
+                </div>
+                <div class="q-card">
+                    <div class="q">¿Qué zonas y exhibiciones atraen más?</div>
+                    <div class="a">Aforo por zona y tiempos de permanencia para evaluar la distribución de la tienda, las góndolas y las promociones.</div>
+                </div>
+                <div class="q-card">
+                    <div class="q">¿Cuánto esperan mis clientes en caja?</div>
+                    <div class="a">Medición de filas y alertas en tiempo real para abrir otra caja a tiempo.</div>
+                </div>
+                <div class="q-card">
+                    <div class="q">¿Cuándo y dónde se concentran las pérdidas?</div>
+                    <div class="a">Patrones de merodeo, comportamientos anómalos y manipulación de mercadería, para reforzar la vigilancia donde realmente hace falta.</div>
+                </div>
+                <div class="q-card">
+                    <div class="q">¿Cómo se comparan mis sucursales?</div>
+                    <div class="a">Tableros con información objetiva de cada tienda para comparar desempeño, operación y seguridad.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-bg" id="casos">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Casos de uso en retail</span>
+                <h2 class="section-title-dark reveal">Una misma plataforma para vender más, operar mejor y perder menos</h2>
+                <p class="section-sub reveal">Se activan los análisis según la necesidad de cada tienda, centro de distribución o bodega.</p>
+            </div>
+            <div class="modules-grid reveal-stagger">
+                <div class="module-group">
+                    <h3>Conocer al cliente</h3>
+                    <p>Cómo entran, por dónde se mueven y cuánto tiempo se quedan.</p>
+                    <div class="chips">
+                        <span class="chip">Conteo de visitantes</span><span class="chip">Aforo por zona</span>
+                        <span class="chip">Horas pico</span><span class="chip">Tiempos de permanencia</span>
+                        <span class="chip">Flujos dentro de la tienda</span><span class="chip">Comparación entre sucursales</span>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <h3>Operación de tienda</h3>
+                    <p>Menos esperas y recursos mejor asignados.</p>
+                    <div class="chips">
+                        <span class="chip">Filas en cajas</span><span class="chip">Planificación de personal</span>
+                        <span class="chip">Limpieza y mantenimiento según uso</span><span class="chip">Pantallas y señalización apagadas</span>
+                        <span class="chip">Rutas de evacuación obstruidas</span>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <h3>Prevención de pérdidas</h3>
+                    <p>Detectar el riesgo antes de que se convierta en pérdida.</p>
+                    <div class="chips">
+                        <span class="chip">Merodeo</span><span class="chip">Comportamiento anómalo</span>
+                        <span class="chip">Hurto y manipulación de mercadería</span><span class="chip">Vandalismo y daños</span>
+                        <span class="chip">Intrusión fuera de horario</span><span class="chip">Accesos a zonas restringidas</span>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <h3>Seguridad de las personas</h3>
+                    <p>Alertas inmediatas para clientes y colaboradores.</p>
+                    <div class="chips">
+                        <span class="chip">Caídas y desmayos</span><span class="chip">Peleas y agresiones</span>
+                        <span class="chip">Humo y fuego</span><span class="chip">Objetos abandonados</span>
+                        <span class="chip">Aglomeraciones</span>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <h3>Centro de distribución y bodega</h3>
+                    <p>Seguridad laboral y cuidado de la mercadería.</p>
+                    <div class="chips">
+                        <span class="chip">Uso de casco y chaleco</span><span class="chip">Montacargas conducido en forma riesgosa</span>
+                        <span class="chip">Golpes y mala manipulación de paquetes</span><span class="chip">Zonas de riesgo</span>
+                        <span class="chip">Control de placas vehiculares</span>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <h3>Salud de las cámaras</h3>
+                    <p>Asegura que ninguna cámara quede “ciega”.</p>
+                    <div class="chips">
+                        <span class="chip">Manipulación o sabotaje de cámaras</span><span class="chip">Pérdida de visibilidad</span>
+                        <span class="chip">Lentes sucios o fallas de imagen</span><span class="chip">Historial de incidentes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Cómo funciona</span>
+                <h2 class="section-title-dark reveal">De la cámara a la decisión</h2>
+                <p class="section-sub reveal">No hace falta cambiar su sistema de videovigilancia: la inteligencia artificial trabaja sobre la infraestructura que ya tiene.</p>
+            </div>
+            <div class="flow reveal-stagger">
+                <div class="flow-step">
+                    <span class="process-num mono">01</span>
+                    <h3>Sus cámaras</h3>
+                    <p>Se usa el CCTV existente, de cualquier fabricante, o una instalación nueva.</p>
+                </div>
+                <div class="flow-step">
+                    <span class="process-num mono">02</span>
+                    <h3>IA en sitio o en la nube</h3>
+                    <p>Los algoritmos analizan el video en un equipo local (edge), en la nube o en el centro de datos de su empresa.</p>
+                </div>
+                <div class="flow-step">
+                    <span class="process-num mono">03</span>
+                    <h3>Tablero y alertas</h3>
+                    <p>Datos en tiempo real en una plataforma web y alertas por tablero, correo o app, según lo que usted configure.</p>
+                </div>
+                <div class="flow-step">
+                    <span class="process-num mono">04</span>
+                    <h3>Decisiones</h3>
+                    <p>Reportes de inteligencia de negocio e integración por API con sus sistemas y con plataformas de video como Milestone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-bg" id="modelo">
+        <div class="container">
+            <div class="two-col">
+                <div class="section-head">
+                    <span class="eyebrow">Visión artificial como servicio</span>
+                    <h2 class="section-title-dark reveal">Sin inversión inicial en software: una cuota mensual por cámara</h2>
+                    <p class="section-sub reveal">iMotion Analytics trabaja con un modelo de servicio (AVaaS): usted paga solo por las cámaras que se están analizando. Encaja con el esquema 100% OPEX de Tech Advisors LA y se puede empezar con una sola tienda antes de extenderlo a toda la cadena.</p>
+                </div>
+                <ul class="list-cards reveal-stagger">
+                    <li><strong>Mantenimiento proactivo</strong><span>Usted no tiene que vigilar que la solución funcione: el equipo técnico se encarga.</span></li>
+                    <li><strong>Actualizaciones incluidas</strong><span>Siempre tiene la última versión de los algoritmos, sin costos adicionales.</span></li>
+                    <li><strong>Soluciones a la medida</strong><span>Si su operación necesita un análisis que no existe, se diseña con usted, se prueba en su tienda y después se pone en producción.</span></li>
+                    <li><strong>Representación y acompañamiento local</strong><span>Tech Advisors LA representa a iMotion Analytics en Costa Rica y lo acompaña desde el diagnóstico hasta la medición de resultados.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="respaldo">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Respaldo</span>
+                <h2 class="section-title-dark reveal">Tecnología probada en entornos exigentes</h2>
+                <p class="section-sub reveal">iMotion Analytics es una empresa española especializada en computer vision (visión artificial), representada en Costa Rica por Tech Advisors LA. Desarrolla sus propias soluciones desde 2015 y forma parte del primer sandbox de inteligencia artificial. Sus soluciones ya operan en aeropuertos, puertos, carreteras, túneles, industria y logística, y esa misma experiencia es la que hoy se aplica al comercio.</p>
+            </div>
+            <div class="chips reveal">
+                <span class="chip">Aeropuertos</span><span class="chip">Puertos</span><span class="chip">Carreteras</span>
+                <span class="chip">Túneles</span><span class="chip">Industria</span><span class="chip">Logística</span><span class="chip">Retail</span>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top:0;">
+        <div class="container">
+            <div class="cta-band reveal">
+                <div>
+                    <h2>Empecemos con una tienda piloto</h2>
+                    <p>Revisamos sus cámaras actuales, definimos los indicadores que más le interesan y le mostramos los primeros resultados con datos reales de su tienda.</p>
+                </div>
+                <a href="contacto.html" class="cta-button">Solicitar diagnóstico →</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-cta reveal">
+                <span class="eyebrow">Contacto</span>
+                <h2 class="section-title-dark">Hablemos de IA para su tienda</h2>
+                <p class="section-sub">Cuéntenos cuántas tiendas tiene y qué quiere medir. Le proponemos una prueba piloto con sus cámaras actuales.</p>
+                <a href="contacto.html" class="cta-button">Contáctenos →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-links" aria-label="Páginas del sitio">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="asesoria.html">Asesoría</a>
+                <a href="humand.html">Humand</a>
+                <a href="imotion.html">Computer Vision</a>
+                <a href="firma-digital.html">Firma Digital</a>
+                <a href="pos.html">POS</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p class="footer-brand">Tech Advisors L.A.</p>
+            <p>Soluciones Integrales Sesenta Plus S.A. | Cédula Jurídica: 3-101-860439</p>
+            <p>&copy; 2026 Tech Advisors L.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+                navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+            }
+            if (typeof gsap === 'undefined') return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.utils.toArray('.reveal').forEach(el => {
+                gsap.fromTo(el, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+            });
+            gsap.utils.toArray('.reveal-stagger').forEach(group => {
+                gsap.fromTo(group.children, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out', scrollTrigger: { trigger: group, start: 'top 88%' } });
+            });
+        });
+    </script>
+</body>
+</html>

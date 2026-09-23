@@ -6,15 +6,15 @@
     
     <!-- SEO Básico (Optimizados para que no se corten en Google) -->
     <title>Tech Advisors LA | Transformación Digital e IA en Costa Rica</title>
-    <meta name="description" content="Asesoría en transformación digital, inteligencia artificial, ciberseguridad e IoT para empresas en Costa Rica y Latinoamérica.">
-    <meta name="keywords" content="transformación digital, inteligencia artificial, IA, ciberseguridad, IoT, Costa Rica">
+    <meta name="description" content="Transformación digital, IA y computer vision, firma digital, software a la medida, RR.HH. con Humand e IoT para empresas en Costa Rica y Latinoamérica.">
+    <meta name="keywords" content="transformación digital, inteligencia artificial, IA, desarrollo de software a la medida, Humand, plataforma de recursos humanos, RRHH, computer vision, iMotion Analytics, firma digital, SIGN.TRUST, POS, punto de venta, factura electrónica, modelos de negocio, ciberseguridad, IoT, Costa Rica">
     <link rel="canonical" href="https://techadvisorsla.com/">
 
     <!-- Vista Previa para WhatsApp, LinkedIn y Redes Sociales (Open Graph) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://techadvisorsla.com/">
     <meta property="og:title" content="Tech Advisors LA | Transformación Digital e IA">
-    <meta property="og:description" content="No vendemos tecnología. Conectamos su empresa con la solución exacta en IA, ciberseguridad e IoT.">
+    <meta property="og:description" content="No vendemos tecnología. Conectamos su empresa con la solución exacta en IA, software a la medida, gestión de RR.HH. con Humand, ciberseguridad e IoT.">
     <!-- Por ahora usamos tu logo. Si luego diseñas un banner, solo cambias el nombre del archivo aquí abajo -->
     <meta property="og:image" content="https://techadvisorsla.com/logo-final.png">
 
@@ -29,13 +29,31 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Tech Advisors LA",
+      "legalName": "Soluciones Integrales Sesenta Plus S.A.",
       "url": "https://techadvisorsla.com",
       "logo": "https://techadvisorsla.com/logo-final.png",
       "image": "https://techadvisorsla.com/logo-final.png",
-      "description": "Asesoría en transformación digital, inteligencia artificial (IA), ciberseguridad y networking tecnológico.",
+      "description": "Asesoría en transformación digital, inteligencia artificial (IA), desarrollo de software a la medida, plataforma de recursos humanos Humand, ciberseguridad y networking tecnológico.",
+      "knowsAbout": ["Transformación Digital", "Inteligencia Artificial", "Desarrollo de Software a la Medida", "Plataforma de Recursos Humanos Humand", "Computer Vision", "IoT", "Firma Digital", "Modelos de Negocio", "Networking Estratégico"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Tech Advisors LA",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Inteligencia Artificial e Innovación" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo de Software a la Medida" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plataforma de Recursos Humanos Humand" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Computer Vision — iMotion Analytics" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asesoría Estratégica, Modelos de Negocio y Monetización" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soluciones IoT" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Firma Digital — SIGN.TRUST®" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Punto de Venta (POS) — ASP Software Company" } }
+        ]
+      },
       "telephone": "+50687032711",
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "La Unión",
+        "addressRegion": "Cartago",
         "addressCountry": "CR"
       },
       "areaServed": ["Costa Rica", "Latinoamérica"]
@@ -228,7 +246,7 @@
         section { padding:6.5rem 0; position:relative; }
 
         .section-head { max-width:640px; margin-bottom:3.5rem; }
-        .section-title-dark { font-size:2.3rem; margin-bottom:1rem; }
+        .section-title-dark { font-size:2.3rem; margin-bottom:1rem; line-height:1.2; }
         .section-sub { color:var(--text-muted); font-size:1.05rem; }
 
         /* ---------- SERVICES ---------- */
@@ -271,6 +289,32 @@
 
         .service-card h3 { font-size:1.2rem; margin-bottom:0.8rem; position:relative; z-index:1; }
         .service-card p { color:var(--text-muted); font-size:0.96rem; position:relative; z-index:1; }
+
+        .card-link{
+            display:inline-block; margin-top:1rem; position:relative; z-index:1;
+            color:var(--accent-2); text-decoration:none; font-size:0.9rem; font-weight:500;
+        }
+        .card-link:hover{ text-decoration:underline; }
+
+        /* ---------- FEATURED ---------- */
+        .featured { background: linear-gradient(180deg, var(--bg), var(--bg-2) 50%, var(--bg)); border-top:1px solid var(--border); }
+        .featured-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
+        .featured-card {
+            display:flex; flex-direction:column;
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:2.4rem; text-decoration:none; color:var(--text);
+            background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.16), transparent 55%);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+        .featured-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.6); }
+        .featured-card h3 { font-size:1.45rem; margin-bottom:0.8rem; line-height:1.25; }
+        .featured-card p { color:var(--text-muted); font-size:0.96rem; margin-bottom:1.6rem; }
+        .featured-stats { display:flex; gap:2rem; margin-bottom:1.8rem; flex-wrap:wrap; }
+        .featured-stats div { border-left:2px solid var(--accent); padding-left:0.9rem; }
+        .featured-stats strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.5rem; color:var(--accent-2); line-height:1.2; }
+        .featured-stats span { color:var(--text-muted); font-size:0.82rem; }
+        .featured-link { margin-top:auto; color:var(--accent-2); font-weight:600; font-size:0.95rem; }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
 
         /* ---------- HIGHLIGHT ---------- */
         .networking-highlight {
@@ -352,6 +396,9 @@
             margin-top:2.5rem;
         }
 
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
         .contact-card {
             background:var(--panel);
             border:1px solid var(--border);
@@ -383,9 +430,14 @@
             border-top:1px solid var(--border);
             color:var(--text-muted);
             text-align:center;
-            padding:2.4rem 0;
-            font-size:0.9rem;
+            padding:2.8rem 0;
+            font-size:0.88rem;
+            line-height:1.8;
         }
+        .footer-links { display:flex; justify-content:center; flex-wrap:wrap; gap:0.4rem 1.6rem; margin-bottom:1.6rem; }
+        .footer-links a { color:var(--text-muted); text-decoration:none; font-size:0.88rem; transition:color 0.25s ease; }
+        .footer-links a:hover { color:var(--accent-2); }
+        .footer-brand { font-family:'Space Grotesk', sans-serif; font-weight:600; color:var(--text); font-size:1rem; }
 
         /* ---------- REVEAL DEFAULTS (JS controls the animated state) ---------- */
         .reveal, .reveal-stagger > * { will-change: transform, opacity; }
@@ -398,12 +450,26 @@
             .hero-network{ width:100%; right:0; opacity:0.22; }
             .hero-title{ font-size:2.3rem; }
             .highlight-content{ grid-template-columns:1fr; }
+            .featured-grid{ grid-template-columns:1fr; }
             .highlight-connector{ display:none; }
             .process-track{ grid-template-columns:1fr; }
             .process-line-track, .process-line-fill{ display:none; }
         }
 
         @media (max-width: 768px) {
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
+        }
+        @media (max-width: 1100px) {
             .nav-links {
                 position:absolute; top:100%; left:0; right:0;
                 background:rgba(8,13,34,0.97);
@@ -425,9 +491,12 @@
                 <img src="logo-final.png" alt="Tech Advisors LA" class="logo">
                 <ul class="nav-links">
                     <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#soluciones">Soluciones</a></li>
+                    <li><a href="asesoria.html">Asesoría</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="#modelo">Modelo de Servicio</a></li>
                     <li><a href="#proceso">Cómo trabajamos</a></li>
-                    <li><a href="#contacto" class="nav-cta">Contáctenos</a></li>
+                    <li><a href="contacto.html" class="nav-cta">Contáctenos</a></li>
                 </ul>
                 <button class="nav-toggle" aria-label="Abrir menú">
                     <span></span><span></span><span></span>
@@ -487,8 +556,8 @@
             <div class="hero-content">
                 <span class="eyebrow">Asesoría · IA · Transformación Digital</span>
                 <h1 class="hero-title">No vendemos tecnología. Conectamos su empresa con la <span class="hl">solución exacta</span>.</h1>
-                <p class="hero-sub">Desde inteligencia artificial hasta videovigilancia inteligente e IoT, evaluamos su infraestructura, activamos nuestra red de especialistas y lo acompañamos hasta la implementación — con resultados medibles, no promesas genéricas.</p>
-                <a href="#contacto" class="cta-button">Diagnostique su Proyecto →</a>
+                <p class="hero-sub">Desde inteligencia artificial y software a la medida hasta gestión de talento humano con Humand, computer vision, firma digital e IoT, evaluamos su infraestructura, activamos nuestra red de especialistas y lo acompañamos hasta la implementación — con resultados medibles, no promesas genéricas.</p>
+                <a href="contacto.html" class="cta-button">Diagnostique su Proyecto →</a>
                 <a href="#proceso" class="cta-ghost">Ver cómo trabajamos</a>
             </div>
         </div>
@@ -510,15 +579,30 @@
                 </div>
 
                 <div class="service-card">
+                    <div class="node-tag">SW</div>
+                    <h3>Desarrollo de Software a la Medida</h3>
+                    <p>Diseñamos y construimos aplicaciones web, móviles e integraciones hechas para sus procesos: desde el levantamiento de requerimientos hasta la puesta en producción y el soporte continuo.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="node-tag">HR</div>
+                    <h3>Plataforma de Recursos Humanos — Humand</h3>
+                    <p>Implementamos Humand para digitalizar la gestión de su gente: comunicación interna, expediente digital, vacaciones y permisos, colillas de pago, control de marcas y evaluaciones del desempeño, todo desde una app en el celular de cada colaborador.</p>
+                    <a href="humand.html" class="card-link">Conocer Humand →</a>
+                </div>
+
+                <div class="service-card">
                     <div class="node-tag">NW</div>
                     <h3>Networking Estratégico y Asesoría</h3>
                     <p>Evaluamos su infraestructura actual y activamos nuestra red curada de proveedores y especialistas para conectarlo exactamente con lo que su empresa necesita.</p>
+                    <a href="asesoria.html" class="card-link">Ver asesoría estratégica →</a>
                 </div>
 
                 <div class="service-card">
                     <div class="node-tag">CV</div>
-                    <h3>Analítica de Cámaras y Videovigilancia Inteligente</h3>
-                    <p>Soluciones avanzadas de video con integraciones de análisis en tiempo real y detección de comportamientos, para una seguridad que anticipa en lugar de solo grabar.</p>
+                    <h3>Computer Vision — Analítica de Video con IA</h3>
+                    <p>Convertimos sus cámaras en sensores inteligentes: conteo de personas, filas, detección de comportamientos y alertas en tiempo real. Representamos a iMotion Analytics en Costa Rica.</p>
+                    <a href="imotion.html" class="card-link">Computer vision para retail →</a>
                 </div>
 
                 <div class="service-card">
@@ -528,17 +612,79 @@
                 </div>
 
                 <div class="service-card">
+                    <div class="node-tag">POS</div>
+                    <h3>Punto de Venta como Servicio</h3>
+                    <p>Facturación, inventario, analíticas, factura electrónica y lealtad para PYMES y cadenas de retail, con pago mensual. Representamos a ASP Software Company.</p>
+                    <a href="pos.html" class="card-link">Conocer el POS →</a>
+                </div>
+
+                <div class="service-card">
                     <div class="node-tag">FD</div>
                     <h3>Transformación y Firma Digital</h3>
-                    <p>Digitalizamos procesos, flujos de aprobación y adopción de firma electrónica certificada, para que su empresa opere sin fricciones ni papel.</p>
+                    <p>Digitalizamos procesos y aprobaciones con firma digital que conserva su validez en el tiempo. Representamos e implementamos SIGN.TRUST® en Costa Rica y Latinoamérica.</p>
+                    <a href="firma-digital.html" class="card-link">Conocer SIGN.TRUST® →</a>
                 </div>
 
                 <div class="service-card">
                     <div class="node-tag">RM</div>
-                    <h3>Representación de Modelos de Negocio</h3>
-                    <p>Traemos tecnología líder al mercado y la adaptamos al modelo de negocio específico de cada cliente — nunca una solución genérica.</p>
+                    <h3>Modelos de Negocio y Monetización</h3>
+                    <p>Traemos tecnología líder al mercado, armamos ecosistemas de soluciones integrales y definimos el modelo de negocio y de cobro adecuado para cada cliente — nunca una solución genérica.</p>
+                    <a href="asesoria.html" class="card-link">Ver asesoría estratégica →</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="featured" id="soluciones">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Soluciones destacadas</span>
+                <h2 class="section-title-dark reveal">Soluciones que representamos e implementamos</h2>
+                <p class="section-sub reveal">Plataformas probadas que representamos en Costa Rica y acompañamos de principio a fin.</p>
+            </div>
+            <div class="featured-grid reveal-stagger">
+                <a href="humand.html" class="featured-card">
+                    <span class="eyebrow">Recursos Humanos · Humand</span>
+                    <h3>Toda la gestión de su gente en una sola app</h3>
+                    <p>Comunicación interna, vacaciones y permisos, colillas de pago, control de marcas y expediente digital, al alcance de cada colaborador, incluso de quienes no tienen correo de la empresa.</p>
+                    <div class="featured-stats">
+                        <div><strong>98%</strong><span>de colaboradores alcanzados*</span></div>
+                        <div><strong>1–2 h</strong><span>de respuesta, antes 1–2 días*</span></div>
+                    </div>
+                    <span class="featured-link">Conocer Humand →</span>
+                </a>
+                <a href="imotion.html" class="featured-card">
+                    <span class="eyebrow">Computer Vision · iMotion Analytics</span>
+                    <h3>Sus cámaras ya ven su tienda. Ahora pueden ayudarle a decidir.</h3>
+                    <p>Computer vision sobre sus cámaras actuales para contar visitantes, anticipar horas pico, reducir filas en cajas y detectar riesgos de pérdida antes de que ocurran.</p>
+                    <div class="featured-stats">
+                        <div><strong>+99%</strong><span>de fiabilidad en conteo de aforo</span></div>
+                        <div><strong>50+</strong><span>casos de uso de IA</span></div>
+                    </div>
+                    <span class="featured-link">Conocer la solución →</span>
+                </a>
+                <a href="firma-digital.html" class="featured-card">
+                    <span class="eyebrow">Firma Digital · SIGN.TRUST®</span>
+                    <h3>El reto no es firmar. Es demostrar la validez años después.</h3>
+                    <p>Firma simple, avanzada, cualificada con PKI y jurídica, con trazabilidad y preservación de la evidencia durante todo el ciclo de vida del documento.</p>
+                    <div class="featured-stats">
+                        <div><strong>4</strong><span>clases de firma</span></div>
+                        <div><strong>2 modelos</strong><span>en la nube o en su infraestructura</span></div>
+                    </div>
+                    <span class="featured-link">Conocer SIGN.TRUST® →</span>
+                </a>
+                <a href="pos.html" class="featured-card">
+                    <span class="eyebrow">Punto de Venta · ASP Software Company</span>
+                    <h3>Su punto de venta como ventaja competitiva, no como un gasto.</h3>
+                    <p>Facturación, apartados, cierres de caja, inventario, inteligencia de negocios, factura electrónica y lealtad, en una suscripción mensual para PYMES y cadenas de retail.</p>
+                    <div class="featured-stats">
+                        <div><strong>20 años</strong><span>de evolución en el mercado</span></div>
+                        <div><strong>Sin CAPEX</strong><span>pago mensual por servicio</span></div>
+                    </div>
+                    <span class="featured-link">Conocer el POS →</span>
+                </a>
+            </div>
+            <p class="impact-note">* Caso de éxito publicado por Humand.</p>
         </div>
     </section>
 
@@ -576,7 +722,7 @@
                 <div class="service-card">
                     <div class="node-tag">aaS</div>
                     <h3>100% OPEX — Todo como Servicio</h3>
-                    <p>Convierta la inversión en gasto operativo: soluciones de IA, IoT, videovigilancia y firma digital administradas de forma eficiente, sin desembolsos de capital iniciales ni gestión técnica interna.</p>
+                    <p>Convierta la inversión en gasto operativo: soluciones de IA, software, gestión de RR.HH., IoT, computer vision y firma digital administradas de forma eficiente, sin desembolsos de capital iniciales ni gestión técnica interna.</p>
                 </div>
             </div>
         </div>
@@ -602,7 +748,7 @@
                 <div class="process-node reveal">
                     <span class="process-num mono">02</span>
                     <h3>Conexión</h3>
-                    <p>Activamos nuestra red curada de partners y especialistas para encontrar la solución exacta — en IA, IoT, ciberseguridad o transformación digital.</p>
+                    <p>Activamos nuestra red curada de partners y especialistas para encontrar la solución exacta — en IA, software a la medida, recursos humanos, IoT, ciberseguridad o transformación digital.</p>
                 </div>
                 <div class="process-node reveal">
                     <span class="process-num mono">03</span>
@@ -615,29 +761,30 @@
 
     <section class="contact" id="contacto">
         <div class="container">
-            <div class="section-head">
+            <div class="contact-cta reveal">
                 <span class="eyebrow">Contacto</span>
-                <h2 class="section-title-dark reveal">Inicie su Transformación Digital</h2>
-                <p class="section-sub reveal">Conversemos sobre su proyecto de IA, transformación digital o innovación tecnológica — sin compromiso.</p>
-            </div>
-            <div class="contact-grid reveal-stagger">
-                <div class="contact-card">
-                    <h3>Eric Estrada Montero</h3>
-                    <a href="tel:+50687032711" class="contact-phone">+506 8703-2711</a>
-                    <a href="mailto:eric.estrada@techadvisorsla.com">eric.estrada@techadvisorsla.com</a>
-                </div>
-                <div class="contact-card">
-                    <h3>Mario Estrada Solano</h3>
-                    <a href="tel:+50683835646" class="contact-phone">+506 8383-5646</a>
-                    <a href="mailto:mario.estrada@techadvisorsla.com">mario.estrada@techadvisorsla.com</a>
-                </div>
+                <h2 class="section-title-dark">Inicie su Transformación Digital</h2>
+                <p class="section-sub">Conversemos sobre su proyecto de IA, software a la medida, gestión de recursos humanos o transformación digital, sin compromiso.</p>
+                <a href="contacto.html" class="cta-button">Contáctenos →</a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Tech Advisors LA. Todos los derechos reservados.</p>
+            <nav class="footer-links" aria-label="Páginas del sitio">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="asesoria.html">Asesoría</a>
+                <a href="humand.html">Humand</a>
+                <a href="imotion.html">Computer Vision</a>
+                <a href="firma-digital.html">Firma Digital</a>
+                <a href="pos.html">POS</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p class="footer-brand">Tech Advisors L.A.</p>
+            <p>Soluciones Integrales Sesenta Plus S.A. | Cédula Jurídica: 3-101-860439</p>
+            <p>&copy; 2026 Tech Advisors L.A. Todos los derechos reservados.</p>
         </div>
     </footer>
 

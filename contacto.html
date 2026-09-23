@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <title>Contacto | Tech Advisors L.A. — La Unión, Cartago, Costa Rica</title>
+    <meta name="description" content="Contacte a Tech Advisors L.A.: teléfonos, WhatsApp y correos de Eric Estrada y Mario Estrada. Soluciones Integrales Sesenta Plus S.A., cédula jurídica 3-101-860439, La Unión, Cartago.">
+    <meta name="keywords" content="contacto Tech Advisors LA, asesoría tecnológica Cartago, La Unión Cartago, transformación digital Costa Rica">
+    <link rel="canonical" href="https://techadvisorsla.com/contacto.html">
+
+    <!-- Vista Previa para WhatsApp, LinkedIn y Redes Sociales (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techadvisorsla.com/contacto.html">
+    <meta property="og:title" content="Contacto | Tech Advisors L.A.">
+    <meta property="og:description" content="Conversemos sobre su proyecto. Teléfonos, WhatsApp y correos del equipo de Tech Advisors L.A. en La Unión, Cartago, Costa Rica.">
+    <meta property="og:image" content="https://techadvisorsla.com/logo-final.png">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Datos Estructurados Schema.org -->
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "url": "https://techadvisorsla.com/contacto.html",
+      "mainEntity": {
+            "@type": "ProfessionalService",
+            "name": "Tech Advisors L.A.",
+            "legalName": "Soluciones Integrales Sesenta Plus S.A.",
+            "url": "https://techadvisorsla.com",
+            "logo": "https://techadvisorsla.com/logo-final.png",
+            "telephone": "+50687032711",
+            "email": "eric.estrada@techadvisorsla.com",
+            "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "La Unión",
+                  "addressRegion": "Cartago",
+                  "addressCountry": "CR"
+            },
+            "areaServed": [
+                  "Costa Rica",
+                  "Latinoamérica"
+            ],
+            "contactPoint": [
+                  {
+                        "@type": "ContactPoint",
+                        "name": "Eric Estrada Montero",
+                        "contactType": "sales",
+                        "telephone": "+50687032711",
+                        "email": "eric.estrada@techadvisorsla.com",
+                        "availableLanguage": "Spanish"
+                  },
+                  {
+                        "@type": "ContactPoint",
+                        "name": "Mario Estrada Solano",
+                        "contactType": "sales",
+                        "telephone": "+50683835646",
+                        "email": "mario.estrada@techadvisorsla.com",
+                        "availableLanguage": "Spanish"
+                  }
+            ]
+      }
+}
+    </script>
+
+    <style>
+        :root{
+            --bg:#080D22;
+            --bg-2:#0A1128;
+            --panel:#0F1938;
+            --panel-2:#111D42;
+            --accent:#2E86F5;
+            --accent-2:#4FD8EB;
+            --text:#EDEEF3;
+            --text-muted:#8B93AC;
+            --border: rgba(255,255,255,0.09);
+            --radius: 16px;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior:smooth; }
+
+        body {
+            font-family:'Inter', sans-serif;
+            line-height:1.65;
+            color:var(--text);
+            background:var(--bg);
+            overflow-x:hidden;
+        }
+
+        h1,h2,h3 { font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; }
+
+        .mono { font-family:'IBM Plex Mono', monospace; }
+
+        .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+
+        .eyebrow {
+            font-family:'IBM Plex Mono', monospace;
+            text-transform:uppercase;
+            letter-spacing:0.14em;
+            font-size:0.75rem;
+            color:var(--accent-2);
+            display:inline-block;
+            margin-bottom:1rem;
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            background: rgba(8,13,34,0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav { display:flex; justify-content:space-between; align-items:center; }
+
+        .logo { height:42px; }
+
+        .nav-links { display:flex; gap:2.25rem; list-style:none; align-items:center; }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration:none;
+            font-weight:500;
+            font-size:0.95rem;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover { color: var(--accent-2); }
+
+        .nav-cta {
+            border:1px solid var(--accent);
+            color:var(--text) !important;
+            padding:0.55rem 1.3rem;
+            border-radius:50px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-cta:hover { background:var(--accent); box-shadow:0 0 24px rgba(46,134,245,0.55); }
+
+        .nav-toggle {
+            display:none;
+            width:26px; height:20px;
+            position:relative;
+            background:none; border:none; cursor:pointer;
+        }
+        .nav-toggle span {
+            position:absolute; left:0; width:100%; height:2px; background:var(--text);
+            transition: all 0.25s ease;
+        }
+        .nav-toggle span:nth-child(1){ top:0; }
+        .nav-toggle span:nth-child(2){ top:9px; }
+        .nav-toggle span:nth-child(3){ top:18px; }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            position:relative;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            padding-top:6rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 60% 55% at 82% 28%, rgba(46,134,245,0.16), transparent 60%),
+                radial-gradient(ellipse 50% 45% at 10% 85%, rgba(79,216,235,0.09), transparent 60%),
+                var(--bg);
+        }
+
+        .hero-grid-overlay{
+            position:absolute; inset:0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 20%, transparent 75%);
+            pointer-events:none;
+        }
+
+        .hero-network {
+            position:absolute;
+            top:0; right:-4%;
+            width:62%;
+            height:100%;
+            z-index:1;
+            opacity:0.9;
+        }
+
+        .network-line { stroke:var(--accent); stroke-width:1.4; fill:none; opacity:0.55; }
+        .network-node {
+            fill:var(--accent-2);
+            filter:url(#nodeGlow);
+            transform-box:fill-box;
+            transform-origin:center;
+            opacity:0;
+            transform:scale(0.3);
+        }
+
+        .hero-content { position:relative; z-index:2; max-width:620px; }
+
+        .hero-title {
+            font-size:3.1rem;
+            line-height:1.12;
+            margin-bottom:1.4rem;
+        }
+        .hero-title .hl { color:var(--accent-2); }
+
+        .hero-sub {
+            font-size:1.15rem;
+            color:var(--text-muted);
+            max-width:520px;
+            margin-bottom:2.4rem;
+        }
+
+        .cta-button {
+            display:inline-flex;
+            align-items:center;
+            gap:0.6rem;
+            background:var(--accent);
+            color:#08112b;
+            font-weight:600;
+            padding:1rem 2.2rem;
+            border-radius:50px;
+            text-decoration:none;
+            box-shadow: 0 0 0 rgba(46,134,245,0);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover { box-shadow: 0 0 34px rgba(46,134,245,0.6); transform:translateY(-2px); }
+
+        .cta-ghost{
+            display:inline-flex;
+            align-items:center;
+            color:var(--text-muted);
+            text-decoration:none;
+            margin-left:1.4rem;
+            font-size:0.95rem;
+            border-bottom:1px solid var(--border);
+            padding-bottom:2px;
+            transition:color 0.25s ease, border-color 0.25s ease;
+        }
+        .cta-ghost:hover{ color:var(--text); border-color:var(--accent-2); }
+
+        /* ---------- SECTIONS SHARED ---------- */
+        section { padding:6.5rem 0; position:relative; }
+
+        .section-head { max-width:640px; margin-bottom:3.5rem; }
+        .section-title-dark { font-size:2.3rem; margin-bottom:1rem; line-height:1.2; }
+        .section-sub { color:var(--text-muted); font-size:1.05rem; }
+
+        /* ---------- SERVICES ---------- */
+        .services-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+            gap:1.5rem;
+        }
+
+        .service-card {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.2rem;
+            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+            position:relative;
+            overflow:hidden;
+        }
+        .service-card::before{
+            content:"";
+            position:absolute; inset:0;
+            background:radial-gradient(circle at 85% -10%, rgba(46,134,245,0.16), transparent 55%);
+            opacity:0; transition:opacity 0.35s ease;
+        }
+        .service-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.55); background:var(--panel-2); }
+        .service-card:hover::before{ opacity:1; }
+
+        .node-tag {
+            width:46px; height:46px;
+            display:inline-flex; align-items:center; justify-content:center;
+            border:1px solid var(--accent);
+            border-radius:10px;
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.8rem;
+            font-weight:500;
+            color:var(--accent-2);
+            margin-bottom:1.3rem;
+            position:relative; z-index:1;
+        }
+
+        .service-card h3 { font-size:1.2rem; margin-bottom:0.8rem; position:relative; z-index:1; }
+        .service-card p { color:var(--text-muted); font-size:0.96rem; position:relative; z-index:1; }
+
+        .card-link{
+            display:inline-block; margin-top:1rem; position:relative; z-index:1;
+            color:var(--accent-2); text-decoration:none; font-size:0.9rem; font-weight:500;
+        }
+        .card-link:hover{ text-decoration:underline; }
+
+        /* ---------- FEATURED ---------- */
+        .featured { background: linear-gradient(180deg, var(--bg), var(--bg-2) 50%, var(--bg)); border-top:1px solid var(--border); }
+        .featured-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
+        .featured-card {
+            display:flex; flex-direction:column;
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:2.4rem; text-decoration:none; color:var(--text);
+            background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.16), transparent 55%);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+        .featured-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.6); }
+        .featured-card h3 { font-size:1.45rem; margin-bottom:0.8rem; line-height:1.25; }
+        .featured-card p { color:var(--text-muted); font-size:0.96rem; margin-bottom:1.6rem; }
+        .featured-stats { display:flex; gap:2rem; margin-bottom:1.8rem; flex-wrap:wrap; }
+        .featured-stats div { border-left:2px solid var(--accent); padding-left:0.9rem; }
+        .featured-stats strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.5rem; color:var(--accent-2); line-height:1.2; }
+        .featured-stats span { color:var(--text-muted); font-size:0.82rem; }
+        .featured-link { margin-top:auto; color:var(--accent-2); font-weight:600; font-size:0.95rem; }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
+
+        /* ---------- HIGHLIGHT ---------- */
+        .networking-highlight {
+            background: linear-gradient(180deg, var(--bg-2), var(--bg));
+            border-top:1px solid var(--border);
+            border-bottom:1px solid var(--border);
+        }
+
+        .highlight-content {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:3rem;
+            position:relative;
+        }
+
+        .highlight-connector {
+            position:absolute;
+            top:50%; left:50%;
+            transform:translate(-50%,-50%);
+            width:1px; height:70%;
+            background: linear-gradient(180deg, transparent, var(--accent), transparent);
+            opacity:0.5;
+        }
+
+        .highlight-text h2 { font-size:1.55rem; margin-bottom:1rem; color:var(--text); }
+        .highlight-text p { color:var(--text-muted); }
+
+        /* ---------- PROCESS ---------- */
+        .process-track {
+            position:relative;
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:2.5rem;
+            margin-top:1rem;
+        }
+        .process-line-track{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:rgba(255,255,255,0.08);
+            z-index:0;
+        }
+        .process-line-fill{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:linear-gradient(90deg, var(--accent), var(--accent-2));
+            transform-origin:left center;
+            transform:scaleX(0);
+            z-index:0;
+        }
+
+        .process-node { position:relative; z-index:1; }
+
+        .process-num {
+            display:inline-flex; align-items:center; justify-content:center;
+            width:44px; height:44px;
+            border-radius:50%;
+            background:var(--bg);
+            border:2px solid var(--accent-2);
+            color:var(--accent-2);
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.85rem;
+            margin-bottom:1.1rem;
+        }
+
+        .process-node h3 { font-size:1.15rem; margin-bottom:0.6rem; }
+        .process-node p { color:var(--text-muted); font-size:0.95rem; }
+
+        /* ---------- CONTACT ---------- */
+        .contact {
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(46,134,245,0.12), transparent 65%), var(--bg);
+        }
+
+        .contact-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+            gap:1.75rem;
+            margin-top:2.5rem;
+        }
+
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
+        .contact-card {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.4rem 2rem;
+            text-align:center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-card:hover{ border-color:var(--accent-2); transform:translateY(-4px); }
+
+        .contact-card h3 { font-size:1.1rem; margin-bottom:0.6rem; color:var(--text); }
+
+        .contact-card a {
+            color: var(--accent-2);
+            text-decoration:none;
+            font-size:1.02rem;
+            font-weight:500;
+            font-family:'IBM Plex Mono', monospace;
+            display:block;
+        }
+
+        .contact-card .contact-phone {
+            color: var(--text);
+            font-size:1.05rem;
+            margin-bottom:0.6rem;
+        }
+
+        footer {
+            border-top:1px solid var(--border);
+            color:var(--text-muted);
+            text-align:center;
+            padding:2.8rem 0;
+            font-size:0.88rem;
+            line-height:1.8;
+        }
+        .footer-links { display:flex; justify-content:center; flex-wrap:wrap; gap:0.4rem 1.6rem; margin-bottom:1.6rem; }
+        .footer-links a { color:var(--text-muted); text-decoration:none; font-size:0.88rem; transition:color 0.25s ease; }
+        .footer-links a:hover { color:var(--accent-2); }
+        .footer-brand { font-family:'Space Grotesk', sans-serif; font-weight:600; color:var(--text); font-size:1rem; }
+
+        /* ---------- REVEAL DEFAULTS (JS controls the animated state) ---------- */
+        .reveal, .reveal-stagger > * { will-change: transform, opacity; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior:auto; }
+        }
+
+        @media (max-width: 900px) {
+            .hero-network{ width:100%; right:0; opacity:0.22; }
+            .hero-title{ font-size:2.3rem; }
+            .highlight-content{ grid-template-columns:1fr; }
+            .featured-grid{ grid-template-columns:1fr; }
+            .highlight-connector{ display:none; }
+            .process-track{ grid-template-columns:1fr; }
+            .process-line-track, .process-line-fill{ display:none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
+        }
+        @media (max-width: 1100px) {
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
+        }
+    
+        /* ---------- SUBPAGE ---------- */
+        .logo-link { display:inline-flex; }
+        .sub-hero {
+            position:relative;
+            padding:10rem 0 5.5rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 55% 60% at 85% 20%, rgba(46,134,245,0.18), transparent 60%),
+                radial-gradient(ellipse 45% 45% at 5% 90%, rgba(79,216,235,0.08), transparent 60%),
+                var(--bg);
+            border-bottom:1px solid var(--border);
+        }
+        .sub-hero .hero-content { max-width:760px; }
+        .sub-hero .hero-title { font-size:2.9rem; }
+        .sub-hero .hero-sub { max-width:640px; }
+        .breadcrumb { font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--text-muted); margin-bottom:1.4rem; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; }
+        .breadcrumb a:hover { color:var(--accent-2); }
+
+        .stat-strip {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+            gap:1rem;
+            margin-top:3rem;
+            max-width:860px;
+        }
+        .stat-strip div {
+            border-left:2px solid var(--accent);
+            padding:0.2rem 0 0.2rem 1rem;
+        }
+        .stat-strip strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.7rem; color:var(--text); line-height:1.2; }
+        .stat-strip span { color:var(--text-muted); font-size:0.88rem; }
+
+        .alt-bg { background:linear-gradient(180deg, var(--bg-2), var(--bg)); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+
+        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+        .two-col .section-head { margin-bottom:0; }
+
+        .list-cards { list-style:none; display:grid; gap:1rem; }
+        .list-cards li {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:1.1rem 1.3rem;
+        }
+        .list-cards strong { display:block; font-family:'Space Grotesk', sans-serif; font-weight:600; margin-bottom:0.2rem; }
+        .list-cards span { color:var(--text-muted); font-size:0.93rem; }
+
+        .pain-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.25rem; }
+        .pain {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem;
+        }
+        .pain .before { font-size:0.9rem; color:var(--text-muted); margin-bottom:0.9rem; padding-bottom:0.9rem; border-bottom:1px dashed var(--border); }
+        .pain .before b { color:#F28B82; font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.75rem; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+        .pain .after { font-size:0.95rem; color:var(--text); }
+        .pain .after b { color:var(--accent-2); font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.75rem; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+
+        .modules-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+            gap:1.25rem;
+        }
+        .module-group {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:1.6rem;
+        }
+        .module-group h3 { font-size:1.02rem; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.6rem; }
+        .module-group h3::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 10px var(--accent-2); flex:none; }
+        .module-group > p { color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; }
+        .chips { display:flex; flex-wrap:wrap; gap:0.5rem; }
+        .chip {
+            font-size:0.85rem; color:var(--text);
+            background:rgba(255,255,255,0.04);
+            border:1px solid var(--border);
+            border-radius:50px;
+            padding:0.35rem 0.85rem;
+        }
+
+        .impact-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:1.25rem; }
+        .impact-card {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem 1.4rem; display:flex; flex-direction:column;
+        }
+        .impact-label { color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; min-height:4.8em; }
+        .impact-value { font-family:'Space Grotesk', sans-serif; font-size:2.1rem; font-weight:700; line-height:1.1; color:var(--accent-2); margin-bottom:0.5rem; }
+        .impact-delta { font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--text); }
+        .impact-delta .from { color:var(--text-muted); }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
+
+        .flow {
+            display:grid; grid-template-columns:repeat(4, 1fr); gap:1.25rem; position:relative;
+        }
+        .flow-step {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem; position:relative;
+        }
+        .flow-step:not(:last-child)::after{
+            content:"→"; position:absolute; right:-1.05rem; top:50%; transform:translateY(-50%);
+            color:var(--accent-2); font-family:'IBM Plex Mono', monospace; font-size:1.1rem; z-index:2;
+        }
+        .flow-step h3 { font-size:1.05rem; margin:0.9rem 0 0.5rem; }
+        .flow-step p { color:var(--text-muted); font-size:0.92rem; }
+
+        .q-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; }
+        .q-card {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem;
+        }
+        .q-card .q { font-family:'Space Grotesk', sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:0.6rem; }
+        .q-card .a { color:var(--text-muted); font-size:0.93rem; }
+
+        .cta-band {
+            background:var(--panel); border:1px solid rgba(46,134,245,0.4); border-radius:var(--radius);
+            padding:3rem; display:flex; justify-content:space-between; align-items:center; gap:2rem; flex-wrap:wrap;
+            background-image:radial-gradient(circle at 90% 0%, rgba(46,134,245,0.22), transparent 55%);
+        }
+        .cta-band h2 { font-size:1.8rem; margin-bottom:0.5rem; }
+        .cta-band p { color:var(--text-muted); max-width:560px; }
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
+        @media (max-width: 900px) {
+            .two-col{ grid-template-columns:1fr; }
+            .modules-grid{ grid-template-columns:1fr; }
+            .flow{ grid-template-columns:1fr; }
+            .flow-step:not(:last-child)::after{ content:"↓"; right:auto; left:50%; top:auto; bottom:-1.15rem; transform:translateX(-50%); }
+            .sub-hero .hero-title{ font-size:2.15rem; }
+            .cta-band{ padding:2rem; }
+        }
+        @media (max-width: 600px){ .impact-label{ min-height:0; } .container{ padding:0 1.25rem; } }
+
+        .c-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+        .c-person { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:2.4rem; text-align:center; display:flex; flex-direction:column; align-items:center; }
+        .c-avatar { width:96px; height:96px; border-radius:50%; object-fit:cover; border:2px solid rgba(79,216,235,0.55); box-shadow:0 0 0 5px rgba(46,134,245,0.12); margin-bottom:1.2rem; }
+        .c-person h3 { font-size:1.35rem; line-height:1.25; }
+        .role { font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--accent-2); margin:0.3rem 0 1.4rem; }
+        .c-lines { list-style:none; display:grid; gap:0.8rem; width:100%; margin-bottom:1.6rem; }
+        .c-lines li { display:flex; flex-direction:column; gap:0.1rem; }
+        .c-lines span { font-family:'IBM Plex Mono', monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-muted); }
+        .c-lines a { color:var(--text); text-decoration:none; font-size:1.05rem; word-break:break-word; }
+        .c-lines a:hover { color:var(--accent-2); }
+        .c-actions { display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; margin-top:auto; }
+        .c-actions .cta-button { padding:0.8rem 1.5rem; }
+        .btn-outline { display:inline-flex; align-items:center; padding:0.8rem 1.5rem; border-radius:50px; border:1px solid var(--accent); color:var(--text); text-decoration:none; font-weight:500; transition:all 0.25s ease; }
+        .btn-outline:hover { background:var(--accent); color:#08112b; }
+
+        .company-card { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:2.2rem; }
+        .company-card dl { display:grid; gap:1.1rem; }
+        .company-card dt { font-family:'IBM Plex Mono', monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-muted); }
+        .company-card dd { font-size:1.05rem; color:var(--text); }
+        .company-card dd a { color:var(--accent-2); text-decoration:none; }
+        .map-wrap { display:flex; flex-direction:column; gap:0.8rem; height:100%; }
+        .map-wrap iframe { width:100%; flex:1; min-height:340px; border:1px solid var(--border); border-radius:var(--radius); filter:grayscale(0.4) brightness(0.9); }
+        .map-link { color:var(--accent-2); text-decoration:none; font-size:0.92rem; font-weight:500; }
+
+        .topic-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1rem; }
+        .topic { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:1.3rem 1.4rem; display:flex; flex-direction:column; gap:0.9rem; transition:border-color 0.25s ease; }
+        .topic:hover { border-color:rgba(46,134,245,0.6); }
+        .topic-name { font-weight:600; color:var(--text); }
+        .topic-links { display:flex; gap:0.6rem; flex-wrap:wrap; }
+        .topic-links a { display:inline-flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--text); text-decoration:none; border:1px solid var(--border); border-radius:50px; padding:0.4rem 0.9rem; transition:border-color 0.25s ease, color 0.25s ease; }
+        .topic-links a:hover { border-color:var(--accent-2); color:var(--accent-2); }
+
+        @media (max-width: 900px) { .c-grid { grid-template-columns:1fr; } }
+        @media (max-width: 600px) { .c-person, .company-card { padding:1.6rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo-link"><img src="logo-final.png" alt="Tech Advisors LA" class="logo"></a>
+                <ul class="nav-links">
+                    <li><a href="#equipo">Equipo</a></li>
+                    <li><a href="#empresa">Empresa</a></li>
+                    <li><a href="#temas">Temas</a></li>
+                    <li><a href="#equipo" class="nav-cta">Contáctenos</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="sub-hero">
+        <div class="hero-grid-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb"><a href="index.html">Inicio</a> / Contacto</div>
+                <span class="eyebrow">Contacto</span>
+                <h1 class="hero-title">Conversemos sobre su <span class="hl">proyecto</span>.</h1>
+                <p class="hero-sub">Llámenos, escríbanos por WhatsApp o envíenos un correo. La primera conversación no tiene compromiso: queremos entender su necesidad antes de recomendarle cualquier solución.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipo">
+        <div class="container">
+            <div class="c-grid reveal-stagger">
+
+                <article class="c-person">
+                    <img class="c-avatar" src="mario-estrada.jpg" alt="Mario Estrada Solano" width="96" height="96">
+                    <h3>Mario Estrada Solano</h3>
+                    <p class="role">Founder y Asesor</p>
+                    <ul class="c-lines">
+                        <li><span>Teléfono</span><a href="tel:+50683835646">+506 8383-5646</a></li>
+                        <li><span>Correo</span><a href="mailto:mario.estrada@techadvisorsla.com?subject=Consulta%20desde%20techadvisorsla.com&amp;body=Hola%20Mario%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">mario.estrada@techadvisorsla.com</a></li>
+                    </ul>
+                    <div class="c-actions">
+                        <a class="cta-button" href="https://wa.me/50683835646?text=Hola%20Mario%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> Enviar WhatsApp</a>
+                        <a class="btn-outline" href="mailto:mario.estrada@techadvisorsla.com?subject=Consulta%20desde%20techadvisorsla.com&amp;body=Hola%20Mario%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Enviar correo</a>
+                    </div>
+                </article>
+
+                <article class="c-person">
+                    <img class="c-avatar" src="eric-estrada.jpg" alt="Eric Estrada Montero" width="96" height="96">
+                    <h3>Eric Estrada Montero</h3>
+                    <p class="role">Co-Founder y CEO</p>
+                    <ul class="c-lines">
+                        <li><span>Teléfono</span><a href="tel:+50687032711">+506 8703-2711</a></li>
+                        <li><span>Correo</span><a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%20desde%20techadvisorsla.com&amp;body=Hola%20Eric%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">eric.estrada@techadvisorsla.com</a></li>
+                    </ul>
+                    <div class="c-actions">
+                        <a class="cta-button" href="https://wa.me/50687032711?text=Hola%20Eric%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> Enviar WhatsApp</a>
+                        <a class="btn-outline" href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%20desde%20techadvisorsla.com&amp;body=Hola%20Eric%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Enviar correo</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-bg" id="empresa">
+        <div class="container">
+            <div class="two-col">
+                <div class="company-card reveal">
+                    <span class="eyebrow">Información de la empresa</span>
+                    <dl>
+                        <div><dt>Nombre comercial</dt><dd>Tech Advisors L.A.</dd></div>
+                        <div><dt>Razón social</dt><dd>Soluciones Integrales Sesenta Plus S.A.</dd></div>
+                        <div><dt>Cédula jurídica</dt><dd>3-101-860439</dd></div>
+                        <div><dt>Ubicación</dt><dd>La Unión, Cartago, Costa Rica</dd></div>
+                        <div><dt>Cobertura</dt><dd>Costa Rica y Latinoamérica</dd></div>
+                        <div><dt>Sitio web</dt><dd><a href="https://techadvisorsla.com">techadvisorsla.com</a></dd></div>
+                    </dl>
+                </div>
+                <div class="map-wrap reveal">
+                    <iframe title="Ubicación: La Unión, Cartago, Costa Rica" src="https://www.google.com/maps?q=La+Uni%C3%B3n,+Cartago,+Costa+Rica&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=La+Uni%C3%B3n%2C+Cartago%2C+Costa+Rica" target="_blank" rel="noopener">Abrir en Google Maps →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="temas">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">¿Sobre qué quiere conversar?</span>
+                <h2 class="section-title-dark reveal">Escríbanos directamente sobre la solución que le interesa</h2>
+                <p class="section-sub reveal">Elija el tema y le abrimos un mensaje ya redactado por WhatsApp o por correo.</p>
+            </div>
+            <div class="topic-grid reveal-stagger">
+                <div class="topic">
+                    <span class="topic-name">Asesoría estratégica y transformación digital</span>
+                    <div class="topic-links">
+                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20asesor%C3%ADa%20estrat%C3%A9gica%20y%20transformaci%C3%B3n%20digital." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Asesor%C3%ADa%20estrat%C3%A9gica%20y%20transformaci%C3%B3n%20digital&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20asesor%C3%ADa%20estrat%C3%A9gica%20y%20transformaci%C3%B3n%20digital.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                    </div>
+                </div>
+                <div class="topic">
+                    <span class="topic-name">Humand · Recursos Humanos</span>
+                    <div class="topic-links">
+                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20plataforma%20de%20Recursos%20Humanos%20Humand." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Humand%20%C2%B7%20Recursos%20Humanos&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20plataforma%20de%20Recursos%20Humanos%20Humand.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                    </div>
+                </div>
+                <div class="topic">
+                    <span class="topic-name">Computer Vision · iMotion</span>
+                    <div class="topic-links">
+                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20Computer%20Vision%20con%20iMotion%20Analytics." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Computer%20Vision%20%C2%B7%20iMotion&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20Computer%20Vision%20con%20iMotion%20Analytics.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                    </div>
+                </div>
+                <div class="topic">
+                    <span class="topic-name">Firma digital · SIGN.TRUST®</span>
+                    <div class="topic-links">
+                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20firma%20digital%20con%20SIGN.TRUST%C2%AE." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Firma%20digital%20%C2%B7%20SIGN.TRUST%C2%AE&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20firma%20digital%20con%20SIGN.TRUST%C2%AE.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                    </div>
+                </div>
+                <div class="topic">
+                    <span class="topic-name">Punto de venta · POS</span>
+                    <div class="topic-links">
+                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20sistema%20de%20punto%20de%20venta%20%28POS%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Punto%20de%20venta%20%C2%B7%20POS&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20sistema%20de%20punto%20de%20venta%20%28POS%29.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                    </div>
+                </div>
+                <div class="topic">
+                    <span class="topic-name">Desarrollo de software a la medida</span>
+                    <div class="topic-links">
+                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20desarrollo%20de%20software%20a%20la%20medida." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Desarrollo%20de%20software%20a%20la%20medida&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20desarrollo%20de%20software%20a%20la%20medida.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-links" aria-label="Páginas del sitio">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="asesoria.html">Asesoría</a>
+                <a href="humand.html">Humand</a>
+                <a href="imotion.html">Computer Vision</a>
+                <a href="firma-digital.html">Firma Digital</a>
+                <a href="pos.html">POS</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p class="footer-brand">Tech Advisors L.A.</p>
+            <p>Soluciones Integrales Sesenta Plus S.A. | Cédula Jurídica: 3-101-860439</p>
+            <p>&copy; 2026 Tech Advisors L.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+                navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+            }
+            if (typeof gsap === 'undefined') return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.utils.toArray('.reveal').forEach(el => {
+                gsap.fromTo(el, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+            });
+            gsap.utils.toArray('.reveal-stagger').forEach(group => {
+                gsap.fromTo(group.children, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out', scrollTrigger: { trigger: group, start: 'top 88%' } });
+            });
+        });
+    </script>
+</body>
+</html>

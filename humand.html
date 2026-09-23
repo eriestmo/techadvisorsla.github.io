@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <title>Humand en Costa Rica | Plataforma de RR.HH. — Tech Advisors LA</title>
+    <meta name="description" content="Implementamos Humand en Costa Rica: comunicación interna, vacaciones y permisos, colillas de pago, control de marcas y expediente digital en una sola app.">
+    <meta name="keywords" content="Humand, Humand Costa Rica, plataforma de recursos humanos, software RRHH, comunicación interna, control de marcas, colillas de pago, vacaciones y permisos, expediente digital">
+    <link rel="canonical" href="https://techadvisorsla.com/humand.html">
+
+    <!-- Vista Previa para WhatsApp, LinkedIn y Redes Sociales (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techadvisorsla.com/humand.html">
+    <meta property="og:title" content="Humand | Toda la gestión de su gente en una sola app">
+    <meta property="og:description" content="Comunicación interna, trámites de RR.HH., control de marcas y cultura organizacional en una app. Implementación y acompañamiento de Tech Advisors LA.">
+    <meta property="og:image" content="https://techadvisorsla.com/logo-final.png">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Datos Estructurados Schema.org -->
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Plataforma de Recursos Humanos Humand",
+      "serviceType": "Software de gestión de Recursos Humanos y comunicación interna",
+      "description": "Implementación de Humand en Costa Rica: comunicación interna, expediente digital, vacaciones y permisos, colillas de pago, control de marcas, evaluación del desempeño y cultura organizacional en una sola app.",
+      "provider": {
+            "@type": "ProfessionalService",
+            "name": "Tech Advisors LA",
+            "url": "https://techadvisorsla.com",
+            "telephone": "+50687032711"
+      },
+      "areaServed": [
+            "Costa Rica",
+            "Latinoamérica"
+      ],
+      "url": "https://techadvisorsla.com/humand.html"
+}
+    </script>
+
+    <style>
+        :root{
+            --bg:#080D22;
+            --bg-2:#0A1128;
+            --panel:#0F1938;
+            --panel-2:#111D42;
+            --accent:#2E86F5;
+            --accent-2:#4FD8EB;
+            --text:#EDEEF3;
+            --text-muted:#8B93AC;
+            --border: rgba(255,255,255,0.09);
+            --radius: 16px;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior:smooth; }
+
+        body {
+            font-family:'Inter', sans-serif;
+            line-height:1.65;
+            color:var(--text);
+            background:var(--bg);
+            overflow-x:hidden;
+        }
+
+        h1,h2,h3 { font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; }
+
+        .mono { font-family:'IBM Plex Mono', monospace; }
+
+        .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+
+        .eyebrow {
+            font-family:'IBM Plex Mono', monospace;
+            text-transform:uppercase;
+            letter-spacing:0.14em;
+            font-size:0.75rem;
+            color:var(--accent-2);
+            display:inline-block;
+            margin-bottom:1rem;
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            background: rgba(8,13,34,0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav { display:flex; justify-content:space-between; align-items:center; }
+
+        .logo { height:42px; }
+
+        .nav-links { display:flex; gap:2.25rem; list-style:none; align-items:center; }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration:none;
+            font-weight:500;
+            font-size:0.95rem;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover { color: var(--accent-2); }
+
+        .nav-cta {
+            border:1px solid var(--accent);
+            color:var(--text) !important;
+            padding:0.55rem 1.3rem;
+            border-radius:50px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-cta:hover { background:var(--accent); box-shadow:0 0 24px rgba(46,134,245,0.55); }
+
+        .nav-toggle {
+            display:none;
+            width:26px; height:20px;
+            position:relative;
+            background:none; border:none; cursor:pointer;
+        }
+        .nav-toggle span {
+            position:absolute; left:0; width:100%; height:2px; background:var(--text);
+            transition: all 0.25s ease;
+        }
+        .nav-toggle span:nth-child(1){ top:0; }
+        .nav-toggle span:nth-child(2){ top:9px; }
+        .nav-toggle span:nth-child(3){ top:18px; }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            position:relative;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            padding-top:6rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 60% 55% at 82% 28%, rgba(46,134,245,0.16), transparent 60%),
+                radial-gradient(ellipse 50% 45% at 10% 85%, rgba(79,216,235,0.09), transparent 60%),
+                var(--bg);
+        }
+
+        .hero-grid-overlay{
+            position:absolute; inset:0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 20%, transparent 75%);
+            pointer-events:none;
+        }
+
+        .hero-network {
+            position:absolute;
+            top:0; right:-4%;
+            width:62%;
+            height:100%;
+            z-index:1;
+            opacity:0.9;
+        }
+
+        .network-line { stroke:var(--accent); stroke-width:1.4; fill:none; opacity:0.55; }
+        .network-node {
+            fill:var(--accent-2);
+            filter:url(#nodeGlow);
+            transform-box:fill-box;
+            transform-origin:center;
+            opacity:0;
+            transform:scale(0.3);
+        }
+
+        .hero-content { position:relative; z-index:2; max-width:620px; }
+
+        .hero-title {
+            font-size:3.1rem;
+            line-height:1.12;
+            margin-bottom:1.4rem;
+        }
+        .hero-title .hl { color:var(--accent-2); }
+
+        .hero-sub {
+            font-size:1.15rem;
+            color:var(--text-muted);
+            max-width:520px;
+            margin-bottom:2.4rem;
+        }
+
+        .cta-button {
+            display:inline-flex;
+            align-items:center;
+            gap:0.6rem;
+            background:var(--accent);
+            color:#08112b;
+            font-weight:600;
+            padding:1rem 2.2rem;
+            border-radius:50px;
+            text-decoration:none;
+            box-shadow: 0 0 0 rgba(46,134,245,0);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover { box-shadow: 0 0 34px rgba(46,134,245,0.6); transform:translateY(-2px); }
+
+        .cta-ghost{
+            display:inline-flex;
+            align-items:center;
+            color:var(--text-muted);
+            text-decoration:none;
+            margin-left:1.4rem;
+            font-size:0.95rem;
+            border-bottom:1px solid var(--border);
+            padding-bottom:2px;
+            transition:color 0.25s ease, border-color 0.25s ease;
+        }
+        .cta-ghost:hover{ color:var(--text); border-color:var(--accent-2); }
+
+        /* ---------- SECTIONS SHARED ---------- */
+        section { padding:6.5rem 0; position:relative; }
+
+        .section-head { max-width:640px; margin-bottom:3.5rem; }
+        .section-title-dark { font-size:2.3rem; margin-bottom:1rem; line-height:1.2; }
+        .section-sub { color:var(--text-muted); font-size:1.05rem; }
+
+        /* ---------- SERVICES ---------- */
+        .services-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+            gap:1.5rem;
+        }
+
+        .service-card {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.2rem;
+            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+            position:relative;
+            overflow:hidden;
+        }
+        .service-card::before{
+            content:"";
+            position:absolute; inset:0;
+            background:radial-gradient(circle at 85% -10%, rgba(46,134,245,0.16), transparent 55%);
+            opacity:0; transition:opacity 0.35s ease;
+        }
+        .service-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.55); background:var(--panel-2); }
+        .service-card:hover::before{ opacity:1; }
+
+        .node-tag {
+            width:46px; height:46px;
+            display:inline-flex; align-items:center; justify-content:center;
+            border:1px solid var(--accent);
+            border-radius:10px;
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.8rem;
+            font-weight:500;
+            color:var(--accent-2);
+            margin-bottom:1.3rem;
+            position:relative; z-index:1;
+        }
+
+        .service-card h3 { font-size:1.2rem; margin-bottom:0.8rem; position:relative; z-index:1; }
+        .service-card p { color:var(--text-muted); font-size:0.96rem; position:relative; z-index:1; }
+
+        .card-link{
+            display:inline-block; margin-top:1rem; position:relative; z-index:1;
+            color:var(--accent-2); text-decoration:none; font-size:0.9rem; font-weight:500;
+        }
+        .card-link:hover{ text-decoration:underline; }
+
+        /* ---------- FEATURED ---------- */
+        .featured { background: linear-gradient(180deg, var(--bg), var(--bg-2) 50%, var(--bg)); border-top:1px solid var(--border); }
+        .featured-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
+        .featured-card {
+            display:flex; flex-direction:column;
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:2.4rem; text-decoration:none; color:var(--text);
+            background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.16), transparent 55%);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+        .featured-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.6); }
+        .featured-card h3 { font-size:1.45rem; margin-bottom:0.8rem; line-height:1.25; }
+        .featured-card p { color:var(--text-muted); font-size:0.96rem; margin-bottom:1.6rem; }
+        .featured-stats { display:flex; gap:2rem; margin-bottom:1.8rem; flex-wrap:wrap; }
+        .featured-stats div { border-left:2px solid var(--accent); padding-left:0.9rem; }
+        .featured-stats strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.5rem; color:var(--accent-2); line-height:1.2; }
+        .featured-stats span { color:var(--text-muted); font-size:0.82rem; }
+        .featured-link { margin-top:auto; color:var(--accent-2); font-weight:600; font-size:0.95rem; }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
+
+        /* ---------- HIGHLIGHT ---------- */
+        .networking-highlight {
+            background: linear-gradient(180deg, var(--bg-2), var(--bg));
+            border-top:1px solid var(--border);
+            border-bottom:1px solid var(--border);
+        }
+
+        .highlight-content {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:3rem;
+            position:relative;
+        }
+
+        .highlight-connector {
+            position:absolute;
+            top:50%; left:50%;
+            transform:translate(-50%,-50%);
+            width:1px; height:70%;
+            background: linear-gradient(180deg, transparent, var(--accent), transparent);
+            opacity:0.5;
+        }
+
+        .highlight-text h2 { font-size:1.55rem; margin-bottom:1rem; color:var(--text); }
+        .highlight-text p { color:var(--text-muted); }
+
+        /* ---------- PROCESS ---------- */
+        .process-track {
+            position:relative;
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:2.5rem;
+            margin-top:1rem;
+        }
+        .process-line-track{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:rgba(255,255,255,0.08);
+            z-index:0;
+        }
+        .process-line-fill{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:linear-gradient(90deg, var(--accent), var(--accent-2));
+            transform-origin:left center;
+            transform:scaleX(0);
+            z-index:0;
+        }
+
+        .process-node { position:relative; z-index:1; }
+
+        .process-num {
+            display:inline-flex; align-items:center; justify-content:center;
+            width:44px; height:44px;
+            border-radius:50%;
+            background:var(--bg);
+            border:2px solid var(--accent-2);
+            color:var(--accent-2);
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.85rem;
+            margin-bottom:1.1rem;
+        }
+
+        .process-node h3 { font-size:1.15rem; margin-bottom:0.6rem; }
+        .process-node p { color:var(--text-muted); font-size:0.95rem; }
+
+        /* ---------- CONTACT ---------- */
+        .contact {
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(46,134,245,0.12), transparent 65%), var(--bg);
+        }
+
+        .contact-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+            gap:1.75rem;
+            margin-top:2.5rem;
+        }
+
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
+        .contact-card {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.4rem 2rem;
+            text-align:center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-card:hover{ border-color:var(--accent-2); transform:translateY(-4px); }
+
+        .contact-card h3 { font-size:1.1rem; margin-bottom:0.6rem; color:var(--text); }
+
+        .contact-card a {
+            color: var(--accent-2);
+            text-decoration:none;
+            font-size:1.02rem;
+            font-weight:500;
+            font-family:'IBM Plex Mono', monospace;
+            display:block;
+        }
+
+        .contact-card .contact-phone {
+            color: var(--text);
+            font-size:1.05rem;
+            margin-bottom:0.6rem;
+        }
+
+        footer {
+            border-top:1px solid var(--border);
+            color:var(--text-muted);
+            text-align:center;
+            padding:2.8rem 0;
+            font-size:0.88rem;
+            line-height:1.8;
+        }
+        .footer-links { display:flex; justify-content:center; flex-wrap:wrap; gap:0.4rem 1.6rem; margin-bottom:1.6rem; }
+        .footer-links a { color:var(--text-muted); text-decoration:none; font-size:0.88rem; transition:color 0.25s ease; }
+        .footer-links a:hover { color:var(--accent-2); }
+        .footer-brand { font-family:'Space Grotesk', sans-serif; font-weight:600; color:var(--text); font-size:1rem; }
+
+        /* ---------- REVEAL DEFAULTS (JS controls the animated state) ---------- */
+        .reveal, .reveal-stagger > * { will-change: transform, opacity; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior:auto; }
+        }
+
+        @media (max-width: 900px) {
+            .hero-network{ width:100%; right:0; opacity:0.22; }
+            .hero-title{ font-size:2.3rem; }
+            .highlight-content{ grid-template-columns:1fr; }
+            .featured-grid{ grid-template-columns:1fr; }
+            .highlight-connector{ display:none; }
+            .process-track{ grid-template-columns:1fr; }
+            .process-line-track, .process-line-fill{ display:none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
+        }
+        @media (max-width: 1100px) {
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
+        }
+    
+        /* ---------- SUBPAGE ---------- */
+        .logo-link { display:inline-flex; }
+        .sub-hero {
+            position:relative;
+            padding:10rem 0 5.5rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 55% 60% at 85% 20%, rgba(46,134,245,0.18), transparent 60%),
+                radial-gradient(ellipse 45% 45% at 5% 90%, rgba(79,216,235,0.08), transparent 60%),
+                var(--bg);
+            border-bottom:1px solid var(--border);
+        }
+        .sub-hero .hero-content { max-width:760px; }
+        .sub-hero .hero-title { font-size:2.9rem; }
+        .sub-hero .hero-sub { max-width:640px; }
+        .breadcrumb { font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--text-muted); margin-bottom:1.4rem; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; }
+        .breadcrumb a:hover { color:var(--accent-2); }
+
+        .stat-strip {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+            gap:1rem;
+            margin-top:3rem;
+            max-width:860px;
+        }
+        .stat-strip div {
+            border-left:2px solid var(--accent);
+            padding:0.2rem 0 0.2rem 1rem;
+        }
+        .stat-strip strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.7rem; color:var(--text); line-height:1.2; }
+        .stat-strip span { color:var(--text-muted); font-size:0.88rem; }
+
+        .alt-bg { background:linear-gradient(180deg, var(--bg-2), var(--bg)); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+
+        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+        .two-col .section-head { margin-bottom:0; }
+
+        .list-cards { list-style:none; display:grid; gap:1rem; }
+        .list-cards li {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:1.1rem 1.3rem;
+        }
+        .list-cards strong { display:block; font-family:'Space Grotesk', sans-serif; font-weight:600; margin-bottom:0.2rem; }
+        .list-cards span { color:var(--text-muted); font-size:0.93rem; }
+
+        .pain-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.25rem; }
+        .pain {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem;
+        }
+        .pain .before { font-size:0.9rem; color:var(--text-muted); margin-bottom:0.9rem; padding-bottom:0.9rem; border-bottom:1px dashed var(--border); }
+        .pain .before b { color:#F28B82; font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.75rem; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+        .pain .after { font-size:0.95rem; color:var(--text); }
+        .pain .after b { color:var(--accent-2); font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.75rem; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+
+        .modules-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+            gap:1.25rem;
+        }
+        .module-group {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:1.6rem;
+        }
+        .module-group h3 { font-size:1.02rem; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.6rem; }
+        .module-group h3::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 10px var(--accent-2); flex:none; }
+        .module-group > p { color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; }
+        .chips { display:flex; flex-wrap:wrap; gap:0.5rem; }
+        .chip {
+            font-size:0.85rem; color:var(--text);
+            background:rgba(255,255,255,0.04);
+            border:1px solid var(--border);
+            border-radius:50px;
+            padding:0.35rem 0.85rem;
+        }
+
+        .impact-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:1.25rem; }
+        .impact-card {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem 1.4rem; display:flex; flex-direction:column;
+        }
+        .impact-label { color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; min-height:4.8em; }
+        .impact-value { font-family:'Space Grotesk', sans-serif; font-size:2.1rem; font-weight:700; line-height:1.1; color:var(--accent-2); margin-bottom:0.5rem; }
+        .impact-delta { font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--text); }
+        .impact-delta .from { color:var(--text-muted); }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
+
+        .flow {
+            display:grid; grid-template-columns:repeat(4, 1fr); gap:1.25rem; position:relative;
+        }
+        .flow-step {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem; position:relative;
+        }
+        .flow-step:not(:last-child)::after{
+            content:"→"; position:absolute; right:-1.05rem; top:50%; transform:translateY(-50%);
+            color:var(--accent-2); font-family:'IBM Plex Mono', monospace; font-size:1.1rem; z-index:2;
+        }
+        .flow-step h3 { font-size:1.05rem; margin:0.9rem 0 0.5rem; }
+        .flow-step p { color:var(--text-muted); font-size:0.92rem; }
+
+        .q-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; }
+        .q-card {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem;
+        }
+        .q-card .q { font-family:'Space Grotesk', sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:0.6rem; }
+        .q-card .a { color:var(--text-muted); font-size:0.93rem; }
+
+        .cta-band {
+            background:var(--panel); border:1px solid rgba(46,134,245,0.4); border-radius:var(--radius);
+            padding:3rem; display:flex; justify-content:space-between; align-items:center; gap:2rem; flex-wrap:wrap;
+            background-image:radial-gradient(circle at 90% 0%, rgba(46,134,245,0.22), transparent 55%);
+        }
+        .cta-band h2 { font-size:1.8rem; margin-bottom:0.5rem; }
+        .cta-band p { color:var(--text-muted); max-width:560px; }
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
+        @media (max-width: 900px) {
+            .two-col{ grid-template-columns:1fr; }
+            .modules-grid{ grid-template-columns:1fr; }
+            .flow{ grid-template-columns:1fr; }
+            .flow-step:not(:last-child)::after{ content:"↓"; right:auto; left:50%; top:auto; bottom:-1.15rem; transform:translateX(-50%); }
+            .sub-hero .hero-title{ font-size:2.15rem; }
+            .cta-band{ padding:2rem; }
+        }
+        @media (max-width: 600px){ .impact-label{ min-height:0; } .container{ padding:0 1.25rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo-link"><img src="logo-final.png" alt="Tech Advisors LA" class="logo"></a>
+                <ul class="nav-links">
+                    <li><a href="#problemas">Qué resuelve</a></li>
+                    <li><a href="#modulos">Módulos</a></li>
+                    <li><a href="#resultados">Resultados</a></li>
+                    <li><a href="#implementacion">Implementación</a></li>
+                    <li><a href="contacto.html" class="nav-cta">Contáctenos</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="sub-hero">
+        <div class="hero-grid-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb"><a href="index.html">Inicio</a> / Recursos Humanos / Humand</div>
+                <span class="eyebrow">Recursos Humanos · Comunicación interna</span>
+                <h1 class="hero-title">Toda la gestión de su gente, en <span class="hl">una sola app</span>.</h1>
+                <p class="hero-sub">Humand reúne en una aplicación la comunicación interna, los trámites de Recursos Humanos y la cultura de su empresa. Llega a todos los colaboradores, también al personal de planta, de campo o de tienda que no tiene correo de la empresa. En Tech Advisors LA nos encargamos de la implementación y del acompañamiento en Costa Rica.</p>
+                <a href="contacto.html" class="cta-button">Solicite una demostración →</a>
+                <a href="#modulos" class="cta-ghost">Ver módulos</a>
+
+                <div class="stat-strip">
+                    <div><strong>98%</strong><span>de colaboradores alcanzados por los mensajes clave*</span></div>
+                    <div><strong>1–2 horas</strong><span>para responder solicitudes internas, antes 1–2 días*</span></div>
+                    <div><strong>30+</strong><span>módulos que usted activa según lo que necesite</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problemas">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">¿Le suena familiar?</span>
+                <h2 class="section-title-dark reveal">Lo que Humand resuelve en el día a día</h2>
+                <p class="section-sub reveal">Los problemas más comunes de Recursos Humanos, y cómo cambian con una sola plataforma.</p>
+            </div>
+            <div class="pain-grid reveal-stagger">
+                <div class="pain">
+                    <div class="before"><b>ANTES</b>Los comunicados se pierden entre correos, grupos de WhatsApp y la pizarra del comedor.</div>
+                    <div class="after"><b>CON HUMAND</b>Un solo muro oficial, y usted sabe quién leyó cada mensaje.</div>
+                </div>
+                <div class="pain">
+                    <div class="before"><b>ANTES</b>Las vacaciones y los permisos se piden en papel o por correo y se atrasan en aprobaciones.</div>
+                    <div class="after"><b>CON HUMAND</b>Se solicitan y aprueban desde el celular, con el saldo de días siempre a la vista.</div>
+                </div>
+                <div class="pain">
+                    <div class="before"><b>ANTES</b>Las colillas de pago y las constancias se imprimen o se envían una por una.</div>
+                    <div class="after"><b>CON HUMAND</b>Cada colaborador las consulta en la app, y los documentos se firman digitalmente.</div>
+                </div>
+                <div class="pain">
+                    <div class="before"><b>ANTES</b>Las marcas de entrada y salida se llevan en papel o en relojes sin conexión con la planilla.</div>
+                    <div class="after"><b>CON HUMAND</b>Marcas digitales desde el celular, con registro automático de las jornadas.</div>
+                </div>
+                <div class="pain">
+                    <div class="before"><b>ANTES</b>El personal operativo no tiene computadora ni correo, y se queda fuera de todo.</div>
+                    <div class="after"><b>CON HUMAND</b>Todos reciben la misma información en su celular, estén donde estén.</div>
+                </div>
+                <div class="pain">
+                    <div class="before"><b>ANTES</b>Los expedientes del personal están en carpetas físicas y en hojas de Excel sueltas.</div>
+                    <div class="after"><b>CON HUMAND</b>Expediente digital del colaborador, ordenado y siempre actualizado.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-bg" id="muro">
+        <div class="container">
+            <div class="two-col">
+                <div class="section-head">
+                    <span class="eyebrow">El nuevo muro de Humand</span>
+                    <h2 class="section-title-dark reveal">Una comunicación interna visual, cercana y medible</h2>
+                    <p class="section-sub reveal">El muro funciona como una red social interna de su empresa: la información llega a todo el equipo al mismo tiempo, y los colaboradores reaccionan, comentan y participan.</p>
+                </div>
+                <ul class="list-cards reveal-stagger">
+                    <li><strong>Publicaciones internas</strong><span>Comparta noticias, fotos y videos con toda la empresa o con un grupo específico.</span></li>
+                    <li><strong>Encuestas rápidas</strong><span>Consulte la opinión de su equipo y tenga resultados en minutos, directamente en el muro.</span></li>
+                    <li><strong>Métricas en tiempo real</strong><span>Vea quién leyó cada comunicado y cuántas reacciones y comentarios recibió, para saber qué contenido conecta.</span></li>
+                    <li><strong>Comunicación en todas las direcciones</strong><span>No solo de la gerencia hacia el equipo: los colaboradores también participan, opinan y reconocen a sus compañeros.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="modulos">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Módulos</span>
+                <h2 class="section-title-dark reveal">Active solo lo que su empresa necesita</h2>
+                <p class="section-sub reveal">Humand es modular: puede empezar con comunicación interna y agregar después los trámites de Recursos Humanos, las evaluaciones o el control de marcas.</p>
+            </div>
+            <div class="modules-grid reveal-stagger">
+                <div class="module-group">
+                    <h3>Comunicación interna</h3>
+                    <p>Toda la información oficial en un solo lugar.</p>
+                    <div class="chips">
+                        <span class="chip">Red social interna</span><span class="chip">Noticias</span><span class="chip">Chat</span>
+                        <span class="chip">Grupos</span><span class="chip">Videollamadas</span><span class="chip">Transmisiones en vivo</span>
+                        <span class="chip">Biblioteca de documentos</span><span class="chip">Buzón de sugerencias</span><span class="chip">Canal de quejas</span>
+                        <span class="chip">Beneficios</span><span class="chip">Agenda</span><span class="chip">Organigrama</span>
+                        <span class="chip">Asistentes virtuales con IA</span>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <h3>Gestión de Recursos Humanos</h3>
+                    <p>Los trámites del día a día, sin papel.</p>
+                    <div class="chips">
+                        <span class="chip">Vacaciones y permisos</span><span class="chip">Colillas de pago</span>
+                        <span class="chip">Firma digital de documentos</span><span class="chip">Documentos del colaborador</span>
+                        <span class="chip">Expediente digital</span><span class="chip">Inducción de nuevo personal</span>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <h3>Operaciones</h3>
+                    <p>Control y trámites operativos desde el celular.</p>
+                    <div class="chips">
+                        <span class="chip">Control de marcas y asistencia</span><span class="chip">Solicitudes de servicio</span>
+                        <span class="chip">Formularios, trámites y aprobaciones</span>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <h3>Desarrollo del talento</h3>
+                    <p>Para medir, capacitar y hacer crecer a su equipo.</p>
+                    <div class="chips">
+                        <span class="chip">Evaluación del desempeño</span><span class="chip">Clima y experiencia del colaborador</span>
+                        <span class="chip">Plan de carrera</span><span class="chip">Capacitaciones</span><span class="chip">Concursos internos</span>
+                        <span class="chip">Encuestas</span><span class="chip">Objetivos y resultados clave (OKR)</span>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <h3>Cultura organizacional</h3>
+                    <p>Para fortalecer el sentido de pertenencia.</p>
+                    <div class="chips">
+                        <span class="chip">Cumpleaños y aniversarios</span><span class="chip">Reconocimientos</span><span class="chip">Eventos</span>
+                        <span class="chip">Marketplace interno</span><span class="chip">Programa de referidos</span>
+                    </div>
+                </div>
+                <div class="module-group">
+                    <h3>Control de marcas sin papel</h3>
+                    <p>Asistencia y jornadas, registradas en forma automática.</p>
+                    <div class="chips">
+                        <span class="chip">Marcas digitales desde el celular</span><span class="chip">Registro automático de jornadas</span>
+                        <span class="chip">Integración con planilla y otros procesos</span><span class="chip">Mejor gestión del tiempo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-bg" id="resultados">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Resultados comprobados</span>
+                <h2 class="section-title-dark reveal">El impacto de Humand en la comunicación interna</h2>
+                <p class="section-sub reveal">Resultados de una empresa que implementó Humand, antes y después.</p>
+            </div>
+            <div class="impact-grid reveal-stagger">
+                <div class="impact-card">
+                    <div class="impact-label">Tiempo de respuesta a solicitudes internas</div>
+                    <div class="impact-value">1–2 horas</div>
+                    <div class="impact-delta"><span class="from">antes:</span> 1–2 días</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-label">Colaboradores que reciben los mensajes clave</div>
+                    <div class="impact-value">98%</div>
+                    <div class="impact-delta"><span class="from">antes:</span> 60%</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-label">Satisfacción con la comunicación interna</div>
+                    <div class="impact-value">87%</div>
+                    <div class="impact-delta"><span class="from">antes:</span> 63%</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-label">Menos tiempo dedicado a comunicación interna</div>
+                    <div class="impact-value">50%</div>
+                    <div class="impact-delta">50 horas menos gracias a la automatización</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-label">Menos costos de comunicación</div>
+                    <div class="impact-value">20%</div>
+                    <div class="impact-delta">papelería, impresiones y reuniones presenciales</div>
+                </div>
+            </div>
+            <p class="impact-note">* Fuente: caso de éxito publicado por Humand. Los resultados pueden variar según cada organización.</p>
+        </div>
+    </section>
+
+    <section class="process" id="implementacion">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Cómo lo implementamos</span>
+                <h2 class="section-title-dark reveal">Lo acompañamos desde el diagnóstico hasta la adopción</h2>
+                <p class="section-sub reveal">Una plataforma solo da resultados si el equipo la usa. Por eso no solo la instalamos: también la hacemos parte de la operación diaria.</p>
+            </div>
+            <div class="flow reveal-stagger">
+                <div class="flow-step">
+                    <span class="process-num mono">01</span>
+                    <h3>Diagnóstico</h3>
+                    <p>Revisamos cómo se comunican hoy y qué trámites de Recursos Humanos consumen más tiempo.</p>
+                </div>
+                <div class="flow-step">
+                    <span class="process-num mono">02</span>
+                    <h3>Configuración</h3>
+                    <p>Activamos los módulos adecuados y cargamos la estructura, los colaboradores y los documentos.</p>
+                </div>
+                <div class="flow-step">
+                    <span class="process-num mono">03</span>
+                    <h3>Lanzamiento</h3>
+                    <p>Preparamos el lanzamiento interno para que todo el personal descargue la app y empiece a usarla.</p>
+                </div>
+                <div class="flow-step">
+                    <span class="process-num mono">04</span>
+                    <h3>Acompañamiento</h3>
+                    <p>Medimos el uso y ajustamos lo necesario. Cuando la empresa esté lista, activamos nuevos módulos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding-top:0;">
+        <div class="container">
+            <div class="cta-band reveal">
+                <div>
+                    <h2>¿Quiere ver Humand funcionando?</h2>
+                    <p>Le mostramos la plataforma con ejemplos de su industria y le proponemos por dónde empezar.</p>
+                </div>
+                <a href="contacto.html" class="cta-button">Agendar demostración →</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-cta reveal">
+                <span class="eyebrow">Contacto</span>
+                <h2 class="section-title-dark">Hablemos de Humand para su empresa</h2>
+                <p class="section-sub">Cuéntenos cuántos colaboradores tiene y cómo se comunican hoy. Le preparamos una demostración, sin compromiso.</p>
+                <a href="contacto.html" class="cta-button">Contáctenos →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-links" aria-label="Páginas del sitio">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="asesoria.html">Asesoría</a>
+                <a href="humand.html">Humand</a>
+                <a href="imotion.html">Computer Vision</a>
+                <a href="firma-digital.html">Firma Digital</a>
+                <a href="pos.html">POS</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p class="footer-brand">Tech Advisors L.A.</p>
+            <p>Soluciones Integrales Sesenta Plus S.A. | Cédula Jurídica: 3-101-860439</p>
+            <p>&copy; 2026 Tech Advisors L.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+                navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+            }
+            if (typeof gsap === 'undefined') return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.utils.toArray('.reveal').forEach(el => {
+                gsap.fromTo(el, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+            });
+            gsap.utils.toArray('.reveal-stagger').forEach(group => {
+                gsap.fromTo(group.children, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out', scrollTrigger: { trigger: group, start: 'top 88%' } });
+            });
+        });
+    </script>
+</body>
+</html>
