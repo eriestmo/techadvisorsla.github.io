@@ -453,18 +453,56 @@
             .nav-links.open { display:flex; }
             .nav-toggle { display:block; }
         }
-        @media (max-width: 1100px) {
-            .nav-links {
-                position:absolute; top:100%; left:0; right:0;
-                background:rgba(8,13,34,0.97);
-                flex-direction:column;
-                padding:1.5rem 2rem;
-                gap:1.25rem;
-                display:none;
-                border-bottom:1px solid var(--border);
+
+        /* ---------- DROPDOWN MENU ---------- */
+        .has-dd { position:relative; }
+        .dd-toggle {
+            background:none; border:0; cursor:pointer; padding:0;
+            color:var(--text-muted); font-family:'Inter', sans-serif; font-weight:500; font-size:0.95rem;
+            display:inline-flex; align-items:center; gap:0.35rem; transition:color 0.25s ease;
+        }
+        .dd-toggle:hover, .has-dd.open .dd-toggle, .dd-toggle.current { color:var(--accent-2); }
+        .dd-toggle svg { transition:transform 0.2s ease; }
+        .has-dd.open .dd-toggle svg { transform:rotate(180deg); }
+        .dd {
+            position:absolute; top:calc(100% + 18px); left:50%;
+            transform:translate(-50%, 6px);
+            min-width:320px;
+            display:grid; gap:0.15rem;
+            background:rgba(12,20,48,0.98);
+            border:1px solid var(--border); border-radius:14px;
+            padding:0.6rem;
+            box-shadow:0 22px 50px rgba(0,0,0,0.45);
+            opacity:0; visibility:hidden;
+            transition:opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+            z-index:1001;
+        }
+        .dd::before { content:""; position:absolute; left:0; right:0; top:-20px; height:20px; }
+        .has-dd.open .dd { opacity:1; visibility:visible; transform:translate(-50%, 0); }
+        .dd-wide { grid-template-columns:1fr 1fr; min-width:620px; }
+        .nav-links .dd a { display:block; padding:0.7rem 0.85rem; border-radius:10px; text-decoration:none; color:var(--text); transition:background 0.2s ease; }
+        .nav-links .dd a:hover, .nav-links .dd a.current { background:rgba(46,134,245,0.14); }
+        .dd strong { display:block; font-weight:600; font-size:0.92rem; color:var(--text); }
+        .dd span { display:block; color:var(--text-muted); font-size:0.8rem; line-height:1.4; margin-top:0.15rem; }
+        .nav-links .dd .dd-all { grid-column:1 / -1; margin-top:0.3rem; border-top:1px solid var(--border); border-radius:0 0 10px 10px; color:var(--accent-2); font-size:0.88rem; font-weight:600; }
+
+        @media (min-width: 769px) and (max-width: 1060px) {
+            .dd-wide { grid-template-columns:1fr; min-width:320px; max-height:70vh; overflow-y:auto; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { max-height:calc(100vh - 74px); overflow-y:auto; align-items:stretch !important; background:#080D22 !important; box-shadow:0 24px 40px rgba(0,0,0,0.5); }
+            .dd-toggle { font-size:1rem; width:100%; justify-content:space-between; }
+            .dd, .dd-wide {
+                position:static; transform:none; min-width:0;
+                grid-template-columns:1fr;
+                background:transparent; border:0; box-shadow:none;
+                padding:0.4rem 0 0 0.6rem;
+                display:none; opacity:1; visibility:visible;
             }
-            .nav-links.open { display:flex; }
-            .nav-toggle { display:block; }
+            .dd::before { display:none; }
+            .has-dd.open .dd { display:grid; transform:none; }
+            .nav-links .nav-cta { text-align:center; }
         }
     
         /* ---------- SUBPAGE ---------- */
@@ -607,10 +645,30 @@
             <nav>
                 <a href="index.html" class="logo-link"><img src="logo-final.png" alt="Tech Advisors LA" class="logo"></a>
                 <ul class="nav-links">
-                    <li><a href="#problemas">Qué resuelve</a></li>
-                    <li><a href="#modulos">Módulos</a></li>
-                    <li><a href="#resultados">Resultados</a></li>
-                    <li><a href="#implementacion">Implementación</a></li>
+                    <li class="has-dd">
+                        <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-servicios">Servicios <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="dd" id="dd-servicios">
+                            <a href="asesoria.html"><strong>Asesoría estratégica</strong><span>Networking, modelos de negocio y transformación digital</span></a>
+                            <a href="index.html#servicios"><strong>Todos los servicios</strong><span>IA, software a la medida, IoT y más</span></a>
+                            <a href="index.html#modelo"><strong>Modelo de servicio</strong><span>CAPEX, OPEX, híbrido o 100% como servicio</span></a>
+                            <a href="index.html#proceso"><strong>Cómo trabajamos</strong><span>Diagnóstico, conexión e implementación</span></a>
+                        </div>
+                    </li>
+                    <li class="has-dd">
+                        <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-soluciones">Soluciones <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="dd dd-wide" id="dd-soluciones">
+                            <a href="humand.html"><strong>Humand · Recursos Humanos</strong><span>Comunicación interna y gestión del personal</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
+                            <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
+                            <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
+                            <a href="automatizacion.html"><strong>Automatización · CIP y SIP</strong><span>Instrumentación y procesos industriales</span></a>
+                            <a href="energia.html"><strong>Gestión energética</strong><span>Medición inteligente y paneles solares</span></a>
+                            <a href="agricultura.html"><strong>Agricultura inteligente</strong><span>Sensores IoT y redes LoRaWAN</span></a>
+                            <a href="index.html#soluciones" class="dd-all">Ver soluciones destacadas →</a>
+                        </div>
+                    </li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="contacto.html" class="nav-cta">Contáctenos</a></li>
                 </ul>
                 <button class="nav-toggle" aria-label="Abrir menú">
@@ -628,7 +686,7 @@
                 <span class="eyebrow">Recursos Humanos · Comunicación interna</span>
                 <h1 class="hero-title">Toda la gestión de su gente, en <span class="hl">una sola app</span>.</h1>
                 <p class="hero-sub">Humand reúne en una aplicación la comunicación interna, los trámites de Recursos Humanos y la cultura de su empresa. Llega a todos los colaboradores, también al personal de planta, de campo o de tienda que no tiene correo de la empresa. En Tech Advisors LA nos encargamos de la implementación y del acompañamiento en Costa Rica.</p>
-                <a href="contacto.html" class="cta-button">Solicite una demostración →</a>
+                <a href="contacto.html" class="cta-button">Agende una reunión →</a>
                 <a href="#modulos" class="cta-ghost">Ver módulos</a>
 
                 <div class="stat-strip">
@@ -833,10 +891,10 @@
         <div class="container">
             <div class="cta-band reveal">
                 <div>
-                    <h2>¿Quiere ver Humand funcionando?</h2>
-                    <p>Le mostramos la plataforma con ejemplos de su industria y le proponemos por dónde empezar.</p>
+                    <h2>¿Conversamos sobre Humand para su empresa?</h2>
+                    <p>Coordinemos una reunión para conocer cómo se comunica hoy su equipo, revisar la plataforma con ejemplos de su industria y definir por dónde empezar.</p>
                 </div>
-                <a href="contacto.html" class="cta-button">Agendar demostración →</a>
+                <a href="contacto.html" class="cta-button">Agendar reunión →</a>
             </div>
         </div>
     </section>
@@ -847,7 +905,7 @@
             <div class="contact-cta reveal">
                 <span class="eyebrow">Contacto</span>
                 <h2 class="section-title-dark">Hablemos de Humand para su empresa</h2>
-                <p class="section-sub">Cuéntenos cuántos colaboradores tiene y cómo se comunican hoy. Le preparamos una demostración, sin compromiso.</p>
+                <p class="section-sub">Cuéntenos cuántos colaboradores tiene y cómo se comunican hoy. Coordinemos una reunión, sin compromiso.</p>
                 <a href="contacto.html" class="cta-button">Contáctenos →</a>
             </div>
         </div>
@@ -863,6 +921,10 @@
                 <a href="imotion.html">Computer Vision</a>
                 <a href="firma-digital.html">Firma Digital</a>
                 <a href="pos.html">POS</a>
+                <a href="rfid.html">RFID</a>
+                <a href="automatizacion.html">Automatización</a>
+                <a href="energia.html">Energía</a>
+                <a href="agricultura.html">Agricultura</a>
                 <a href="contacto.html">Contacto</a>
             </nav>
             <p class="footer-brand">Tech Advisors L.A.</p>
@@ -882,6 +944,45 @@
                 navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
                 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
             }
+
+            // dropdown menus
+            const dds = document.querySelectorAll('.has-dd');
+            const closeAll = (except) => dds.forEach(d => {
+                if (d === except) return;
+                d.classList.remove('open');
+                d.querySelector('.dd-toggle').setAttribute('aria-expanded', 'false');
+            });
+            const canHover = window.matchMedia('(hover: hover) and (min-width: 769px)');
+            dds.forEach(d => {
+                const btn = d.querySelector('.dd-toggle');
+                let t;
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const willOpen = canHover.matches ? true : !d.classList.contains('open');
+                    closeAll(d);
+                    d.classList.toggle('open', willOpen);
+                    btn.setAttribute('aria-expanded', String(willOpen));
+                });
+                d.addEventListener('mouseenter', () => {
+                    if (!canHover.matches) return;
+                    clearTimeout(t); closeAll(d);
+                    d.classList.add('open'); btn.setAttribute('aria-expanded', 'true');
+                });
+                d.addEventListener('mouseleave', () => {
+                    if (!canHover.matches) return;
+                    t = setTimeout(() => { d.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }, 180);
+                });
+            });
+            document.addEventListener('click', (e) => { if (!e.target.closest('.has-dd')) closeAll(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+            // highlight current page
+            const here = location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.dd a').forEach(a => {
+                if (a.getAttribute('href') === here) {
+                    a.classList.add('current');
+                    a.closest('.has-dd').querySelector('.dd-toggle').classList.add('current');
+                }
+            });
             if (typeof gsap === 'undefined') return;
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             gsap.registerPlugin(ScrollTrigger);

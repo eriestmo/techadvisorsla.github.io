@@ -477,18 +477,56 @@
             .nav-links.open { display:flex; }
             .nav-toggle { display:block; }
         }
-        @media (max-width: 1100px) {
-            .nav-links {
-                position:absolute; top:100%; left:0; right:0;
-                background:rgba(8,13,34,0.97);
-                flex-direction:column;
-                padding:1.5rem 2rem;
-                gap:1.25rem;
-                display:none;
-                border-bottom:1px solid var(--border);
+
+        /* ---------- DROPDOWN MENU ---------- */
+        .has-dd { position:relative; }
+        .dd-toggle {
+            background:none; border:0; cursor:pointer; padding:0;
+            color:var(--text-muted); font-family:'Inter', sans-serif; font-weight:500; font-size:0.95rem;
+            display:inline-flex; align-items:center; gap:0.35rem; transition:color 0.25s ease;
+        }
+        .dd-toggle:hover, .has-dd.open .dd-toggle, .dd-toggle.current { color:var(--accent-2); }
+        .dd-toggle svg { transition:transform 0.2s ease; }
+        .has-dd.open .dd-toggle svg { transform:rotate(180deg); }
+        .dd {
+            position:absolute; top:calc(100% + 18px); left:50%;
+            transform:translate(-50%, 6px);
+            min-width:320px;
+            display:grid; gap:0.15rem;
+            background:rgba(12,20,48,0.98);
+            border:1px solid var(--border); border-radius:14px;
+            padding:0.6rem;
+            box-shadow:0 22px 50px rgba(0,0,0,0.45);
+            opacity:0; visibility:hidden;
+            transition:opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+            z-index:1001;
+        }
+        .dd::before { content:""; position:absolute; left:0; right:0; top:-20px; height:20px; }
+        .has-dd.open .dd { opacity:1; visibility:visible; transform:translate(-50%, 0); }
+        .dd-wide { grid-template-columns:1fr 1fr; min-width:620px; }
+        .nav-links .dd a { display:block; padding:0.7rem 0.85rem; border-radius:10px; text-decoration:none; color:var(--text); transition:background 0.2s ease; }
+        .nav-links .dd a:hover, .nav-links .dd a.current { background:rgba(46,134,245,0.14); }
+        .dd strong { display:block; font-weight:600; font-size:0.92rem; color:var(--text); }
+        .dd span { display:block; color:var(--text-muted); font-size:0.8rem; line-height:1.4; margin-top:0.15rem; }
+        .nav-links .dd .dd-all { grid-column:1 / -1; margin-top:0.3rem; border-top:1px solid var(--border); border-radius:0 0 10px 10px; color:var(--accent-2); font-size:0.88rem; font-weight:600; }
+
+        @media (min-width: 769px) and (max-width: 1060px) {
+            .dd-wide { grid-template-columns:1fr; min-width:320px; max-height:70vh; overflow-y:auto; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { max-height:calc(100vh - 74px); overflow-y:auto; align-items:stretch !important; background:#080D22 !important; box-shadow:0 24px 40px rgba(0,0,0,0.5); }
+            .dd-toggle { font-size:1rem; width:100%; justify-content:space-between; }
+            .dd, .dd-wide {
+                position:static; transform:none; min-width:0;
+                grid-template-columns:1fr;
+                background:transparent; border:0; box-shadow:none;
+                padding:0.4rem 0 0 0.6rem;
+                display:none; opacity:1; visibility:visible;
             }
-            .nav-links.open { display:flex; }
-            .nav-toggle { display:block; }
+            .dd::before { display:none; }
+            .has-dd.open .dd { display:grid; transform:none; }
+            .nav-links .nav-cta { text-align:center; }
         }
     
         /* ---------- SUBPAGE ---------- */
@@ -666,10 +704,31 @@
             <nav>
                 <a href="index.html" class="logo-link"><img src="logo-final.png" alt="Tech Advisors LA" class="logo"></a>
                 <ul class="nav-links">
-                    <li><a href="#equipo">Equipo</a></li>
-                    <li><a href="#empresa">Empresa</a></li>
-                    <li><a href="#temas">Temas</a></li>
-                    <li><a href="#equipo" class="nav-cta">Contáctenos</a></li>
+                    <li class="has-dd">
+                        <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-servicios">Servicios <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="dd" id="dd-servicios">
+                            <a href="asesoria.html"><strong>Asesoría estratégica</strong><span>Networking, modelos de negocio y transformación digital</span></a>
+                            <a href="index.html#servicios"><strong>Todos los servicios</strong><span>IA, software a la medida, IoT y más</span></a>
+                            <a href="index.html#modelo"><strong>Modelo de servicio</strong><span>CAPEX, OPEX, híbrido o 100% como servicio</span></a>
+                            <a href="index.html#proceso"><strong>Cómo trabajamos</strong><span>Diagnóstico, conexión e implementación</span></a>
+                        </div>
+                    </li>
+                    <li class="has-dd">
+                        <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-soluciones">Soluciones <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="dd dd-wide" id="dd-soluciones">
+                            <a href="humand.html"><strong>Humand · Recursos Humanos</strong><span>Comunicación interna y gestión del personal</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
+                            <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
+                            <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
+                            <a href="automatizacion.html"><strong>Automatización · CIP y SIP</strong><span>Instrumentación y procesos industriales</span></a>
+                            <a href="energia.html"><strong>Gestión energética</strong><span>Medición inteligente y paneles solares</span></a>
+                            <a href="agricultura.html"><strong>Agricultura inteligente</strong><span>Sensores IoT y redes LoRaWAN</span></a>
+                            <a href="index.html#soluciones" class="dd-all">Ver soluciones destacadas →</a>
+                        </div>
+                    </li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-cta">Contáctenos</a></li>
                 </ul>
                 <button class="nav-toggle" aria-label="Abrir menú">
                     <span></span><span></span><span></span>
@@ -741,7 +800,7 @@
                 </div>
                 <div class="map-wrap reveal">
                     <iframe title="Ubicación: La Unión, Cartago, Costa Rica" src="https://www.google.com/maps?q=La+Uni%C3%B3n,+Cartago,+Costa+Rica&amp;z=12&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=La+Uni%C3%B3n%2C+Cartago%2C+Costa+Rica" target="_blank" rel="noopener">Abrir en Google Maps →</a>
+                    <a class="map-link" href="https://maps.app.goo.gl/RzJs9ZJMjHYfbuvM6" target="_blank" rel="noopener">Abrir en Google Maps →</a>
                 </div>
             </div>
         </div>
@@ -758,43 +817,71 @@
                 <div class="topic">
                     <span class="topic-name">Asesoría estratégica y transformación digital</span>
                     <div class="topic-links">
-                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20asesor%C3%ADa%20estrat%C3%A9gica%20y%20transformaci%C3%B3n%20digital." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
-                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Asesor%C3%ADa%20estrat%C3%A9gica%20y%20transformaci%C3%B3n%20digital&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20asesor%C3%ADa%20estrat%C3%A9gica%20y%20transformaci%C3%B3n%20digital.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                        <a href="https://wa.me/50683835646?text=Hola%20Mario%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20asesor%C3%ADa%20estrat%C3%A9gica%20y%20transformaci%C3%B3n%20digital." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:mario.estrada@techadvisorsla.com?subject=Consulta%3A%20Asesor%C3%ADa%20estrat%C3%A9gica%20y%20transformaci%C3%B3n%20digital&amp;body=Hola%20Mario%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20asesor%C3%ADa%20estrat%C3%A9gica%20y%20transformaci%C3%B3n%20digital.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
                     </div>
                 </div>
                 <div class="topic">
                     <span class="topic-name">Humand · Recursos Humanos</span>
                     <div class="topic-links">
-                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20plataforma%20de%20Recursos%20Humanos%20Humand." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
-                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Humand%20%C2%B7%20Recursos%20Humanos&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20plataforma%20de%20Recursos%20Humanos%20Humand.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                        <a href="https://wa.me/50687032711?text=Hola%20Eric%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20plataforma%20de%20Recursos%20Humanos%20Humand." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Humand%20%C2%B7%20Recursos%20Humanos&amp;body=Hola%20Eric%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20plataforma%20de%20Recursos%20Humanos%20Humand.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
                     </div>
                 </div>
                 <div class="topic">
                     <span class="topic-name">Computer Vision · iMotion</span>
                     <div class="topic-links">
-                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20Computer%20Vision%20con%20iMotion%20Analytics." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
-                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Computer%20Vision%20%C2%B7%20iMotion&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20Computer%20Vision%20con%20iMotion%20Analytics.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                        <a href="https://wa.me/50687032711?text=Hola%20Eric%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20Computer%20Vision%20con%20iMotion%20Analytics." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Computer%20Vision%20%C2%B7%20iMotion&amp;body=Hola%20Eric%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20Computer%20Vision%20con%20iMotion%20Analytics.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
                     </div>
                 </div>
                 <div class="topic">
                     <span class="topic-name">Firma digital · SIGN.TRUST®</span>
                     <div class="topic-links">
-                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20firma%20digital%20con%20SIGN.TRUST%C2%AE." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
-                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Firma%20digital%20%C2%B7%20SIGN.TRUST%C2%AE&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20firma%20digital%20con%20SIGN.TRUST%C2%AE.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                        <a href="https://wa.me/50687032711?text=Hola%20Eric%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20firma%20digital%20con%20SIGN.TRUST%C2%AE." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Firma%20digital%20%C2%B7%20SIGN.TRUST%C2%AE&amp;body=Hola%20Eric%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20firma%20digital%20con%20SIGN.TRUST%C2%AE.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
                     </div>
                 </div>
                 <div class="topic">
                     <span class="topic-name">Punto de venta · POS</span>
                     <div class="topic-links">
-                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20sistema%20de%20punto%20de%20venta%20%28POS%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
-                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Punto%20de%20venta%20%C2%B7%20POS&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20sistema%20de%20punto%20de%20venta%20%28POS%29.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                        <a href="https://wa.me/50683835646?text=Hola%20Mario%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20sistema%20de%20punto%20de%20venta%20%28POS%29." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:mario.estrada@techadvisorsla.com?subject=Consulta%3A%20Punto%20de%20venta%20%C2%B7%20POS&amp;body=Hola%20Mario%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20el%20sistema%20de%20punto%20de%20venta%20%28POS%29.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
                     </div>
                 </div>
                 <div class="topic">
                     <span class="topic-name">Desarrollo de software a la medida</span>
                     <div class="topic-links">
-                        <a href="https://wa.me/50687032711?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20desarrollo%20de%20software%20a%20la%20medida." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
-                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Desarrollo%20de%20software%20a%20la%20medida&amp;body=Hola%2C%0A%0AHola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20desarrollo%20de%20software%20a%20la%20medida.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                        <a href="https://wa.me/50683835646?text=Hola%20Mario%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20desarrollo%20de%20software%20a%20la%20medida." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:mario.estrada@techadvisorsla.com?subject=Consulta%3A%20Desarrollo%20de%20software%20a%20la%20medida&amp;body=Hola%20Mario%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20desarrollo%20de%20software%20a%20la%20medida.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                    </div>
+                </div>
+                <div class="topic">
+                    <span class="topic-name">RFID y tags · Comercio y condominios</span>
+                    <div class="topic-links">
+                        <a href="https://wa.me/50687032711?text=Hola%20Eric%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20las%20soluciones%20RFID%20y%20tags%20para%20comercio%20y%20condominios." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20RFID%20y%20tags%20%C2%B7%20Comercio%20y%20condominios&amp;body=Hola%20Eric%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20las%20soluciones%20RFID%20y%20tags%20para%20comercio%20y%20condominios.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                    </div>
+                </div>
+                <div class="topic">
+                    <span class="topic-name">Automatización industrial · CIP y SIP</span>
+                    <div class="topic-links">
+                        <a href="https://wa.me/50687032711?text=Hola%20Eric%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20automatizaci%C3%B3n%20industrial%20y%20los%20sistemas%20CIP%20y%20SIP." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Automatizaci%C3%B3n%20industrial%20%C2%B7%20CIP%20y%20SIP&amp;body=Hola%20Eric%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20automatizaci%C3%B3n%20industrial%20y%20los%20sistemas%20CIP%20y%20SIP.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                    </div>
+                </div>
+                <div class="topic">
+                    <span class="topic-name">Gestión energética y paneles solares</span>
+                    <div class="topic-links">
+                        <a href="https://wa.me/50687032711?text=Hola%20Eric%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20gesti%C3%B3n%20energ%C3%A9tica%2C%20la%20medici%C3%B3n%20inteligente%20y%20los%20paneles%20solares." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Gesti%C3%B3n%20energ%C3%A9tica%20y%20paneles%20solares&amp;body=Hola%20Eric%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20gesti%C3%B3n%20energ%C3%A9tica%2C%20la%20medici%C3%B3n%20inteligente%20y%20los%20paneles%20solares.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
+                    </div>
+                </div>
+                <div class="topic">
+                    <span class="topic-name">Agricultura inteligente · IoT</span>
+                    <div class="topic-links">
+                        <a href="https://wa.me/50687032711?text=Hola%20Eric%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20agricultura%20inteligente%20con%20sensores%20IoT." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.04c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.23-4.25 9.47-9.47 9.47zm8.06-17.54A11.33 11.33 0 0 0 12.04.62C5.76.62.65 5.73.65 12.01c0 2.01.52 3.97 1.52 5.69L.55 23.6l6.04-1.58a11.36 11.36 0 0 0 5.44 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.19-5.9-3.33-8.05z"/></svg> WhatsApp</a>
+                        <a href="mailto:eric.estrada@techadvisorsla.com?subject=Consulta%3A%20Agricultura%20inteligente%20%C2%B7%20IoT&amp;body=Hola%20Eric%2C%0A%0ALe%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20agricultura%20inteligente%20con%20sensores%20IoT.%0A%0ANombre%3A%0AEmpresa%3A%0ATel%C3%A9fono%3A%0A%0AGracias.">Correo</a>
                     </div>
                 </div>
             </div>
@@ -811,6 +898,10 @@
                 <a href="imotion.html">Computer Vision</a>
                 <a href="firma-digital.html">Firma Digital</a>
                 <a href="pos.html">POS</a>
+                <a href="rfid.html">RFID</a>
+                <a href="automatizacion.html">Automatización</a>
+                <a href="energia.html">Energía</a>
+                <a href="agricultura.html">Agricultura</a>
                 <a href="contacto.html">Contacto</a>
             </nav>
             <p class="footer-brand">Tech Advisors L.A.</p>
@@ -830,6 +921,45 @@
                 navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
                 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
             }
+
+            // dropdown menus
+            const dds = document.querySelectorAll('.has-dd');
+            const closeAll = (except) => dds.forEach(d => {
+                if (d === except) return;
+                d.classList.remove('open');
+                d.querySelector('.dd-toggle').setAttribute('aria-expanded', 'false');
+            });
+            const canHover = window.matchMedia('(hover: hover) and (min-width: 769px)');
+            dds.forEach(d => {
+                const btn = d.querySelector('.dd-toggle');
+                let t;
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const willOpen = canHover.matches ? true : !d.classList.contains('open');
+                    closeAll(d);
+                    d.classList.toggle('open', willOpen);
+                    btn.setAttribute('aria-expanded', String(willOpen));
+                });
+                d.addEventListener('mouseenter', () => {
+                    if (!canHover.matches) return;
+                    clearTimeout(t); closeAll(d);
+                    d.classList.add('open'); btn.setAttribute('aria-expanded', 'true');
+                });
+                d.addEventListener('mouseleave', () => {
+                    if (!canHover.matches) return;
+                    t = setTimeout(() => { d.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }, 180);
+                });
+            });
+            document.addEventListener('click', (e) => { if (!e.target.closest('.has-dd')) closeAll(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+            // highlight current page
+            const here = location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.dd a').forEach(a => {
+                if (a.getAttribute('href') === here) {
+                    a.classList.add('current');
+                    a.closest('.has-dd').querySelector('.dd-toggle').classList.add('current');
+                }
+            });
             if (typeof gsap === 'undefined') return;
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             gsap.registerPlugin(ScrollTrigger);

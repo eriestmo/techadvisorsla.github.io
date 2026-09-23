@@ -6,7 +6,7 @@
 
     <!-- SEO Básico -->
     <title>Nosotros | Tech Advisors LA — Asesoría en Transformación Digital e IA</title>
-    <meta name="description" content="Conozca a Tech Advisors LA: equipo fundador, experiencia en distintos mercados y partners como Humand, iMotion Analytics, SIGN.TRUST® y ASP Software Company en Costa Rica y Latinoamérica.">
+    <meta name="description" content="Conozca a Tech Advisors LA: equipo fundador, experiencia en distintos mercados y partners como Humand, iMotion Analytics, SIGN.TRUST®, ASP Software Company y Lain Holdings en Costa Rica y Latinoamérica.">
     <meta name="keywords" content="Tech Advisors LA, nosotros, Eric Estrada Montero, Mario Estrada Solano, ciudades inteligentes, IoT, asesoría tecnológica Costa Rica, transformación digital, partners tecnológicos">
     <link rel="canonical" href="https://techadvisorsla.com/nosotros.html">
 
@@ -480,18 +480,56 @@
             .nav-links.open { display:flex; }
             .nav-toggle { display:block; }
         }
-        @media (max-width: 1100px) {
-            .nav-links {
-                position:absolute; top:100%; left:0; right:0;
-                background:rgba(8,13,34,0.97);
-                flex-direction:column;
-                padding:1.5rem 2rem;
-                gap:1.25rem;
-                display:none;
-                border-bottom:1px solid var(--border);
+
+        /* ---------- DROPDOWN MENU ---------- */
+        .has-dd { position:relative; }
+        .dd-toggle {
+            background:none; border:0; cursor:pointer; padding:0;
+            color:var(--text-muted); font-family:'Inter', sans-serif; font-weight:500; font-size:0.95rem;
+            display:inline-flex; align-items:center; gap:0.35rem; transition:color 0.25s ease;
+        }
+        .dd-toggle:hover, .has-dd.open .dd-toggle, .dd-toggle.current { color:var(--accent-2); }
+        .dd-toggle svg { transition:transform 0.2s ease; }
+        .has-dd.open .dd-toggle svg { transform:rotate(180deg); }
+        .dd {
+            position:absolute; top:calc(100% + 18px); left:50%;
+            transform:translate(-50%, 6px);
+            min-width:320px;
+            display:grid; gap:0.15rem;
+            background:rgba(12,20,48,0.98);
+            border:1px solid var(--border); border-radius:14px;
+            padding:0.6rem;
+            box-shadow:0 22px 50px rgba(0,0,0,0.45);
+            opacity:0; visibility:hidden;
+            transition:opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+            z-index:1001;
+        }
+        .dd::before { content:""; position:absolute; left:0; right:0; top:-20px; height:20px; }
+        .has-dd.open .dd { opacity:1; visibility:visible; transform:translate(-50%, 0); }
+        .dd-wide { grid-template-columns:1fr 1fr; min-width:620px; }
+        .nav-links .dd a { display:block; padding:0.7rem 0.85rem; border-radius:10px; text-decoration:none; color:var(--text); transition:background 0.2s ease; }
+        .nav-links .dd a:hover, .nav-links .dd a.current { background:rgba(46,134,245,0.14); }
+        .dd strong { display:block; font-weight:600; font-size:0.92rem; color:var(--text); }
+        .dd span { display:block; color:var(--text-muted); font-size:0.8rem; line-height:1.4; margin-top:0.15rem; }
+        .nav-links .dd .dd-all { grid-column:1 / -1; margin-top:0.3rem; border-top:1px solid var(--border); border-radius:0 0 10px 10px; color:var(--accent-2); font-size:0.88rem; font-weight:600; }
+
+        @media (min-width: 769px) and (max-width: 1060px) {
+            .dd-wide { grid-template-columns:1fr; min-width:320px; max-height:70vh; overflow-y:auto; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { max-height:calc(100vh - 74px); overflow-y:auto; align-items:stretch !important; background:#080D22 !important; box-shadow:0 24px 40px rgba(0,0,0,0.5); }
+            .dd-toggle { font-size:1rem; width:100%; justify-content:space-between; }
+            .dd, .dd-wide {
+                position:static; transform:none; min-width:0;
+                grid-template-columns:1fr;
+                background:transparent; border:0; box-shadow:none;
+                padding:0.4rem 0 0 0.6rem;
+                display:none; opacity:1; visibility:visible;
             }
-            .nav-links.open { display:flex; }
-            .nav-toggle { display:block; }
+            .dd::before { display:none; }
+            .has-dd.open .dd { display:grid; transform:none; }
+            .nav-links .nav-cta { text-align:center; }
         }
     
         /* ---------- SUBPAGE ---------- */
@@ -660,6 +698,9 @@
         .proj-tag { font-family:'IBM Plex Mono', monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent-2); }
         .proj h3 { font-size:1.08rem; line-height:1.3; }
         .proj p { color:var(--text-muted); font-size:0.9rem; }
+        .proj-wide { grid-column:1 / -1; background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.18), transparent 55%); border-color:rgba(46,134,245,0.35); padding:2rem; }
+        .proj-wide h3 { font-size:1.35rem; }
+        .proj-wide p { font-size:0.97rem; max-width:900px; margin-bottom:0.6rem; }
         .proj-client { margin-top:auto; padding-top:0.6rem; border-top:1px solid var(--border); font-size:0.85rem; font-weight:600; color:var(--text); }
         .person h3 { font-size:1.35rem; line-height:1.25; margin-bottom:0.3rem; }
         .role { font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--accent-2); letter-spacing:0.04em; }
@@ -678,7 +719,7 @@
         .exp h3 { font-size:1.12rem; margin-bottom:0.5rem; }
         .exp p { color:var(--text-muted); font-size:0.93rem; }
 
-        .partner-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.25rem; }
+        .partner-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:1.25rem; }
         @media (max-width: 900px) { .partner-grid { grid-template-columns:1fr 1fr; } }
         @media (max-width: 600px) { .partner-grid { grid-template-columns:1fr; } }
         .partner {
@@ -722,9 +763,30 @@
             <nav>
                 <a href="index.html" class="logo-link"><img src="logo-final.png" alt="Tech Advisors LA" class="logo"></a>
                 <ul class="nav-links">
-                    <li><a href="#equipo">Equipo</a></li>
-                    <li><a href="#experiencia">Experiencia</a></li>
-                    <li><a href="#partners">Partners</a></li>
+                    <li class="has-dd">
+                        <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-servicios">Servicios <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="dd" id="dd-servicios">
+                            <a href="asesoria.html"><strong>Asesoría estratégica</strong><span>Networking, modelos de negocio y transformación digital</span></a>
+                            <a href="index.html#servicios"><strong>Todos los servicios</strong><span>IA, software a la medida, IoT y más</span></a>
+                            <a href="index.html#modelo"><strong>Modelo de servicio</strong><span>CAPEX, OPEX, híbrido o 100% como servicio</span></a>
+                            <a href="index.html#proceso"><strong>Cómo trabajamos</strong><span>Diagnóstico, conexión e implementación</span></a>
+                        </div>
+                    </li>
+                    <li class="has-dd">
+                        <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-soluciones">Soluciones <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="dd dd-wide" id="dd-soluciones">
+                            <a href="humand.html"><strong>Humand · Recursos Humanos</strong><span>Comunicación interna y gestión del personal</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
+                            <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
+                            <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
+                            <a href="automatizacion.html"><strong>Automatización · CIP y SIP</strong><span>Instrumentación y procesos industriales</span></a>
+                            <a href="energia.html"><strong>Gestión energética</strong><span>Medición inteligente y paneles solares</span></a>
+                            <a href="agricultura.html"><strong>Agricultura inteligente</strong><span>Sensores IoT y redes LoRaWAN</span></a>
+                            <a href="index.html#soluciones" class="dd-all">Ver soluciones destacadas →</a>
+                        </div>
+                    </li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="contacto.html" class="nav-cta">Contáctenos</a></li>
                 </ul>
                 <button class="nav-toggle" aria-label="Abrir menú">
@@ -863,22 +925,31 @@
             <div class="stat-strip reveal-stagger" style="margin:0 0 3rem;">
                 <div><strong>25+ años</strong><span>en tecnología y telecomunicaciones</span></div>
                 <div><strong>10 años</strong><span>en ciudades inteligentes, IoT y analítica</span></div>
-                <div><strong>12 proyectos</strong><span>destacados en sectores públicos y privados</span></div>
-            </div>
+                            </div>
 
             <div class="proj-grid reveal-stagger">
-                <div class="proj"><span class="proj-tag">Gobierno local</span><h3>195 tótems inteligentes</h3><p>Ecosistema de tótems integrando múltiples tecnologías para la comunicación ciudadana en la capital.</p><span class="proj-client">Municipalidad de San José</span></div>
-                <div class="proj"><span class="proj-tag">Gobierno local · IoT</span><h3>Parqueo inteligente</h3><p>Sistema basado en IoT con sensores y antenas instalados en la vía pública.</p><span class="proj-client">Municipalidad de Grecia</span></div>
-                <div class="proj"><span class="proj-tag">Seguridad ciudadana</span><h3>Drones de seguridad como servicio</h3><p>Implementación de un servicio administrado de drones para la seguridad del cantón.</p><span class="proj-client">Municipalidad de Desamparados</span></div>
-                <div class="proj"><span class="proj-tag">Servicios públicos · IoT</span><h3>Medidores de agua inteligentes</h3><p>Medidores ultrasónicos para medir en forma precisa y en tiempo real el consumo residencial.</p><span class="proj-client">Ciudad de Aserrí</span></div>
-                <div class="proj"><span class="proj-tag">Transporte y movilidad</span><h3>Pago electrónico en 200 buses</h3><p>Negociación y adecuación tecnológica para habilitar el pago electrónico en la flota.</p><span class="proj-client">COESA</span></div>
-                <div class="proj"><span class="proj-tag">Transporte y movilidad</span><h3>Buses inteligentes</h3><p>Transformación digital del transporte con sistemas interactivos para los usuarios.</p><span class="proj-client">Sector transporte</span></div>
-                <div class="proj"><span class="proj-tag">Seguridad vial · Video</span><h3>Videovigilancia con analítica</h3><p>Plataforma de videovigilancia con analítica de datos para el control y la seguridad del depósito de vehículos.</p><span class="proj-client">COSEVI</span></div>
-                <div class="proj"><span class="proj-tag">Banca y finanzas</span><h3>Wi-Fi inteligente con analítica de negocio</h3><p>Captura de información clave del comportamiento de los usuarios para la toma de decisiones.</p><span class="proj-client">BAC Credomatic</span></div>
-                <div class="proj"><span class="proj-tag">Consumo masivo</span><h3>Inteligencia de negocios con Wi-Fi</h3><p>Solución de Wi-Fi inteligente con analítica del comportamiento de los usuarios finales.</p><span class="proj-client">Cervecería de Costa Rica</span></div>
-                <div class="proj"><span class="proj-tag">Deporte · Modelo de negocio</span><h3>Implementación del VAR</h3><p>Desarrollo, negociación y modelo de negocio para implementar el videoarbitraje en el fútbol nacional.</p><span class="proj-client">FEDEFUTBOL</span></div>
-                <div class="proj"><span class="proj-tag">Deporte · Alianza estratégica</span><h3>Proyecto integral y patrocinio</h3><p>Alianza estratégica que incluyó venta de equipos, asesoría técnica y patrocinio.</p><span class="proj-client">FEDEFUTBOL</span></div>
-                <div class="proj"><span class="proj-tag">Telecomunicaciones · Conferencia</span><h3>Taller “Ciudades Conectadas”</h3><p>Taller especializado sobre la transformación urbana con inteligencia artificial, impartido como invitado de Kölbi.</p><span class="proj-client">Kölbi Tech</span></div>
+                <div class="proj proj-wide">
+                    <span class="proj-tag">Telecomunicaciones · Modelos de negocio · Conectividad</span>
+                    <h3>Desarrollo integral de proyectos tecnológicos</h3>
+                    <p>Desarrollo de proyectos tecnológicos de forma integral, con distintos modelos de monetización. Incluyó la creación del modelo de negocio y la aplicación de soluciones 3G, 4G y 5G para Costa Rica, el desarrollo y seguimiento de la implementación de la solución de internet en el país, y la creación de un ecosistema para diseñar soluciones de acuerdo con la necesidad del mercado.</p>
+                    <div class="chips">
+                        <span class="chip">Modelos de monetización</span><span class="chip">Modelo de negocio</span>
+                        <span class="chip">3G · 4G · 5G</span><span class="chip">Solución de internet</span>
+                        <span class="chip">Ecosistema de soluciones</span>
+                    </div>
+                </div>
+                <div class="proj"><span class="proj-tag">Gobierno local</span><h3>Tótems inteligentes</h3><p>Ecosistema de tótems que integra múltiples tecnologías para mejorar la comunicación ciudadana.</p></div>
+                <div class="proj"><span class="proj-tag">Gobierno local · IoT</span><h3>Parqueo inteligente</h3><p>Sistema basado en IoT con sensores y antenas instalados en la vía pública.</p></div>
+                <div class="proj"><span class="proj-tag">Seguridad ciudadana</span><h3>Drones de seguridad como servicio</h3><p>Implementación de un servicio administrado de drones para la seguridad municipal.</p></div>
+                <div class="proj"><span class="proj-tag">Servicios públicos · IoT</span><h3>Medidores de agua inteligentes</h3><p>Medidores ultrasónicos para medir en forma precisa y en tiempo real el consumo residencial.</p></div>
+                <div class="proj"><span class="proj-tag">Transporte y movilidad</span><h3>Pago electrónico en buses</h3><p>Negociación y adecuación tecnológica para habilitar el pago electrónico en la flota.</p></div>
+                <div class="proj"><span class="proj-tag">Transporte y movilidad</span><h3>Buses inteligentes</h3><p>Transformación digital del transporte con sistemas interactivos para los usuarios.</p></div>
+                <div class="proj"><span class="proj-tag">Seguridad vial · Video</span><h3>Videovigilancia con analítica</h3><p>Plataforma de videovigilancia con analítica de datos para el control y la seguridad del depósito de vehículos.</p></div>
+                <div class="proj"><span class="proj-tag">Banca y finanzas</span><h3>Wi-Fi inteligente con analítica de negocio</h3><p>Captura de información clave del comportamiento de los usuarios para la toma de decisiones.</p></div>
+                <div class="proj"><span class="proj-tag">Consumo masivo</span><h3>Inteligencia de negocios con Wi-Fi</h3><p>Solución de Wi-Fi inteligente con analítica del comportamiento de los usuarios finales.</p></div>
+                <div class="proj"><span class="proj-tag">Deporte · Modelo de negocio</span><h3>VAR (Video Assistant Referee)</h3><p>Desarrollo, negociación y modelo de negocio para implementar el videoarbitraje en el fútbol.</p></div>
+                <div class="proj"><span class="proj-tag">Deporte · Alianza estratégica</span><h3>Proyecto integral y patrocinio</h3><p>Alianza estratégica que incluyó venta de equipos, asesoría técnica y patrocinio.</p></div>
+                <div class="proj"><span class="proj-tag">Ciudades inteligentes · Conferencia</span><h3>Taller “Ciudades Conectadas”</h3><p>Taller especializado sobre la transformación urbana con inteligencia artificial.</p></div>
             </div>
         </div>
     </section>
@@ -913,6 +984,24 @@
                     <span class="p-name">ASP Software Company</span>
                     <span class="p-cat">Punto de venta (POS) · Representantes</span>
                     <span class="p-desc">Sistema de punto de venta, inventario y factura electrónica como servicio, con 20 años de evolución en el mercado y la confianza de clientes del sector retail.</span>
+                    <span class="featured-link">Ver solución →</span>
+                </a>
+                <a class="partner" href="rfid.html">
+                    <span class="p-name">Smart Costa</span>
+                    <span class="p-cat">RFID, tags y prevención de pérdidas</span>
+                    <span class="p-desc">Distribuidor e integrador con más de 18 años en soluciones RFID para comercio y control de acceso.</span>
+                    <span class="featured-link">Ver solución →</span>
+                </a>
+                <a class="partner" href="automatizacion.html">
+                    <span class="p-name">ControlSoft</span>
+                    <span class="p-cat">Automatización industrial · CIP y SIP</span>
+                    <span class="p-desc">Automatización, instrumentación e IoT industrial para alimentos, bebidas, farmacéutica y química.</span>
+                    <span class="featured-link">Ver solución →</span>
+                </a>
+                <a class="partner" href="agricultura.html">
+                    <span class="p-name">Lain Holdings</span>
+                    <span class="p-cat">IoT · Agricultura inteligente</span>
+                    <span class="p-desc">Soluciones IoT de extremo a extremo para agricultura, agua, energía e industria en Latinoamérica.</span>
                     <span class="featured-link">Ver solución →</span>
                 </a>
                 <div class="partner partner-net">
@@ -964,6 +1053,10 @@
                 <a href="imotion.html">Computer Vision</a>
                 <a href="firma-digital.html">Firma Digital</a>
                 <a href="pos.html">POS</a>
+                <a href="rfid.html">RFID</a>
+                <a href="automatizacion.html">Automatización</a>
+                <a href="energia.html">Energía</a>
+                <a href="agricultura.html">Agricultura</a>
                 <a href="contacto.html">Contacto</a>
             </nav>
             <p class="footer-brand">Tech Advisors L.A.</p>
@@ -983,6 +1076,45 @@
                 navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
                 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
             }
+
+            // dropdown menus
+            const dds = document.querySelectorAll('.has-dd');
+            const closeAll = (except) => dds.forEach(d => {
+                if (d === except) return;
+                d.classList.remove('open');
+                d.querySelector('.dd-toggle').setAttribute('aria-expanded', 'false');
+            });
+            const canHover = window.matchMedia('(hover: hover) and (min-width: 769px)');
+            dds.forEach(d => {
+                const btn = d.querySelector('.dd-toggle');
+                let t;
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const willOpen = canHover.matches ? true : !d.classList.contains('open');
+                    closeAll(d);
+                    d.classList.toggle('open', willOpen);
+                    btn.setAttribute('aria-expanded', String(willOpen));
+                });
+                d.addEventListener('mouseenter', () => {
+                    if (!canHover.matches) return;
+                    clearTimeout(t); closeAll(d);
+                    d.classList.add('open'); btn.setAttribute('aria-expanded', 'true');
+                });
+                d.addEventListener('mouseleave', () => {
+                    if (!canHover.matches) return;
+                    t = setTimeout(() => { d.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }, 180);
+                });
+            });
+            document.addEventListener('click', (e) => { if (!e.target.closest('.has-dd')) closeAll(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+            // highlight current page
+            const here = location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.dd a').forEach(a => {
+                if (a.getAttribute('href') === here) {
+                    a.classList.add('current');
+                    a.closest('.has-dd').querySelector('.dd-toggle').classList.add('current');
+                }
+            });
             if (typeof gsap === 'undefined') return;
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             gsap.registerPlugin(ScrollTrigger);
