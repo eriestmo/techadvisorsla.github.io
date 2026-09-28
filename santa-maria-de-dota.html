@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <title>Caso de Éxito: Red LoRaWAN en Santa María de Dota | Tech Advisors LA</title>
+    <meta name="description" content="Página no publicada. Caso de éxito: diagnóstico y estabilización de la red LoRaWAN de AgroBoost 4.0 en Santa María de Dota, junto con Lain Holdings.">
+    <meta name="keywords" content="Santa María de Dota, AgroBoost 4.0, MICITT, caficultores, LoRaWAN, caso de éxito, Lain Holdings, Smart Cities Latam">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://techadvisorsla.com/santa-maria-de-dota.html">
+
+    <!-- Ícono del sitio (favicon) -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#080D22">
+
+    <!-- Vista Previa para WhatsApp, LinkedIn y Redes Sociales (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techadvisorsla.com/santa-maria-de-dota.html">
+    <meta property="og:title" content="Caso de Éxito: Red LoRaWAN en Santa María de Dota">
+    <meta property="og:description" content="Página no publicada — pendiente de autorización. Caso de éxito de la red LoRaWAN de AgroBoost 4.0 en Santa María de Dota.">
+    <meta property="og:image" content="https://techadvisorsla.com/logo-final.png">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+    <style>
+        :root{
+            --bg:#080D22;
+            --bg-2:#0A1128;
+            --panel:#0F1938;
+            --panel-2:#111D42;
+            --accent:#2E86F5;
+            --accent-2:#4FD8EB;
+            --text:#EDEEF3;
+            --text-muted:#8B93AC;
+            --border: rgba(255,255,255,0.09);
+            --radius: 16px;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        html { scroll-behavior:smooth; }
+
+        body {
+            font-family:'Inter', sans-serif;
+            line-height:1.65;
+            color:var(--text);
+            background:var(--bg);
+            overflow-x:hidden;
+        }
+
+        h1,h2,h3 { font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; }
+
+        .mono { font-family:'IBM Plex Mono', monospace; }
+
+        .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+
+        .eyebrow {
+            font-family:'IBM Plex Mono', monospace;
+            text-transform:uppercase;
+            letter-spacing:0.14em;
+            font-size:0.75rem;
+            color:var(--accent-2);
+            display:inline-block;
+            margin-bottom:1rem;
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            background: rgba(8,13,34,0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav { display:flex; justify-content:space-between; align-items:center; }
+
+        .logo { height:42px; }
+
+        .nav-links { display:flex; gap:2.25rem; list-style:none; align-items:center; }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration:none;
+            font-weight:500;
+            font-size:0.95rem;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover { color: var(--accent-2); }
+
+        .nav-cta {
+            border:1px solid var(--accent);
+            color:var(--text) !important;
+            padding:0.55rem 1.3rem;
+            border-radius:50px;
+            transition: all 0.25s ease;
+        }
+
+        .nav-cta:hover { background:var(--accent); box-shadow:0 0 24px rgba(46,134,245,0.55); }
+
+        .nav-toggle {
+            display:none;
+            width:26px; height:20px;
+            position:relative;
+            background:none; border:none; cursor:pointer;
+        }
+        .nav-toggle span {
+            position:absolute; left:0; width:100%; height:2px; background:var(--text);
+            transition: all 0.25s ease;
+        }
+        .nav-toggle span:nth-child(1){ top:0; }
+        .nav-toggle span:nth-child(2){ top:9px; }
+        .nav-toggle span:nth-child(3){ top:18px; }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            position:relative;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            padding-top:6rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 60% 55% at 82% 28%, rgba(46,134,245,0.16), transparent 60%),
+                radial-gradient(ellipse 50% 45% at 10% 85%, rgba(79,216,235,0.09), transparent 60%),
+                var(--bg);
+        }
+
+        .hero-grid-overlay{
+            position:absolute; inset:0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 20%, transparent 75%);
+            pointer-events:none;
+        }
+
+        .hero-network {
+            position:absolute;
+            top:0; right:-4%;
+            width:62%;
+            height:100%;
+            z-index:1;
+            opacity:0.9;
+        }
+
+        .network-line { stroke:var(--accent); stroke-width:1.4; fill:none; opacity:0.55; }
+        .network-node {
+            fill:var(--accent-2);
+            filter:url(#nodeGlow);
+            transform-box:fill-box;
+            transform-origin:center;
+            opacity:0;
+            transform:scale(0.3);
+        }
+
+        .hero-content { position:relative; z-index:2; max-width:620px; }
+
+        .hero-title {
+            font-size:3.1rem;
+            line-height:1.12;
+            margin-bottom:1.4rem;
+        }
+        .hero-title .hl { color:var(--accent-2); }
+
+        .hero-sub {
+            font-size:1.15rem;
+            color:var(--text-muted);
+            max-width:520px;
+            margin-bottom:2.4rem;
+        }
+
+        .cta-button {
+            display:inline-flex;
+            align-items:center;
+            gap:0.6rem;
+            background:var(--accent);
+            color:#08112b;
+            font-weight:600;
+            padding:1rem 2.2rem;
+            border-radius:50px;
+            text-decoration:none;
+            box-shadow: 0 0 0 rgba(46,134,245,0);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover { box-shadow: 0 0 34px rgba(46,134,245,0.6); transform:translateY(-2px); }
+
+        .cta-ghost{
+            display:inline-flex;
+            align-items:center;
+            color:var(--text-muted);
+            text-decoration:none;
+            margin-left:1.4rem;
+            font-size:0.95rem;
+            border-bottom:1px solid var(--border);
+            padding-bottom:2px;
+            transition:color 0.25s ease, border-color 0.25s ease;
+        }
+        .cta-ghost:hover{ color:var(--text); border-color:var(--accent-2); }
+
+        /* ---------- SECTIONS SHARED ---------- */
+        section { padding:6.5rem 0; position:relative; }
+
+        .section-head { max-width:640px; margin-bottom:3.5rem; }
+        .section-title-dark { font-size:2.3rem; margin-bottom:1rem; line-height:1.2; }
+        .section-sub { color:var(--text-muted); font-size:1.05rem; }
+
+        /* ---------- SERVICES ---------- */
+        .services-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+            gap:1.5rem;
+        }
+
+        .service-card {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.2rem;
+            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+            position:relative;
+            overflow:hidden;
+        }
+        .service-card::before{
+            content:"";
+            position:absolute; inset:0;
+            background:radial-gradient(circle at 85% -10%, rgba(46,134,245,0.16), transparent 55%);
+            opacity:0; transition:opacity 0.35s ease;
+        }
+        .service-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.55); background:var(--panel-2); }
+        .service-card:hover::before{ opacity:1; }
+
+        .node-tag {
+            width:46px; height:46px;
+            display:inline-flex; align-items:center; justify-content:center;
+            border:1px solid var(--accent);
+            border-radius:10px;
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.8rem;
+            font-weight:500;
+            color:var(--accent-2);
+            margin-bottom:1.3rem;
+            position:relative; z-index:1;
+        }
+
+        .service-card h3 { font-size:1.2rem; margin-bottom:0.8rem; position:relative; z-index:1; }
+        .service-card p { color:var(--text-muted); font-size:0.96rem; position:relative; z-index:1; }
+
+        .card-link{
+            display:inline-block; margin-top:1rem; position:relative; z-index:1;
+            color:var(--accent-2); text-decoration:none; font-size:0.9rem; font-weight:500;
+        }
+        .card-link:hover{ text-decoration:underline; }
+
+        /* ---------- FEATURED ---------- */
+        .featured { background: linear-gradient(180deg, var(--bg), var(--bg-2) 50%, var(--bg)); border-top:1px solid var(--border); }
+        .featured-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
+        .featured-card {
+            display:flex; flex-direction:column;
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:2.4rem; text-decoration:none; color:var(--text);
+            background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.16), transparent 55%);
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+        .featured-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.6); }
+        .featured-card h3 { font-size:1.45rem; margin-bottom:0.8rem; line-height:1.25; }
+        .featured-card p { color:var(--text-muted); font-size:0.96rem; margin-bottom:1.6rem; }
+        .featured-stats { display:flex; gap:2rem; margin-bottom:1.8rem; flex-wrap:wrap; }
+        .featured-stats div { border-left:2px solid var(--accent); padding-left:0.9rem; }
+        .featured-stats strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.5rem; color:var(--accent-2); line-height:1.2; }
+        .featured-stats span { color:var(--text-muted); font-size:0.82rem; }
+        .featured-link { margin-top:auto; color:var(--accent-2); font-weight:600; font-size:0.95rem; }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
+
+        /* ---------- HIGHLIGHT ---------- */
+        .networking-highlight {
+            background: linear-gradient(180deg, var(--bg-2), var(--bg));
+            border-top:1px solid var(--border);
+            border-bottom:1px solid var(--border);
+        }
+
+        .highlight-content {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:3rem;
+            position:relative;
+        }
+
+        .highlight-connector {
+            position:absolute;
+            top:50%; left:50%;
+            transform:translate(-50%,-50%);
+            width:1px; height:70%;
+            background: linear-gradient(180deg, transparent, var(--accent), transparent);
+            opacity:0.5;
+        }
+
+        .highlight-text h2 { font-size:1.55rem; margin-bottom:1rem; color:var(--text); }
+        .highlight-text p { color:var(--text-muted); }
+
+        /* ---------- PROCESS ---------- */
+        .process-track {
+            position:relative;
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:2.5rem;
+            margin-top:1rem;
+        }
+        .process-line-track{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:rgba(255,255,255,0.08);
+            z-index:0;
+        }
+        .process-line-fill{
+            position:absolute;
+            top:22px; left:5%; right:5%;
+            height:2px;
+            background:linear-gradient(90deg, var(--accent), var(--accent-2));
+            transform-origin:left center;
+            transform:scaleX(0);
+            z-index:0;
+        }
+
+        .process-node { position:relative; z-index:1; }
+
+        .process-num {
+            display:inline-flex; align-items:center; justify-content:center;
+            width:44px; height:44px;
+            border-radius:50%;
+            background:var(--bg);
+            border:2px solid var(--accent-2);
+            color:var(--accent-2);
+            font-family:'IBM Plex Mono', monospace;
+            font-size:0.85rem;
+            margin-bottom:1.1rem;
+        }
+
+        .process-node h3 { font-size:1.15rem; margin-bottom:0.6rem; }
+        .process-node p { color:var(--text-muted); font-size:0.95rem; }
+
+        /* ---------- CONTACT ---------- */
+        .contact {
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(46,134,245,0.12), transparent 65%), var(--bg);
+        }
+
+        .contact-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+            gap:1.75rem;
+            margin-top:2.5rem;
+        }
+
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
+        .contact-card {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:2.4rem 2rem;
+            text-align:center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .contact-card:hover{ border-color:var(--accent-2); transform:translateY(-4px); }
+
+        .contact-card h3 { font-size:1.1rem; margin-bottom:0.6rem; color:var(--text); }
+
+        .contact-card a {
+            color: var(--accent-2);
+            text-decoration:none;
+            font-size:1.02rem;
+            font-weight:500;
+            font-family:'IBM Plex Mono', monospace;
+            display:block;
+        }
+
+        .contact-card .contact-phone {
+            color: var(--text);
+            font-size:1.05rem;
+            margin-bottom:0.6rem;
+        }
+
+        footer {
+            border-top:1px solid var(--border);
+            color:var(--text-muted);
+            text-align:center;
+            padding:2.8rem 0;
+            font-size:0.88rem;
+            line-height:1.8;
+        }
+        .footer-links { display:flex; justify-content:center; flex-wrap:wrap; gap:0.4rem 1.6rem; margin-bottom:1.6rem; }
+        .footer-links a { color:var(--text-muted); text-decoration:none; font-size:0.88rem; transition:color 0.25s ease; }
+        .footer-links a:hover { color:var(--accent-2); }
+        .footer-brand { font-family:'Space Grotesk', sans-serif; font-weight:600; color:var(--text); font-size:1rem; }
+
+        /* ---------- REVEAL DEFAULTS (JS controls the animated state) ---------- */
+        .reveal, .reveal-stagger > * { will-change: transform, opacity; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior:auto; }
+        }
+
+        @media (max-width: 900px) {
+            .hero-network{ width:100%; right:0; opacity:0.22; }
+            .hero-title{ font-size:2.3rem; }
+            .highlight-content{ grid-template-columns:1fr; }
+            .featured-grid{ grid-template-columns:1fr; }
+            .highlight-connector{ display:none; }
+            .process-track{ grid-template-columns:1fr; }
+            .process-line-track, .process-line-fill{ display:none; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position:absolute; top:100%; left:0; right:0;
+                background:rgba(8,13,34,0.97);
+                flex-direction:column;
+                padding:1.5rem 2rem;
+                gap:1.25rem;
+                display:none;
+                border-bottom:1px solid var(--border);
+            }
+            .nav-links.open { display:flex; }
+            .nav-toggle { display:block; }
+        }
+
+        /* ---------- DROPDOWN MENU ---------- */
+        .has-dd { position:relative; }
+        .dd-toggle {
+            background:none; border:0; cursor:pointer; padding:0;
+            color:var(--text-muted); font-family:'Inter', sans-serif; font-weight:500; font-size:0.95rem;
+            display:inline-flex; align-items:center; gap:0.35rem; transition:color 0.25s ease;
+        }
+        .dd-toggle:hover, .has-dd.open .dd-toggle, .dd-toggle.current { color:var(--accent-2); }
+        .dd-toggle svg { transition:transform 0.2s ease; }
+        .has-dd.open .dd-toggle svg { transform:rotate(180deg); }
+        .dd {
+            position:absolute; top:calc(100% + 18px); left:50%;
+            transform:translate(-50%, 6px);
+            min-width:320px;
+            display:grid; gap:0.15rem;
+            background:rgba(12,20,48,0.98);
+            border:1px solid var(--border); border-radius:14px;
+            padding:0.6rem;
+            box-shadow:0 22px 50px rgba(0,0,0,0.45);
+            opacity:0; visibility:hidden;
+            transition:opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+            z-index:1001;
+        }
+        .dd::before { content:""; position:absolute; left:0; right:0; top:-20px; height:20px; }
+        .has-dd.open .dd { opacity:1; visibility:visible; transform:translate(-50%, 0); }
+        .dd-wide { grid-template-columns:1fr 1fr; min-width:620px; }
+        .nav-links .dd a { display:block; padding:0.7rem 0.85rem; border-radius:10px; text-decoration:none; color:var(--text); transition:background 0.2s ease; }
+        .nav-links .dd a:hover, .nav-links .dd a.current { background:rgba(46,134,245,0.14); }
+        .dd strong { display:block; font-weight:600; font-size:0.92rem; color:var(--text); }
+        .dd span { display:block; color:var(--text-muted); font-size:0.8rem; line-height:1.4; margin-top:0.15rem; }
+        .nav-links .dd .dd-all { grid-column:1 / -1; margin-top:0.3rem; border-top:1px solid var(--border); border-radius:0 0 10px 10px; color:var(--accent-2); font-size:0.88rem; font-weight:600; }
+
+        @media (min-width: 769px) and (max-width: 1060px) {
+            .dd-wide { grid-template-columns:1fr; min-width:320px; max-height:70vh; overflow-y:auto; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { max-height:calc(100vh - 74px); overflow-y:auto; align-items:stretch !important; background:#080D22 !important; box-shadow:0 24px 40px rgba(0,0,0,0.5); }
+            .dd-toggle { font-size:1rem; width:100%; justify-content:space-between; }
+            .dd, .dd-wide {
+                position:static; transform:none; min-width:0;
+                grid-template-columns:1fr;
+                background:transparent; border:0; box-shadow:none;
+                padding:0.4rem 0 0 0.6rem;
+                display:none; opacity:1; visibility:visible;
+            }
+            .dd::before { display:none; }
+            .has-dd.open .dd { display:grid; transform:none; }
+            .nav-links .nav-cta { text-align:center; }
+        }
+    
+        /* ---------- SUBPAGE ---------- */
+        .logo-link { display:inline-flex; }
+        .sub-hero {
+            position:relative;
+            padding:10rem 0 5.5rem;
+            overflow:hidden;
+            background:
+                radial-gradient(ellipse 55% 60% at 85% 20%, rgba(46,134,245,0.18), transparent 60%),
+                radial-gradient(ellipse 45% 45% at 5% 90%, rgba(79,216,235,0.08), transparent 60%),
+                var(--bg);
+            border-bottom:1px solid var(--border);
+        }
+        .sub-hero .hero-content { max-width:760px; }
+        .sub-hero .hero-title { font-size:2.9rem; }
+        .sub-hero .hero-sub { max-width:640px; }
+        .breadcrumb { font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--text-muted); margin-bottom:1.4rem; }
+        .breadcrumb a { color:var(--text-muted); text-decoration:none; }
+        .breadcrumb a:hover { color:var(--accent-2); }
+
+        .stat-strip {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+            gap:1rem;
+            margin-top:3rem;
+            max-width:860px;
+        }
+        .stat-strip div {
+            border-left:2px solid var(--accent);
+            padding:0.2rem 0 0.2rem 1rem;
+        }
+        .stat-strip strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.7rem; color:var(--text); line-height:1.2; }
+        .stat-strip span { color:var(--text-muted); font-size:0.88rem; }
+
+        .alt-bg { background:linear-gradient(180deg, var(--bg-2), var(--bg)); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+
+        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+        .two-col .section-head { margin-bottom:0; }
+
+        .list-cards { list-style:none; display:grid; gap:1rem; }
+        .list-cards li {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:12px;
+            padding:1.1rem 1.3rem;
+        }
+        .list-cards strong { display:block; font-family:'Space Grotesk', sans-serif; font-weight:600; margin-bottom:0.2rem; }
+        .list-cards span { color:var(--text-muted); font-size:0.93rem; }
+
+        .pain-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.25rem; }
+        .pain {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem;
+        }
+        .pain .before { font-size:0.9rem; color:var(--text-muted); margin-bottom:0.9rem; padding-bottom:0.9rem; border-bottom:1px dashed var(--border); }
+        .pain .before b { color:#F28B82; font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.75rem; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+        .pain .after { font-size:0.95rem; color:var(--text); }
+        .pain .after b { color:var(--accent-2); font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:0.75rem; letter-spacing:0.08em; display:block; margin-bottom:0.3rem; }
+
+        .modules-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(340px, 1fr));
+            gap:1.25rem;
+        }
+        .module-group {
+            background:var(--panel);
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:1.6rem;
+        }
+        .module-group h3 { font-size:1.02rem; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.6rem; }
+        .module-group h3::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--accent-2); box-shadow:0 0 10px var(--accent-2); flex:none; }
+        .module-group > p { color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; }
+        .chips { display:flex; flex-wrap:wrap; gap:0.5rem; }
+        .chip {
+            font-size:0.85rem; color:var(--text);
+            background:rgba(255,255,255,0.04);
+            border:1px solid var(--border);
+            border-radius:50px;
+            padding:0.35rem 0.85rem;
+        }
+
+        .impact-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:1.25rem; }
+        .impact-card {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem 1.4rem; display:flex; flex-direction:column;
+        }
+        .impact-label { color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem; min-height:4.8em; }
+        .impact-value { font-family:'Space Grotesk', sans-serif; font-size:2.1rem; font-weight:700; line-height:1.1; color:var(--accent-2); margin-bottom:0.5rem; }
+        .impact-delta { font-family:'IBM Plex Mono', monospace; font-size:0.82rem; color:var(--text); }
+        .impact-delta .from { color:var(--text-muted); }
+        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
+
+        .flow {
+            display:grid; grid-template-columns:repeat(4, 1fr); gap:1.25rem; position:relative;
+        }
+        .flow-step {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.6rem; position:relative;
+        }
+        .flow-step:not(:last-child)::after{
+            content:"→"; position:absolute; right:-1.05rem; top:50%; transform:translateY(-50%);
+            color:var(--accent-2); font-family:'IBM Plex Mono', monospace; font-size:1.1rem; z-index:2;
+        }
+        .flow-step h3 { font-size:1.05rem; margin:0.9rem 0 0.5rem; }
+        .flow-step p { color:var(--text-muted); font-size:0.92rem; }
+
+        .q-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem; }
+        .q-card {
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem;
+        }
+        .q-card .q { font-family:'Space Grotesk', sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:0.6rem; }
+        .q-card .a { color:var(--text-muted); font-size:0.93rem; }
+
+        .cta-band {
+            background:var(--panel); border:1px solid rgba(46,134,245,0.4); border-radius:var(--radius);
+            padding:3rem; display:flex; justify-content:space-between; align-items:center; gap:2rem; flex-wrap:wrap;
+            background-image:radial-gradient(circle at 90% 0%, rgba(46,134,245,0.22), transparent 55%);
+        }
+        .cta-band h2 { font-size:1.8rem; margin-bottom:0.5rem; }
+        .cta-band p { color:var(--text-muted); max-width:560px; }
+        .contact-cta { max-width:680px; margin:0 auto; text-align:center; }
+        .contact-cta .section-sub { margin:0 auto 2rem; max-width:560px; }
+
+        @media (max-width: 900px) {
+            .two-col{ grid-template-columns:1fr; }
+            .modules-grid{ grid-template-columns:1fr; }
+            .flow{ grid-template-columns:1fr; }
+            .flow-step:not(:last-child)::after{ content:"↓"; right:auto; left:50%; top:auto; bottom:-1.15rem; transform:translateX(-50%); }
+            .sub-hero .hero-title{ font-size:2.15rem; }
+            .cta-band{ padding:2rem; }
+        }
+        @media (max-width: 600px){ .impact-label{ min-height:0; } .container{ padding:0 1.25rem; } }
+
+        .mini-label { font-family:'IBM Plex Mono', monospace; text-transform:uppercase; letter-spacing:0.12em; font-size:0.72rem; color:var(--text-muted); margin-bottom:1rem; }
+        .agro-role { margin-top:1.4rem; padding-left:1rem; border-left:2px solid var(--accent-2); color:var(--text); font-size:0.98rem; }
+        .case { display:grid; grid-template-columns:repeat(4, 1fr); gap:1.25rem; }
+        .case-step { background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem; display:flex; flex-direction:column; gap:0.5rem; }
+        .case-tag { font-family:'IBM Plex Mono', monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent-2); }
+        .case-step h3 { font-size:1.08rem; line-height:1.3; }
+        .case-step p { color:var(--text-muted); font-size:0.92rem; }
+        .result { margin-top:1.25rem; background:var(--panel); border:1px solid rgba(79,216,235,0.45); border-radius:var(--radius); padding:2rem 2.2rem; background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.2), transparent 55%); }
+        .result p { font-size:1.05rem; color:var(--text); max-width:900px; }
+        .result strong { color:var(--accent-2); }
+        #beneficios-campo .pain-grid { grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); }
+        .video-row { margin-top:1.25rem; display:grid; grid-template-columns:1fr auto; gap:2.5rem; align-items:center; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:2rem 2.2rem; }
+        .video-text h3 { font-size:1.45rem; margin-bottom:0.6rem; }
+        .video-text p { color:var(--text-muted); max-width:520px; font-size:1.02rem; }
+        .video-list { display:flex; gap:1.25rem; justify-content:flex-end; }
+        .video-card { width:360px; margin:0; }
+        .ig-card { display:flex; flex-direction:column; gap:0.6rem; }
+        .ig-card .instagram-media { margin:0 !important; min-width:0 !important; width:100% !important; max-width:100% !important; border-radius:12px !important; overflow:hidden; background:#000; border:1px solid var(--border) !important; }
+        .ig-fallback { position:relative; display:block; }
+        .ig-fallback img { width:100%; height:auto; display:block; aspect-ratio:4 / 5; object-fit:cover; }
+        .ig-fallback span { position:absolute; left:0; right:0; bottom:0; padding:1rem; background:linear-gradient(transparent, rgba(0,0,0,0.8)); color:#fff; font-weight:600; font-size:0.95rem; }
+        .ig-card p.ig-source { color:var(--text-muted); font-size:0.82rem; line-height:1.5; text-align:right; }
+        .ig-source a { color:var(--accent-2); text-decoration:none; font-weight:500; }
+        .video-card video { width:100%; height:auto; aspect-ratio:4 / 5; display:block; border-radius:12px; border:1px solid var(--border); background:#000; object-fit:cover; }
+        @media (max-width: 900px) { .case { grid-template-columns:1fr 1fr; } .video-row { grid-template-columns:1fr; } .video-list { flex-wrap:wrap; justify-content:center; } .video-card { width:min(360px, 100%); } }
+        @media (max-width: 600px) { .case { grid-template-columns:1fr; } .result { padding:1.6rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo-link"><img src="logo-final.png" alt="Tech Advisors LA" class="logo"></a>
+                <ul class="nav-links">
+                    <li class="has-dd">
+                        <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-servicios">Servicios <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="dd" id="dd-servicios">
+                            <a href="asesoria.html"><strong>Asesoría estratégica</strong><span>Networking, modelos de negocio y transformación digital</span></a>
+                            <a href="index.html#servicios"><strong>Todos los servicios</strong><span>IA, software a la medida, IoT y más</span></a>
+                            <a href="index.html#modelo"><strong>Modelo de servicio</strong><span>CAPEX, OPEX, híbrido o 100% como servicio</span></a>
+                            <a href="index.html#proceso"><strong>Cómo trabajamos</strong><span>Diagnóstico, conexión e implementación</span></a>
+                        </div>
+                    </li>
+                    <li class="has-dd">
+                        <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-soluciones">Soluciones <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="dd dd-wide" id="dd-soluciones">
+                            <a href="humand.html"><strong>Humand · Recursos Humanos</strong><span>Comunicación interna y gestión del personal</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
+                            <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
+                            <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
+                            <a href="automatizacion.html"><strong>Automatización · CIP y SIP</strong><span>Instrumentación y procesos industriales</span></a>
+                            <a href="energia.html"><strong>Gestión energética</strong><span>Medición inteligente y paneles solares</span></a>
+                            <a href="agricultura.html"><strong>Agricultura inteligente</strong><span>Sensores IoT y redes LoRaWAN</span></a>
+                            <a href="index.html#soluciones" class="dd-all">Ver soluciones destacadas →</a>
+                        </div>
+                    </li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-cta">Contáctenos</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <section class="sub-hero">
+        <div class="hero-grid-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div style="background:rgba(242,139,130,0.1); border:1px solid rgba(242,139,130,0.45); border-radius:10px; padding:0.75rem 1.2rem; margin-bottom:1.6rem; font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:#F28B82; display:inline-flex; align-items:center; gap:0.55rem;">
+                    🔒 Página no publicada — pendiente de autorización de Smart Cities Latam / MICITT. No compartir este enlace.
+                </div>
+                <div class="breadcrumb"><a href="index.html">Inicio</a> / <a href="agricultura.html">Agricultura inteligente</a> / Caso: Santa María de Dota</div>
+                <span class="eyebrow">Caso de éxito · IoT · LoRaWAN</span>
+                <h1 class="hero-title">Cómo estabilizamos la red <span class="hl">LoRaWAN de AgroBoost 4.0</span> en Santa María de Dota</h1>
+                <p class="hero-sub">Junto con Lain Holdings, diagnosticamos y estabilizamos la red de sensores de suelo, estaciones meteorológicas y gateways que da servicio a los caficultores del programa AgroBoost 4.0 (MICITT) en Santa María de Dota, en un valle de montaña donde el relieve era el mayor reto.</p>
+                <a href="contacto.html" class="cta-button">Hablar de un proyecto similar →</a>
+                <a href="#experiencia" class="cta-ghost">Ver el caso completo</a>
+
+                <div class="stat-strip">
+                    <div><strong>709</strong><span>muestras georreferenciadas</span></div>
+                    <div><strong>3 al 6</strong><span>agosto 2026, visita técnica de campo</span></div>
+                    <div><strong>~2x</strong><span>cobertura proyectada del valle habitado</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Nuestra experiencia</span>
+                <h2 class="section-title-dark reveal">Caso real: la red LoRaWAN de AgroBoost 4.0 en Santa María de Dota</h2>
+                <p class="section-sub reveal">Junto con Lain Holdings, diagnosticamos y estabilizamos la red de sensores de suelo, estaciones meteorológicas y gateways que da servicio a los caficultores del programa, en un valle de montaña donde el relieve es el mayor reto.</p>
+            </div>
+
+            <div class="case reveal-stagger">
+                <div class="case-step">
+                    <span class="case-tag">Diagnóstico</span>
+                    <h3>Revisión en campo y en plataforma</h3>
+                    <p>Visitamos las fincas, revisamos físicamente los sensores y gateways, y analizamos la telemetría de la plataforma de gestión para conocer el estado real de la red.</p>
+                </div>
+                <div class="case-step">
+                    <span class="case-tag">Estudio técnico</span>
+                    <h3>Medición y simulación de cobertura</h3>
+                    <p>Hicimos una campaña de medición georreferenciada a pie y en vehículo, y simulamos la cobertura del valle con software de radioplanificación para ubicar los mejores puntos para los gateways.</p>
+                </div>
+                <div class="case-step">
+                    <span class="case-tag">Hallazgos</span>
+                    <h3>El relieve y la configuración, no la distancia</h3>
+                    <p>La montaña bloqueaba la señal mucho más que la distancia. Además, los sensores traían una configuración de fábrica que transmitía en exceso y agotaba sus baterías antes de tiempo.</p>
+                </div>
+                <div class="case-step">
+                    <span class="case-tag">Acciones</span>
+                    <h3>Estabilización de la red</h3>
+                    <p>Instalamos un gateway en altura con enlace satelital, reconfiguramos los sensores para bajo consumo, cambiamos baterías, depuramos el inventario de equipos y dimos una charla a los agricultores.</p>
+                </div>
+            </div>
+
+            <div class="result reveal">
+                <div>
+                    <span class="eyebrow">Resultado</span>
+                    <p>Los sensores intervenidos volvieron a reportar temperatura, humedad, conductividad, pH y nutrientes del suelo. Con los nuevos emplazamientos en altura, el estudio proyecta <strong>casi duplicar la cobertura del valle habitado</strong>. Además, quedó un plan de fortalecimiento que incluye capacitar a personal local como primer nivel de soporte.</p>
+                </div>
+
+            <div class="video-row reveal">
+                <div class="video-text">
+                    <span class="eyebrow">En video</span>
+                    <h3>El proyecto en campo</h3>
+                    <p>Conozca AgroBoost 4.0 en palabras del MICITT: sensores en las fincas, análisis de datos y acompañamiento a los caficultores para mejorar su producción.</p>
+                </div>
+                <div class="video-list">
+<div class="video-card ig-card">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcPR691hLCX/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+                            <a href="https://www.instagram.com/reel/DcPR691hLCX/" target="_blank" rel="noopener" class="ig-fallback">
+                                <img src="agricultura-video-1.jpg" alt="Sensor IoT instalado en una finca" width="720" height="900" loading="lazy">
+                                <span>Ver el video en Instagram →</span>
+                            </a>
+                        </blockquote>
+                        <p class="ig-source">Video publicado por el MICITT en <a href="https://www.instagram.com/micittcr/" target="_blank" rel="noopener">@micittcr</a> · <a href="https://www.instagram.com/reel/DcPR691hLCX/" target="_blank" rel="noopener">Ver en Instagram →</a></p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-cta reveal">
+                <span class="eyebrow">Contacto</span>
+                <h2 class="section-title-dark">¿Un proyecto de IoT o redes de sensores en campo?</h2>
+                <p class="section-sub">Cuéntenos qué necesita medir o conectar. Le proponemos una solución a la medida, sin compromiso.</p>
+                <a href="contacto.html" class="cta-button">Contáctenos →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-links" aria-label="Páginas del sitio">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="asesoria.html">Asesoría</a>
+                <a href="humand.html">Humand</a>
+                <a href="imotion.html">Computer Vision</a>
+                <a href="firma-digital.html">Firma Digital</a>
+                <a href="pos.html">POS</a>
+                <a href="rfid.html">RFID</a>
+                <a href="automatizacion.html">Automatización</a>
+                <a href="energia.html">Energía</a>
+                <a href="agricultura.html">Agricultura</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p class="footer-brand">Tech Advisors L.A.</p>
+            <p>Razón Social: 3-101-860439 S.A. | Cédula Jurídica: 3-101-860439</p>
+            <p>&copy; 2026 Tech Advisors L.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+                navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+            }
+
+            // dropdown menus
+            const dds = document.querySelectorAll('.has-dd');
+            const closeAll = (except) => dds.forEach(d => {
+                if (d === except) return;
+                d.classList.remove('open');
+                d.querySelector('.dd-toggle').setAttribute('aria-expanded', 'false');
+            });
+            const canHover = window.matchMedia('(hover: hover) and (min-width: 769px)');
+            dds.forEach(d => {
+                const btn = d.querySelector('.dd-toggle');
+                let t;
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const willOpen = canHover.matches ? true : !d.classList.contains('open');
+                    closeAll(d);
+                    d.classList.toggle('open', willOpen);
+                    btn.setAttribute('aria-expanded', String(willOpen));
+                });
+                d.addEventListener('mouseenter', () => {
+                    if (!canHover.matches) return;
+                    clearTimeout(t); closeAll(d);
+                    d.classList.add('open'); btn.setAttribute('aria-expanded', 'true');
+                });
+                d.addEventListener('mouseleave', () => {
+                    if (!canHover.matches) return;
+                    t = setTimeout(() => { d.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }, 180);
+                });
+            });
+            document.addEventListener('click', (e) => { if (!e.target.closest('.has-dd')) closeAll(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+            // highlight current page
+            const here = location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.dd a').forEach(a => {
+                if (a.getAttribute('href') === here) {
+                    a.classList.add('current');
+                    a.closest('.has-dd').querySelector('.dd-toggle').classList.add('current');
+                }
+            });
+            if (typeof gsap === 'undefined') return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.utils.toArray('.reveal').forEach(el => {
+                gsap.fromTo(el, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+            });
+            gsap.utils.toArray('.reveal-stagger').forEach(group => {
+                gsap.fromTo(group.children, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out', scrollTrigger: { trigger: group, start: 'top 88%' } });
+            });
+        });
+    </script>
+    <script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html>
