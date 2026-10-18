@@ -50,15 +50,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "url": "https://techadvisorsla.com",
       "logo": "https://techadvisorsla.com/logo-final.png",
       "image": "https://techadvisorsla.com/logo-final.png",
-      "description": "Asesoría en transformación digital, inteligencia artificial (IA), desarrollo de software a la medida, plataforma de recursos humanos Humand, ciberseguridad y networking tecnológico.",
-      "knowsAbout": ["Transformación Digital", "Inteligencia Artificial", "Desarrollo de Software a la Medida", "Plataforma de Recursos Humanos Humand", "Computer Vision", "IoT", "Firma Digital", "Modelos de Negocio", "Networking Estratégico"],
+      "description": "Asesoría en transformación digital, inteligencia artificial (IA), desarrollo de software a la medida, gestión de personas y RR.HH. con Humand, ciberseguridad y networking tecnológico.",
+      "knowsAbout": ["Transformación Digital", "Inteligencia Artificial", "Desarrollo de Software a la Medida", "Gestión de personas y RR.HH. con Humand", "Computer Vision", "IoT", "Firma Digital", "Modelos de Negocio", "Networking Estratégico"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Servicios de Tech Advisors LA",
         "itemListElement": [
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Inteligencia Artificial e Innovación" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo de Software a la Medida" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plataforma de Recursos Humanos Humand" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestión de personas y RR.HH. con Humand" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Computer Vision — iMotion Analytics" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asesoría Estratégica, Modelos de Negocio y Monetización" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soluciones IoT" } },
@@ -701,6 +701,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding:0.4rem 0.8rem; font-size:0.85rem; font-family:inherit; transition:border-color .2s ease, background .2s ease;
         }
         .assistant-chips button:hover{ border-color:var(--accent-2); background:rgba(79,216,235,0.1); }
+        .assistant-chips[hidden], .assistant-back[hidden]{ display:none; }
+        .assistant-back{ padding:0 1.1rem 0.9rem; }
+        .assistant-back button{ width:100%; cursor:pointer; background:transparent; color:var(--text); border:1px solid var(--accent-2); border-radius:12px; padding:0.8rem 1rem; font-size:1rem; font-weight:600; font-family:inherit; }
+        .assistant-back button:hover{ background:rgba(79,216,235,0.12); }
+        .assistant-panel .bubble{ font-size:1rem; line-height:1.6; max-width:100%; }
         .assistant-actions{ display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; padding:0.9rem 1.1rem 1.1rem; border-top:1px solid var(--border); }
         .assistant-actions a{
             display:flex; align-items:center; justify-content:center; text-align:center; text-decoration:none; font-weight:600; font-size:0.85rem; padding:0.65rem 0.5rem; border-radius:10px;
@@ -769,7 +774,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li class="has-dd">
                         <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-soluciones">Soluciones <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         <div class="dd dd-wide" id="dd-soluciones">
-                            <a href="humand.html"><strong>Humand · Recursos Humanos</strong><span>Comunicación interna y gestión del personal</span></a>
+                            <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
+                            <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
                             <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
                             <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
                             <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
@@ -864,7 +870,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div>
                             <span class="eyebrow">Software y Plataformas</span>
                             <h2 class="slide-title">Software hecho para <span class="hl">cómo trabaja</span> su empresa.</h2>
-                            <p class="slide-desc">Desarrollo a la medida, gestión del talento humano con Humand y punto de venta con factura electrónica, desde el levantamiento hasta el soporte.</p>
+                            <p class="slide-desc">Desarrollo a la medida y chatbots con IA con Asesorías SyS, gestión de personas y cultura con Humand, y punto de venta con factura electrónica, desde el levantamiento hasta el soporte.</p>
                             <div class="slide-ctas">
                                 <a href="contacto.html" class="cta-button">Solicitar propuesta →</a>
                                 <a href="humand.html" class="cta-ghost">Ver Humand</a>
@@ -873,8 +879,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="slide-panel">
                             <p class="panel-label">Incluye</p>
                             <ul>
-                                <li><span>Software a la medida<small>Aplicaciones web, móviles e integraciones</small></span></li>
-                                <li><a href="humand.html">Recursos Humanos · Humand<small>Comunicación y gestión del personal</small></a></li>
+                                <li><a href="software.html">Software a la medida<small>Chatbots con IA, automatización y desarrollo con Asesorías SyS</small></a></li>
+                                <li><a href="humand.html">Gestión de personas · Humand<small>RR.HH., operaciones, cultura y comunicación interna</small></a></li>
                                 <li><a href="pos.html">Punto de venta · POS<small>Facturación, inventario y factura electrónica</small></a></li>
                             </ul>
                         </div>
@@ -982,7 +988,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <article class="cat-card" id="cat-software">
                     <div class="cat-top"><span class="cat-tag">SW</span><h3>Software y Plataformas</h3></div>
                     <p>Aplicaciones a la medida y plataformas listas para gestionar su gente y sus ventas.</p>
-                    <div class="chips"><span class="chip">Software a la medida</span><a class="chip" href="humand.html">Humand · RR.HH.</a><a class="chip" href="pos.html">Punto de venta</a></div>
+                    <div class="chips"><a class="chip" href="software.html">Software a la medida</a><a class="chip" href="humand.html">Humand · Gestión de personas</a><a class="chip" href="pos.html">Punto de venta</a></div>
                 </article>
 
                 <article class="cat-card" id="cat-iot">
@@ -1018,10 +1024,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <div class="partner-row reveal-stagger">
-                <a class="partner" href="humand.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/humand.webp" alt="" width="700" height="120" loading="lazy" decoding="async"></span><strong>Humand</strong><span>Recursos Humanos</span><div class="p-tags"><em class="p-tag rep">Representación</em></div></a>
+                <a class="partner" href="humand.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/humand.webp" alt="" width="700" height="120" loading="lazy" decoding="async"></span><strong>Humand</strong><span>Gestión de personas, cultura y RR.HH.</span><div class="p-tags"><em class="p-tag rep">Representación</em></div></a>
                 <a class="partner" href="imotion.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/imotion.webp" alt="" width="503" height="136" loading="lazy" decoding="async"></span><strong>iMotion Analytics</strong><span>Computer vision</span><div class="p-tags"><em class="p-tag rep">Representación</em></div></a>
                 <a class="partner" href="firma-digital.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/signtrust.webp" alt="" width="302" height="136" loading="lazy" decoding="async"></span><strong>SIGN.TRUST®</strong><span>Firma digital</span><div class="p-tags"><em class="p-tag rep">Representación</em></div></a>
                 <a class="partner" href="pos.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/asp.webp" alt="" width="298" height="136" loading="lazy" decoding="async"></span><strong>ASP Software Company</strong><span>Punto de venta (POS), solución que representamos</span><div class="p-tags"><em class="p-tag">Socio de negocio</em></div></a>
+                <a class="partner" href="software.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/sys.webp" alt="" width="400" height="202" loading="lazy" decoding="async"></span><strong>Asesorías SyS</strong><span>Software, chatbots con IA y automatización</span><div class="p-tags"><em class="p-tag">Socio de negocio</em></div></a>
                 <a class="partner" href="agricultura.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/lain.webp" alt="" width="107" height="136" loading="lazy" decoding="async"></span><strong>Lain Holdings</strong><span>Agricultura inteligente e IoT</span><div class="p-tags"><em class="p-tag">Socio de negocio</em></div></a>
                 <a class="partner" href="rfid.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/smartcosta.webp" alt="" width="437" height="136" loading="lazy" decoding="async"></span><strong>Smart Costa</strong><span>RFID y tags</span><div class="p-tags"><em class="p-tag">Socio de negocio</em></div></a>
                 <a class="partner" href="automatizacion.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/controlsoft.svg" alt="" width="240" height="80" loading="lazy" decoding="async"></span><strong>ControlSoft</strong><span>Automatización industrial y edificios inteligentes</span><div class="p-tags"><em class="p-tag">Socio de negocio</em></div></a>
@@ -1115,6 +1122,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="bubble bot">¡Hola! Elija una pregunta y le respondo al instante.</div>
             </div>
             <div class="assistant-chips" id="assistantChips"></div>
+            <div class="assistant-back" id="assistantBack" hidden><button type="button">&larr; Volver a las preguntas</button></div>
             <div class="assistant-actions">
                 <a class="primary" href="https://wa.me/50687032711?text=Hola%20Eric%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Tengo%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a>
                 <a href="contacto.html">Otras formas de contacto</a>
@@ -1133,6 +1141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a href="index.html">Inicio</a>
                 <a href="nosotros.html">Nosotros</a>
                 <a href="asesoria.html">Asesoría</a>
+                <a href="software.html">Software</a>
                 <a href="humand.html">Humand</a>
                 <a href="imotion.html">Computer Vision</a>
                 <a href="firma-digital.html">Firma Digital</a>
@@ -1254,7 +1263,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const log = document.getElementById('assistantLog');
             const chipsBox = document.getElementById('assistantChips');
             const FAQ = [
-                { q: '¿Qué servicios ofrecen?', a: 'Trabajamos en cinco áreas: inteligencia artificial y visión artificial; software y plataformas (a la medida, Humand, punto de venta); IoT, energía y automatización; firma digital y procesos; y asesoría con modelos de negocio.', link: ['Ver las categorías', '#servicios'] },
+                { q: '¿Qué servicios ofrecen?', a: 'Trabajamos en cinco áreas: inteligencia artificial y visión artificial; software y plataformas (a la medida con Asesorías SyS, gestión de personas con Humand, punto de venta); IoT, energía y automatización; firma digital y procesos; y asesoría con modelos de negocio.', link: ['Ver las categorías', '#servicios'] },
                 { q: '¿Trabajan con una sola marca?', a: 'No. Somos asesores neutrales: primero entendemos su necesidad y luego le conectamos con la solución adecuada de nuestra red de aliados, incluidas las soluciones que representamos y nuestros socios de negocio.', link: ['Ver aliados', '#soluciones'] },
                 { q: '¿Puedo evitar una inversión inicial?', a: 'Según el proyecto, sí. Estructuramos soluciones con inversión propia (CAPEX), híbridas o 100% como servicio con pago mensual (OPEX).', link: ['Ver modelo de servicio', '#modelo'] },
                 { q: '¿Cómo empezamos un proyecto?', a: 'Con un diagnóstico: entendemos su necesidad real, activamos nuestra red de especialistas y le acompañamos en la implementación y en la medición de resultados.', link: ['Ver cómo trabajamos', '#proceso'] },
@@ -1274,19 +1283,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     b.append(a);
                 }
                 log.append(b);
-                log.scrollTop = log.scrollHeight;
+            };
+            const GREETING = '¡Hola! Elija una pregunta y le respondo al instante.';
+            const backBox = document.getElementById('assistantBack');
+            const backBtn = backBox.querySelector('button');
+            const showMenu = () => {
+                log.textContent = '';
+                bubble('bot', GREETING);
+                log.scrollTop = 0;
+                backBox.hidden = true;
+                chipsBox.hidden = false;
+                const first = chipsBox.querySelector('button');
+                if (first) first.focus();
+            };
+            const showAnswer = (item) => {
+                log.textContent = '';
+                bubble('me', item.q);
+                bubble('bot', item.a, item.link);
+                log.scrollTop = 0;
+                chipsBox.hidden = true;
+                backBox.hidden = false;
+                backBtn.focus();
             };
             FAQ.forEach(item => {
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.textContent = item.q;
-                btn.addEventListener('click', () => { bubble('me', item.q); bubble('bot', item.a, item.link); });
+                btn.addEventListener('click', () => showAnswer(item));
                 chipsBox.append(btn);
             });
+            backBtn.addEventListener('click', showMenu);
             const toggle = (open) => {
                 panel.hidden = !open;
                 fab.setAttribute('aria-expanded', String(open));
-                if (open) panel.querySelector('.assistant-chips button').focus(); else fab.focus({ preventScroll: true });
+                if (open) { if (!chipsBox.hidden) chipsBox.querySelector('button').focus(); else backBtn.focus(); } else fab.focus({ preventScroll: true });
             };
             fab.addEventListener('click', () => toggle(panel.hidden));
             panel.querySelector('.assistant-close').addEventListener('click', () => toggle(false));
