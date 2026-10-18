@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NF4L9KSF');</script>
+<!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -308,52 +316,6 @@
         }
         .card-link:hover{ text-decoration:underline; }
 
-        /* ---------- FEATURED ---------- */
-        .featured { background: linear-gradient(180deg, var(--bg), var(--bg-2) 50%, var(--bg)); border-top:1px solid var(--border); }
-        .featured-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
-        .featured-card {
-            display:flex; flex-direction:column;
-            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
-            padding:2.4rem; text-decoration:none; color:var(--text);
-            background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.16), transparent 55%);
-            transition: transform 0.35s ease, border-color 0.35s ease;
-        }
-        .featured-card:hover { transform:translateY(-6px); border-color:rgba(46,134,245,0.6); }
-        .featured-card h3 { font-size:1.45rem; margin-bottom:0.8rem; line-height:1.25; }
-        .featured-card p { color:var(--text-muted); font-size:0.96rem; margin-bottom:1.6rem; }
-        .featured-stats { display:flex; gap:2rem; margin-bottom:1.8rem; flex-wrap:wrap; }
-        .featured-stats div { border-left:2px solid var(--accent); padding-left:0.9rem; }
-        .featured-stats strong { display:block; font-family:'Space Grotesk', sans-serif; font-size:1.5rem; color:var(--accent-2); line-height:1.2; }
-        .featured-stats span { color:var(--text-muted); font-size:0.82rem; }
-        .featured-link { margin-top:auto; color:var(--accent-2); font-weight:600; font-size:0.95rem; }
-        .impact-note { color:var(--text-muted); font-size:0.8rem; margin-top:1.4rem; }
-
-        /* ---------- HIGHLIGHT ---------- */
-        .networking-highlight {
-            background: linear-gradient(180deg, var(--bg-2), var(--bg));
-            border-top:1px solid var(--border);
-            border-bottom:1px solid var(--border);
-        }
-
-        .highlight-content {
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:3rem;
-            position:relative;
-        }
-
-        .highlight-connector {
-            position:absolute;
-            top:50%; left:50%;
-            transform:translate(-50%,-50%);
-            width:1px; height:70%;
-            background: linear-gradient(180deg, transparent, var(--accent), transparent);
-            opacity:0.5;
-        }
-
-        .highlight-text h2 { font-size:1.55rem; margin-bottom:1rem; color:var(--text); }
-        .highlight-text p { color:var(--text-muted); }
-
         /* ---------- PROCESS ---------- */
         .process-track {
             position:relative;
@@ -461,11 +423,6 @@
         @media (max-width: 900px) {
             .hero-network{ width:100%; right:0; opacity:0.22; }
             .hero-title{ font-size:2.3rem; }
-            .highlight-content{ grid-template-columns:1fr; }
-            .featured-grid{ grid-template-columns:1fr; }
-            .highlight-connector{ display:none; }
-            .process-track{ grid-template-columns:1fr; }
-            .process-line-track, .process-line-fill{ display:none; }
         }
 
         @media (max-width: 768px) {
@@ -532,13 +489,260 @@
             .has-dd.open .dd { display:grid; transform:none; }
             .nav-links .nav-cta { text-align:center; }
         }
+    
+        /* =====================================================
+           REDISEÑO HOME v2 — evaluación SC-305
+           1 Logo/header · 2 Categorías · 3 Carrusel 10 s
+           4 Aliados · 5 Metodología + casos · 6 Consulta rápida
+           ===================================================== */
+        .sr-only{ position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+        :focus-visible{ outline:2px solid var(--accent-2); outline-offset:3px; border-radius:6px; }
+
+        /* 1 · Header: logo con presencia */
+        header{ padding:0.5rem 0; }
+        .logo-link{ display:inline-flex; }
+        .logo{ height:72px; width:auto; display:block; }
+        .nav-links a, .dd-toggle{ font-size:1rem; }
+
+        /* secciones más compactas en el home */
+        section{ padding:4.5rem 0; }
+        .section-head{ margin-bottom:2.4rem; }
+        .section-head.row{ max-width:none; display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; }
+        .section-head.row > div{ flex:1 1 480px; }
+        .section-head.row .section-title-dark{ margin-bottom:0; }
+        .section-head.row .section-sub{ flex:0 1 400px; max-width:400px; }
+        .alt-bg{ background:linear-gradient(180deg, var(--bg-2), var(--bg)); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+
+        /* 3 · Hero con carrusel */
+        .hero{ min-height:0; display:block; padding:9.75rem 0 3rem; }
+        .hero .container{ position:relative; z-index:2; }
+        .hero-network{ opacity:0.55; }
+        .carousel{ --interval:10s; position:relative; }
+        .slides{ display:grid; }
+        .slide{
+            grid-area:1 / 1;
+            display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr); gap:3rem; align-items:center;
+            opacity:0; visibility:hidden; transform:translateY(12px);
+            transition:opacity .6s ease, transform .6s ease, visibility .6s;
+        }
+        .slide.is-active{ opacity:1; visibility:visible; transform:none; }
+        .slide-title{ font-size:clamp(2rem, 4.1vw, 3.05rem); line-height:1.12; margin-bottom:1.1rem; }
+        .slide-title .hl{ color:var(--accent-2); }
+        .slide-desc{ color:var(--text-muted); font-size:1.1rem; max-width:540px; margin-bottom:1.9rem; }
+        .slide-ctas{ display:flex; flex-wrap:wrap; align-items:center; gap:1rem 0; }
+        .slide-ctas .cta-ghost{ margin-left:1.4rem; }
+        .slide-panel{
+            background:rgba(15,25,56,0.74); border:1px solid var(--border); border-radius:var(--radius);
+            padding:1.5rem; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+        }
+        .panel-label{ font-family:'IBM Plex Mono', monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-muted); margin-bottom:0.9rem; }
+        .slide-panel ul{ list-style:none; display:grid; gap:0.55rem; }
+        .slide-panel a, .slide-panel li > span{
+            display:block; padding:0.75rem 0.95rem; border:1px solid var(--border); border-radius:10px;
+            color:var(--text); text-decoration:none; font-weight:600; font-size:0.95rem; line-height:1.3;
+            transition:border-color .2s ease, background .2s ease;
+        }
+        .slide-panel a:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.13); }
+        .slide-panel small{ display:block; color:var(--text-muted); font-weight:400; font-size:0.8rem; margin-top:0.15rem; }
+        .slide-panel a{ position:relative; padding-right:2.4rem; }
+        .slide-panel a::after{ content:"→"; position:absolute; right:0.95rem; top:50%; transform:translateY(-50%); color:var(--accent-2); }
+
+        .carousel-bar{ display:flex; align-items:center; gap:1rem; margin-top:2.4rem; }
+        .carousel-tabs{ flex:1; display:grid; grid-template-columns:repeat(5, 1fr); gap:0.8rem; }
+        .tab{
+            position:relative; background:none; border:0; cursor:pointer; text-align:left;
+            padding:0.8rem 0 0; color:var(--text-muted);
+            font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase;
+            transition:color .2s ease;
+        }
+        .tab:hover{ color:var(--text); }
+        .tab[aria-selected="true"]{ color:var(--text); }
+        .tab::before, .tab::after{ content:""; position:absolute; top:0; left:0; height:3px; border-radius:3px; }
+        .tab::before{ right:0; background:rgba(255,255,255,0.13); }
+        .tab::after{ width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+        .tab[aria-selected="true"]::after{ animation:tabfill var(--interval) linear forwards; }
+        @keyframes tabfill{ from{ width:0; } to{ width:100%; } }
+        .carousel.hold .tab[aria-selected="true"]::after,
+        .carousel.is-paused .tab[aria-selected="true"]::after{ animation-play-state:paused; }
+        .ctrl{
+            flex:none; width:42px; height:42px; border-radius:50%; cursor:pointer;
+            background:rgba(15,25,56,0.8); border:1px solid var(--border); color:var(--text);
+            display:inline-flex; align-items:center; justify-content:center; transition:border-color .2s ease, background .2s ease;
+        }
+        .ctrl:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.15); }
+        .ctrl svg{ width:16px; height:16px; }
+        .ctrl .i-play{ display:none; }
+        .carousel.is-paused .ctrl-pause .i-play{ display:block; }
+        .carousel.is-paused .ctrl-pause .i-pause{ display:none; }
+
+        /* 2 · Cinco categorías */
+        .cat-grid{ display:grid; grid-template-columns:repeat(6, 1fr); gap:1.1rem; }
+        .cat-card{
+            grid-column:span 2; display:flex; flex-direction:column;
+            background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.6rem;
+            transition:transform .3s ease, border-color .3s ease;
+            background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.12), transparent 55%);
+        }
+        .cat-card:nth-child(n+4){ grid-column:span 3; }
+        .cat-card:hover{ transform:translateY(-4px); border-color:rgba(46,134,245,0.55); }
+        .cat-top{ display:flex; align-items:center; gap:0.9rem; margin-bottom:0.9rem; }
+        .cat-tag{
+            flex:none; width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center;
+            border:1px solid var(--accent); border-radius:10px; color:var(--accent-2);
+            font-family:'IBM Plex Mono', monospace; font-size:0.78rem; font-weight:500;
+        }
+        .cat-card h3{ font-size:1.15rem; line-height:1.25; }
+        .cat-card p{ color:var(--text-muted); font-size:0.93rem; margin-bottom:1.1rem; }
+        .chips{ display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:auto; }
+        .chip{
+            display:inline-flex; align-items:center; padding:0.4rem 0.8rem; border-radius:50px;
+            border:1px solid var(--border); background:rgba(255,255,255,0.03);
+            color:var(--text); font-size:0.82rem; text-decoration:none; transition:border-color .2s ease, background .2s ease;
+        }
+        a.chip:hover{ border-color:var(--accent-2); background:rgba(79,216,235,0.1); }
+        a.chip::after{ content:"↗"; margin-left:0.35rem; color:var(--accent-2); font-size:0.75rem; }
+        span.chip{ color:var(--text-muted); }
+
+        /* 4 · Aliados */
+        .partner-row{ display:grid; grid-template-columns:repeat(6, 1fr); gap:1rem; }
+        .partner{
+            display:flex; flex-direction:column; align-items:flex-start; gap:0.3rem;
+            background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:1.1rem 1.1rem 1.2rem;
+            text-decoration:none; color:var(--text); transition:transform .3s ease, border-color .3s ease;
+        }
+        .partner:hover{ transform:translateY(-4px); border-color:var(--accent-2); }
+        .partner-mark{
+            width:40px; height:40px; border-radius:50%; margin-bottom:0.5rem;
+            display:inline-flex; align-items:center; justify-content:center;
+            background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#08112b;
+            font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:0.95rem;
+        }
+        .partner strong{ font-family:'Space Grotesk', sans-serif; font-size:1rem; line-height:1.25; }
+        .partner span{ color:var(--text-muted); font-size:0.8rem; line-height:1.4; }
+        .partner .partner-mark{ color:#08112b; font-size:0.95rem; line-height:1; }
+
+        .partner-logo{ width:100%; height:68px; border-radius:10px; background:#F3F6FC; margin-bottom:0.6rem;
+            display:flex; align-items:center; justify-content:center; padding:0.6rem 0.9rem; }
+        .partner-logo img{ max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block; }
+        .partner-logo b{ font-family:'Space Grotesk',sans-serif; font-weight:700; color:#0B1230; font-size:0.95rem; text-align:center; line-height:1.15; }
+
+        /* 5 · Metodología + casos */
+        .steps{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1.1rem; margin-bottom:1.6rem; }
+        .step{ display:flex; gap:1rem; align-items:flex-start; padding:1.2rem 1.3rem; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,0.02); }
+        .step .process-num{ flex:none; margin:0; width:40px; height:40px; }
+        .step h3{ font-size:1.05rem; margin-bottom:0.25rem; }
+        .step p{ color:var(--text-muted); font-size:0.88rem; line-height:1.5; }
+        .case-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1.1rem; }
+        .case-card{
+            display:flex; flex-direction:column; background:var(--panel); border:1px solid var(--border);
+            border-radius:var(--radius); padding:1.6rem; text-decoration:none; color:var(--text);
+            background-image:radial-gradient(circle at 100% 0%, rgba(46,134,245,0.14), transparent 55%);
+            transition:transform .3s ease, border-color .3s ease;
+        }
+        .case-card:hover{ transform:translateY(-4px); border-color:rgba(46,134,245,0.6); }
+        .case-card .eyebrow{ margin-bottom:0.7rem; }
+        .case-card h3{ font-size:1.2rem; line-height:1.25; margin-bottom:0.6rem; }
+        .case-card p{ color:var(--text-muted); font-size:0.92rem; margin-bottom:1.1rem; }
+        .case-stats{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.1rem; }
+        .case-stats div{ border-left:2px solid var(--accent); padding-left:0.8rem; }
+        .case-stats strong{ display:block; font-family:'Space Grotesk', sans-serif; font-size:1.35rem; color:var(--accent-2); line-height:1.2; }
+        .case-stats span{ color:var(--text-muted); font-size:0.8rem; }
+        .case-link{ margin-top:auto; color:var(--accent-2); font-weight:600; font-size:0.92rem; }
+        .case-card.cta{ border-style:dashed; justify-content:center; align-items:flex-start; }
+        .note{ color:var(--text-muted); font-size:0.78rem; margin-top:1rem; }
+
+        /* Modelo de servicio (franja compacta) */
+        .model-band{ display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+        .model-band h2{ font-size:1.6rem; line-height:1.25; margin-bottom:0.4rem; }
+        .model-band p{ color:var(--text-muted); max-width:520px; font-size:0.95rem; }
+        .model-pills{ display:flex; gap:0.75rem; flex-wrap:wrap; }
+        .pill{ padding:0.8rem 1.2rem; border:1px solid var(--border); border-radius:12px; background:var(--panel); min-width:150px; }
+        .pill strong{ display:block; font-family:'Space Grotesk', sans-serif; color:var(--accent-2); font-size:1.05rem; }
+        .pill span{ color:var(--text-muted); font-size:0.8rem; }
+
+        .contact{ padding:4rem 0; }
+
+        /* 6 · Consulta rápida flotante */
+        .assistant{ position:fixed; right:1.25rem; bottom:1.25rem; z-index:1100; font-family:'Inter', sans-serif; }
+        .assistant-fab{
+            display:inline-flex; align-items:center; gap:0.6rem; cursor:pointer; border:0;
+            background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#08112b; font-weight:700; font-size:0.95rem;
+            padding:0.85rem 1.2rem; border-radius:50px; box-shadow:0 12px 30px rgba(46,134,245,0.45);
+            transition:transform .2s ease, box-shadow .2s ease;
+        }
+        .assistant-fab:hover{ transform:translateY(-2px); box-shadow:0 16px 38px rgba(46,134,245,0.6); }
+        .assistant-fab svg{ width:20px; height:20px; }
+        .assistant-panel{
+            position:absolute; right:0; bottom:calc(100% + 0.8rem); width:min(380px, calc(100vw - 2.5rem));
+            max-height:min(560px, calc(100vh - 8rem)); display:flex; flex-direction:column;
+            background:#0C1430; border:1px solid var(--border); border-radius:18px; overflow:hidden;
+            box-shadow:0 26px 60px rgba(0,0,0,0.55);
+        }
+        .assistant-panel[hidden]{ display:none; }
+        .assistant-head{ display:flex; align-items:center; justify-content:space-between; padding:0.95rem 1.1rem; border-bottom:1px solid var(--border); background:rgba(46,134,245,0.1); }
+        .assistant-head strong{ font-family:'Space Grotesk', sans-serif; font-size:1rem; }
+        .assistant-head small{ display:block; color:var(--text-muted); font-size:0.75rem; }
+        .assistant-close{ background:none; border:0; color:var(--text-muted); font-size:1.5rem; line-height:1; cursor:pointer; padding:0.2rem 0.5rem; }
+        .assistant-close:hover{ color:var(--text); }
+        .assistant-log{ padding:1rem 1.1rem; overflow-y:auto; display:flex; flex-direction:column; gap:0.6rem; flex:1; }
+        .bubble{ max-width:92%; padding:0.65rem 0.9rem; border-radius:14px; font-size:0.9rem; line-height:1.5; }
+        .bubble.bot{ background:var(--panel-2); border:1px solid var(--border); align-self:flex-start; }
+        .bubble.me{ background:var(--accent); color:#08112b; font-weight:500; align-self:flex-end; }
+        .bubble a{ color:var(--accent-2); font-weight:600; }
+        .assistant-chips{ display:flex; flex-wrap:wrap; gap:0.45rem; padding:0 1.1rem 0.9rem; }
+        .assistant-chips button{
+            cursor:pointer; background:transparent; color:var(--text); border:1px solid var(--border); border-radius:50px;
+            padding:0.4rem 0.8rem; font-size:0.8rem; font-family:inherit; transition:border-color .2s ease, background .2s ease;
+        }
+        .assistant-chips button:hover{ border-color:var(--accent-2); background:rgba(79,216,235,0.1); }
+        .assistant-actions{ display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; padding:0.9rem 1.1rem 1.1rem; border-top:1px solid var(--border); }
+        .assistant-actions a{
+            display:flex; align-items:center; justify-content:center; text-align:center; text-decoration:none; font-weight:600; font-size:0.85rem; padding:0.65rem 0.5rem; border-radius:10px;
+            border:1px solid var(--accent); color:var(--text);
+        }
+        .assistant-actions a.primary{ background:var(--accent); color:#08112b; }
+        .assistant-actions a:hover{ box-shadow:0 0 18px rgba(46,134,245,0.5); }
+
+        /* responsive */
+        @media (max-width:1060px){
+            .partner-row{ grid-template-columns:repeat(3, 1fr); }
+        }
+        @media (max-width:900px){
+            .slide{ grid-template-columns:1fr; gap:1.6rem; }
+            .slide-panel{ display:none; }
+            .cat-card, .cat-card:nth-child(n+4){ grid-column:span 6; }
+            .steps, .case-grid{ grid-template-columns:1fr; }
+            .hero{ padding:8.2rem 0 2.5rem; }
+            .hero-network{ width:100%; right:0; opacity:0.2; }
+        }
+        @media (max-width:768px){
+            .logo{ height:54px; }
+            .tab span.t-label{ display:none; }
+            .tab{ padding-top:1.1rem; }
+            .carousel-bar{ margin-top:1.6rem; }
+            .slide-ctas .cta-ghost{ margin-left:0; }
+            .assistant-fab span{ display:none; }
+            .assistant-fab{ padding:0.95rem; }
+        }
+        @media (max-width:520px){
+            .partner-row{ grid-template-columns:repeat(2, 1fr); }
+        }
+        @media (prefers-reduced-motion: reduce){
+            .slide{ transition:none; }
+            .tab[aria-selected="true"]::after{ animation:none; width:100%; }
+            .ctrl-pause{ display:none; }
+        }
     </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NF4L9KSF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <header>
         <div class="container">
             <nav>
-                <img src="logo-final.png" alt="Tech Advisors LA" class="logo">
+                <a href="index.html" class="logo-link" aria-label="Tech Advisors LA, ir al inicio"><img src="logo-final.png" alt="Tech Advisors LA" class="logo" width="180" height="72"></a>
                 <ul class="nav-links">
                     <li class="has-dd">
                         <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-servicios">Servicios <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -573,20 +777,18 @@
         </div>
     </header>
 
-    <section class="hero">
+    <main>
+    <!-- 3 · HERO CON CARRUSEL (10 s) -->
+    <section class="hero" id="inicio" aria-label="Categorías de soluciones">
         <div class="hero-grid-overlay"></div>
 
-        <svg class="hero-network" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <svg class="hero-network" viewBox="0 0 800 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
                 <filter id="nodeGlow" x="-150%" y="-150%" width="400%" height="400%">
                     <feGaussianBlur stdDeviation="4" result="blur" />
-                    <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
             </defs>
-
             <g id="netLines">
                 <line class="network-line" x1="120" y1="120" x2="330" y2="80" />
                 <line class="network-line" x1="330" y1="80" x2="540" y2="150" />
@@ -604,7 +806,6 @@
                 <line class="network-line" x1="220" y1="530" x2="440" y2="520" />
                 <line class="network-line" x1="440" y1="520" x2="640" y2="540" />
             </g>
-
             <g id="netNodes">
                 <circle class="network-node" cx="120" cy="120" r="6" />
                 <circle class="network-node" cx="330" cy="80" r="7" />
@@ -621,229 +822,256 @@
         </svg>
 
         <div class="container">
-            <div class="hero-content">
-                <span class="eyebrow">Asesoría · IA · Transformación Digital</span>
-                <h1 class="hero-title">No vendemos tecnología. Conectamos su empresa con la <span class="hl">solución exacta</span>.</h1>
-                <p class="hero-sub">Desde inteligencia artificial y software a la medida hasta gestión de talento humano con Humand, computer vision, firma digital e IoT, evaluamos su infraestructura, activamos nuestra red de especialistas y lo acompañamos hasta la implementación — con resultados medibles, no promesas genéricas.</p>
-                <a href="contacto.html" class="cta-button">Diagnostique su Proyecto →</a>
-                <a href="#proceso" class="cta-ghost">Ver cómo trabajamos</a>
+            <h1 class="sr-only">Tech Advisors LA: transformación digital, inteligencia artificial e IoT en Costa Rica y Latinoamérica</h1>
+
+            <div class="carousel" id="heroCarousel" role="region" aria-roledescription="carrusel" aria-label="Categorías de soluciones de Tech Advisors LA">
+                <div class="slides" id="heroSlides" aria-live="off">
+
+                    <article class="slide is-active" role="group" aria-roledescription="diapositiva" aria-label="1 de 5">
+                        <div>
+                            <span class="eyebrow">Inteligencia Artificial y Visión Artificial</span>
+                            <h2 class="slide-title">IA aplicada a su negocio, con <span class="hl">resultados medibles</span>.</h2>
+                            <p class="slide-desc">Automatización inteligente, análisis predictivo, asistentes virtuales y computer vision sobre las cámaras que ya tiene instaladas.</p>
+                            <div class="slide-ctas">
+                                <a href="contacto.html" class="cta-button">Diagnóstico de IA →</a>
+                                <a href="imotion.html" class="cta-ghost">Ver computer vision</a>
+                            </div>
+                        </div>
+                        <div class="slide-panel">
+                            <p class="panel-label">Incluye</p>
+                            <ul>
+                                <li><a href="imotion.html">Computer vision · iMotion<small>IA sobre sus cámaras para retail</small></a></li>
+                                <li><span>Automatización inteligente<small>Procesos que se ejecutan solos</small></span></li>
+                                <li><span>Asistentes virtuales y análisis predictivo<small>Decisiones con datos, no con suposiciones</small></span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 5">
+                        <div>
+                            <span class="eyebrow">Software y Plataformas</span>
+                            <h2 class="slide-title">Software hecho para <span class="hl">cómo trabaja</span> su empresa.</h2>
+                            <p class="slide-desc">Desarrollo a la medida, gestión del talento humano con Humand y punto de venta con factura electrónica, desde el levantamiento hasta el soporte.</p>
+                            <div class="slide-ctas">
+                                <a href="contacto.html" class="cta-button">Solicitar propuesta →</a>
+                                <a href="humand.html" class="cta-ghost">Ver Humand</a>
+                            </div>
+                        </div>
+                        <div class="slide-panel">
+                            <p class="panel-label">Incluye</p>
+                            <ul>
+                                <li><span>Software a la medida<small>Aplicaciones web, móviles e integraciones</small></span></li>
+                                <li><a href="humand.html">Recursos Humanos · Humand<small>Comunicación y gestión del personal</small></a></li>
+                                <li><a href="pos.html">Punto de venta · POS<small>Facturación, inventario y factura electrónica</small></a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 5">
+                        <div>
+                            <span class="eyebrow">IoT, Energía y Automatización</span>
+                            <h2 class="slide-title">Conecte, mida y <span class="hl">automatice</span> su operación.</h2>
+                            <p class="slide-desc">Sensores y redes LoRaWAN, RFID, automatización industrial y medición inteligente de energía para operar con datos en tiempo real.</p>
+                            <div class="slide-ctas">
+                                <a href="contacto.html" class="cta-button">Evaluar mi proyecto →</a>
+                                <a href="agricultura.html" class="cta-ghost">Ver agricultura inteligente</a>
+                            </div>
+                        </div>
+                        <div class="slide-panel">
+                            <p class="panel-label">Incluye</p>
+                            <ul>
+                                <li><a href="agricultura.html">Agricultura inteligente<small>Sensores IoT y redes LoRaWAN</small></a></li>
+                                <li><a href="rfid.html">RFID y tags<small>Comercio y acceso a condominios</small></a></li>
+                                <li><a href="automatizacion.html">Automatización · CIP y SIP<small>Instrumentación y procesos industriales</small></a></li>
+                                <li><a href="energia.html">Gestión energética<small>Medición inteligente y paneles solares</small></a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 5">
+                        <div>
+                            <span class="eyebrow">Firma Digital y Procesos</span>
+                            <h2 class="slide-title">Firmas y procesos digitales con <span class="hl">validez en el tiempo</span>.</h2>
+                            <p class="slide-desc">El reto no es firmar, es demostrar la validez del documento años después. Firma electrónica certificada, flujos de aprobación y evidencia preservada.</p>
+                            <div class="slide-ctas">
+                                <a href="contacto.html" class="cta-button">Consultar firma digital →</a>
+                                <a href="firma-digital.html" class="cta-ghost">Ver SIGN.TRUST®</a>
+                            </div>
+                        </div>
+                        <div class="slide-panel">
+                            <p class="panel-label">Incluye</p>
+                            <ul>
+                                <li><a href="firma-digital.html">Firma digital · SIGN.TRUST®<small>Simple, avanzada, cualificada y jurídica</small></a></li>
+                                <li><span>Flujos de aprobación digital<small>Menos papel y menos fricción</small></span></li>
+                                <li><span>Preservación de la evidencia<small>Trazabilidad durante todo el ciclo de vida</small></span></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 5">
+                        <div>
+                            <span class="eyebrow">Asesoría y Modelos de Negocio</span>
+                            <h2 class="slide-title">No vendemos tecnología. Conectamos su empresa con la <span class="hl">solución exacta</span>.</h2>
+                            <p class="slide-desc">Asesores neutrales: evaluamos su necesidad, activamos nuestra red de especialistas y estructuramos el proyecto como CAPEX, OPEX o todo como servicio.</p>
+                            <div class="slide-ctas">
+                                <a href="contacto.html" class="cta-button">Agendar una conversación →</a>
+                                <a href="asesoria.html" class="cta-ghost">Ver asesoría</a>
+                            </div>
+                        </div>
+                        <div class="slide-panel">
+                            <p class="panel-label">Incluye</p>
+                            <ul>
+                                <li><a href="asesoria.html">Networking estratégico<small>La solución correcta, no la más conveniente</small></a></li>
+                                <li><a href="asesoria.html">Modelos de negocio y monetización<small>Cómo cobrar y cómo invertir</small></a></li>
+                                <li><a href="#modelo">CAPEX · OPEX · como servicio<small>Usted decide cómo invertir</small></a></li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="carousel-bar">
+                    <button class="ctrl ctrl-prev" type="button" aria-label="Diapositiva anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    <div class="carousel-tabs" role="tablist" aria-label="Elegir categoría">
+                        <button class="tab" role="tab" aria-selected="true" aria-label="Inteligencia artificial y visión artificial"><span class="t-label">IA y visión</span></button>
+                        <button class="tab" role="tab" aria-selected="false" aria-label="Software y plataformas"><span class="t-label">Software</span></button>
+                        <button class="tab" role="tab" aria-selected="false" aria-label="IoT, energía y automatización"><span class="t-label">IoT y energía</span></button>
+                        <button class="tab" role="tab" aria-selected="false" aria-label="Firma digital y procesos"><span class="t-label">Firma digital</span></button>
+                        <button class="tab" role="tab" aria-selected="false" aria-label="Asesoría y modelos de negocio"><span class="t-label">Asesoría</span></button>
+                    </div>
+                    <button class="ctrl ctrl-pause" type="button" aria-label="Pausar rotación automática">
+                        <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg>
+                    </button>
+                    <button class="ctrl ctrl-next" type="button" aria-label="Diapositiva siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="services" id="servicios">
+    <!-- 2 · CINCO CATEGORÍAS -->
+    <section class="categories" id="servicios">
         <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">Servicios</span>
-                <h2 class="section-title-dark reveal">Capacidades tecnológicas, sin ataduras a una sola marca</h2>
-                <p class="section-sub reveal">Evaluamos su necesidad y movilizamos la tecnología de punta correcta — no la que más nos conviene vender.</p>
+            <div class="section-head row">
+                <div>
+                    <span class="eyebrow">Qué hacemos</span>
+                    <h2 class="section-title-dark reveal">Cinco categorías, una sola conversación</h2>
+                </div>
+                <p class="section-sub reveal">Toda nuestra oferta en un vistazo. Evaluamos su necesidad y movilizamos la tecnología correcta, no la que más nos conviene vender.</p>
             </div>
 
-            <div class="services-grid reveal-stagger">
-                <div class="service-card">
-                    <div class="node-tag">IA</div>
-                    <h3>Inteligencia Artificial e Innovación</h3>
-                    <p>IA aplicada con criterio de negocio: automatización inteligente de procesos, análisis predictivo de datos y asistentes virtuales que generan resultados medibles, no solo titulares.</p>
-                </div>
+            <div class="cat-grid reveal-stagger">
+                <article class="cat-card" id="cat-ia">
+                    <div class="cat-top"><span class="cat-tag">IA</span><h3>Inteligencia Artificial y Visión Artificial</h3></div>
+                    <p>Automatización inteligente, análisis predictivo, asistentes virtuales y analítica de video con resultados medibles.</p>
+                    <div class="chips"><span class="chip">IA e innovación</span><a class="chip" href="imotion.html">Computer vision · iMotion</a></div>
+                </article>
 
-                <div class="service-card">
-                    <div class="node-tag">SW</div>
-                    <h3>Desarrollo de Software a la Medida</h3>
-                    <p>Diseñamos y construimos aplicaciones web, móviles e integraciones hechas para sus procesos: desde el levantamiento de requerimientos hasta la puesta en producción y el soporte continuo.</p>
-                </div>
+                <article class="cat-card" id="cat-software">
+                    <div class="cat-top"><span class="cat-tag">SW</span><h3>Software y Plataformas</h3></div>
+                    <p>Aplicaciones a la medida y plataformas listas para gestionar su gente y sus ventas.</p>
+                    <div class="chips"><span class="chip">Software a la medida</span><a class="chip" href="humand.html">Humand · RR.HH.</a><a class="chip" href="pos.html">Punto de venta</a></div>
+                </article>
 
-                <div class="service-card">
-                    <div class="node-tag">HR</div>
-                    <h3>Plataforma de Recursos Humanos — Humand</h3>
-                    <p>Implementamos Humand para digitalizar la gestión de su gente: comunicación interna, expediente digital, vacaciones y permisos, colillas de pago, control de marcas y evaluaciones del desempeño, todo desde una app en el celular de cada colaborador.</p>
-                    <a href="humand.html" class="card-link">Conocer Humand →</a>
-                </div>
+                <article class="cat-card" id="cat-iot">
+                    <div class="cat-top"><span class="cat-tag">IoT</span><h3>IoT, Energía y Automatización</h3></div>
+                    <p>Redes de sensores, control de acceso, procesos industriales y medición inteligente de energía.</p>
+                    <div class="chips"><a class="chip" href="agricultura.html">Agricultura inteligente</a><a class="chip" href="rfid.html">RFID y tags</a><a class="chip" href="automatizacion.html">CIP y SIP</a><a class="chip" href="energia.html">Energía</a></div>
+                </article>
 
-                <div class="service-card">
-                    <div class="node-tag">NW</div>
-                    <h3>Networking Estratégico y Asesoría</h3>
-                    <p>Evaluamos su infraestructura actual y activamos nuestra red curada de proveedores y especialistas para conectarlo exactamente con lo que su empresa necesita.</p>
-                    <a href="asesoria.html" class="card-link">Ver asesoría estratégica →</a>
-                </div>
+                <article class="cat-card" id="cat-firma">
+                    <div class="cat-top"><span class="cat-tag">FD</span><h3>Firma Digital y Procesos</h3></div>
+                    <p>Digitalice sus procesos con firma electrónica certificada, flujos de aprobación y evidencia que conserva su validez.</p>
+                    <div class="chips"><a class="chip" href="firma-digital.html">SIGN.TRUST®</a><span class="chip">Flujos de aprobación</span><span class="chip">Preservación de evidencia</span></div>
+                </article>
 
-                <div class="service-card">
-                    <div class="node-tag">CV</div>
-                    <h3>Computer Vision — Analítica de Video con IA</h3>
-                    <p>Convertimos sus cámaras en sensores inteligentes: conteo de personas, filas, detección de comportamientos y alertas en tiempo real. Representamos a iMotion Analytics en Costa Rica.</p>
-                    <a href="imotion.html" class="card-link">Computer vision para retail →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="node-tag">IoT</div>
-                    <h3>IoT y Agricultura Inteligente</h3>
-                    <p>Redes de sensores y plataformas de gestión que conectan sus operaciones, desde la finca hasta la planta, con monitoreo remoto y decisiones en tiempo real.</p>
-                    <a href="agricultura.html" class="card-link">Agricultura inteligente →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="node-tag">POS</div>
-                    <h3>Punto de Venta como Servicio</h3>
-                    <p>Facturación, inventario, analíticas, factura electrónica y lealtad para PYMES y cadenas de retail, con pago mensual. Representamos a ASP Software Company.</p>
-                    <a href="pos.html" class="card-link">Conocer el POS →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="node-tag">RFID</div>
-                    <h3>RFID y Tags</h3>
-                    <p>Prevención de pérdidas, inventario y trazabilidad para el comercio, y control de acceso de residentes y vehículos para condominios.</p>
-                    <a href="rfid.html" class="card-link">Conocer RFID →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="node-tag">CIP</div>
-                    <h3>Automatización Industrial · CIP y SIP</h3>
-                    <p>Limpieza y esterilización en sitio, instrumentación, dosificación y edificios inteligentes para la industria.</p>
-                    <a href="automatizacion.html" class="card-link">Conocer la solución →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="node-tag">EN</div>
-                    <h3>Gestión Energética</h3>
-                    <p>Asesoría y sistemas inteligentes de medición y control eléctrico, y paneles solares para consumir mejor y gastar menos.</p>
-                    <a href="energia.html" class="card-link">Conocer la solución →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="node-tag">FD</div>
-                    <h3>Transformación y Firma Digital</h3>
-                    <p>Digitalizamos procesos y aprobaciones con firma digital que conserva su validez en el tiempo. Representamos e implementamos SIGN.TRUST® en Costa Rica y Latinoamérica.</p>
-                    <a href="firma-digital.html" class="card-link">Conocer SIGN.TRUST® →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="node-tag">RM</div>
-                    <h3>Modelos de Negocio y Monetización</h3>
-                    <p>Traemos tecnología líder al mercado, armamos ecosistemas de soluciones integrales y definimos el modelo de negocio y de cobro adecuado para cada cliente — nunca una solución genérica.</p>
-                    <a href="asesoria.html" class="card-link">Ver asesoría estratégica →</a>
-                </div>
+                <article class="cat-card" id="cat-asesoria">
+                    <div class="cat-top"><span class="cat-tag">AS</span><h3>Asesoría y Modelos de Negocio</h3></div>
+                    <p>Networking estratégico, modelos de negocio y de cobro, y proyectos como servicio administrado.</p>
+                    <div class="chips"><a class="chip" href="asesoria.html">Networking estratégico</a><a class="chip" href="asesoria.html">Modelos de negocio</a><a class="chip" href="#modelo">CAPEX · OPEX</a></div>
+                </article>
             </div>
         </div>
     </section>
 
-    <section class="featured" id="soluciones">
+    <!-- 4 · ALIADOS TECNOLÓGICOS -->
+    <section class="partners alt-bg" id="soluciones">
         <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">Soluciones destacadas</span>
-                <h2 class="section-title-dark reveal">Soluciones que representamos e implementamos</h2>
-                <p class="section-sub reveal">Plataformas probadas que representamos en Costa Rica y acompañamos de principio a fin.</p>
+            <div class="section-head row">
+                <div>
+                    <span class="eyebrow">Aliados tecnológicos</span>
+                    <h2 class="section-title-dark reveal">Plataformas probadas que representamos y acompañamos</h2>
+                </div>
+                <p class="section-sub reveal">Detrás de cada solución hay un aliado especializado. Nosotros las implementamos y las acompañamos de principio a fin.</p>
             </div>
-            <div class="featured-grid reveal-stagger">
-                <a href="humand.html" class="featured-card">
-                    <span class="eyebrow">Recursos Humanos · Humand</span>
-                    <h3>Toda la gestión de su gente en una sola app</h3>
-                    <p>Comunicación interna, vacaciones y permisos, colillas de pago, control de marcas y expediente digital, al alcance de cada colaborador, incluso de quienes no tienen correo de la empresa.</p>
-                    <div class="featured-stats">
+
+            <div class="partner-row reveal-stagger">
+                <a class="partner" href="humand.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/humand.png" alt="" loading="lazy" decoding="async"></span><strong>Humand</strong><span>Recursos Humanos</span></a>
+                <a class="partner" href="imotion.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/imotion.png" alt="" loading="lazy" decoding="async"></span><strong>iMotion Analytics</strong><span>Computer vision</span></a>
+                <a class="partner" href="firma-digital.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/signtrust.png" alt="" loading="lazy" decoding="async"></span><strong>SIGN.TRUST®</strong><span>Firma digital</span></a>
+                <a class="partner" href="pos.html"><span class="partner-logo" aria-hidden="true"><b>ASP Software</b></span><strong>ASP Software Company</strong><span>Punto de venta</span></a>
+                <a class="partner" href="agricultura.html"><span class="partner-logo" aria-hidden="true"><b>Lain Holdings</b></span><strong>Lain Holdings</strong><span>IoT y LoRaWAN</span></a>
+                <a class="partner" href="rfid.html"><span class="partner-logo" aria-hidden="true"><b>Smart Costa</b></span><strong>Smart Costa</strong><span>RFID y tags</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 · METODOLOGÍA Y PORTAFOLIO -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="section-head row">
+                <div>
+                    <span class="eyebrow">Cómo trabajamos</span>
+                    <h2 class="section-title-dark reveal">De la necesidad real a la solución conectada</h2>
+                </div>
+                <p class="section-sub reveal">Tres pasos, respaldados por nuestra red de especialistas, y proyectos que ya lo demuestran.</p>
+            </div>
+
+            <ol class="steps reveal-stagger" style="list-style:none;">
+                <li class="step"><span class="process-num mono">01</span><div><h3>Diagnóstico</h3><p>Entendemos su necesidad real y el estado actual de su infraestructura.</p></div></li>
+                <li class="step"><span class="process-num mono">02</span><div><h3>Conexión</h3><p>Activamos nuestra red de aliados y especialistas para hallar la solución exacta.</p></div></li>
+                <li class="step"><span class="process-num mono">03</span><div><h3>Implementación</h3><p>Acompañamos la puesta en marcha y medimos los resultados.</p></div></li>
+            </ol>
+
+            <div class="case-grid reveal-stagger">
+                <a class="case-card" href="agricultura.html#agroboost">
+                    <span class="eyebrow">Proyecto de impacto · IoT agrícola</span>
+                    <h3>AgroBoost 4.0 · MICITT</h3>
+                    <p>Red de sensores y LoRaWAN para caficultores de la zona de Dota. Participamos, junto con Lain Holdings, en el diagnóstico, la estabilización y el fortalecimiento de la red.</p>
+                    <span class="case-link">Ver el proyecto →</span>
+                </a>
+                <a class="case-card" href="humand.html">
+                    <span class="eyebrow">Gestión de personas · Humand</span>
+                    <h3>Toda la gestión de su gente en una app</h3>
+                    <div class="case-stats">
                         <div><strong>98%</strong><span>de colaboradores alcanzados*</span></div>
                         <div><strong>1–2 h</strong><span>de respuesta, antes 1–2 días*</span></div>
                     </div>
-                    <span class="featured-link">Conocer Humand →</span>
+                    <span class="case-link">Conocer Humand →</span>
                 </a>
-                <a href="imotion.html" class="featured-card">
-                    <span class="eyebrow">Computer Vision · iMotion Analytics</span>
-                    <h3>Sus cámaras ya ven su tienda. Ahora pueden ayudarle a decidir.</h3>
-                    <p>Computer vision sobre sus cámaras actuales para contar visitantes, anticipar horas pico, reducir filas en cajas y detectar riesgos de pérdida antes de que ocurran.</p>
-                    <div class="featured-stats">
-                        <div><strong>+99%</strong><span>de fiabilidad en conteo de aforo</span></div>
-                        <div><strong>50+</strong><span>casos de uso de IA</span></div>
-                    </div>
-                    <span class="featured-link">Conocer la solución →</span>
-                </a>
-                <a href="firma-digital.html" class="featured-card">
-                    <span class="eyebrow">Firma Digital · SIGN.TRUST®</span>
-                    <h3>El reto no es firmar. Es demostrar la validez años después.</h3>
-                    <p>Firma simple, avanzada, cualificada con PKI y jurídica, con trazabilidad y preservación de la evidencia durante todo el ciclo de vida del documento.</p>
-                    <div class="featured-stats">
-                        <div><strong>4</strong><span>clases de firma</span></div>
-                        <div><strong>2 modelos</strong><span>en la nube o en su infraestructura</span></div>
-                    </div>
-                    <span class="featured-link">Conocer SIGN.TRUST® →</span>
-                </a>
-                <a href="pos.html" class="featured-card">
-                    <span class="eyebrow">Punto de Venta · ASP Software Company</span>
-                    <h3>Su punto de venta como ventaja competitiva, no como un gasto.</h3>
-                    <p>Facturación, apartados, cierres de caja, inventario, inteligencia de negocios, factura electrónica y lealtad, en una suscripción mensual para PYMES y cadenas de retail.</p>
-                    <div class="featured-stats">
-                        <div><strong>20 años</strong><span>de evolución en el mercado</span></div>
-                        <div><strong>Sin CAPEX</strong><span>pago mensual por servicio</span></div>
-                    </div>
-                    <span class="featured-link">Conocer el POS →</span>
+                <a class="case-card cta" href="contacto.html">
+                    <span class="eyebrow">Su proyecto</span>
+                    <h3>Puede ser el siguiente caso</h3>
+                    <p>Cuéntenos qué necesita y empezamos con un diagnóstico, sin compromiso.</p>
+                    <span class="case-link">Contáctenos →</span>
                 </a>
             </div>
-            <p class="impact-note">* Caso de éxito publicado por Humand.</p>
+            <p class="note">* Caso de éxito publicado por Humand.</p>
         </div>
     </section>
 
-    <section class="networking-highlight">
+    <!-- MODELO DE SERVICIO (franja compacta) -->
+    <section class="alt-bg" id="modelo" style="padding:3rem 0;">
         <div class="container">
-            <div class="highlight-content">
-                <div class="highlight-connector"></div>
-                <div class="highlight-text reveal">
-                    <h2>La neutralidad es nuestra ventaja</h2>
-                    <p>No trabajamos para un fabricante, trabajamos para usted. Analizamos su necesidad real y le conectamos con la solución exacta de nuestra red validada de partners — sin sesgos comerciales de por medio.</p>
+            <div class="model-band">
+                <div>
+                    <span class="eyebrow">Modelo de servicio</span>
+                    <h2>CAPEX, OPEX o 100% como servicio: usted decide</h2>
+                    <p>Operamos como una firma de servicios administrados y estructuramos cada proyecto según cómo su empresa maneja el presupuesto.</p>
                 </div>
-                <div class="highlight-text reveal">
-                    <h2>IA con resultados, no solo tendencia</h2>
-                    <p>Ayudamos a organizaciones públicas y privadas a identificar oportunidades reales de inteligencia artificial, con un enfoque práctico y medible desde el primer día.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="service-model" id="modelo">
-        <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">Modelo de Servicio</span>
-                <h2 class="section-title-dark reveal">CAPEX, OPEX, o 100% como servicio — usted decide</h2>
-                <p class="section-sub reveal">Operamos como una firma de servicios administrados (Managed Services): estructuramos cada proyecto según cómo su empresa necesita manejar el presupuesto, no al revés.</p>
-            </div>
-
-            <div class="services-grid reveal-stagger">
-                <div class="service-card">
-                    <div class="node-tag">MS</div>
-                    <h3>Modelo Híbrido (CAPEX + OPEX)</h3>
-                    <p>Para organizaciones que prefieren invertir en infraestructura propia, complementada con soporte, gestión y servicios continuos a cargo de nuestra red de especialistas.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="node-tag">aaS</div>
-                    <h3>100% OPEX — Todo como Servicio</h3>
-                    <p>Convierta la inversión en gasto operativo: soluciones de IA, software, gestión de RR.HH., IoT, computer vision y firma digital administradas de forma eficiente, sin desembolsos de capital iniciales ni gestión técnica interna.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="process" id="proceso">
-        <div class="container">
-            <div class="section-head">
-                <span class="eyebrow">Cómo trabajamos</span>
-                <h2 class="section-title-dark reveal">De la necesidad real a la solución conectada</h2>
-                <p class="section-sub reveal">Un proceso simple, en tres pasos, respaldado por nuestra red de partners.</p>
-            </div>
-
-            <div class="process-track">
-                <div class="process-line-track"></div>
-                <div class="process-line-fill"></div>
-
-                <div class="process-node reveal">
-                    <span class="process-num mono">01</span>
-                    <h3>Diagnóstico</h3>
-                    <p>Entendemos a fondo su necesidad real y el estado actual de su infraestructura tecnológica.</p>
-                </div>
-                <div class="process-node reveal">
-                    <span class="process-num mono">02</span>
-                    <h3>Conexión</h3>
-                    <p>Activamos nuestra red curada de partners y especialistas para encontrar la solución exacta — en IA, software a la medida, recursos humanos, IoT, ciberseguridad o transformación digital.</p>
-                </div>
-                <div class="process-node reveal">
-                    <span class="process-num mono">03</span>
-                    <h3>Implementación</h3>
-                    <p>Acompañamos la puesta en marcha y medimos resultados, para que la transformación digital sea real, no solo un proyecto más.</p>
+                <div class="model-pills">
+                    <div class="pill"><strong>CAPEX</strong><span>Inversión propia</span></div>
+                    <div class="pill"><strong>Híbrido</strong><span>CAPEX + OPEX</span></div>
+                    <div class="pill"><strong>100% OPEX</strong><span>Todo como servicio</span></div>
                 </div>
             </div>
         </div>
@@ -854,11 +1082,35 @@
             <div class="contact-cta reveal">
                 <span class="eyebrow">Contacto</span>
                 <h2 class="section-title-dark">Inicie su Transformación Digital</h2>
-                <p class="section-sub">Conversemos sobre su proyecto de IA, software a la medida, gestión de recursos humanos o transformación digital, sin compromiso.</p>
+                <p class="section-sub">Conversemos sobre su proyecto de IA, software, IoT o transformación digital, sin compromiso.</p>
                 <a href="contacto.html" class="cta-button">Contáctenos →</a>
             </div>
         </div>
     </section>
+    </main>
+
+    <!-- 6 · CONSULTA RÁPIDA -->
+    <div class="assistant" id="assistant">
+        <div class="assistant-panel" id="assistantPanel" role="dialog" aria-label="Consulta rápida" hidden>
+            <div class="assistant-head">
+                <div><strong>Consulta rápida</strong><small>Respuestas inmediatas a lo más preguntado</small></div>
+                <button class="assistant-close" type="button" aria-label="Cerrar consulta rápida">&times;</button>
+            </div>
+            <div class="assistant-log" id="assistantLog" aria-live="polite">
+                <div class="bubble bot">¡Hola! Elija una pregunta y le respondo al instante.</div>
+            </div>
+            <div class="assistant-chips" id="assistantChips"></div>
+            <div class="assistant-actions">
+                <a class="primary" href="https://wa.me/50687032711?text=Hola%20Eric%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Tengo%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a>
+                <a href="contacto.html">Otras formas de contacto</a>
+            </div>
+        </div>
+        <button class="assistant-fab" id="assistantFab" type="button" aria-expanded="false" aria-controls="assistantPanel">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span>Consulta rápida</span>
+        </button>
+    </div>
+
 
     <footer>
         <div class="container">
@@ -886,7 +1138,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // mobile nav toggle
+            // ---------- menú móvil ----------
             const navToggle = document.querySelector('.nav-toggle');
             const navLinks = document.querySelector('.nav-links');
             if (navToggle && navLinks) {
@@ -894,7 +1146,7 @@
                 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
             }
 
-            // dropdown menus
+            // ---------- menús desplegables ----------
             const dds = document.querySelectorAll('.has-dd');
             const closeAll = (except) => dds.forEach(d => {
                 if (d === except) return;
@@ -924,53 +1176,125 @@
             });
             document.addEventListener('click', (e) => { if (!e.target.closest('.has-dd')) closeAll(); });
             document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
-            // highlight current page
-            const here = location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('.dd a').forEach(a => {
-                if (a.getAttribute('href') === here) {
-                    a.classList.add('current');
-                    a.closest('.has-dd').querySelector('.dd-toggle').classList.add('current');
-                }
-            });
 
+            // ---------- carrusel del hero (rotación cada 10 s) ----------
+            // El intervalo vive en CSS (--interval: 10s) y la barra de cada pestaña se llena en ese tiempo;
+            // al terminar la animación (animationend) pasa a la siguiente categoría. Así barra y rotación nunca se desfasan.
+            const carousel = document.getElementById('heroCarousel');
+            if (carousel) {
+                const slides = [...carousel.querySelectorAll('.slide')];
+                const tabs = [...carousel.querySelectorAll('.tab')];
+                const slidesWrap = document.getElementById('heroSlides');
+                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                let current = 0;
+                let playing = !reduceMotion;
+
+                const go = (n) => {
+                    current = (n + slides.length) % slides.length;
+                    slides.forEach((s, k) => s.classList.toggle('is-active', k === current));
+                    tabs.forEach((t, k) => { t.setAttribute('aria-selected', String(k === current)); t.tabIndex = k === current ? 0 : -1; });
+                };
+                const setPlaying = (on) => {
+                    playing = on;
+                    carousel.classList.toggle('is-paused', !on);
+                    slidesWrap.setAttribute('aria-live', on ? 'off' : 'polite');
+                    const pb = carousel.querySelector('.ctrl-pause');
+                    pb.setAttribute('aria-label', on ? 'Pausar rotación automática' : 'Reanudar rotación automática');
+                };
+
+                carousel.querySelector('.ctrl-prev').addEventListener('click', () => go(current - 1));
+                carousel.querySelector('.ctrl-next').addEventListener('click', () => go(current + 1));
+                carousel.querySelector('.ctrl-pause').addEventListener('click', () => setPlaying(!playing));
+                tabs.forEach((t, k) => t.addEventListener('click', () => go(k)));
+                carousel.querySelector('.carousel-tabs').addEventListener('keydown', (e) => {
+                    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+                    e.preventDefault();
+                    go(current + (e.key === 'ArrowRight' ? 1 : -1));
+                    tabs[current].focus();
+                });
+                carousel.addEventListener('animationend', (e) => {
+                    if (e.animationName === 'tabfill' && playing) go(current + 1);
+                });
+                // pausa mientras el visitante lee o interactúa
+                carousel.addEventListener('mouseenter', () => carousel.classList.add('hold'));
+                carousel.addEventListener('mouseleave', () => carousel.classList.remove('hold'));
+                carousel.addEventListener('focusin', () => carousel.classList.add('hold'));
+                carousel.addEventListener('focusout', () => carousel.classList.remove('hold'));
+                // deslizar en móvil
+                let x0 = null;
+                slidesWrap.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+                slidesWrap.addEventListener('touchend', (e) => {
+                    if (x0 === null) return;
+                    const dx = e.changedTouches[0].clientX - x0;
+                    if (Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
+                    x0 = null;
+                });
+                go(0);
+                if (reduceMotion) setPlaying(false);
+            }
+
+            // ---------- consulta rápida ----------
+            const fab = document.getElementById('assistantFab');
+            const panel = document.getElementById('assistantPanel');
+            const log = document.getElementById('assistantLog');
+            const chipsBox = document.getElementById('assistantChips');
+            const FAQ = [
+                { q: '¿Qué servicios ofrecen?', a: 'Trabajamos en cinco áreas: inteligencia artificial y visión artificial; software y plataformas (a la medida, Humand, punto de venta); IoT, energía y automatización; firma digital y procesos; y asesoría con modelos de negocio.', link: ['Ver las categorías', '#servicios'] },
+                { q: '¿Trabajan con una sola marca?', a: 'No. Somos asesores neutrales: primero entendemos su necesidad y luego le conectamos con la solución adecuada de nuestra red de aliados, incluidas las plataformas que representamos.', link: ['Ver aliados', '#soluciones'] },
+                { q: '¿Puedo evitar una inversión inicial?', a: 'Según el proyecto, sí. Estructuramos soluciones con inversión propia (CAPEX), híbridas o 100% como servicio con pago mensual (OPEX).', link: ['Ver modelo de servicio', '#modelo'] },
+                { q: '¿Cómo empezamos un proyecto?', a: 'Con un diagnóstico: entendemos su necesidad real, activamos nuestra red de especialistas y le acompañamos en la implementación y en la medición de resultados.', link: ['Ver cómo trabajamos', '#proceso'] },
+                { q: '¿Atienden fuera de Costa Rica?', a: 'Sí. Atendemos al sector público y privado en Costa Rica y Latinoamérica.' },
+                { q: '¿Cuánto cuesta?', a: 'Depende del alcance. Después del diagnóstico le presentamos una propuesta con el modelo de pago que mejor se ajuste a su empresa.', link: ['Solicitar un diagnóstico', 'contacto.html'] }
+            ];
+            const bubble = (cls, text, link) => {
+                const b = document.createElement('div');
+                b.className = 'bubble ' + cls;
+                b.textContent = text;
+                if (link) {
+                    b.append(' ');
+                    const a = document.createElement('a');
+                    a.textContent = link[0] + ' →';
+                    a.href = link[1];
+                    if (link[1].startsWith('#')) a.addEventListener('click', () => toggle(false));
+                    b.append(a);
+                }
+                log.append(b);
+                log.scrollTop = log.scrollHeight;
+            };
+            FAQ.forEach(item => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.textContent = item.q;
+                btn.addEventListener('click', () => { bubble('me', item.q); bubble('bot', item.a, item.link); });
+                chipsBox.append(btn);
+            });
+            const toggle = (open) => {
+                panel.hidden = !open;
+                fab.setAttribute('aria-expanded', String(open));
+                if (open) panel.querySelector('.assistant-chips button').focus(); else fab.focus({ preventScroll: true });
+            };
+            fab.addEventListener('click', () => toggle(panel.hidden));
+            panel.querySelector('.assistant-close').addEventListener('click', () => toggle(false));
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) toggle(false); });
+
+            // ---------- animaciones GSAP ----------
             if (typeof gsap === 'undefined') return;
             gsap.registerPlugin(ScrollTrigger);
-
-            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-            // prep network line draw effect
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             document.querySelectorAll('.network-line').forEach(line => {
                 const len = line.getTotalLength ? line.getTotalLength() : 300;
                 line.style.strokeDasharray = len;
-                line.style.strokeDashoffset = reduceMotion ? 0 : len;
+                line.style.strokeDashoffset = reduce ? 0 : len;
             });
-
-            if (reduceMotion) {
-                gsap.set('.network-node', { opacity: 0.8, scale: 1 });
-                return;
-            }
-
-            const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-            tl.to('.network-line', { strokeDashoffset: 0, duration: 1.3, stagger: 0.05 })
-              .to('.network-node', { opacity: 0.9, scale: 1, duration: 0.5, stagger: 0.04 }, '-=0.9');
-
+            if (reduce) { gsap.set('.network-node', { opacity: 0.8, scale: 1 }); return; }
+            gsap.timeline({ defaults: { ease: 'power2.out' } })
+                .to('.network-line', { strokeDashoffset: 0, duration: 1.3, stagger: 0.05 })
+                .to('.network-node', { opacity: 0.9, scale: 1, duration: 0.5, stagger: 0.04 }, '-=0.9');
             gsap.utils.toArray('.reveal').forEach(el => {
-                gsap.fromTo(el, { opacity: 0, y: 26 }, {
-                    opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
-                    scrollTrigger: { trigger: el, start: 'top 88%' }
-                });
+                gsap.fromTo(el, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 90%' } });
             });
-
             gsap.utils.toArray('.reveal-stagger').forEach(group => {
-                gsap.fromTo(group.children, { opacity: 0, y: 24 }, {
-                    opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out',
-                    scrollTrigger: { trigger: group, start: 'top 88%' }
-                });
-            });
-
-            gsap.to('.process-line-fill', {
-                scaleX: 1, ease: 'none',
-                scrollTrigger: { trigger: '.process-track', start: 'top 75%', end: 'bottom 65%', scrub: true }
+                gsap.fromTo(group.children, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.07, ease: 'power2.out', scrollTrigger: { trigger: group, start: 'top 92%' } });
             });
         });
     </script>
