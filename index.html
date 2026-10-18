@@ -493,7 +493,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         /* =====================================================
            REDISEÑO HOME v2 — evaluación SC-305
            1 Logo/header · 2 Categorías · 3 Carrusel 10 s
-           4 Aliados · 5 Metodología + casos · 6 Consulta rápida
+           4 Socios de negocio · 5 Metodología + casos · 6 Consulta rápida
            ===================================================== */
         .sr-only{ position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
         :focus-visible{ outline:2px solid var(--accent-2); outline-offset:3px; border-radius:6px; }
@@ -604,7 +604,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         span.chip{ color:var(--text-muted); }
 
         /* 4 · Aliados */
-        .partner-row{ display:grid; grid-template-columns:repeat(6, 1fr); gap:1rem; }
+        .partner-row{ display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; }
+        .partner-row > .partner{ flex:0 1 calc((100% - 3rem) / 4); min-width:0; }
         .partner{
             display:flex; flex-direction:column; align-items:flex-start; gap:0.3rem;
             background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:1.1rem 1.1rem 1.2rem;
@@ -618,10 +619,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:0.95rem;
         }
         .partner strong{ font-family:'Space Grotesk', sans-serif; font-size:1rem; line-height:1.25; }
+        .partner .p-tags{ display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:0.55rem; }
+        .p-tag{ font-style:normal; font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.04em; text-transform:uppercase;
+            padding:0.22rem 0.55rem; border-radius:999px; border:1px solid var(--border); color:var(--text-muted); }
+        .p-tag.rep{ color:var(--accent-2); border-color:rgba(79,216,235,.4); }
         .partner span{ color:var(--text-muted); font-size:0.8rem; line-height:1.4; }
         .partner .partner-mark{ color:#08112b; font-size:0.95rem; line-height:1; }
 
-        .partner-logo{ width:100%; height:68px; border-radius:10px; background:#F3F6FC; margin-bottom:0.6rem;
+        .partner-logo{ width:100%; height:84px; border-radius:10px; background:#F3F6FC; margin-bottom:0.6rem;
             display:flex; align-items:center; justify-content:center; padding:0.6rem 0.9rem; }
         .partner-logo img{ max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block; }
         .partner-logo b{ font-family:'Space Grotesk',sans-serif; font-weight:700; color:#0B1230; font-size:0.95rem; text-align:center; line-height:1.15; }
@@ -705,7 +710,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         /* responsive */
         @media (max-width:1060px){
-            .partner-row{ grid-template-columns:repeat(3, 1fr); }
+            .partner-row > .partner{ flex-basis:calc((100% - 2rem) / 3); }
         }
         @media (max-width:900px){
             .slide{ grid-template-columns:1fr; gap:1.6rem; }
@@ -725,7 +730,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .assistant-fab{ padding:0.95rem; }
         }
         @media (max-width:520px){
-            .partner-row{ grid-template-columns:repeat(2, 1fr); }
+            .partner-row > .partner{ flex-basis:calc((100% - 1rem) / 2); }
         }
         @media (prefers-reduced-motion: reduce){
             .slide{ transition:none; }
@@ -998,19 +1003,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="section-head row">
                 <div>
-                    <span class="eyebrow">Aliados tecnológicos</span>
-                    <h2 class="section-title-dark reveal">Plataformas probadas que representamos y acompañamos</h2>
+                    <span class="eyebrow">Socios y representaciones</span>
+                    <h2 class="section-title-dark reveal">Socios de negocio y soluciones que representamos</h2>
                 </div>
-                <p class="section-sub reveal">Detrás de cada solución hay un aliado especializado. Nosotros las implementamos y las acompañamos de principio a fin.</p>
+                <p class="section-sub reveal">Trabajamos de la mano con empresas especializadas. Juntos diseñamos, implementamos y acompañamos cada solución de principio a fin.</p>
             </div>
 
             <div class="partner-row reveal-stagger">
-                <a class="partner" href="humand.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/humand.png" alt="" loading="lazy" decoding="async"></span><strong>Humand</strong><span>Recursos Humanos</span></a>
-                <a class="partner" href="imotion.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/imotion.png" alt="" loading="lazy" decoding="async"></span><strong>iMotion Analytics</strong><span>Computer vision</span></a>
-                <a class="partner" href="firma-digital.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/signtrust.png" alt="" loading="lazy" decoding="async"></span><strong>SIGN.TRUST®</strong><span>Firma digital</span></a>
-                <a class="partner" href="pos.html"><span class="partner-logo" aria-hidden="true"><b>ASP Software</b></span><strong>ASP Software Company</strong><span>Punto de venta</span></a>
-                <a class="partner" href="agricultura.html"><span class="partner-logo" aria-hidden="true"><b>Lain Holdings</b></span><strong>Lain Holdings</strong><span>IoT y LoRaWAN</span></a>
-                <a class="partner" href="rfid.html"><span class="partner-logo" aria-hidden="true"><b>Smart Costa</b></span><strong>Smart Costa</strong><span>RFID y tags</span></a>
+                <a class="partner" href="humand.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/humand.png" alt="" loading="lazy" decoding="async"></span><strong>Humand</strong><span>Recursos Humanos</span><div class="p-tags"><em class="p-tag">Socio de negocio</em></div></a>
+                <a class="partner" href="imotion.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/imotion.png" alt="" loading="lazy" decoding="async"></span><strong>iMotion Analytics</strong><span>Computer vision</span><div class="p-tags"><em class="p-tag rep">Representación</em></div></a>
+                <a class="partner" href="firma-digital.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/signtrust.png" alt="" loading="lazy" decoding="async"></span><strong>SIGN.TRUST®</strong><span>Firma digital</span><div class="p-tags"><em class="p-tag rep">Representación</em></div></a>
+                <a class="partner" href="pos.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/asp.png" alt="" loading="lazy" decoding="async"></span><strong>ASP Software Company</strong><span>Punto de venta</span><div class="p-tags"><em class="p-tag rep">Representación</em><em class="p-tag">Socio de negocio</em></div></a>
+                <a class="partner" href="agricultura.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/lain.png" alt="" loading="lazy" decoding="async"></span><strong>Lain Holdings</strong><span>IoT y LoRaWAN</span><div class="p-tags"><em class="p-tag">Socio de negocio</em></div></a>
+                <a class="partner" href="rfid.html"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/smartcosta.png" alt="" loading="lazy" decoding="async"></span><strong>Smart Costa</strong><span>RFID y tags</span><div class="p-tags"><em class="p-tag">Socio de negocio</em></div></a>
+                <div class="partner"><span class="partner-logo" aria-hidden="true"><img src="assets/partners/nodolatam.png" alt="" loading="lazy" decoding="async"></span><strong>NODO Latam</strong><span>Integración tecnológica</span><div class="p-tags"><em class="p-tag">Socio de negocio</em></div></div>
             </div>
         </div>
     </section>
@@ -1240,7 +1246,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const chipsBox = document.getElementById('assistantChips');
             const FAQ = [
                 { q: '¿Qué servicios ofrecen?', a: 'Trabajamos en cinco áreas: inteligencia artificial y visión artificial; software y plataformas (a la medida, Humand, punto de venta); IoT, energía y automatización; firma digital y procesos; y asesoría con modelos de negocio.', link: ['Ver las categorías', '#servicios'] },
-                { q: '¿Trabajan con una sola marca?', a: 'No. Somos asesores neutrales: primero entendemos su necesidad y luego le conectamos con la solución adecuada de nuestra red de aliados, incluidas las plataformas que representamos.', link: ['Ver aliados', '#soluciones'] },
+                { q: '¿Trabajan con una sola marca?', a: 'No. Somos asesores neutrales: primero entendemos su necesidad y luego le conectamos con la solución adecuada de nuestra red de aliados, incluidas las soluciones que representamos y nuestros socios de negocio.', link: ['Ver aliados', '#soluciones'] },
                 { q: '¿Puedo evitar una inversión inicial?', a: 'Según el proyecto, sí. Estructuramos soluciones con inversión propia (CAPEX), híbridas o 100% como servicio con pago mensual (OPEX).', link: ['Ver modelo de servicio', '#modelo'] },
                 { q: '¿Cómo empezamos un proyecto?', a: 'Con un diagnóstico: entendemos su necesidad real, activamos nuestra red de especialistas y le acompañamos en la implementación y en la medición de resultados.', link: ['Ver cómo trabajamos', '#proceso'] },
                 { q: '¿Atienden fuera de Costa Rica?', a: 'Sí. Atendemos al sector público y privado en Costa Rica y Latinoamérica.' },
