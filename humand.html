@@ -36,7 +36,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
 
     <!-- Datos Estructurados Schema.org -->
     <script type="application/ld+json">
@@ -713,7 +714,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header>
         <div class="container">
             <nav>
-                <a href="index.html" class="logo-link"><img src="logo-final.png" alt="Tech Advisors LA" class="logo"></a>
+                <a href="index.html" class="logo-link"><img src="logo-header.webp" alt="Tech Advisors LA" class="logo" width="180" height="72" decoding="async" fetchpriority="high"></a>
                 <ul class="nav-links">
                     <li class="has-dd">
                         <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-servicios">Servicios <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -931,7 +932,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="alt-bg" id="partners">
         <div class="container">
             <div class="partner-banner">
-                <img src="assets/partners/humand-partners.jpg" width="1080" height="1350" loading="lazy" decoding="async"
+                <img src="assets/partners/humand-partners.webp" width="1080" height="1350" loading="lazy" decoding="async"
                      alt="¡Somos Partners! Humand y Tech Advisors LA, con la app de Humand en dos celulares">
                 <div>
                     <span class="eyebrow">Alianza</span>
