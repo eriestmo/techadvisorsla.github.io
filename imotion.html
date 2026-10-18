@@ -674,7 +674,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .story-note{ margin-top:1.2rem; color:var(--text-muted); font-size:0.85rem; }
         @media (max-width:900px){ .story-grid{ grid-template-columns:1fr; } }
     
-        .clients-board{ margin-top:1.4rem; background:#fff; border-radius:var(--radius,16px); padding:0.8rem; border:1px solid var(--border); }
+        .trust-names{ display:flex; flex-wrap:wrap; gap:0.6rem; margin:0.4rem 0 1rem; }
+        .trust-names span{ background:#F3F6FC; color:#0B1230; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.95rem; padding:0.6rem 1.1rem; border-radius:10px; }
+        .mini-label{ margin-top:1.4rem; color:var(--text-muted); font-size:0.9rem; font-weight:600; }
+        .clients-board-unused{ margin-top:1.4rem; background:#fff; border-radius:var(--radius,16px); padding:0.8rem; border:1px solid var(--border); }
         .clients-board img{ display:block; width:100%; height:auto; border-radius:10px; }
         .clients-cap{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:0.6rem 1.5rem; margin-top:0.9rem; color:var(--text-muted); font-size:0.85rem; }
         .clients-cap a{ color:var(--accent-2); text-decoration:none; font-weight:600; }
@@ -944,12 +947,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a class="story-src" href="https://www.imotionanalytics.com" target="_blank" rel="noopener">Sitio de iMotion Analytics ↗</a>
                 </article>
             </div>
-            <div class="clients-board reveal">
-                <img src="assets/partners/imotion-clientes.webp" loading="lazy" decoding="async" width="1000" height="562"
-                     alt="Clientes de iMotion Analytics: Renfe, Adif, IKEA, Janssen, CaixaBank, HD Hoteles, Louvre Hotels Group, Aena, Geox, Campanile, Krack, Kave Home, Opticalia, Volkswagen, Fujitsu, Ajuntament de Castelldefels, Ajuntament d'Esplugues, Ajuntament de Vilafranca del Penedès, Villanueva de la Cañada y Generalitat de Catalunya">
+            <p class="mini-label reveal">Clientes de iMotion Analytics</p>
+            <div class="trust-names reveal">
+                <span>Renfe</span><span>Adif</span><span>IKEA</span><span>Janssen</span><span>CaixaBank</span><span>HD Hoteles</span><span>Louvre Hotels Group</span><span>Aena</span><span>Geox</span><span>Campanile</span><span>Krack</span><span>Kave Home</span><span>Opticalia</span><span>Volkswagen</span><span>Fujitsu</span><span>Ajuntament de Castelldefels</span><span>Ajuntament d'Esplugues</span><span>Ajuntament de Vilafranca del Penedès</span><span>Villanueva de la Cañada</span><span>Generalitat de Catalunya</span>
             </div>
             <div class="clients-cap">
-                <span>Clientes de iMotion Analytics. Fuente: presentación corporativa de iMotion Analytics.</span>
+                <span>Fuente: sitio y presentación corporativa de iMotion Analytics.</span>
                 <a href="https://www.imotionanalytics.com" target="_blank" rel="noopener">Verifique en imotionanalytics.com ↗</a>
             </div>
             <p class="story-note">Información publicada por la prensa especializada y por la propia empresa; las cifras corresponden a la fecha de cada fuente y no son resultados garantizados.</p>
