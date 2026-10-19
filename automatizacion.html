@@ -685,7 +685,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .cta-row-final{ display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin-top:0.4rem; }
     
         .agro-role{ margin-top:1.2rem; padding-left:1rem; border-left:2px solid var(--accent-2); color:var(--text); }
-    </style>
+    /* Ruleta de contenido (tabset) */
+.tabs-section{ position:relative; }
+.ts-bar{ display:none; align-items:center; gap:.9rem; margin-bottom:2.2rem; scroll-margin-top:100px; }
+.tabset.js .ts-bar{ display:flex; }
+.ts-tabs{ position:relative; flex:1; min-width:0; display:flex; gap:1.1rem; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.ts-tabs::-webkit-scrollbar{ display:none; }
+.ts-tab{
+    position:relative; flex:1 0 auto; background:none; border:0; cursor:pointer; text-align:left; white-space:nowrap;
+    padding:.85rem .1rem 0; color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; transition:color .2s ease;
+}
+.ts-tab:hover, .ts-tab[aria-selected="true"]{ color:var(--text); }
+.ts-tab::before, .ts-tab::after{ content:""; position:absolute; top:0; left:0; height:3px; border-radius:3px; }
+.ts-tab::before{ right:0; background:rgba(255,255,255,0.13); }
+.ts-tab::after{ width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.ts-tab[aria-selected="true"]::after{ width:100%; }
+.tabset.ts-auto .ts-tab[aria-selected="true"]::after{ width:0; animation:tsfill 14s linear forwards; }
+.tabset.ts-hold .ts-tab[aria-selected="true"]::after{ animation-play-state:paused; }
+@keyframes tsfill{ from{ width:0; } to{ width:100%; } }
+.ts-ctrl{
+    flex:none; width:40px; height:40px; border-radius:50%; cursor:pointer; color:var(--text);
+    background:rgba(15,25,56,0.8); border:1px solid var(--border); display:inline-flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+}
+.ts-ctrl:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.15); }
+.ts-ctrl svg{ width:16px; height:16px; }
+.ts-ctrl .i-play{ display:none; }
+.tabset.ts-stopped .ts-pause .i-play{ display:block; }
+.tabset.ts-stopped .ts-pause .i-pause{ display:none; }
+.tabset.js .ts-panel{ display:none; }
+.tabset.js .ts-panel.is-active{ display:block; animation:tsin .45s ease; }
+@keyframes tsin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.ts-panel > section, .ts-panel > .container{ padding-top:0; }
+@media (max-width:700px){ .ts-ctrl{ width:34px; height:34px; } .ts-bar{ gap:.5rem; margin-bottom:1.6rem; } }
+@media (prefers-reduced-motion:reduce){ .tabset.js .ts-panel.is-active{ animation:none; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -714,7 +749,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="dd dd-wide" id="dd-soluciones">
                             <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
                             <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
-                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras: retail, industria, puertos y más</span></a>
                             <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
                             <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
                             <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
@@ -750,14 +785,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section id="cip-sip">
+    <section class="tabs-section" id="temas"><div class="tabset" data-tabset><div class="container"><div class="ts-bar"><button class="ts-ctrl ts-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ts-tabs" role="tablist" aria-label="Elegir tema"><button class="ts-tab" role="tab" id="ts-temas-0" aria-controls="cip-sip" aria-selected="true" tabindex="0">CIP y SIP</button><button class="ts-tab" role="tab" id="ts-temas-1" aria-controls="soluciones" aria-selected="false" tabindex="-1">Más soluciones</button><button class="ts-tab" role="tab" id="ts-temas-2" aria-controls="industrias" aria-selected="false" tabindex="-1">Industrias</button><button class="ts-tab" role="tab" id="ts-temas-3" aria-controls="controlsoft" aria-selected="false" tabindex="-1">Con ControlSoft</button></div><button class="ts-ctrl ts-pause" type="button" aria-label="Pausar rotación automática"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg></button><button class="ts-ctrl ts-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="ts-panel is-active" id="cip-sip" role="tabpanel" aria-labelledby="ts-temas-0">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Soluciones CIP y SIP</span>
-                <h2 class="section-title-dark reveal">Limpieza y esterilización sin desarmar la línea</h2>
-                <p class="section-sub reveal">Estos sistemas limpian y esterilizan tanques, tuberías y equipos en su lugar, de forma automática y repetible. Así se reducen los paros de producción y se cumplen las exigencias de inocuidad.</p>
+                <h2 class="section-title-dark">Limpieza y esterilización sin desarmar la línea</h2>
+                <p class="section-sub">Estos sistemas limpian y esterilizan tanques, tuberías y equipos en su lugar, de forma automática y repetible. Así se reducen los paros de producción y se cumplen las exigencias de inocuidad.</p>
             </div>
-            <div class="compare reveal-stagger">
+            <div class="compare">
                 <div class="compare-card highlight">
                     <span class="mono tag-accent">CIP · Clean in Place</span>
                     <h3>Limpieza en sitio</h3>
@@ -769,22 +804,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Esterilización con vapor o agua caliente de equipos y líneas, con registro de temperatura y tiempo para validar cada ciclo.</p>
                 </div>
             </div>
-            <div class="values reveal-stagger">
+            <div class="values">
                 <div><strong>Inocuidad</strong><span>Ciclos validados y repetibles, lote tras lote.</span></div>
                 <div><strong>Menos paros</strong><span>Limpieza sin desarmar equipos ni detener la planta más de lo necesario.</span></div>
                 <div><strong>Ahorro</strong><span>Uso controlado de agua, químicos y energía.</span></div>
                 <div><strong>Trazabilidad</strong><span>Registro de cada ciclo para auditorías y certificaciones.</span></div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="soluciones">
+    </div><div class="ts-panel" id="soluciones" role="tabpanel" aria-labelledby="ts-temas-1">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Más soluciones</span>
-                <h2 class="section-title-dark reveal">Automatización de punta a punta</h2>
+                <h2 class="section-title-dark">Automatización de punta a punta</h2>
             </div>
-            <div class="modules-grid reveal-stagger">
+            <div class="modules-grid">
                 <div class="module-group">
                     <h3>Instrumentación y medición</h3>
                     <p>Medición precisa de las variables de su proceso.</p>
@@ -837,39 +870,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="industrias">
+    </div><div class="ts-panel" id="industrias" role="tabpanel" aria-labelledby="ts-temas-2">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Industrias</span>
-                <h2 class="section-title-dark reveal">Para industrias donde la precisión es obligatoria</h2>
+                <h2 class="section-title-dark">Para industrias donde la precisión es obligatoria</h2>
             </div>
-            <div class="q-grid reveal-stagger">
+            <div class="q-grid">
                 <div class="q-card"><div class="q">Alimentos y bebidas</div><div class="a">Limpieza CIP de líneas, dosificación de ingredientes y control de temperatura.</div></div>
                 <div class="q-card"><div class="q">Farmacéutica</div><div class="a">Esterilización SIP, ambientes controlados y trazabilidad para cumplir la normativa.</div></div>
                 <div class="q-card"><div class="q">Agrícola</div><div class="a">Medición y control de fluidos, dosificación y monitoreo remoto.</div></div>
                 <div class="q-card"><div class="q">Química</div><div class="a">Manejo seguro de fluidos, gases y productos viscosos con medición precisa.</div></div>
             </div>
         </div>
-    </section>
-
-
-    <section class="alt-bg" id="controlsoft">
+    </div><div class="ts-panel" id="controlsoft" role="tabpanel" aria-labelledby="ts-temas-3">
         <div class="container">
             <div class="two-col">
                 <div class="section-head">
                     <span class="eyebrow">Socio de negocio · Automatización</span>
-                    <h2 class="section-title-dark reveal">Con ControlSoft, automatización y plataformas para la industria</h2>
-                    <p class="section-sub reveal">ControlSoft es una empresa costarricense de plataformas y automatización industrial. Ofrece automatización industrial y de edificios, software en la nube para IoT e instrumentación inalámbrica, con el objetivo de optimizar procesos y reducir costos operativos.</p>
-                    <p class="agro-role reveal">Tech Advisors LA trabaja de la mano con ControlSoft para llevar estas soluciones a la industria y a los edificios de Costa Rica.</p>
+                    <h2 class="section-title-dark">Con ControlSoft, automatización y plataformas para la industria</h2>
+                    <p class="section-sub">ControlSoft es una empresa costarricense de plataformas y automatización industrial. Ofrece automatización industrial y de edificios, software en la nube para IoT e instrumentación inalámbrica, con el objetivo de optimizar procesos y reducir costos operativos.</p>
+                    <p class="agro-role">Tech Advisors LA trabaja de la mano con ControlSoft para llevar estas soluciones a la industria y a los edificios de Costa Rica.</p>
                     <div class="cta-row-final" style="justify-content:flex-start;margin-top:1.4rem;">
                         <a href="https://scontrolsoftcr.com" class="cta-button" target="_blank" rel="noopener">Conozca ControlSoft ↗</a>
                     </div>
                 </div>
                 <div>
-                    <p class="mini-label reveal">Qué podemos implementar con ellos</p>
-                    <ul class="list-cards reveal-stagger">
+                    <p class="mini-label">Qué podemos implementar con ellos</p>
+                    <ul class="list-cards">
                         <li><strong>Automatización industrial</strong><span>Sistemas CIP y SIP, control y supervisión de procesos.</span></li>
                         <li><strong>Instrumentación inalámbrica</strong><span>Medición por radar, presión diferencial, flujo másico y volumétrico.</span></li>
                         <li><strong>Calibración de flujo en sitio</strong><span>Para líquidos, gases, pastas y mezclas en alimentos y bebidas.</span></li>
@@ -879,7 +907,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
+    </div></div></section>
+
+    
+
+    
+
+
+    
 
     <section class="contact" id="contacto">
         <div class="container">
@@ -982,5 +1017,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
     </script>
+<script src="tabset.js" defer></script>
 </body>
 </html>

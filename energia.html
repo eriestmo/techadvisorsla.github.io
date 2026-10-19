@@ -677,7 +677,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .wa-float:hover{ filter:brightness(1.08); }
         @media (max-width:600px){ .wa-float span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .wa-float{ padding:0.85rem; } }
         .cta-row-final{ display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin-top:0.4rem; }
-    </style>
+    /* Ruleta de contenido (tabset) */
+.tabs-section{ position:relative; }
+.ts-bar{ display:none; align-items:center; gap:.9rem; margin-bottom:2.2rem; scroll-margin-top:100px; }
+.tabset.js .ts-bar{ display:flex; }
+.ts-tabs{ position:relative; flex:1; min-width:0; display:flex; gap:1.1rem; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.ts-tabs::-webkit-scrollbar{ display:none; }
+.ts-tab{
+    position:relative; flex:1 0 auto; background:none; border:0; cursor:pointer; text-align:left; white-space:nowrap;
+    padding:.85rem .1rem 0; color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; transition:color .2s ease;
+}
+.ts-tab:hover, .ts-tab[aria-selected="true"]{ color:var(--text); }
+.ts-tab::before, .ts-tab::after{ content:""; position:absolute; top:0; left:0; height:3px; border-radius:3px; }
+.ts-tab::before{ right:0; background:rgba(255,255,255,0.13); }
+.ts-tab::after{ width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.ts-tab[aria-selected="true"]::after{ width:100%; }
+.tabset.ts-auto .ts-tab[aria-selected="true"]::after{ width:0; animation:tsfill 14s linear forwards; }
+.tabset.ts-hold .ts-tab[aria-selected="true"]::after{ animation-play-state:paused; }
+@keyframes tsfill{ from{ width:0; } to{ width:100%; } }
+.ts-ctrl{
+    flex:none; width:40px; height:40px; border-radius:50%; cursor:pointer; color:var(--text);
+    background:rgba(15,25,56,0.8); border:1px solid var(--border); display:inline-flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+}
+.ts-ctrl:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.15); }
+.ts-ctrl svg{ width:16px; height:16px; }
+.ts-ctrl .i-play{ display:none; }
+.tabset.ts-stopped .ts-pause .i-play{ display:block; }
+.tabset.ts-stopped .ts-pause .i-pause{ display:none; }
+.tabset.js .ts-panel{ display:none; }
+.tabset.js .ts-panel.is-active{ display:block; animation:tsin .45s ease; }
+@keyframes tsin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.ts-panel > section, .ts-panel > .container{ padding-top:0; }
+@media (max-width:700px){ .ts-ctrl{ width:34px; height:34px; } .ts-bar{ gap:.5rem; margin-bottom:1.6rem; } }
+@media (prefers-reduced-motion:reduce){ .tabset.js .ts-panel.is-active{ animation:none; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -706,7 +741,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="dd dd-wide" id="dd-soluciones">
                             <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
                             <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
-                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras: retail, industria, puertos y más</span></a>
                             <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
                             <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
                             <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
@@ -742,13 +777,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section id="soluciones">
+    <section class="tabs-section" id="temas"><div class="tabset" data-tabset><div class="container"><div class="ts-bar"><button class="ts-ctrl ts-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ts-tabs" role="tablist" aria-label="Elegir tema"><button class="ts-tab" role="tab" id="ts-temas-0" aria-controls="soluciones" aria-selected="true" tabindex="0">Qué hacemos</button><button class="ts-tab" role="tab" id="ts-temas-1" aria-controls="beneficios" aria-selected="false" tabindex="-1">Beneficios</button><button class="ts-tab" role="tab" id="ts-temas-2" aria-controls="para-quien" aria-selected="false" tabindex="-1">Para quién</button><button class="ts-tab" role="tab" id="ts-temas-3" aria-controls="proceso" aria-selected="false" tabindex="-1">Cómo trabajamos</button></div><button class="ts-ctrl ts-pause" type="button" aria-label="Pausar rotación automática"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg></button><button class="ts-ctrl ts-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="ts-panel is-active" id="soluciones" role="tabpanel" aria-labelledby="ts-temas-0">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Qué hacemos</span>
-                <h2 class="section-title-dark reveal">Del consumo que no se ve a decisiones basadas en datos</h2>
+                <h2 class="section-title-dark">Del consumo que no se ve a decisiones basadas en datos</h2>
             </div>
-            <div class="pillars reveal-stagger">
+            <div class="pillars">
                 <div class="pillar"><div class="node-tag">AS</div><h3>Asesoría energética</h3><p>Analizamos su consumo y su infraestructura eléctrica, y le proponemos un plan de mejora con prioridades claras.</p></div>
                 <div class="pillar"><div class="node-tag">MED</div><h3>Medición inteligente</h3><p>Medidores y sensores que registran el consumo por edificio, área o equipo, en tiempo real.</p></div>
                 <div class="pillar"><div class="node-tag">CTL</div><h3>Control eléctrico</h3><p>Automatización de cargas, horarios y equipos para evitar consumos innecesarios y picos de demanda.</p></div>
@@ -757,17 +792,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pillar"><div class="node-tag">NEW</div><h3>Nuevos sistemas eléctricos</h3><p>Desarrollamos nuevas formas de diseñar y aplicar sistemas eléctricos más eficientes e inteligentes.</p></div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="beneficios">
+    </div><div class="ts-panel" id="beneficios" role="tabpanel" aria-labelledby="ts-temas-1">
         <div class="container">
             <div class="two-col">
                 <div class="section-head">
                     <span class="eyebrow">Beneficios</span>
-                    <h2 class="section-title-dark reveal">Lo que no se mide, no se puede mejorar</h2>
-                    <p class="section-sub reveal">Con medición y control inteligente, usted sabe dónde se va la energía y puede actuar. Con energía solar, además, genera parte de la que consume.</p>
+                    <h2 class="section-title-dark">Lo que no se mide, no se puede mejorar</h2>
+                    <p class="section-sub">Con medición y control inteligente, usted sabe dónde se va la energía y puede actuar. Con energía solar, además, genera parte de la que consume.</p>
                 </div>
-                <ul class="list-cards reveal-stagger">
+                <ul class="list-cards">
                     <li><strong>Menor factura eléctrica</strong><span>Menos desperdicio y mejor uso de horarios y de la demanda.</span></li>
                     <li><strong>Visibilidad del consumo</strong><span>Datos por área y por equipo, no solo el total del recibo.</span></li>
                     <li><strong>Energía propia</strong><span>Los paneles solares reducen la dependencia de la red eléctrica.</span></li>
@@ -776,38 +809,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
             </div>
         </div>
-    </section>
-
-    <section id="para-quien">
+    </div><div class="ts-panel" id="para-quien" role="tabpanel" aria-labelledby="ts-temas-2">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Para quién</span>
-                <h2 class="section-title-dark reveal">Soluciones para distintos tipos de organización</h2>
+                <h2 class="section-title-dark">Soluciones para distintos tipos de organización</h2>
             </div>
-            <div class="q-grid reveal-stagger">
+            <div class="q-grid">
                 <div class="q-card"><div class="q">Industria</div><div class="a">Control de cargas y demanda en plantas con alto consumo eléctrico.</div></div>
                 <div class="q-card"><div class="q">Comercio y oficinas</div><div class="a">Medición por local, piso o área, y generación solar en techos.</div></div>
                 <div class="q-card"><div class="q">Sector público</div><div class="a">Eficiencia energética en edificios e instalaciones institucionales.</div></div>
                 <div class="q-card"><div class="q">Condominios y residenciales</div><div class="a">Medición de áreas comunes y sistemas solares compartidos.</div></div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg process" id="proceso">
+    </div><div class="ts-panel" id="proceso" role="tabpanel" aria-labelledby="ts-temas-3">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Cómo trabajamos</span>
-                <h2 class="section-title-dark reveal">De la medición al ahorro</h2>
+                <h2 class="section-title-dark">De la medición al ahorro</h2>
             </div>
-            <div class="flow reveal-stagger">
+            <div class="flow">
                 <div class="flow-step"><span class="process-num mono">01</span><h3>Diagnóstico</h3><p>Medimos y analizamos su consumo y su infraestructura actual.</p></div>
                 <div class="flow-step"><span class="process-num mono">02</span><h3>Diseño</h3><p>Definimos la solución: medición, control, energía solar o una combinación.</p></div>
                 <div class="flow-step"><span class="process-num mono">03</span><h3>Implementación</h3><p>Instalamos y ponemos en marcha el sistema con nuestros aliados especialistas.</p></div>
                 <div class="flow-step"><span class="process-num mono">04</span><h3>Seguimiento</h3><p>Medimos resultados y ajustamos para asegurar el ahorro.</p></div>
             </div>
-            <p class="section-sub reveal" style="margin-top:2.5rem;">Como en todos nuestros proyectos, usted elige cómo invertir: CAPEX, OPEX, híbrido o 100% como servicio.</p>
+            <p class="section-sub" style="margin-top:2.5rem;">Como en todos nuestros proyectos, usted elige cómo invertir: CAPEX, OPEX, híbrido o 100% como servicio.</p>
         </div>
-    </section>
+    </div></div></section>
+
+    
+
+    
+
+    
 
 
     <section class="contact" id="contacto">
@@ -911,5 +946,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
     </script>
+<script src="tabset.js" defer></script>
 </body>
 </html>

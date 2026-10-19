@@ -672,7 +672,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .wa-float:hover{ filter:brightness(1.08); }
         @media (max-width:600px){ .wa-float span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .wa-float{ padding:0.85rem; } }
         .cta-row-final{ display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin-top:0.4rem; }
-    </style>
+    /* Ruleta de contenido (tabset) */
+.tabs-section{ position:relative; }
+.ts-bar{ display:none; align-items:center; gap:.9rem; margin-bottom:2.2rem; scroll-margin-top:100px; }
+.tabset.js .ts-bar{ display:flex; }
+.ts-tabs{ position:relative; flex:1; min-width:0; display:flex; gap:1.1rem; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.ts-tabs::-webkit-scrollbar{ display:none; }
+.ts-tab{
+    position:relative; flex:1 0 auto; background:none; border:0; cursor:pointer; text-align:left; white-space:nowrap;
+    padding:.85rem .1rem 0; color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; transition:color .2s ease;
+}
+.ts-tab:hover, .ts-tab[aria-selected="true"]{ color:var(--text); }
+.ts-tab::before, .ts-tab::after{ content:""; position:absolute; top:0; left:0; height:3px; border-radius:3px; }
+.ts-tab::before{ right:0; background:rgba(255,255,255,0.13); }
+.ts-tab::after{ width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.ts-tab[aria-selected="true"]::after{ width:100%; }
+.tabset.ts-auto .ts-tab[aria-selected="true"]::after{ width:0; animation:tsfill 14s linear forwards; }
+.tabset.ts-hold .ts-tab[aria-selected="true"]::after{ animation-play-state:paused; }
+@keyframes tsfill{ from{ width:0; } to{ width:100%; } }
+.ts-ctrl{
+    flex:none; width:40px; height:40px; border-radius:50%; cursor:pointer; color:var(--text);
+    background:rgba(15,25,56,0.8); border:1px solid var(--border); display:inline-flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+}
+.ts-ctrl:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.15); }
+.ts-ctrl svg{ width:16px; height:16px; }
+.ts-ctrl .i-play{ display:none; }
+.tabset.ts-stopped .ts-pause .i-play{ display:block; }
+.tabset.ts-stopped .ts-pause .i-pause{ display:none; }
+.tabset.js .ts-panel{ display:none; }
+.tabset.js .ts-panel.is-active{ display:block; animation:tsin .45s ease; }
+@keyframes tsin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.ts-panel > section, .ts-panel > .container{ padding-top:0; }
+@media (max-width:700px){ .ts-ctrl{ width:34px; height:34px; } .ts-bar{ gap:.5rem; margin-bottom:1.6rem; } }
+@media (prefers-reduced-motion:reduce){ .tabset.js .ts-panel.is-active{ animation:none; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -701,7 +736,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="dd dd-wide" id="dd-soluciones">
                             <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
                             <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
-                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras: retail, industria, puertos y más</span></a>
                             <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
                             <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
                             <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
@@ -743,14 +778,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section id="comercio">
+    <section class="tabs-section" id="temas"><div class="tabset" data-tabset><div class="container"><div class="ts-bar"><button class="ts-ctrl ts-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ts-tabs" role="tablist" aria-label="Elegir tema"><button class="ts-tab" role="tab" id="ts-temas-0" aria-controls="comercio" aria-selected="true" tabindex="0">Comercio</button><button class="ts-tab" role="tab" id="ts-temas-1" aria-controls="condominios" aria-selected="false" tabindex="-1">Condominios</button><button class="ts-tab" role="tab" id="ts-temas-2" aria-controls="beneficios" aria-selected="false" tabindex="-1">Beneficios</button><button class="ts-tab" role="tab" id="ts-temas-3" aria-controls="proceso" aria-selected="false" tabindex="-1">Cómo lo implementamos</button></div><button class="ts-ctrl ts-pause" type="button" aria-label="Pausar rotación automática"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg></button><button class="ts-ctrl ts-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="ts-panel is-active" id="comercio" role="tabpanel" aria-labelledby="ts-temas-0">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Para comercio y retail</span>
-                <h2 class="section-title-dark reveal">Menos pérdidas, inventario exacto y mejores decisiones</h2>
-                <p class="section-sub reveal">Combinamos equipos, software y servicio para tiendas, centros de distribución y bodegas.</p>
+                <h2 class="section-title-dark">Menos pérdidas, inventario exacto y mejores decisiones</h2>
+                <p class="section-sub">Combinamos equipos, software y servicio para tiendas, centros de distribución y bodegas.</p>
             </div>
-            <div class="modules-grid reveal-stagger">
+            <div class="modules-grid">
                 <div class="module-group">
                     <h3>Prevención de pérdidas (EAS)</h3>
                     <p>Antenas y etiquetas en la salida de la tienda para detectar mercadería que sale sin pagar.</p>
@@ -785,17 +820,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="condominios">
+    </div><div class="ts-panel" id="condominios" role="tabpanel" aria-labelledby="ts-temas-1">
         <div class="container">
             <div class="two-col">
                 <div class="section-head">
                     <span class="eyebrow">Para condominios y residenciales</span>
-                    <h2 class="section-title-dark reveal">Acceso ágil y seguro para residentes y vehículos</h2>
-                    <p class="section-sub reveal">Con tags RFID, los residentes entran sin detenerse y la administración controla quién ingresa y cuándo. Así se acaban las filas en el portón y el uso indebido de controles o tarjetas.</p>
+                    <h2 class="section-title-dark">Acceso ágil y seguro para residentes y vehículos</h2>
+                    <p class="section-sub">Con tags RFID, los residentes entran sin detenerse y la administración controla quién ingresa y cuándo. Así se acaban las filas en el portón y el uso indebido de controles o tarjetas.</p>
                 </div>
-                <ul class="list-cards reveal-stagger">
+                <ul class="list-cards">
                     <li><strong>Tags vehiculares</strong><span>Una etiqueta en el parabrisas abre el acceso automáticamente al acercarse.</span></li>
                     <li><strong>Tarjetas y llaveros para peatones</strong><span>Acceso por puertas peatonales, áreas comunes y amenidades.</span></li>
                     <li><strong>Registro de ingresos</strong><span>Historial de quién entró y a qué hora, disponible para la administración.</span></li>
@@ -803,37 +836,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
             </div>
         </div>
-    </section>
-
-    <section id="beneficios">
+    </div><div class="ts-panel" id="beneficios" role="tabpanel" aria-labelledby="ts-temas-2">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Beneficios</span>
-                <h2 class="section-title-dark reveal">Por qué RFID</h2>
+                <h2 class="section-title-dark">Por qué RFID</h2>
             </div>
-            <div class="pain-grid reveal-stagger">
+            <div class="pain-grid">
                 <div class="pain"><div class="after"><b>SIN CONTACTO</b>Lee etiquetas a distancia, sin tener que verlas ni escanearlas una por una.</div></div>
                 <div class="pain"><div class="after"><b>RAPIDEZ</b>Inventarios y accesos en segundos, en lugar de minutos u horas.</div></div>
                 <div class="pain"><div class="after"><b>SEGURIDAD</b>Menos pérdidas en tienda y control real de quién entra a su propiedad.</div></div>
                 <div class="pain"><div class="after"><b>DATOS CONFIABLES</b>Información automática y trazable para tomar mejores decisiones.</div></div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg process" id="proceso">
+    </div><div class="ts-panel" id="proceso" role="tabpanel" aria-labelledby="ts-temas-3">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Cómo lo implementamos</span>
-                <h2 class="section-title-dark reveal">Del diagnóstico a la operación</h2>
+                <h2 class="section-title-dark">Del diagnóstico a la operación</h2>
             </div>
-            <div class="flow reveal-stagger">
+            <div class="flow">
                 <div class="flow-step"><span class="process-num mono">01</span><h3>Visita y diagnóstico</h3><p>Revisamos su tienda, bodega o condominio y lo que necesita controlar.</p></div>
                 <div class="flow-step"><span class="process-num mono">02</span><h3>Diseño</h3><p>Definimos la tecnología, los equipos y las etiquetas adecuadas.</p></div>
                 <div class="flow-step"><span class="process-num mono">03</span><h3>Instalación</h3><p>Instalamos, configuramos e integramos con sus sistemas actuales.</p></div>
                 <div class="flow-step"><span class="process-num mono">04</span><h3>Soporte</h3><p>Capacitamos a su personal y damos seguimiento a la operación.</p></div>
             </div>
         </div>
-    </section>
+    </div></div></section>
+
+    
+
+    
+
+    
 
 
     <section class="contact" id="contacto">
@@ -937,5 +972,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
     </script>
+<script src="tabset.js" defer></script>
 </body>
 </html>

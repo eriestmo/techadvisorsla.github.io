@@ -697,7 +697,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .wa-float:hover{ filter:brightness(1.08); }
         @media (max-width:600px){ .wa-float span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .wa-float{ padding:0.85rem; } }
         .cta-row-final{ display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin-top:0.4rem; }
-    </style>
+    /* Ruleta de contenido (tabset) */
+.tabs-section{ position:relative; }
+.ts-bar{ display:none; align-items:center; gap:.9rem; margin-bottom:2.2rem; scroll-margin-top:100px; }
+.tabset.js .ts-bar{ display:flex; }
+.ts-tabs{ position:relative; flex:1; min-width:0; display:flex; gap:1.1rem; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.ts-tabs::-webkit-scrollbar{ display:none; }
+.ts-tab{
+    position:relative; flex:1 0 auto; background:none; border:0; cursor:pointer; text-align:left; white-space:nowrap;
+    padding:.85rem .1rem 0; color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; transition:color .2s ease;
+}
+.ts-tab:hover, .ts-tab[aria-selected="true"]{ color:var(--text); }
+.ts-tab::before, .ts-tab::after{ content:""; position:absolute; top:0; left:0; height:3px; border-radius:3px; }
+.ts-tab::before{ right:0; background:rgba(255,255,255,0.13); }
+.ts-tab::after{ width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.ts-tab[aria-selected="true"]::after{ width:100%; }
+.tabset.ts-auto .ts-tab[aria-selected="true"]::after{ width:0; animation:tsfill 14s linear forwards; }
+.tabset.ts-hold .ts-tab[aria-selected="true"]::after{ animation-play-state:paused; }
+@keyframes tsfill{ from{ width:0; } to{ width:100%; } }
+.ts-ctrl{
+    flex:none; width:40px; height:40px; border-radius:50%; cursor:pointer; color:var(--text);
+    background:rgba(15,25,56,0.8); border:1px solid var(--border); display:inline-flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+}
+.ts-ctrl:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.15); }
+.ts-ctrl svg{ width:16px; height:16px; }
+.ts-ctrl .i-play{ display:none; }
+.tabset.ts-stopped .ts-pause .i-play{ display:block; }
+.tabset.ts-stopped .ts-pause .i-pause{ display:none; }
+.tabset.js .ts-panel{ display:none; }
+.tabset.js .ts-panel.is-active{ display:block; animation:tsin .45s ease; }
+@keyframes tsin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.ts-panel > section, .ts-panel > .container{ padding-top:0; }
+@media (max-width:700px){ .ts-ctrl{ width:34px; height:34px; } .ts-bar{ gap:.5rem; margin-bottom:1.6rem; } }
+@media (prefers-reduced-motion:reduce){ .tabset.js .ts-panel.is-active{ animation:none; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -726,7 +761,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="dd dd-wide" id="dd-soluciones">
                             <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
                             <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
-                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras: retail, industria, puertos y más</span></a>
                             <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
                             <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
                             <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
@@ -768,14 +803,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section id="que-medimos">
+    <section class="tabs-section" id="temas"><div class="tabset" data-tabset><div class="container"><div class="ts-bar"><button class="ts-ctrl ts-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ts-tabs" role="tablist" aria-label="Elegir tema"><button class="ts-tab" role="tab" id="ts-temas-0" aria-controls="que-medimos" aria-selected="true" tabindex="0">Qué medimos</button><button class="ts-tab" role="tab" id="ts-temas-1" aria-controls="como-funciona" aria-selected="false" tabindex="-1">Cómo funciona</button><button class="ts-tab" role="tab" id="ts-temas-2" aria-controls="lain-holdings" aria-selected="false" tabindex="-1">Con Lain Holdings</button><button class="ts-tab" role="tab" id="ts-temas-3" aria-controls="beneficios" aria-selected="false" tabindex="-1">Por qué con nosotros</button><button class="ts-tab" role="tab" id="ts-temas-4" aria-controls="beneficios-campo" aria-selected="false" tabindex="-1">Beneficios</button></div><button class="ts-ctrl ts-pause" type="button" aria-label="Pausar rotación automática"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg></button><button class="ts-ctrl ts-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="ts-panel is-active" id="que-medimos" role="tabpanel" aria-labelledby="ts-temas-0">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Qué medimos</span>
-                <h2 class="section-title-dark reveal">Sensores para cada necesidad del campo</h2>
-                <p class="section-sub reveal">Cada sensor envía sus datos en forma automática. Usted deja de depender de visitas y revisiones manuales para saber qué pasa en su cultivo.</p>
+                <h2 class="section-title-dark">Sensores para cada necesidad del campo</h2>
+                <p class="section-sub">Cada sensor envía sus datos en forma automática. Usted deja de depender de visitas y revisiones manuales para saber qué pasa en su cultivo.</p>
             </div>
-            <div class="modules-grid reveal-stagger">
+            <div class="modules-grid">
                 <div class="module-group">
                     <h3>Suelo</h3>
                     <p>La información que define el riego y la fertilización.</p>
@@ -826,36 +861,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="como-funciona">
+    </div><div class="ts-panel" id="como-funciona" role="tabpanel" aria-labelledby="ts-temas-1">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Cómo funciona</span>
-                <h2 class="section-title-dark reveal">De la finca al celular del productor</h2>
-                <p class="section-sub reveal">Una solución de extremo a extremo: sensores, red, plataforma y alertas.</p>
+                <h2 class="section-title-dark">De la finca al celular del productor</h2>
+                <p class="section-sub">Una solución de extremo a extremo: sensores, red, plataforma y alertas.</p>
             </div>
-            <div class="flow reveal-stagger">
+            <div class="flow">
                 <div class="flow-step"><span class="process-num mono">01</span><h3>Sensores en campo</h3><p>Equipos de bajo consumo que funcionan con batería y transmiten sus lecturas en forma periódica.</p></div>
                 <div class="flow-step"><span class="process-num mono">02</span><h3>Red LoRaWAN</h3><p>Gateways de largo alcance y, donde no hay señal celular, conexión satelital a Internet.</p></div>
                 <div class="flow-step"><span class="process-num mono">03</span><h3>Plataforma en la nube</h3><p>Todas las fincas, sensores y estaciones en un solo tablero, con historial y mapas.</p></div>
                 <div class="flow-step"><span class="process-num mono">04</span><h3>Alertas y decisiones</h3><p>Avisos cuando algo se sale de lo normal y datos para decidir cuándo regar o fertilizar.</p></div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="lain-holdings">
+    </div><div class="ts-panel" id="lain-holdings" role="tabpanel" aria-labelledby="ts-temas-2">
         <div class="container">
             <div class="two-col">
                 <div class="section-head">
                     <span class="eyebrow">Socio de negocio · IoT</span>
-                    <h2 class="section-title-dark reveal">Agricultura y más allá: IoT de extremo a extremo con Lain Holdings</h2>
-                    <p class="section-sub reveal">Lain Holdings es una empresa de asesoría y soluciones tecnológicas basadas en Internet de las cosas. Acompaña los proyectos desde el diseño hasta la analítica de datos, con soluciones llave en mano y plataformas agnósticas que incorporan diversas tecnologías.</p>
-                    <p class="agro-role reveal">Tech Advisors LA trabaja de la mano con Lain Holdings para llevar sus soluciones IoT al campo y a otras industrias.</p>
+                    <h2 class="section-title-dark">Agricultura y más allá: IoT de extremo a extremo con Lain Holdings</h2>
+                    <p class="section-sub">Lain Holdings es una empresa de asesoría y soluciones tecnológicas basadas en Internet de las cosas. Acompaña los proyectos desde el diseño hasta la analítica de datos, con soluciones llave en mano y plataformas agnósticas que incorporan diversas tecnologías.</p>
+                    <p class="agro-role">Tech Advisors LA trabaja de la mano con Lain Holdings para llevar sus soluciones IoT al campo y a otras industrias.</p>
                 </div>
                 <div>
-                    <p class="mini-label reveal">Qué podemos implementar con ellos</p>
-                    <ul class="list-cards reveal-stagger">
+                    <p class="mini-label">Qué podemos implementar con ellos</p>
+                    <ul class="list-cards">
                         <li><strong>Agroindustria</strong><span>Invernaderos automatizados, agricultura de precisión y riego inteligente.</span></li>
                         <li><strong>Ganadería y acuicultura</strong><span>Básculas ganaderas, monitoreo de animales y soluciones para piscicultura.</span></li>
                         <li><strong>Gestión del agua</strong><span>Calidad del agua, medidores inteligentes y sensores de nivel.</span></li>
@@ -865,17 +896,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="beneficios">
+    </div><div class="ts-panel" id="beneficios" role="tabpanel" aria-labelledby="ts-temas-3">
         <div class="container">
             <div class="two-col">
                 <div class="section-head">
                     <span class="eyebrow">Por qué con nosotros</span>
-                    <h2 class="section-title-dark reveal">Lo que aprendimos en el campo, aplicado a su proyecto</h2>
-                    <p class="section-sub reveal">Una red IoT agrícola no se resuelve solo con equipos: hay que diseñarla para el terreno, configurarla bien y acompañar a los productores.</p>
+                    <h2 class="section-title-dark">Lo que aprendimos en el campo, aplicado a su proyecto</h2>
+                    <p class="section-sub">Una red IoT agrícola no se resuelve solo con equipos: hay que diseñarla para el terreno, configurarla bien y acompañar a los productores.</p>
                 </div>
-                <ul class="list-cards reveal-stagger">
+                <ul class="list-cards">
                     <li><strong>Diseño según el terreno</strong><span>Estudiamos el relieve y medimos la cobertura antes de ubicar gateways.</span></li>
                     <li><strong>Sensores configurados para durar</strong><span>Parámetros de bajo consumo para que las baterías rindan al máximo.</span></li>
                     <li><strong>Conectividad donde no hay señal</strong><span>Enlaces satelitales para gateways en zonas sin cobertura celular.</span></li>
@@ -884,15 +913,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
             </div>
         </div>
-    </section>
-
-    <section id="beneficios-campo">
+    </div><div class="ts-panel" id="beneficios-campo" role="tabpanel" aria-labelledby="ts-temas-4">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Beneficios</span>
-                <h2 class="section-title-dark reveal">Más productividad con menos recursos</h2>
+                <h2 class="section-title-dark">Más productividad con menos recursos</h2>
             </div>
-            <div class="pain-grid reveal-stagger">
+            <div class="pain-grid">
                 <div class="pain"><div class="after"><b>RIEGO EFICIENTE</b>Riegue según la humedad real del suelo y ahorre agua y energía.</div></div>
                 <div class="pain"><div class="after"><b>FERTILIZACIÓN PRECISA</b>Aplique nutrientes según lo que el suelo realmente necesita.</div></div>
                 <div class="pain"><div class="after"><b>MENOS VISITAS</b>Monitoreo permanente sin recorrer la finca para revisar.</div></div>
@@ -900,7 +927,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pain"><div class="after"><b>SOSTENIBILIDAD</b>Prácticas agrícolas más eficientes y medibles.</div></div>
             </div>
         </div>
-    </section>
+    </div></div></section>
+
+    
+
+    
+
+    
+
+    
 
 
     <section class="contact" id="contacto">
@@ -1005,5 +1040,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
     </script>
     <script async src="https://www.instagram.com/embed.js"></script>
+<script src="tabset.js" defer></script>
 </body>
 </html>

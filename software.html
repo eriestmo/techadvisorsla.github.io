@@ -689,7 +689,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .wa-float:hover{ filter:brightness(1.08); }
         @media (max-width:600px){ .wa-float span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .wa-float{ padding:0.85rem; } }
         .cta-row-final{ display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin-top:0.4rem; }
-    </style>
+    /* Ruleta de contenido (tabset) */
+.tabs-section{ position:relative; }
+.ts-bar{ display:none; align-items:center; gap:.9rem; margin-bottom:2.2rem; scroll-margin-top:100px; }
+.tabset.js .ts-bar{ display:flex; }
+.ts-tabs{ position:relative; flex:1; min-width:0; display:flex; gap:1.1rem; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.ts-tabs::-webkit-scrollbar{ display:none; }
+.ts-tab{
+    position:relative; flex:1 0 auto; background:none; border:0; cursor:pointer; text-align:left; white-space:nowrap;
+    padding:.85rem .1rem 0; color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; transition:color .2s ease;
+}
+.ts-tab:hover, .ts-tab[aria-selected="true"]{ color:var(--text); }
+.ts-tab::before, .ts-tab::after{ content:""; position:absolute; top:0; left:0; height:3px; border-radius:3px; }
+.ts-tab::before{ right:0; background:rgba(255,255,255,0.13); }
+.ts-tab::after{ width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.ts-tab[aria-selected="true"]::after{ width:100%; }
+.tabset.ts-auto .ts-tab[aria-selected="true"]::after{ width:0; animation:tsfill 14s linear forwards; }
+.tabset.ts-hold .ts-tab[aria-selected="true"]::after{ animation-play-state:paused; }
+@keyframes tsfill{ from{ width:0; } to{ width:100%; } }
+.ts-ctrl{
+    flex:none; width:40px; height:40px; border-radius:50%; cursor:pointer; color:var(--text);
+    background:rgba(15,25,56,0.8); border:1px solid var(--border); display:inline-flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+}
+.ts-ctrl:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.15); }
+.ts-ctrl svg{ width:16px; height:16px; }
+.ts-ctrl .i-play{ display:none; }
+.tabset.ts-stopped .ts-pause .i-play{ display:block; }
+.tabset.ts-stopped .ts-pause .i-pause{ display:none; }
+.tabset.js .ts-panel{ display:none; }
+.tabset.js .ts-panel.is-active{ display:block; animation:tsin .45s ease; }
+@keyframes tsin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.ts-panel > section, .ts-panel > .container{ padding-top:0; }
+@media (max-width:700px){ .ts-ctrl{ width:34px; height:34px; } .ts-bar{ gap:.5rem; margin-bottom:1.6rem; } }
+@media (prefers-reduced-motion:reduce){ .tabset.js .ts-panel.is-active{ animation:none; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -718,7 +753,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="dd dd-wide" id="dd-soluciones">
                             <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
                             <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
-                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras: retail, industria, puertos y más</span></a>
                             <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
                             <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
                             <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
@@ -760,14 +795,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section id="que-desarrollamos">
+    <section class="tabs-section" id="temas"><div class="tabset" data-tabset><div class="container"><div class="ts-bar"><button class="ts-ctrl ts-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ts-tabs" role="tablist" aria-label="Elegir tema"><button class="ts-tab" role="tab" id="ts-temas-0" aria-controls="que-desarrollamos" aria-selected="true" tabindex="0">Qué desarrollamos</button><button class="ts-tab" role="tab" id="ts-temas-1" aria-controls="asesorias-sys" aria-selected="false" tabindex="-1">Con Asesorías SyS</button><button class="ts-tab" role="tab" id="ts-temas-2" aria-controls="como-trabajamos" aria-selected="false" tabindex="-1">Cómo trabajamos</button><button class="ts-tab" role="tab" id="ts-temas-3" aria-controls="beneficios" aria-selected="false" tabindex="-1">Beneficios</button></div><button class="ts-ctrl ts-pause" type="button" aria-label="Pausar rotación automática"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg></button><button class="ts-ctrl ts-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="ts-panel is-active" id="que-desarrollamos" role="tabpanel" aria-labelledby="ts-temas-0">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Qué desarrollamos</span>
-                <h2 class="section-title-dark reveal">Del proceso manual a la solución que funciona sola</h2>
-                <p class="section-sub reveal">Partimos de cómo trabaja hoy su equipo y construimos solo lo que necesita: sin licencias de sobra y sin cambiar lo que ya funciona.</p>
+                <h2 class="section-title-dark">Del proceso manual a la solución que funciona sola</h2>
+                <p class="section-sub">Partimos de cómo trabaja hoy su equipo y construimos solo lo que necesita: sin licencias de sobra y sin cambiar lo que ya funciona.</p>
             </div>
-            <div class="modules-grid reveal-stagger">
+            <div class="modules-grid">
                 <div class="module-group">
                     <h3>Automatización de procesos</h3>
                     <p>Flujos de trabajo que se ejecutan sin intervención humana.</p>
@@ -805,21 +840,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="asesorias-sys">
+    </div><div class="ts-panel" id="asesorias-sys" role="tabpanel" aria-labelledby="ts-temas-1">
         <div class="container">
             <div class="two-col">
                 <div class="section-head">
                     <span class="eyebrow">Socio de negocio · Desarrollo de software</span>
-                    <h2 class="section-title-dark reveal">Ingeniería de procesos y tecnología con Asesorías SyS</h2>
-                    <p class="section-sub reveal">Asesorías SyS es una empresa familiar que integra ingeniería, contabilidad y tecnología. Atiende a pymes y empresas medianas de distintas industrias, a distancia en Latinoamérica y de forma presencial en Naranjo, Alajuela (Costa Rica) y Morelia, Michoacán (México).</p>
-                    <p class="agro-role reveal">Tech Advisors LA trabaja de la mano con Asesorías SyS para llevar desarrollo de software y automatización a las empresas que atendemos.</p>
+                    <h2 class="section-title-dark">Ingeniería de procesos y tecnología con Asesorías SyS</h2>
+                    <p class="section-sub">Asesorías SyS es una empresa familiar que integra ingeniería, contabilidad y tecnología. Atiende a pymes y empresas medianas de distintas industrias, a distancia en Latinoamérica y de forma presencial en Naranjo, Alajuela (Costa Rica) y Morelia, Michoacán (México).</p>
+                    <p class="agro-role">Tech Advisors LA trabaja de la mano con Asesorías SyS para llevar desarrollo de software y automatización a las empresas que atendemos.</p>
                     <a href="https://asesorias-sys.com" class="cta-ghost" target="_blank" rel="noopener">Visitar asesorias-sys.com ↗</a>
                 </div>
                 <div>
-                    <p class="mini-label reveal">Lo que aportan</p>
-                    <ul class="list-cards reveal-stagger">
+                    <p class="mini-label">Lo que aportan</p>
+                    <ul class="list-cards">
                         <li><strong>Chatbots y automatización de procesos con IA</strong><span>Asistentes y flujos con IA que conectan sus herramientas actuales y eliminan tareas manuales repetitivas.</span></li>
                         <li><strong>Mapeo de procesos AS-IS / TO-BE</strong><span>Documentan cómo trabaja hoy la empresa y cómo debería hacerlo antes de programar.</span></li>
                         <li><strong>Tableros financieros y operativos</strong><span>Información en tiempo real con Excel y Power BI.</span></li>
@@ -829,15 +862,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="como-trabajamos">
+    </div><div class="ts-panel" id="como-trabajamos" role="tabpanel" aria-labelledby="ts-temas-2">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Cómo trabajamos</span>
-                <h2 class="section-title-dark reveal">Primero entender el proceso, después programar</h2>
+                <h2 class="section-title-dark">Primero entender el proceso, después programar</h2>
             </div>
-            <div class="pain-grid reveal-stagger">
+            <div class="pain-grid">
                 <div class="pain"><div class="after"><b>1 · DIAGNÓSTICO</b>Una reunión inicial para conocer su empresa, sus procesos y lo que más tiempo le quita.</div></div>
                 <div class="pain"><div class="after"><b>2 · ANÁLISIS</b>Mapeamos los procesos críticos y definimos qué automatizar o desarrollar primero.</div></div>
                 <div class="pain"><div class="after"><b>3 · PLAN DE ACCIÓN</b>Le entregamos una propuesta concreta, con alcance, etapas y modelo de pago (CAPEX, OPEX o híbrido).</div></div>
@@ -845,15 +876,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pain"><div class="after"><b>5 · SOPORTE</b>Capacitamos a su personal y damos seguimiento para medir resultados.</div></div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="beneficios">
+    </div><div class="ts-panel" id="beneficios" role="tabpanel" aria-labelledby="ts-temas-3">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Beneficios</span>
-                <h2 class="section-title-dark reveal">Más tiempo para lo que hace crecer su negocio</h2>
+                <h2 class="section-title-dark">Más tiempo para lo que hace crecer su negocio</h2>
             </div>
-            <div class="pain-grid reveal-stagger">
+            <div class="pain-grid">
                 <div class="pain"><div class="after"><b>ATENCIÓN SIN ESPERAS</b>Un chatbot responde las preguntas frecuentes a cualquier hora y su equipo se enfoca en lo importante.</div></div>
                 <div class="pain"><div class="after"><b>MENOS TAREAS MANUALES</b>Su equipo deja de digitar, copiar y revisar lo que una automatización hace sola.</div></div>
                 <div class="pain"><div class="after"><b>SISTEMAS CONECTADOS</b>Un solo flujo de información en lugar de archivos y herramientas aisladas.</div></div>
@@ -861,7 +890,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pain"><div class="after"><b>SIN CASARSE CON UNA MARCA</b>Elegimos la tecnología que conviene a su caso, no la que nos toca vender.</div></div>
             </div>
         </div>
-    </section>
+    </div></div></section>
+
+    
+
+    
+
+    
 
     <section class="contact" id="contacto">
         <div class="container">
@@ -965,5 +1000,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
     </script>
     <script async src="https://www.instagram.com/embed.js"></script>
+<script src="tabset.js" defer></script>
 </body>
 </html>

@@ -788,7 +788,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .wa-float:hover{ filter:brightness(1.08); }
         @media (max-width:600px){ .wa-float span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .wa-float{ padding:0.85rem; } }
         .cta-row-final{ display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin-top:0.4rem; }
-    </style>
+    /* Ruleta de contenido (tabset) */
+.tabs-section{ position:relative; }
+.ts-bar{ display:none; align-items:center; gap:.9rem; margin-bottom:2.2rem; scroll-margin-top:100px; }
+.tabset.js .ts-bar{ display:flex; }
+.ts-tabs{ position:relative; flex:1; min-width:0; display:flex; gap:1.1rem; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.ts-tabs::-webkit-scrollbar{ display:none; }
+.ts-tab{
+    position:relative; flex:1 0 auto; background:none; border:0; cursor:pointer; text-align:left; white-space:nowrap;
+    padding:.85rem .1rem 0; color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; transition:color .2s ease;
+}
+.ts-tab:hover, .ts-tab[aria-selected="true"]{ color:var(--text); }
+.ts-tab::before, .ts-tab::after{ content:""; position:absolute; top:0; left:0; height:3px; border-radius:3px; }
+.ts-tab::before{ right:0; background:rgba(255,255,255,0.13); }
+.ts-tab::after{ width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.ts-tab[aria-selected="true"]::after{ width:100%; }
+.tabset.ts-auto .ts-tab[aria-selected="true"]::after{ width:0; animation:tsfill 14s linear forwards; }
+.tabset.ts-hold .ts-tab[aria-selected="true"]::after{ animation-play-state:paused; }
+@keyframes tsfill{ from{ width:0; } to{ width:100%; } }
+.ts-ctrl{
+    flex:none; width:40px; height:40px; border-radius:50%; cursor:pointer; color:var(--text);
+    background:rgba(15,25,56,0.8); border:1px solid var(--border); display:inline-flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+}
+.ts-ctrl:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.15); }
+.ts-ctrl svg{ width:16px; height:16px; }
+.ts-ctrl .i-play{ display:none; }
+.tabset.ts-stopped .ts-pause .i-play{ display:block; }
+.tabset.ts-stopped .ts-pause .i-pause{ display:none; }
+.tabset.js .ts-panel{ display:none; }
+.tabset.js .ts-panel.is-active{ display:block; animation:tsin .45s ease; }
+@keyframes tsin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.ts-panel > section, .ts-panel > .container{ padding-top:0; }
+@media (max-width:700px){ .ts-ctrl{ width:34px; height:34px; } .ts-bar{ gap:.5rem; margin-bottom:1.6rem; } }
+@media (prefers-reduced-motion:reduce){ .tabset.js .ts-panel.is-active{ animation:none; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -817,7 +852,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="dd dd-wide" id="dd-soluciones">
                             <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
                             <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
-                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras: retail, industria, puertos y más</span></a>
                             <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
                             <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
                             <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
@@ -875,15 +910,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section class="alt-bg" id="equipo">
+    <section class="tabs-section" id="trayectoria"><div class="tabset" data-tabset><div class="container"><div class="ts-bar"><button class="ts-ctrl ts-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ts-tabs" role="tablist" aria-label="Elegir tema"><button class="ts-tab" role="tab" id="ts-trayectoria-0" aria-controls="equipo" aria-selected="true" tabindex="0">Equipo fundador</button><button class="ts-tab" role="tab" id="ts-trayectoria-1" aria-controls="experiencia" aria-selected="false" tabindex="-1">Experiencia</button><button class="ts-tab" role="tab" id="ts-trayectoria-2" aria-controls="partners" aria-selected="false" tabindex="-1">Partners</button></div><button class="ts-ctrl ts-pause" type="button" aria-label="Pausar rotación automática"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg></button><button class="ts-ctrl ts-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="ts-panel is-active" id="equipo" role="tabpanel" aria-labelledby="ts-trayectoria-0">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Equipo fundador</span>
-                <h2 class="section-title-dark reveal">Las personas detrás de Tech Advisors LA</h2>
-                <p class="section-sub reveal">Más de 25 años de experiencia en tecnología y telecomunicaciones, y una década liderando proyectos de ciudades inteligentes, IoT y analítica en Costa Rica y Latinoamérica.</p>
+                <h2 class="section-title-dark">Las personas detrás de Tech Advisors LA</h2>
+                <p class="section-sub">Más de 25 años de experiencia en tecnología y telecomunicaciones, y una década liderando proyectos de ciudades inteligentes, IoT y analítica en Costa Rica y Latinoamérica.</p>
             </div>
 
-            <div class="team-grid reveal-stagger">
+            <div class="team-grid">
                 <article class="person">
                     <div class="person-top">
                         <img class="avatar" src="mario-estrada.jpg" alt="Mario Estrada Solano" width="88" height="88">
@@ -955,22 +990,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </article>
             </div>
         </div>
-    </section>
-
-    <section id="experiencia">
+    </div><div class="ts-panel" id="experiencia" role="tabpanel" aria-labelledby="ts-trayectoria-1">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Experiencia</span>
-                <h2 class="section-title-dark reveal">Proyectos y soluciones para diferentes mercados</h2>
-                <p class="section-sub reveal">Estos son algunos de los proyectos que nuestro equipo ha liderado a lo largo de su trayectoria, junto con los partners que lo acompañan. Esa experiencia es la que hoy ponemos al servicio de cada cliente.</p>
+                <h2 class="section-title-dark">Proyectos y soluciones para diferentes mercados</h2>
+                <p class="section-sub">Estos son algunos de los proyectos que nuestro equipo ha liderado a lo largo de su trayectoria, junto con los partners que lo acompañan. Esa experiencia es la que hoy ponemos al servicio de cada cliente.</p>
             </div>
 
-            <div class="stat-strip reveal-stagger" style="margin:0 0 3rem;">
+            <div class="stat-strip" style="margin:0 0 3rem;">
                 <div><strong>25+ años</strong><span>en tecnología y telecomunicaciones</span></div>
                 <div><strong>10 años</strong><span>en ciudades inteligentes, IoT y analítica</span></div>
                             </div>
 
-            <div class="proj-grid reveal-stagger">
+            <div class="proj-grid">
                 <div class="proj proj-wide">
                     <span class="proj-tag">Telecomunicaciones · Modelos de negocio · Conectividad</span>
                     <h3>Desarrollo integral de proyectos tecnológicos</h3>
@@ -995,16 +1028,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="proj"><span class="proj-tag">Ciudades inteligentes · Conferencia</span><h3>Taller “Ciudades Conectadas”</h3><p>Taller especializado sobre la transformación urbana con inteligencia artificial.</p></div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="partners">
+    </div><div class="ts-panel" id="partners" role="tabpanel" aria-labelledby="ts-trayectoria-2">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Partners</span>
-                <h2 class="section-title-dark reveal">Aliados que nos acompañan en los proyectos</h2>
-                <p class="section-sub reveal">Representamos e implementamos soluciones líderes y trabajamos con socios de negocio. Además, contamos con una red de integradores y especialistas que activamos según cada necesidad.</p>
+                <h2 class="section-title-dark">Aliados que nos acompañan en los proyectos</h2>
+                <p class="section-sub">Representamos e implementamos soluciones líderes y trabajamos con socios de negocio. Además, contamos con una red de integradores y especialistas que activamos según cada necesidad.</p>
             </div>
-            <div class="partner-grid reveal-stagger">
+            <div class="partner-grid">
                 <a class="partner" href="humand.html">
                     <span class="p-name">Humand</span>
                     <span class="p-cat">Gestión de personas · Representación</span>
@@ -1060,7 +1091,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
+    </div></div></section>
+
+    
+
+    
 
     <section id="empresa">
         <div class="container">
@@ -1182,5 +1217,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
     </script>
+<script src="tabset.js" defer></script>
 </body>
 </html>

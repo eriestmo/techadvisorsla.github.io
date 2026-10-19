@@ -690,7 +690,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .wa-float:hover{ filter:brightness(1.08); }
         @media (max-width:600px){ .wa-float span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .wa-float{ padding:0.85rem; } }
         .cta-row-final{ display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin-top:0.4rem; }
-    </style>
+    /* Ruleta de contenido (tabset) */
+.tabs-section{ position:relative; }
+.ts-bar{ display:none; align-items:center; gap:.9rem; margin-bottom:2.2rem; scroll-margin-top:100px; }
+.tabset.js .ts-bar{ display:flex; }
+.ts-tabs{ position:relative; flex:1; min-width:0; display:flex; gap:1.1rem; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.ts-tabs::-webkit-scrollbar{ display:none; }
+.ts-tab{
+    position:relative; flex:1 0 auto; background:none; border:0; cursor:pointer; text-align:left; white-space:nowrap;
+    padding:.85rem .1rem 0; color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; transition:color .2s ease;
+}
+.ts-tab:hover, .ts-tab[aria-selected="true"]{ color:var(--text); }
+.ts-tab::before, .ts-tab::after{ content:""; position:absolute; top:0; left:0; height:3px; border-radius:3px; }
+.ts-tab::before{ right:0; background:rgba(255,255,255,0.13); }
+.ts-tab::after{ width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.ts-tab[aria-selected="true"]::after{ width:100%; }
+.tabset.ts-auto .ts-tab[aria-selected="true"]::after{ width:0; animation:tsfill 14s linear forwards; }
+.tabset.ts-hold .ts-tab[aria-selected="true"]::after{ animation-play-state:paused; }
+@keyframes tsfill{ from{ width:0; } to{ width:100%; } }
+.ts-ctrl{
+    flex:none; width:40px; height:40px; border-radius:50%; cursor:pointer; color:var(--text);
+    background:rgba(15,25,56,0.8); border:1px solid var(--border); display:inline-flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+}
+.ts-ctrl:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.15); }
+.ts-ctrl svg{ width:16px; height:16px; }
+.ts-ctrl .i-play{ display:none; }
+.tabset.ts-stopped .ts-pause .i-play{ display:block; }
+.tabset.ts-stopped .ts-pause .i-pause{ display:none; }
+.tabset.js .ts-panel{ display:none; }
+.tabset.js .ts-panel.is-active{ display:block; animation:tsin .45s ease; }
+@keyframes tsin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.ts-panel > section, .ts-panel > .container{ padding-top:0; }
+@media (max-width:700px){ .ts-ctrl{ width:34px; height:34px; } .ts-bar{ gap:.5rem; margin-bottom:1.6rem; } }
+@media (prefers-reduced-motion:reduce){ .tabset.js .ts-panel.is-active{ animation:none; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -719,7 +754,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="dd dd-wide" id="dd-soluciones">
                             <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
                             <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
-                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras: retail, industria, puertos y más</span></a>
                             <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
                             <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
                             <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
@@ -761,14 +796,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section id="que-abarca">
+    <section class="tabs-section" id="temas"><div class="tabset" data-tabset><div class="container"><div class="ts-bar"><button class="ts-ctrl ts-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ts-tabs" role="tablist" aria-label="Elegir tema"><button class="ts-tab" role="tab" id="ts-temas-0" aria-controls="que-abarca" aria-selected="true" tabindex="0">Qué abarca</button><button class="ts-tab" role="tab" id="ts-temas-1" aria-controls="controlsoft" aria-selected="false" tabindex="-1">Con ControlSoft</button><button class="ts-tab" role="tab" id="ts-temas-2" aria-controls="ecosistema" aria-selected="false" tabindex="-1">Su gente y documentos</button><button class="ts-tab" role="tab" id="ts-temas-3" aria-controls="como-trabajamos" aria-selected="false" tabindex="-1">Cómo trabajamos</button></div><button class="ts-ctrl ts-pause" type="button" aria-label="Pausar rotación automática"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg></button><button class="ts-ctrl ts-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="ts-panel is-active" id="que-abarca" role="tabpanel" aria-labelledby="ts-temas-0">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Qué abarca</span>
-                <h2 class="section-title-dark reveal">Cuatro frentes para digitalizar su operación</h2>
-                <p class="section-sub reveal">Empezamos por donde su empresa gana más: no hace falta transformarlo todo a la vez.</p>
+                <h2 class="section-title-dark">Cuatro frentes para digitalizar su operación</h2>
+                <p class="section-sub">Empezamos por donde su empresa gana más: no hace falta transformarlo todo a la vez.</p>
             </div>
-            <div class="modules-grid reveal-stagger">
+            <div class="modules-grid">
                 <div class="module-group">
                     <h3>Automatización industrial</h3>
                     <p>Control de procesos con instrumentación y sistemas inteligentes.</p>
@@ -799,21 +834,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="controlsoft">
+    </div><div class="ts-panel" id="controlsoft" role="tabpanel" aria-labelledby="ts-temas-1">
         <div class="container">
             <div class="two-col">
                 <div class="section-head">
                     <span class="eyebrow">Socio de negocio · Transformación digital</span>
-                    <h2 class="section-title-dark reveal">Plataformas y automatización industrial inteligente con ControlSoft</h2>
-                    <p class="section-sub reveal">ControlSoft ofrece plataformas y automatización industrial inteligente que optimizan procesos y reducen los costos de operación. Su propuesta de software como servicio busca ser el aliado de la empresa en la toma de decisiones. Está en San José, Costa Rica.</p>
-                    <p class="agro-role reveal">Tech Advisors LA trabaja de la mano con ControlSoft para llevar la transformación digital a plantas, edificios e instalaciones.</p>
+                    <h2 class="section-title-dark">Plataformas y automatización industrial inteligente con ControlSoft</h2>
+                    <p class="section-sub">ControlSoft ofrece plataformas y automatización industrial inteligente que optimizan procesos y reducen los costos de operación. Su propuesta de software como servicio busca ser el aliado de la empresa en la toma de decisiones. Está en San José, Costa Rica.</p>
+                    <p class="agro-role">Tech Advisors LA trabaja de la mano con ControlSoft para llevar la transformación digital a plantas, edificios e instalaciones.</p>
                     <a href="https://scontrolsoftcr.com" class="cta-ghost" target="_blank" rel="noopener">Visitar scontrolsoftcr.com ↗</a>
                 </div>
                 <div>
-                    <p class="mini-label reveal">Lo que aportan</p>
-                    <ul class="list-cards reveal-stagger">
+                    <p class="mini-label">Lo que aportan</p>
+                    <ul class="list-cards">
                         <li><strong>Diseño con ciberseguridad</strong><span>Soluciones pensadas con estándares de seguridad desde el inicio.</span></li>
                         <li><strong>Soluciones personalizadas</strong><span>Ajustadas a cada proceso, planta o edificio.</span></li>
                         <li><strong>Integración versátil</strong><span>Se conectan con los sistemas y equipos que su empresa ya usa.</span></li>
@@ -824,16 +857,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="ecosistema">
+    </div><div class="ts-panel" id="ecosistema" role="tabpanel" aria-labelledby="ts-temas-2">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Más allá de la planta</span>
-                <h2 class="section-title-dark reveal">La transformación digital también es su gente y sus documentos</h2>
-                <p class="section-sub reveal">Según su necesidad, combinamos otras soluciones de nuestra red.</p>
+                <h2 class="section-title-dark">La transformación digital también es su gente y sus documentos</h2>
+                <p class="section-sub">Según su necesidad, combinamos otras soluciones de nuestra red.</p>
             </div>
-            <div class="pain-grid reveal-stagger">
+            <div class="pain-grid">
                 <div class="pain"><div class="after"><b>PERSONAS Y CULTURA</b>Gestión de personas, operaciones y comunicación interna con <a href="humand.html">Humand</a>.</div></div>
                 <div class="pain"><div class="after"><b>PROCESOS Y SOFTWARE</b>Chatbots, automatización y desarrollo con <a href="software.html">Asesorías SyS</a>.</div></div>
                 <div class="pain"><div class="after"><b>DOCUMENTOS</b>Validez legal en el tiempo con <a href="firma-digital.html">firma digital SIGN.TRUST®</a>.</div></div>
@@ -841,15 +872,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pain"><div class="after"><b>COMERCIO</b>Facturación e inventario con el <a href="pos.html">punto de venta</a>.</div></div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="como-trabajamos">
+    </div><div class="ts-panel" id="como-trabajamos" role="tabpanel" aria-labelledby="ts-temas-3">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Cómo trabajamos</span>
-                <h2 class="section-title-dark reveal">Un camino claro, sin saltos grandes</h2>
+                <h2 class="section-title-dark">Un camino claro, sin saltos grandes</h2>
             </div>
-            <div class="pain-grid reveal-stagger">
+            <div class="pain-grid">
                 <div class="pain"><div class="after"><b>1 · DIAGNÓSTICO</b>Entendemos su operación, sus procesos y dónde se pierde tiempo o dinero.</div></div>
                 <div class="pain"><div class="after"><b>2 · PRIORIDADES</b>Definimos qué digitalizar primero según el retorno esperado.</div></div>
                 <div class="pain"><div class="after"><b>3 · SOLUCIÓN</b>Activamos al especialista adecuado de nuestra red, sin atarnos a una marca.</div></div>
@@ -857,7 +886,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pain"><div class="after"><b>5 · MEDICIÓN</b>Acompañamos la implementación y medimos los resultados.</div></div>
             </div>
         </div>
-    </section>
+    </div></div></section>
+
+    
+
+    
+
+    
 
     <section class="contact" id="contacto">
         <div class="container">
@@ -961,5 +996,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
     </script>
     <script async src="https://www.instagram.com/embed.js"></script>
+<script src="tabset.js" defer></script>
 </body>
 </html>

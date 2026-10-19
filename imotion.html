@@ -13,9 +13,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Básico -->
-    <title>Computer Vision para Retail en Costa Rica | iMotion Analytics — Tech Advisors LA</title>
-    <meta name="description" content="Computer vision para tiendas en Costa Rica: conteo de visitantes, filas en cajas, zonas de interés, prevención de pérdidas y análisis predictivo con sus cámaras actuales.">
-    <meta name="keywords" content="computer vision, computer vision retail, inteligencia artificial retail, analítica de video, visión artificial, iMotion Analytics, conteo de personas, prevención de pérdidas, análisis predictivo, tiendas, supermercados, Costa Rica">
+    <title>Computer Vision en Costa Rica: retail, industria, aeropuertos y puertos | iMotion Analytics — Tech Advisors LA</title>
+    <meta name="description" content="Computer vision con sus cámaras actuales para retail, industria y logística, aeropuertos, puertos, infraestructuras y transporte: aforo, seguridad laboral, intrusión, prevención de pérdidas y más. Tech Advisors LA representa a iMotion Analytics en Costa Rica.">
+    <meta name="keywords" content="computer vision, visión artificial, analítica de video, inteligencia artificial, iMotion Analytics, computer vision retail, detección de EPIs, detección de caídas, intrusión perimetral, aeropuertos, puertos, industria, logística, conteo de personas, prevención de pérdidas, Costa Rica">
     <link rel="canonical" href="https://techadvisorsla.com/imotion.html">
 
     <!-- Ícono del sitio (favicon) -->
@@ -29,8 +29,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Vista Previa para WhatsApp, LinkedIn y Redes Sociales (Open Graph) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://techadvisorsla.com/imotion.html">
-    <meta property="og:title" content="Computer Vision para Retail | Sus cámaras ya ven su tienda, ahora pueden ayudarle a decidir">
-    <meta property="og:description" content="Conteo de visitantes, filas, zonas de interés y prevención de pérdidas con computer vision sobre sus cámaras actuales. Tech Advisors LA representa a iMotion Analytics en Costa Rica.">
+    <meta property="og:title" content="Computer Vision para retail, industria, aeropuertos y puertos | Sus cámaras ya ven su operación">
+    <meta property="og:description" content="Aforo, seguridad laboral, intrusión perimetral, caídas, filas y prevención de pérdidas con computer vision sobre sus cámaras actuales. Tech Advisors LA representa a iMotion Analytics en Costa Rica.">
     <meta property="og:image" content="https://techadvisorsla.com/logo-final.png">
 
     <!-- Fuentes -->
@@ -44,9 +44,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Computer Vision para Retail — iMotion Analytics",
-      "serviceType": "Computer vision como servicio (AVaaS) para comercio minorista",
-      "description": "Computer vision (analítica de video con inteligencia artificial) para tiendas y supermercados: conteo de visitantes, filas en cajas, zonas de mayor interés, prevención de pérdidas y seguridad, sobre las cámaras existentes.",
+      "name": "Computer Vision para retail, industria, aeropuertos y puertos — iMotion Analytics",
+      "serviceType": "Computer vision como servicio (AVaaS) para comercio, industria, logística, aeropuertos, puertos e infraestructuras",
+      "description": "Computer vision (analítica de video con inteligencia artificial) sobre las cámaras existentes: conteo y aforo, seguridad laboral con detección de EPIs, intrusión perimetral, detección de caídas, fuego y humo, prevención de pérdidas y monitoreo operativo en retail, industria, logística, aeropuertos, puertos e infraestructuras.",
       "provider": {
             "@type": "ProfessionalService",
             "name": "Tech Advisors LA",
@@ -694,7 +694,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .wa-float:hover{ filter:brightness(1.08); }
         @media (max-width:600px){ .wa-float span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .wa-float{ padding:0.85rem; } }
         .cta-row-final{ display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin-top:0.4rem; }
-    </style>
+    .module-group .story-src{display:inline-block;margin-top:14px;color:var(--accent-2);font-weight:600;text-decoration:none}.module-group .story-src:hover,.module-group .story-src:focus-visible{text-decoration:underline}
+@media (min-width:901px){.modules-grid.modules-2{grid-template-columns:repeat(2,1fr)}}
+/* Ruleta de contenido (tabset) */
+.tabs-section{ position:relative; }
+.ts-bar{ display:none; align-items:center; gap:.9rem; margin-bottom:2.2rem; scroll-margin-top:100px; }
+.tabset.js .ts-bar{ display:flex; }
+.ts-tabs{ position:relative; flex:1; min-width:0; display:flex; gap:1.1rem; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.ts-tabs::-webkit-scrollbar{ display:none; }
+.ts-tab{
+    position:relative; flex:1 0 auto; background:none; border:0; cursor:pointer; text-align:left; white-space:nowrap;
+    padding:.85rem .1rem 0; color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; transition:color .2s ease;
+}
+.ts-tab:hover, .ts-tab[aria-selected="true"]{ color:var(--text); }
+.ts-tab::before, .ts-tab::after{ content:""; position:absolute; top:0; left:0; height:3px; border-radius:3px; }
+.ts-tab::before{ right:0; background:rgba(255,255,255,0.13); }
+.ts-tab::after{ width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.ts-tab[aria-selected="true"]::after{ width:100%; }
+.tabset.ts-auto .ts-tab[aria-selected="true"]::after{ width:0; animation:tsfill 14s linear forwards; }
+.tabset.ts-hold .ts-tab[aria-selected="true"]::after{ animation-play-state:paused; }
+@keyframes tsfill{ from{ width:0; } to{ width:100%; } }
+.ts-ctrl{
+    flex:none; width:40px; height:40px; border-radius:50%; cursor:pointer; color:var(--text);
+    background:rgba(15,25,56,0.8); border:1px solid var(--border); display:inline-flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+}
+.ts-ctrl:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.15); }
+.ts-ctrl svg{ width:16px; height:16px; }
+.ts-ctrl .i-play{ display:none; }
+.tabset.ts-stopped .ts-pause .i-play{ display:block; }
+.tabset.ts-stopped .ts-pause .i-pause{ display:none; }
+.tabset.js .ts-panel{ display:none; }
+.tabset.js .ts-panel.is-active{ display:block; animation:tsin .45s ease; }
+@keyframes tsin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.ts-panel > section, .ts-panel > .container{ padding-top:0; }
+@media (max-width:700px){ .ts-ctrl{ width:34px; height:34px; } .ts-bar{ gap:.5rem; margin-bottom:1.6rem; } }
+@media (prefers-reduced-motion:reduce){ .tabset.js .ts-panel.is-active{ animation:none; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -723,7 +760,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="dd dd-wide" id="dd-soluciones">
                             <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
                             <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
-                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras: retail, industria, puertos y más</span></a>
                             <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
                             <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
                             <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
@@ -750,11 +787,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="hero-content">
                 <div class="breadcrumb"><a href="index.html">Inicio</a> / Computer Vision / iMotion Analytics</div>
-                <span class="eyebrow">Computer Vision · IA · Retail</span>
-                <h1 class="hero-title">Sus cámaras ya ven su tienda. Ahora pueden <span class="hl">ayudarle a decidir</span>.</h1>
-                <p class="hero-sub">Con la tecnología de computer vision de iMotion Analytics, las cámaras que su tienda ya tiene se convierten en sensores inteligentes. Cuentan visitantes, detectan filas, muestran las zonas de mayor interés y alertan sobre situaciones de riesgo. Con esos datos, usted puede anticipar la demanda, planificar mejor al personal y reducir pérdidas. Tech Advisors LA representa a iMotion Analytics en Costa Rica.</p>
+                <span class="eyebrow">Computer Vision · IA · Múltiples sectores</span>
+                <h1 class="hero-title">Sus cámaras ya ven su operación. Ahora pueden <span class="hl">ayudarle a decidir</span>.</h1>
+                <p class="hero-sub">Con la tecnología de computer vision de iMotion Analytics, las cámaras que su empresa ya tiene se convierten en sensores inteligentes: cuentan personas, miden filas y aforos, detectan intrusiones, caídas, humo o falta de equipo de protección, y alertan en tiempo real. Se aplica en comercio, industria y logística, aeropuertos, puertos, infraestructuras y transporte. Tech Advisors LA representa a iMotion Analytics en Costa Rica.</p>
                 <a href="contacto.html" class="cta-button">Solicite un diagnóstico →</a>
-                <a href="#casos" class="cta-ghost">Ver casos de uso</a>
+                <a href="#sectores" class="cta-ghost">Ver sectores</a>
 
                 <div class="stat-strip">
                     <div><strong>+99%</strong><span>de fiabilidad en la medición de aforo en accesos</span></div>
@@ -765,14 +802,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section id="preguntas">
+    <section class="tabs-section" id="sectores"><div class="tabset" data-tabset><div class="container"><div class="ts-bar"><button class="ts-ctrl ts-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ts-tabs" role="tablist" aria-label="Elegir tema"><button class="ts-tab" role="tab" id="ts-sectores-0" aria-controls="retail" aria-selected="true" tabindex="0">Retail: decisiones</button><button class="ts-tab" role="tab" id="ts-sectores-1" aria-controls="casos" aria-selected="false" tabindex="-1">Retail: casos de uso</button><button class="ts-tab" role="tab" id="ts-sectores-2" aria-controls="industria" aria-selected="false" tabindex="-1">Industria y logística</button><button class="ts-tab" role="tab" id="ts-sectores-3" aria-controls="aeropuertos" aria-selected="false" tabindex="-1">Aeropuertos</button><button class="ts-tab" role="tab" id="ts-sectores-4" aria-controls="puertos" aria-selected="false" tabindex="-1">Puertos</button><button class="ts-tab" role="tab" id="ts-sectores-5" aria-controls="transporte" aria-selected="false" tabindex="-1">Infraestructura y transporte</button><button class="ts-tab" role="tab" id="ts-sectores-6" aria-controls="otros" aria-selected="false" tabindex="-1">Banca, turismo y ciudad</button></div><button class="ts-ctrl ts-pause" type="button" aria-label="Pausar rotación automática"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg></button><button class="ts-ctrl ts-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="ts-panel is-active" id="retail" role="tabpanel" aria-labelledby="ts-sectores-0">
         <div class="container">
             <div class="section-head">
-                <span class="eyebrow">Análisis predictivo</span>
-                <h2 class="section-title-dark reveal">Preguntas que su tienda puede responder con datos</h2>
-                <p class="section-sub reveal">La IA registra en forma continua lo que pasa en el piso de venta. Con el historial, usted identifica patrones y se anticipa, en lugar de reaccionar cuando el problema ya ocurrió.</p>
+                <span class="eyebrow">Comercio y retail · Análisis predictivo</span>
+                <h2 class="section-title-dark">Preguntas que su tienda puede responder con datos</h2>
+                <p class="section-sub">La IA registra en forma continua lo que pasa en el piso de venta. Con el historial, usted identifica patrones y se anticipa, en lugar de reaccionar cuando el problema ya ocurrió.</p>
             </div>
-            <div class="q-grid reveal-stagger">
+            <div class="q-grid">
                 <div class="q-card">
                     <div class="q">¿A qué horas y qué días entra más gente?</div>
                     <div class="a">Conteo de visitantes por hora, día y sucursal para ver las tendencias de afluencia y anticipar las horas pico.</div>
@@ -799,16 +836,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="casos">
+    </div><div class="ts-panel" id="casos" role="tabpanel" aria-labelledby="ts-sectores-1">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Casos de uso en retail</span>
-                <h2 class="section-title-dark reveal">Una misma plataforma para vender más, operar mejor y perder menos</h2>
-                <p class="section-sub reveal">Se activan los análisis según la necesidad de cada tienda, centro de distribución o bodega.</p>
+                <h2 class="section-title-dark">Una misma plataforma para vender más, operar mejor y perder menos</h2>
+                <p class="section-sub">Se activan los análisis según la necesidad de cada tienda, centro de distribución o bodega.</p>
             </div>
-            <div class="modules-grid reveal-stagger">
+            <div class="modules-grid">
                 <div class="module-group">
                     <h3>Conocer al cliente</h3>
                     <p>Cómo entran, por dónde se mueven y cuánto tiempo se quedan.</p>
@@ -864,16 +899,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
+    </div><div class="ts-panel" id="industria" role="tabpanel" aria-labelledby="ts-sectores-2"><div class="container"><div class="section-head"><span class="eyebrow">Industria y logística</span><h2 class="section-title-dark">Seguridad laboral y operación segura en plantas, obras y bodegas</h2><p class="section-sub">Alertas automáticas, las 24 horas, sobre las cámaras que ya existen. Los avisos se pueden limitar a los horarios de interés.</p></div><div class="modules-grid"><div class="module-group"><h3>Equipo de protección (EPIs)</h3><p>Detecta y alarma cuando falta el equipo de seguridad y reduce incidentes laborales asociados.</p><div class="chips"><span class="chip">Cascos</span><span class="chip">Chalecos</span><span class="chip">Gafas</span></div></div><div class="module-group"><h3>Caídas y desmayos</h3><p>Identifica patrones de movimiento inusuales que sugieren una caída o desmayo y genera alertas en tiempo real.</p><div class="chips"><span class="chip">Detección de caídas</span><span class="chip">Persona en el suelo</span><span class="chip">Alerta inmediata</span></div></div><div class="module-group"><h3>Intrusión perimetral</h3><p>Controla espacios donde no debe haber personas, con cámaras convencionales o térmicas y zonas dibujadas a la medida.</p><div class="chips"><span class="chip">Cámaras térmicas</span><span class="chip">Zonas verdes y perímetros</span><span class="chip">Centros logísticos</span><span class="chip">Proximidad a zonas de riesgo</span></div></div><div class="module-group"><h3>Fuego y humo</h3><p>Detección visual temprana de humo o fuego para reaccionar antes de que escale.</p><div class="chips"><span class="chip">Humo</span><span class="chip">Fuego</span><span class="chip">Alertas tempranas</span></div></div><div class="module-group"><h3>Logística y mercadería</h3><p>Modelos de visión y lenguaje (VLM) para situaciones que antes requerían a una persona mirando.</p><div class="chips"><span class="chip">Hurto y manipulación de paquetes</span><span class="chip">Golpes y mala manipulación</span><span class="chip">Conducción temeraria de montacargas</span></div></div><div class="module-group"><h3>Salud de las cámaras</h3><p>Evita que una cámara quede «ciega» sin que nadie lo note.</p><div class="chips"><span class="chip">Manipulación o sabotaje</span><span class="chip">Pérdida de visibilidad</span><span class="chip">Lentes sucios o fallas de imagen</span><span class="chip">Condiciones atmosféricas</span></div></div></div></div></div><div class="ts-panel" id="aeropuertos" role="tabpanel" aria-labelledby="ts-sectores-3"><div class="container"><div class="section-head"><span class="eyebrow">Aeropuertos</span><h2 class="section-title-dark">Operación y seguridad aeroportuaria con datos objetivos</h2><p class="section-sub">Medición y monitoreo de aforo con analítica de video en accesos, con una fiabilidad superior al 99 %, y alertas parametrizables por tablero o correo.</p></div><div class="modules-grid modules-2"><div class="module-group"><h3>Flujos y operación</h3><p>Conozca los flujos de pasajeros, vehículos y personal en terminales, accesos, perímetro y zonas de carga.</p><div class="chips"><span class="chip">Aforo en accesos</span><span class="chip">Filas excesivas</span><span class="chip">Permanencias y congestión</span><span class="chip">Ocupación de áreas</span></div></div><div class="module-group"><h3>Seguridad y comportamiento</h3><p>Detección temprana de incidentes en áreas públicas.</p><div class="chips"><span class="chip">Peleas o agresiones</span><span class="chip">Caídas o personas en el suelo</span><span class="chip">Armas u objetos peligrosos</span><span class="chip">Vandalismo o daños</span><span class="chip">Objetos abandonados</span><span class="chip">Accesos no autorizados</span></div></div><div class="module-group"><h3>Equipaje y activos</h3><p>Trazabilidad y control visual de la operación aeroportuaria.</p><div class="chips"><span class="chip">Seguimiento de equipaje</span><span class="chip">Cintas saturadas o bloqueadas</span><span class="chip">Puertas y accesos técnicos</span><span class="chip">Salidas de emergencia</span></div></div><div class="module-group"><h3>Infraestructura</h3><p>Supervisión visual de zonas críticas y alertas por eventos anómalos.</p><div class="chips"><span class="chip">Techos, puentes y fachadas</span><span class="chip">Humo, fuego o chispas</span><span class="chip">Pantallas y señalética</span><span class="chip">Rutas de evacuación obstruidas</span></div></div></div><p class="story-note">Funcionalidades según la presentación de iMotion Analytics para aeropuertos; se activan las que su operación necesite.</p></div></div><div class="ts-panel" id="puertos" role="tabpanel" aria-labelledby="ts-sectores-4"><div class="container"><div class="section-head"><span class="eyebrow">Puertos</span><h2 class="section-title-dark">Control de accesos, contenedores e infraestructura portuaria</h2><p class="section-sub">Plataforma adaptable a los algoritmos de clasificación que cada puerto necesite, con integración por API y con plataformas de video como Milestone.</p></div><div class="modules-grid"><div class="module-group"><h3>Seguridad y vigilancia</h3><p>Monitoreo en tiempo real de áreas restringidas y actividad inusual.</p><div class="chips"><span class="chip">Detección de intrusiones</span><span class="chip">Actividades sospechosas</span><span class="chip">Prevención de riesgos laborales (EPIs)</span><span class="chip">Aforo por zonas</span><span class="chip">Lectura de matrículas</span></div></div><div class="module-group"><h3>Automatización de operaciones</h3><p>Menos revisión manual y mejor trazabilidad de la carga.</p><div class="chips"><span class="chip">Inspección de contenedores</span><span class="chip">Seguimiento desde la llegada hasta la salida</span><span class="chip">Optimización del almacenamiento</span><span class="chip">Inventario en tiempo real</span></div></div><div class="module-group"><h3>Infraestructura y equipos</h3><p>Prevención de fallas antes de que sean problemas mayores.</p><div class="chips"><span class="chip">Inspección de muelles y grúas</span><span class="chip">Detección de anomalías</span><span class="chip">Estado técnico de equipos</span><span class="chip">Mantenimiento predictivo</span></div></div><div class="module-group"><h3>Control de la operación</h3><p>Reaccione con rapidez a colas de transportistas y exceso de carga de trabajo.</p><div class="chips"><span class="chip">Aforo en tiempo real</span><span class="chip">Planificación de recursos</span><span class="chip">Información objetiva y trazable</span></div></div></div></div></div><div class="ts-panel" id="transporte" role="tabpanel" aria-labelledby="ts-sectores-5"><div class="container"><div class="section-head"><span class="eyebrow">Infraestructuras y transporte</span><h2 class="section-title-dark">Estaciones, carreteras, túneles y trenes</h2><p class="section-sub">Experiencia de iMotion Analytics en transporte y espacios públicos, donde lleva años operando.</p></div><div class="modules-grid"><div class="module-group"><h3>Infraestructuras críticas</h3><p>Protección perimetral con cámaras térmicas y convencionales.</p><div class="chips"><span class="chip">Intrusión perimetral</span><span class="chip">Accesos no autorizados</span><span class="chip">Merodeo</span><span class="chip">Comportamiento anómalo</span></div></div><div class="module-group"><h3>Carreteras y túneles</h3><p>Seguridad vial con detección de incidentes en tiempo real.</p><div class="chips"><span class="chip">Flujo de tráfico</span><span class="chip">Clasificación de vehículos</span><span class="chip">Detección de incidentes (DAI)</span><span class="chip">Patrones de movimiento</span></div></div><div class="module-group"><h3>Estaciones, trenes y autobuses</h3><p>Prevención de incidentes y protección de pasajeros.</p><div class="chips"><span class="chip">Vestíbulos y andenes</span><span class="chip">Cruce de vías</span><span class="chip">Control de torniquetes</span><span class="chip">Monitoreo a bordo</span><span class="chip">Patinetes y sillas de ruedas</span></div></div></div></div></div><div class="ts-panel" id="otros" role="tabpanel" aria-labelledby="ts-sectores-6"><div class="container"><div class="section-head"><span class="eyebrow">Banca, turismo y ciudad</span><h2 class="section-title-dark">Experiencia del cliente y espacios públicos</h2><p class="section-sub">Casos que iMotion Analytics ya atiende y que podemos evaluar según cada proyecto.</p></div><div class="modules-grid"><div class="module-group"><h3>Banca</h3><p>Mapas de calor, tiempos de fila y experiencia del cliente en sucursales.</p><div class="chips"><span class="chip">Mapas de calor</span><span class="chip">Tiempos de fila</span><span class="chip">Aforo</span></div></div><div class="module-group"><h3>Turismo y hoteles</h3><p>Gestión de filas, espacios y experiencia en parques, hoteles y resorts.</p><div class="chips"><span class="chip">Filas</span><span class="chip">Ocupación de espacios</span><span class="chip">Experiencia del huésped</span></div></div><div class="module-group"><h3>Smart cities</h3><p>Analítica de video para transporte público, tráfico y seguridad urbana, con datos para decidir.</p><div class="chips"><span class="chip">Movilidad</span><span class="chip">Seguridad</span><span class="chip">Datos para la gestión pública</span></div></div></div></div></div></div></section>
 
-    <section id="como-funciona">
+    
+
+    
+
+
+
+
+<section class="tabs-section alt-bg" id="modelo-ia"><div class="tabset" data-tabset><div class="container"><div class="ts-bar"><button class="ts-ctrl ts-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ts-tabs" role="tablist" aria-label="Elegir tema"><button class="ts-tab" role="tab" id="ts-modelo-ia-0" aria-controls="como-funciona" aria-selected="true" tabindex="0">Cómo funciona</button><button class="ts-tab" role="tab" id="ts-modelo-ia-1" aria-controls="modelo" aria-selected="false" tabindex="-1">Modelo como servicio</button><button class="ts-tab" role="tab" id="ts-modelo-ia-2" aria-controls="referencias" aria-selected="false" tabindex="-1">Referencias</button><button class="ts-tab" role="tab" id="ts-modelo-ia-3" aria-controls="respaldo" aria-selected="false" tabindex="-1">Respaldo</button></div><button class="ts-ctrl ts-pause" type="button" aria-label="Pausar rotación automática"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg></button><button class="ts-ctrl ts-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="ts-panel is-active" id="como-funciona" role="tabpanel" aria-labelledby="ts-modelo-ia-0">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Cómo funciona</span>
-                <h2 class="section-title-dark reveal">De la cámara a la decisión</h2>
-                <p class="section-sub reveal">No hace falta cambiar su sistema de videovigilancia: la inteligencia artificial trabaja sobre la infraestructura que ya tiene.</p>
+                <h2 class="section-title-dark">De la cámara a la decisión</h2>
+                <p class="section-sub">No hace falta cambiar su sistema de videovigilancia: la inteligencia artificial trabaja sobre la infraestructura que ya tiene.</p>
             </div>
-            <div class="flow reveal-stagger">
+            <div class="flow">
                 <div class="flow-step">
                     <span class="process-num mono">01</span>
                     <h3>Sus cámaras</h3>
@@ -896,35 +938,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="modelo">
+    </div><div class="ts-panel" id="modelo" role="tabpanel" aria-labelledby="ts-modelo-ia-1">
         <div class="container">
             <div class="two-col">
                 <div class="section-head">
                     <span class="eyebrow">Visión artificial como servicio</span>
-                    <h2 class="section-title-dark reveal">Sin inversión inicial en software: una cuota mensual por cámara</h2>
-                    <p class="section-sub reveal">iMotion Analytics trabaja con un modelo de servicio (AVaaS): usted paga solo por las cámaras que se están analizando. Encaja con el esquema 100% OPEX de Tech Advisors LA y se puede empezar con una sola tienda antes de extenderlo a toda la cadena.</p>
+                    <h2 class="section-title-dark">Sin inversión inicial en software: una cuota mensual por cámara</h2>
+                    <p class="section-sub">iMotion Analytics trabaja con un modelo de servicio (AVaaS): usted paga solo por las cámaras que se están analizando. Encaja con el esquema 100% OPEX de Tech Advisors LA y se puede empezar con un solo sitio antes de extenderlo a toda la operación.</p>
                 </div>
-                <ul class="list-cards reveal-stagger">
+                <ul class="list-cards">
                     <li><strong>Mantenimiento proactivo</strong><span>Usted no tiene que vigilar que la solución funcione: el equipo técnico se encarga.</span></li>
                     <li><strong>Actualizaciones incluidas</strong><span>Siempre tiene la última versión de los algoritmos, sin costos adicionales.</span></li>
-                    <li><strong>Soluciones a la medida</strong><span>Si su operación necesita un análisis que no existe, se diseña con usted, se prueba en su tienda y después se pone en producción.</span></li>
+                    <li><strong>Soluciones a la medida</strong><span>Si su operación necesita un análisis que no existe, se diseña con usted, se prueba en su operación y después se pone en producción.</span></li>
                     <li><strong>Representación y acompañamiento local</strong><span>Tech Advisors LA representa a iMotion Analytics en Costa Rica y lo acompaña, junto a su socio de negocio Smart Costa, desde el diagnóstico hasta la medición de resultados.</span></li>
                 </ul>
             </div>
         </div>
-    </section>
-
-
-    <section id="referencias">
+    </div><div class="ts-panel" id="referencias" role="tabpanel" aria-labelledby="ts-modelo-ia-2">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Casos y referencias</span>
-                <h2 class="section-title-dark reveal">Visión artificial en operación real, con clientes de primer nivel</h2>
-                <p class="section-sub reveal">Referencias públicas de iMotion Analytics en distintos sectores. La experiencia en transporte e infraestructura es la misma que hoy se aplica al comercio.</p>
+                <h2 class="section-title-dark">Visión artificial en operación real, con clientes de primer nivel</h2>
+                <p class="section-sub">Referencias públicas de iMotion Analytics en distintos sectores. La experiencia en transporte e infraestructura es la misma que hoy se aplica en cada sector.</p>
             </div>
-            <div class="story-grid reveal-stagger">
+            <div class="story-grid">
                 <article class="story">
                     <span class="story-tag">Transporte · Ferroviario</span>
                     <h3>Renfe</h3>
@@ -950,8 +987,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a class="story-src" href="https://www.imotionanalytics.com" target="_blank" rel="noopener">Sitio de iMotion Analytics ↗</a>
                 </article>
             </div>
-            <p class="mini-label reveal">Clientes de iMotion Analytics</p>
-            <div class="trust-names reveal">
+            <p class="mini-label">Clientes de iMotion Analytics</p>
+            <div class="trust-names">
                 <span>Renfe</span><span>Adif</span><span>IKEA</span><span>Janssen</span><span>CaixaBank</span><span>HD Hoteles</span><span>Louvre Hotels Group</span><span>Aena</span><span>Geox</span><span>Campanile</span><span>Krack</span><span>Kave Home</span><span>Opticalia</span><span>Volkswagen</span><span>Fujitsu</span><span>Ajuntament de Castelldefels</span><span>Ajuntament d'Esplugues</span><span>Ajuntament de Vilafranca del Penedès</span><span>Villanueva de la Cañada</span><span>Generalitat de Catalunya</span>
             </div>
             <div class="clients-cap">
@@ -960,41 +997,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <p class="story-note">Información publicada por la prensa especializada y por la propia empresa; las cifras corresponden a la fecha de cada fuente y no son resultados garantizados.</p>
         </div>
-    </section>
-
-    <section id="respaldo">
+    </div><div class="ts-panel" id="respaldo" role="tabpanel" aria-labelledby="ts-modelo-ia-3">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Respaldo</span>
-                <h2 class="section-title-dark reveal">Tecnología probada en entornos exigentes</h2>
-                <p class="section-sub reveal">iMotion Analytics es una empresa española especializada en computer vision (visión artificial), representada en Costa Rica por Tech Advisors LA, con Smart Costa como socio de negocio. Desarrolla sus propias soluciones desde 2015 y forma parte del primer sandbox de inteligencia artificial. Sus soluciones ya operan en aeropuertos, puertos, carreteras, túneles, industria y logística, y esa misma experiencia es la que hoy se aplica al comercio.</p>
+                <h2 class="section-title-dark">Tecnología probada en entornos exigentes</h2>
+                <p class="section-sub">iMotion Analytics es una empresa española especializada en computer vision (visión artificial), representada en Costa Rica por Tech Advisors LA, con Smart Costa como socio de negocio. Desarrolla sus propias soluciones desde 2015 y forma parte del primer sandbox de inteligencia artificial. Sus soluciones ya operan en aeropuertos, puertos, carreteras, túneles, industria y logística, y esa misma experiencia es la que hoy se aplica también al comercio.</p>
             </div>
-            <div class="chips reveal">
+            <div class="chips">
                 <span class="chip">Aeropuertos</span><span class="chip">Puertos</span><span class="chip">Carreteras</span>
                 <span class="chip">Túneles</span><span class="chip">Industria</span><span class="chip">Logística</span><span class="chip">Retail</span>
             </div>
         </div>
-    </section>
+    </div></div></section>
 
-    <section style="padding-top:0;">
-        <div class="container">
-            <div class="cta-band reveal">
-                <div>
-                    <h2>Empecemos con una tienda piloto</h2>
-                    <p>Revisamos sus cámaras actuales, definimos los indicadores que más le interesan y revisamos juntos los primeros resultados con datos reales de su tienda.</p>
-                </div>
-                <a href="contacto.html" class="cta-button">Solicitar diagnóstico →</a>
-            </div>
-        </div>
-    </section>
+    
+
+
+    
+
+    
+
+    
 
 
     <section class="contact" id="contacto">
         <div class="container">
             <div class="contact-cta reveal">
                 <span class="eyebrow">Contacto</span>
-                <h2 class="section-title-dark">Hablemos de IA para su tienda</h2>
-                <p class="section-sub">Cuéntenos cuántas tiendas tiene y qué quiere medir. Le proponemos una prueba piloto con sus cámaras actuales.</p>
+                <h2 class="section-title-dark">Hablemos de IA para su operación</h2>
+                <p class="section-sub">Cuéntenos en qué sector trabaja y qué quiere medir. Le proponemos una prueba piloto con sus cámaras actuales.</p>
                 <div class="cta-row-final"><a href="contacto.html" class="cta-button">Contáctenos →</a><a href="https://wa.me/50664656910?text=Hola%2C%20quiero%20conversar%20sobre%20una%20soluci%C3%B3n%20con%20Tech%20Advisors%20LA" class="cta-ghost" target="_blank" rel="noopener">Escribir por WhatsApp ↗</a></div>
             </div>
         </div>
@@ -1090,5 +1122,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
     </script>
+<script src="tabset.js" defer></script>
 </body>
 </html>

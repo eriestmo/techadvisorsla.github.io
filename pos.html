@@ -682,7 +682,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .wa-float:hover{ filter:brightness(1.08); }
         @media (max-width:600px){ .wa-float span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .wa-float{ padding:0.85rem; } }
         .cta-row-final{ display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:center; margin-top:0.4rem; }
-    </style>
+    /* Ruleta de contenido (tabset) */
+.tabs-section{ position:relative; }
+.ts-bar{ display:none; align-items:center; gap:.9rem; margin-bottom:2.2rem; scroll-margin-top:100px; }
+.tabset.js .ts-bar{ display:flex; }
+.ts-tabs{ position:relative; flex:1; min-width:0; display:flex; gap:1.1rem; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.ts-tabs::-webkit-scrollbar{ display:none; }
+.ts-tab{
+    position:relative; flex:1 0 auto; background:none; border:0; cursor:pointer; text-align:left; white-space:nowrap;
+    padding:.85rem .1rem 0; color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; transition:color .2s ease;
+}
+.ts-tab:hover, .ts-tab[aria-selected="true"]{ color:var(--text); }
+.ts-tab::before, .ts-tab::after{ content:""; position:absolute; top:0; left:0; height:3px; border-radius:3px; }
+.ts-tab::before{ right:0; background:rgba(255,255,255,0.13); }
+.ts-tab::after{ width:0; background:linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.ts-tab[aria-selected="true"]::after{ width:100%; }
+.tabset.ts-auto .ts-tab[aria-selected="true"]::after{ width:0; animation:tsfill 14s linear forwards; }
+.tabset.ts-hold .ts-tab[aria-selected="true"]::after{ animation-play-state:paused; }
+@keyframes tsfill{ from{ width:0; } to{ width:100%; } }
+.ts-ctrl{
+    flex:none; width:40px; height:40px; border-radius:50%; cursor:pointer; color:var(--text);
+    background:rgba(15,25,56,0.8); border:1px solid var(--border); display:inline-flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+}
+.ts-ctrl:hover{ border-color:var(--accent-2); background:rgba(46,134,245,0.15); }
+.ts-ctrl svg{ width:16px; height:16px; }
+.ts-ctrl .i-play{ display:none; }
+.tabset.ts-stopped .ts-pause .i-play{ display:block; }
+.tabset.ts-stopped .ts-pause .i-pause{ display:none; }
+.tabset.js .ts-panel{ display:none; }
+.tabset.js .ts-panel.is-active{ display:block; animation:tsin .45s ease; }
+@keyframes tsin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.ts-panel > section, .ts-panel > .container{ padding-top:0; }
+@media (max-width:700px){ .ts-ctrl{ width:34px; height:34px; } .ts-bar{ gap:.5rem; margin-bottom:1.6rem; } }
+@media (prefers-reduced-motion:reduce){ .tabset.js .ts-panel.is-active{ animation:none; } }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -711,7 +746,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="dd dd-wide" id="dd-soluciones">
                             <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
                             <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
-                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras para retail</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras: retail, industria, puertos y más</span></a>
                             <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
                             <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
                             <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
@@ -753,14 +788,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section id="modulos">
+    <section class="tabs-section" id="temas"><div class="tabset" data-tabset><div class="container"><div class="ts-bar"><button class="ts-ctrl ts-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="ts-tabs" role="tablist" aria-label="Elegir tema"><button class="ts-tab" role="tab" id="ts-temas-0" aria-controls="modulos" aria-selected="true" tabindex="0">Módulos</button><button class="ts-tab" role="tab" id="ts-temas-1" aria-controls="para-quien" aria-selected="false" tabindex="-1">Experiencia</button><button class="ts-tab" role="tab" id="ts-temas-2" aria-controls="tecnologia" aria-selected="false" tabindex="-1">Tecnología</button><button class="ts-tab" role="tab" id="ts-temas-3" aria-controls="modelo" aria-selected="false" tabindex="-1">Modelo como servicio</button><button class="ts-tab" role="tab" id="ts-temas-4" aria-controls="aliados" aria-selected="false" tabindex="-1">Para aliados</button></div><button class="ts-ctrl ts-pause" type="button" aria-label="Pausar rotación automática"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z" fill="currentColor"/></svg></button><button class="ts-ctrl ts-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div><div class="ts-panel is-active" id="modulos" role="tabpanel" aria-labelledby="ts-temas-0">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Módulos</span>
-                <h2 class="section-title-dark reveal">Todo lo que su tienda necesita en una sola herramienta</h2>
-                <p class="section-sub reveal">Desde la venta en caja hasta el análisis de lo que más se vende, en todas sus sucursales.</p>
+                <h2 class="section-title-dark">Todo lo que su tienda necesita en una sola herramienta</h2>
+                <p class="section-sub">Desde la venta en caja hasta el análisis de lo que más se vende, en todas sus sucursales.</p>
             </div>
-            <div class="pillars reveal-stagger">
+            <div class="pillars">
                 <div class="pillar"><div class="node-tag">OP</div><h3>Operación de tienda</h3><p>Facturación de contado, apartados, compras y cierres de caja.</p></div>
                 <div class="pillar"><div class="node-tag">INV</div><h3>Control de inventario</h3><p>Gestión física y en línea de las existencias de cada sucursal.</p></div>
                 <div class="pillar"><div class="node-tag">BI</div><h3>Inteligencia de negocios</h3><p>Análisis de ventas por producto, por marca y en hasta 15 categorías.</p></div>
@@ -769,17 +804,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="pillar"><div class="node-tag">LOY</div><h3>Programas de lealtad</h3><p>Tarjetas de regalo y programa de cliente frecuente para que sus clientes vuelvan.</p></div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="para-quien">
+    </div><div class="ts-panel" id="para-quien" role="tabpanel" aria-labelledby="ts-temas-1">
         <div class="container">
             <div class="two-col">
                 <div class="section-head">
                     <span class="eyebrow">Experiencia comprobada</span>
-                    <h2 class="section-title-dark reveal">20 años evolucionando junto al comercio</h2>
-                    <p class="section-sub reveal">Es una solución con 20 años en el mercado. En ese tiempo ha evolucionado con las necesidades del comercio y se ha ganado la confianza de clientes del sector retail. Es ideal para PYMES que quieren profesionalizar su punto de venta y para cadenas con varias sucursales.</p>
+                    <h2 class="section-title-dark">20 años evolucionando junto al comercio</h2>
+                    <p class="section-sub">Es una solución con 20 años en el mercado. En ese tiempo ha evolucionado con las necesidades del comercio y se ha ganado la confianza de clientes del sector retail. Es ideal para PYMES que quieren profesionalizar su punto de venta y para cadenas con varias sucursales.</p>
                 </div>
-                <ul class="list-cards reveal-stagger">
+                <ul class="list-cards">
                     <li><strong>Supermercados</strong><span>Alto volumen de transacciones, varias cajas e inventario en constante movimiento.</span></li>
                     <li><strong>Tiendas de ropa y zapaterías</strong><span>Control por marca, talla y categoría, con apartados y promociones.</span></li>
                     <li><strong>Ferreterías</strong><span>Miles de artículos con existencias actualizadas en cada sucursal.</span></li>
@@ -787,32 +820,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
             </div>
         </div>
-    </section>
-
-    <section id="tecnologia">
+    </div><div class="ts-panel" id="tecnologia" role="tabpanel" aria-labelledby="ts-temas-2">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Tecnología</span>
-                <h2 class="section-title-dark reveal">Información siempre disponible y segura</h2>
-                <p class="section-sub reveal">La arquitectura está diseñada para que la información de todas las sucursales esté disponible en todo momento.</p>
+                <h2 class="section-title-dark">Información siempre disponible y segura</h2>
+                <p class="section-sub">La arquitectura está diseñada para que la información de todas las sucursales esté disponible en todo momento.</p>
             </div>
-            <div class="flow reveal-stagger">
+            <div class="flow">
                 <div class="flow-step"><span class="process-num mono">01</span><h3>Puntos de venta</h3><p>Cada caja se conecta por Internet, sin infraestructura compleja en la tienda.</p></div>
                 <div class="flow-step"><span class="process-num mono">02</span><h3>Plataforma robusta</h3><p>Una base de datos empresarial que aporta solidez y seguridad a la información.</p></div>
                 <div class="flow-step"><span class="process-num mono">03</span><h3>Respaldo y replicación</h3><p>Los datos se respaldan y se replican en sitios alternos para garantizar la continuidad del negocio.</p></div>
                 <div class="flow-step"><span class="process-num mono">04</span><h3>Acceso en tiempo real</h3><p>El dueño del negocio y su contador consultan la información desde cualquier lugar.</p></div>
             </div>
         </div>
-    </section>
-
-    <section class="alt-bg" id="modelo">
+    </div><div class="ts-panel" id="modelo" role="tabpanel" aria-labelledby="ts-temas-3">
         <div class="container">
             <div class="section-head">
                 <span class="eyebrow">Modelo como servicio</span>
-                <h2 class="section-title-dark reveal">Sin inversión inicial: una suscripción mensual</h2>
-                <p class="section-sub reveal">Un modelo escalable según la demanda, que elimina la barrera de la inversión inicial (CAPEX).</p>
+                <h2 class="section-title-dark">Sin inversión inicial: una suscripción mensual</h2>
+                <p class="section-sub">Un modelo escalable según la demanda, que elimina la barrera de la inversión inicial (CAPEX).</p>
             </div>
-            <div class="services-grid reveal-stagger">
+            <div class="services-grid">
                 <div class="service-card">
                     <div class="node-tag">P1</div>
                     <h3>Paquete Gestión</h3>
@@ -824,24 +853,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Todo lo del Paquete Gestión, más el sistema de lealtad con tarjetas de regalo y cliente frecuente.</p>
                 </div>
             </div>
-            <div class="values reveal-stagger">
+            <div class="values">
                 <div><strong>Hardware flexible</strong><span>Use su propio equipo o adquiéralo también como servicio.</span></div>
                 <div><strong>Transparencia</strong><span>Acceso en tiempo real para el dueño y el contador.</span></div>
                 <div><strong>Escalable</strong><span>Crece con su número de cajas y sucursales.</span></div>
                 <div><strong>Regional</strong><span>Estandarice su operación en Costa Rica y Centroamérica.</span></div>
             </div>
         </div>
-    </section>
-
-    <section id="aliados">
+    </div><div class="ts-panel" id="aliados" role="tabpanel" aria-labelledby="ts-temas-4">
         <div class="container">
             <div class="two-col">
                 <div class="section-head">
                     <span class="eyebrow">Para aliados comerciales</span>
-                    <h2 class="section-title-dark reveal">Disponible también en marca blanca</h2>
-                    <p class="section-sub reveal">Los operadores de telecomunicaciones, proveedores de conectividad y otros aliados pueden ofrecer la solución con su propia marca. Así suman conectividad y software en un solo servicio, generan más valor y construyen relaciones de largo plazo con sus clientes PYME.</p>
+                    <h2 class="section-title-dark">Disponible también en marca blanca</h2>
+                    <p class="section-sub">Los operadores de telecomunicaciones, proveedores de conectividad y otros aliados pueden ofrecer la solución con su propia marca. Así suman conectividad y software en un solo servicio, generan más valor y construyen relaciones de largo plazo con sus clientes PYME.</p>
                 </div>
-                <ul class="list-cards reveal-stagger">
+                <ul class="list-cards">
                     <li><strong>Su marca, su estrategia</strong><span>El aliado define la marca del servicio según su estrategia comercial.</span></li>
                     <li><strong>Pago mensual por servicio</strong><span>Un esquema recurrente que incluye software, factura electrónica y lealtad.</span></li>
                     <li><strong>Soporte compartido</strong><span>ASP Software Company y Tech Advisors LA atienden el soporte técnico especializado, las actualizaciones y las adecuaciones.</span></li>
@@ -849,7 +876,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
             </div>
 
-            <div class="cta-band reveal" style="margin-top:4rem;">
+            <div class="cta-band" style="margin-top:4rem;">
                 <div>
                     <h2>¿Listo para modernizar su punto de venta?</h2>
                     <p>Coordinemos una cita para conocer su operación, revisar el sistema juntos y elegir el paquete adecuado para su negocio.</p>
@@ -857,7 +884,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a href="contacto.html" class="cta-button">Agendar cita →</a>
             </div>
         </div>
-    </section>
+    </div></div></section>
+
+    
+
+    
+
+    
+
+    
 
 
     <section class="contact" id="contacto">
@@ -961,5 +996,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
     </script>
+<script src="tabset.js" defer></script>
 </body>
 </html>
