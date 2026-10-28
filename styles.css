@@ -735,3 +735,22 @@ header{ padding:0.5rem 0; }
 @keyframes tsin{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
 
 .ts-panel > section, .ts-panel > .container{ padding-top:0; }
+
+/* Aviso de cookies y páginas legales */
+.ck-banner{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:1000;max-width:760px;margin:0 auto;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap;box-shadow:0 12px 40px rgba(0,0,0,.45);color:var(--text)}
+.ck-banner p{margin:0;font-size:.92rem;line-height:1.5;color:var(--text-muted);flex:1 1 320px}
+.ck-banner a{color:var(--accent-2)}
+.ck-actions{display:flex;gap:.6rem;flex:none}
+.ck-btn{font:600 .9rem 'Inter',sans-serif;border-radius:999px;padding:.6rem 1.2rem;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text)}
+.ck-btn.ck-yes{background:var(--accent);border-color:var(--accent);color:#04102a}
+.ck-btn:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px}
+.legal{max-width:760px}
+.legal h2{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;margin:2.2rem 0 .6rem;color:var(--text)}
+.legal p,.legal li{color:var(--text-muted);line-height:1.75;font-size:1rem}
+.legal ul{margin:.4rem 0 .4rem 1.2rem}
+.legal a{color:var(--accent-2)}
+.legal .upd{font-size:.9rem;color:var(--text-muted);margin-top:.5rem}
+.legal table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.92rem}
+.legal th,.legal td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--border);color:var(--text-muted);vertical-align:top}
+.legal th{color:var(--text);font-weight:600}
+.legal .ck-btn{margin-top:.6rem}
