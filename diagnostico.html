@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Consentimiento de cookies (por defecto: rechazado) -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+var __c=null;try{__c=localStorage.getItem('ta_consent')}catch(e){}
+gtag('consent','default',{analytics_storage:__c==='granted'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NF4L9KSF');</script>
+<!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <title>Diagnóstico Digital Gratis y Cotizador en Línea | Tech Advisors LA</title>
+    <meta name="description" content="Conozca en 3 minutos el nivel de madurez digital de su empresa y qué soluciones le convienen. Arme su cotización en línea y envíela por WhatsApp a Tech Advisors LA.">
+    <meta name="keywords" content="diagnóstico digital, madurez digital, transformación digital Costa Rica, cotizador en línea, cotizar tecnología, Tech Advisors LA">
+    <link rel="canonical" href="https://techadvisorsla.com/diagnostico.html">
+
+    <!-- Ícono del sitio (favicon) -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#080D22">
+
+    <!-- Vista Previa para WhatsApp, LinkedIn y Redes Sociales (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techadvisorsla.com/diagnostico.html">
+    <meta property="og:title" content="Diagnóstico digital gratis | Tech Advisors LA">
+    <meta property="og:description" content="Descubra su nivel de madurez digital en 3 minutos y cotice las soluciones que necesita.">
+    <meta property="og:image" content="https://techadvisorsla.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Tech Advisors LA: no vendemos tecnología, conectamos su empresa con la solución exacta.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
+
+    <!-- Datos Estructurados Schema.org -->
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Diagnóstico digital y cotizador",
+      "description": "Herramienta gratuita para conocer el nivel de madurez digital de su organización y cotizar soluciones tecnológicas.",
+      "url": "https://techadvisorsla.com/diagnostico.html",
+      "publisher": { "@type": "ProfessionalService", "name": "Tech Advisors LA", "url": "https://techadvisorsla.com", "telephone": "+50664656910" }
+}
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ---- formularios (igual que contacto.html) ---- */
+        .btn-outline { display:inline-flex; align-items:center; gap:.4rem; padding:0.8rem 1.5rem; border-radius:50px; border:1px solid var(--accent); background:transparent; color:var(--text); font:inherit; font-weight:500; cursor:pointer; text-decoration:none; transition:all 0.25s ease; }
+        .btn-outline:hover { background:var(--accent); color:#08112b; }
+        button.cta-button { border:0; cursor:pointer; font-family:inherit; font-size:1rem; }
+        button.cta-button:disabled { opacity:.4; cursor:not-allowed; box-shadow:none; transform:none; }
+        .btn-wa { display:inline-flex; align-items:center; gap:.55rem; }
+        .f-row { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; }
+        .f-field { display:flex; flex-direction:column; gap:0.45rem; font-size:0.9rem; color:var(--text-muted); margin-bottom:1.1rem; }
+        .f-field input, .qt-fields input { font:inherit; font-size:1rem; color:var(--text); background:var(--bg-2); border:1px solid rgba(255,255,255,0.14); border-radius:10px; padding:0.8rem 0.95rem; width:100%; }
+        .f-field input:focus, .qt-fields input:focus { outline:none; border-color:var(--accent-2); box-shadow:0 0 0 3px rgba(79,216,235,.15); }
+        .f-field input[aria-invalid="true"] { border-color:#FCA5A5; }
+        .f-error { color:#FCA5A5; font-size:0.9rem; margin-top:1rem; }
+
+        /* ---- diagnóstico ---- */
+        .dx [hidden], .qt-bar [hidden] { display:none !important; }
+        .dx { max-width:900px; background:var(--panel); border:1px solid var(--border); border-radius:22px; padding:2.2rem; position:relative; overflow:hidden; }
+        .dx::before { content:""; position:absolute; inset:-1px -1px auto -1px; height:1px; background:linear-gradient(90deg, transparent, var(--accent-2), transparent); opacity:.6; }
+        .dx-top { display:flex; align-items:center; gap:1.2rem; margin-bottom:2rem; }
+        .dx-count { font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-2); white-space:nowrap; }
+        .dx-bar { flex:1; height:4px; background:rgba(255,255,255,.08); border-radius:4px; overflow:hidden; }
+        .dx-bar span { display:block; height:100%; width:20%; background:linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius:4px; transition:width .5s cubic-bezier(.2,.8,.2,1); box-shadow:0 0 12px var(--accent-2); }
+        .dx-step { border:0; display:none; }
+        .dx-step.is-active { display:block; animation:dxIn .45s cubic-bezier(.2,.8,.2,1); }
+        @keyframes dxIn { from { opacity:0; transform:translateX(18px); } to { opacity:1; transform:none; } }
+        .dx-step legend { font-family:'Space Grotesk', sans-serif; font-size:1.5rem; font-weight:600; margin-bottom:1.4rem; line-height:1.3; }
+        .dx-step legend em { font-style:normal; font-family:'IBM Plex Mono', monospace; font-size:.75rem; color:var(--text-muted); letter-spacing:.08em; text-transform:uppercase; margin-left:.5rem; vertical-align:middle; }
+        .dx-sub { font-family:'IBM Plex Mono', monospace; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin:1.4rem 0 .8rem; }
+        .dx-step .dx-sub:first-of-type { margin-top:0; }
+        .dx-note { font-size:.85rem; color:var(--text-muted); }
+        .opt-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:.8rem; }
+        .opt-grid--2 { grid-template-columns:repeat(2, 1fr); }
+        .opt-grid--4 { grid-template-columns:repeat(4, 1fr); }
+        .opt { position:relative; text-align:left; font:inherit; color:var(--text); background:rgba(255,255,255,.025); border:1px solid var(--border); border-radius:14px; padding:1rem 1.1rem 1.05rem; cursor:pointer; display:flex; flex-direction:column; gap:.2rem; transition:border-color .2s, background .2s, transform .2s, box-shadow .2s; }
+        .opt:hover { border-color:rgba(79,216,235,.45); transform:translateY(-2px); }
+        .opt:focus-visible { outline:2px solid var(--accent-2); outline-offset:2px; }
+        .opt strong { font-family:'Space Grotesk', sans-serif; font-size:1rem; font-weight:600; padding-right:1.6rem; }
+        .opt small { color:var(--text-muted); font-size:.84rem; line-height:1.4; }
+        .opt-k { font-size:.7rem; color:var(--accent-2); letter-spacing:.1em; margin-bottom:.25rem; }
+        .opt::after { content:""; position:absolute; top:.9rem; right:.9rem; width:20px; height:20px; border-radius:6px; border:1.5px solid rgba(255,255,255,.22); transition:all .2s; }
+        .opt[aria-pressed="true"] { border-color:var(--accent-2); background:linear-gradient(160deg, rgba(46,134,245,.16), rgba(79,216,235,.06)); box-shadow:0 0 0 1px var(--accent-2) inset, 0 8px 30px rgba(46,134,245,.18); }
+        .opt[aria-pressed="true"]::after { background:var(--accent-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3.5 8.5 3 3 6-7' fill='none' stroke='%23080D22' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat; border-color:var(--accent-2); }
+        .opt--sm { padding:.85rem 1rem; }
+        .opt.is-shake { animation:shake .35s; }
+        @keyframes shake { 25% { transform:translateX(-4px); } 75% { transform:translateX(4px); } }
+        .dx-nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-top:2rem; }
+        .dx-nav #dxNext { margin-left:auto; }
+
+        /* resultado */
+        .dx-result { display:grid; grid-template-columns:200px 1fr; gap:2.4rem; align-items:start; animation:dxIn .5s cubic-bezier(.2,.8,.2,1); }
+        .dx-score { position:relative; width:200px; height:200px; }
+        .gauge { width:100%; height:100%; transform:rotate(-90deg); }
+        .g-track { fill:none; stroke:rgba(255,255,255,.07); stroke-width:9; }
+        .g-fill { fill:none; stroke:var(--accent-2); stroke-width:9; stroke-linecap:round; stroke-dasharray:326.7; stroke-dashoffset:326.7; transition:stroke-dashoffset 1.4s cubic-bezier(.2,.8,.2,1); filter:drop-shadow(0 0 6px rgba(79,216,235,.7)); }
+        .g-num { position:absolute; inset:0; display:flex; align-items:baseline; justify-content:center; padding-top:76px; }
+        .g-num strong { font-family:'Space Grotesk', sans-serif; font-size:3.2rem; line-height:1; }
+        .g-num span { color:var(--text-muted); font-family:'IBM Plex Mono', monospace; font-size:.9rem; margin-left:.2rem; }
+        .dx-res-text h3 { font-size:1.8rem; margin-bottom:.6rem; }
+        .dx-res-text > p { color:var(--text-muted); }
+        .rec-list { list-style:none; display:grid; gap:.6rem; margin-bottom:1.6rem; }
+        .rec-list li { display:grid; grid-template-columns:8px 1fr auto; column-gap:.9rem; row-gap:.3rem; align-items:start; background:rgba(255,255,255,.03); border:1px solid var(--border); border-radius:12px; padding:.8rem 1rem; opacity:0; transform:translateY(10px); animation:recIn .5s forwards; }
+        .rec-list li b { font-family:'Space Grotesk', sans-serif; font-weight:600; display:block; }
+        .rec-list li span { color:var(--text-muted); font-size:.86rem; }
+        .rec-list li a { color:var(--accent-2); font-size:.82rem; text-decoration:none; white-space:nowrap; align-self:center; }
+        .rec-list li a:hover { text-decoration:underline; }
+        .rec-list i { flex:none; width:8px; height:8px; margin-top:.5rem; border-radius:50%; background:var(--accent-2); box-shadow:0 0 10px var(--accent-2); }
+        @keyframes recIn { to { opacity:1; transform:none; } }
+        .dx-res-actions { display:flex; gap:.8rem; flex-wrap:wrap; }
+        .dx-restart { margin-top:1.2rem; background:none; border:0; color:var(--text-muted); font:inherit; font-size:.88rem; cursor:pointer; }
+        .dx-restart:hover { color:var(--accent-2); }
+
+        /* ---- cotizador ---- */
+        .qt-groups { display:grid; gap:2.4rem; padding-bottom:1rem; }
+        .qt-group h3 { font-family:'IBM Plex Mono', monospace; font-size:.78rem; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem; display:flex; align-items:center; gap:.8rem; }
+        .qt-group h3::after { content:""; flex:1; height:1px; background:var(--border); }
+        .qt-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:.9rem; }
+        .qt-card { min-height:118px; }
+        .qt-card .tag { align-self:flex-start; margin-top:auto; padding-top:.6rem; font-family:'IBM Plex Mono', monospace; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); }
+        .qt-card.is-rec:not([aria-pressed="true"]) { border-style:dashed; border-color:rgba(79,216,235,.5); }
+        .qt-bar { position:sticky; bottom:1rem; z-index:50; margin-top:2rem; }
+        .qt-bar-in { display:flex; align-items:center; gap:1rem; flex-wrap:wrap; background:rgba(15,25,56,.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(79,216,235,.3); border-radius:18px; padding:1rem 1.2rem; box-shadow:0 18px 50px rgba(0,0,0,.45); }
+        .qt-sum { flex:1 1 220px; min-width:0; display:flex; flex-direction:column; gap:.3rem; }
+        .qt-pill { align-self:flex-start; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:#080D22; background:var(--accent-2); border-radius:50px; padding:.2rem .7rem; transition:transform .25s; }
+        .qt-pill.bump { transform:scale(1.15); }
+        .wa-float { transition:opacity .3s, transform .3s; }
+        .wa-float.is-away { opacity:0; transform:translateY(20px); pointer-events:none; }
+        .qt-names { font-size:.88rem; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .qt-fields { display:flex; gap:.6rem; flex:1 1 320px; }
+        .qt-fields input { padding:.65rem .85rem; font-size:.92rem; }
+
+        @media (max-width: 900px) {
+            .opt-grid, .opt-grid--4 { grid-template-columns:repeat(2, 1fr); }
+            .dx-result { grid-template-columns:1fr; justify-items:start; }
+            .sub-hero .hero-title { font-size:2.15rem; }
+        }
+        @media (max-width: 600px) {
+            .container { padding:0 1.25rem; }
+            .dx { padding:1.4rem; border-radius:18px; }
+            .opt-grid, .opt-grid--2 { grid-template-columns:1fr; }
+            .opt-grid--4 { grid-template-columns:1fr 1fr; }
+            .dx-step legend { font-size:1.25rem; }
+            .f-row { grid-template-columns:1fr; gap:0; }
+            .qt-fields, .qt-names { display:none; }
+            .qt-bar { bottom:.6rem; }
+            .qt-bar-in { flex-wrap:nowrap; padding:.7rem .8rem; gap:.6rem; }
+            .qt-sum { flex:0 0 auto; }
+            .qt-bar-in .cta-button { flex:1; justify-content:center; padding:.75rem 1rem; font-size:.95rem; }
+            .rec-list li { grid-template-columns:8px 1fr; }
+            .rec-list li a { grid-column:2; }
+            .wa-float span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); } .wa-float{ padding:0.85rem; }
+        }
+        @media (max-width:768px){ .logo{ height:54px; } }
+        @media (prefers-reduced-motion: reduce) { .dx-step.is-active, .dx-result, .rec-list li { animation:none; opacity:1; transform:none; } .g-fill, .dx-bar span { transition:none; } }
+    </style>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NF4L9KSF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo-link"><img src="logo-header.webp" alt="Tech Advisors LA" class="logo" width="180" height="72" decoding="async" fetchpriority="high"></a>
+                <ul class="nav-links">
+                    <li class="has-dd">
+                        <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-servicios">Servicios <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="dd" id="dd-servicios">
+                            <a href="diagnostico.html"><strong>Diagnóstico gratis y cotizador</strong><span>Su nivel digital y cotización en 3 minutos</span></a>
+                            <a href="soporte.html"><strong>Soporte técnico</strong><span>Windows y Apple, remoto y presencial</span></a>
+                            <a href="transformacion-digital.html"><strong>Transformación digital</strong><span>Plataformas, automatización y datos</span></a>
+                            <a href="asesoria.html"><strong>Asesoría estratégica</strong><span>Networking, modelos de negocio y transformación digital</span></a>
+                            <a href="index.html#servicios"><strong>Todos los servicios</strong><span>IA, software a la medida, IoT y más</span></a>
+                            <a href="index.html#modelo"><strong>Modelo de servicio</strong><span>CAPEX, OPEX, híbrido o 100% como servicio</span></a>
+                            <a href="index.html#proceso"><strong>Cómo trabajamos</strong><span>Diagnóstico, conexión e implementación</span></a>
+                        </div>
+                    </li>
+                    <li class="has-dd">
+                        <button class="dd-toggle" type="button" aria-expanded="false" aria-controls="dd-soluciones">Soluciones <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        <div class="dd dd-wide" id="dd-soluciones">
+                            <a href="humand.html"><strong>Humand · Gestión de personas</strong><span>RR.HH., cultura y comunicación interna</span></a>
+                            <a href="software.html"><strong>Software a la medida</strong><span>Chatbots con IA y desarrollo con Asesorías SyS</span></a>
+                            <a href="diseno-web.html"><strong>Páginas web y tiendas virtuales</strong><span>Presencia digital y comercio electrónico</span></a>
+                            <a href="imotion.html"><strong>Computer Vision · iMotion</strong><span>IA sobre sus cámaras: retail, industria, puertos y más</span></a>
+                            <a href="firma-digital.html"><strong>Firma digital · SIGN.TRUST®</strong><span>Validez de sus documentos en el tiempo</span></a>
+                            <a href="pos.html"><strong>Punto de venta · POS</strong><span>Facturación, inventario y factura electrónica</span></a>
+                            <a href="infraestructura.html"><strong>Cableado, cámaras y accesos</strong><span>Con NODO Latam: redes y control de acceso</span></a>
+                            <a href="rfid.html"><strong>RFID y tags</strong><span>Comercio y acceso a condominios</span></a>
+                            <a href="automatizacion.html"><strong>Automatización · CIP y SIP</strong><span>Instrumentación y procesos industriales</span></a>
+                            <a href="energia.html"><strong>Gestión energética</strong><span>Medición inteligente y paneles solares</span></a>
+                            <a href="agricultura.html"><strong>Agricultura inteligente</strong><span>Sensores IoT y redes LoRaWAN</span></a>
+                            <a href="index.html#soluciones" class="dd-all">Ver soluciones destacadas →</a>
+                        </div>
+                    </li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html" class="nav-cta">Contáctenos</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido" tabindex="-1">
+
+    <section class="sub-hero">
+        <div class="hero-grid-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb"><a href="index.html">Inicio</a> / Diagnóstico y cotizador</div>
+                <span class="eyebrow">Diagnóstico digital · Gratis · 3 minutos</span>
+                <h1 class="hero-title">¿Por dónde empezar? <span class="hl">Se lo decimos en 3 minutos.</span></h1>
+                <p class="hero-sub">Responda cinco preguntas y reciba al instante su nivel de madurez digital y las soluciones que más impacto tendrían en su organización. Si ya sabe lo que busca, arme su cotización directo.</p>
+                <a href="#diagnostico" class="cta-button">Iniciar diagnóstico →</a>
+                <a href="#cotizador" class="cta-ghost">Ir al cotizador</a>
+                <div class="stat-strip">
+                    <div><strong>5 pasos</strong><span>sin registro ni correos de spam</span></div>
+                    <div><strong>Resultado inmediato</strong><span>nivel de madurez y recomendaciones</span></div>
+                    <div><strong>Directo a WhatsApp</strong><span>le responde una persona, no un robot</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DIAGNÓSTICO ============ -->
+    <section class="alt-bg" id="diagnostico">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Diagnóstico digital · En vivo</span>
+                <h2 class="section-title-dark reveal">Conozca su nivel de madurez digital</h2>
+                <p class="section-sub reveal">Elija la opción que mejor describa su situación. No hay respuestas correctas: es para orientarle.</p>
+            </div>
+
+            <div class="dx reveal" id="dx" data-step="1">
+                <div class="dx-top">
+                    <span class="dx-count mono" id="dxCount">Paso 1 de 5</span>
+                    <div class="dx-bar" aria-hidden="true"><span id="dxBar"></span></div>
+                </div>
+
+                <!-- Paso 1 -->
+                <fieldset class="dx-step is-active" data-step="1">
+                    <legend>¿Qué tipo de organización es?</legend>
+                    <div class="opt-grid" data-name="tipo" data-mode="single">
+                        <button type="button" class="opt" data-v="Pyme o emprendimiento"><span class="opt-k mono">01</span><strong>Pyme o emprendimiento</strong><small>Hasta 50 colaboradores</small></button>
+                        <button type="button" class="opt" data-v="Empresa mediana o grande"><span class="opt-k mono">02</span><strong>Empresa mediana o grande</strong><small>Varias áreas o sucursales</small></button>
+                        <button type="button" class="opt" data-v="Institución del sector público"><span class="opt-k mono">03</span><strong>Sector público</strong><small>Ministerio, municipalidad o institución</small></button>
+                        <button type="button" class="opt" data-v="Condominio o desarrollo inmobiliario"><span class="opt-k mono">04</span><strong>Condominio</strong><small>Residencial, comercial u oficentro</small></button>
+                        <button type="button" class="opt" data-v="Industria, planta o finca"><span class="opt-k mono">05</span><strong>Industria o agro</strong><small>Planta de producción o finca</small></button>
+                        <button type="button" class="opt" data-v="Educación o salud"><span class="opt-k mono">06</span><strong>Educación o salud</strong><small>Centro educativo, clínica u hospital</small></button>
+                    </div>
+                </fieldset>
+
+                <!-- Paso 2 -->
+                <fieldset class="dx-step" data-step="2">
+                    <legend>¿Cuáles son sus mayores retos hoy? <em>Elija hasta 3</em></legend>
+                    <div class="opt-grid" data-name="retos" data-mode="multi" data-max="3">
+                        <button type="button" class="opt" data-v="papel"><span class="opt-k mono">01</span><strong>Procesos manuales y papel</strong><small>Firmas, Excel, trámites lentos</small></button>
+                        <button type="button" class="opt" data-v="clientes"><span class="opt-k mono">02</span><strong>Atención al cliente</strong><small>Respuestas lentas, consultas repetidas</small></button>
+                        <button type="button" class="opt" data-v="datos"><span class="opt-k mono">03</span><strong>Decidir sin datos</strong><small>No tenemos indicadores claros</small></button>
+                        <button type="button" class="opt" data-v="ventas"><span class="opt-k mono">04</span><strong>Vender más</strong><small>Presencia en línea, cobro, facturación</small></button>
+                        <button type="button" class="opt" data-v="seguridad"><span class="opt-k mono">05</span><strong>Seguridad y accesos</strong><small>Cámaras, control de ingreso, redes</small></button>
+                        <button type="button" class="opt" data-v="personal"><span class="opt-k mono">06</span><strong>Gestión del personal</strong><small>Comunicación interna, RR.HH., cultura</small></button>
+                        <button type="button" class="opt" data-v="energia"><span class="opt-k mono">07</span><strong>Costos de energía</strong><small>Factura eléctrica alta, sin medición</small></button>
+                        <button type="button" class="opt" data-v="produccion"><span class="opt-k mono">08</span><strong>Control de producción</strong><small>Planta, procesos o cultivos</small></button>
+                        <button type="button" class="opt" data-v="soporte"><span class="opt-k mono">09</span><strong>Equipos y soporte TI</strong><small>Computadoras lentas, fallas, sin respaldo</small></button>
+                    </div>
+                </fieldset>
+
+                <!-- Paso 3 -->
+                <fieldset class="dx-step" data-step="3">
+                    <legend>¿Cómo describe su nivel digital actual?</legend>
+                    <div class="opt-grid opt-grid--2" data-name="nivel" data-mode="single">
+                        <button type="button" class="opt" data-v="1"><span class="opt-k mono">01</span><strong>Básico</strong><small>Trabajamos con Excel, correo y WhatsApp</small></button>
+                        <button type="button" class="opt" data-v="2"><span class="opt-k mono">02</span><strong>En proceso</strong><small>Tenemos algunos sistemas, pero no se hablan entre sí</small></button>
+                        <button type="button" class="opt" data-v="3"><span class="opt-k mono">03</span><strong>Integrado</strong><small>Sistemas conectados y procesos documentados</small></button>
+                        <button type="button" class="opt" data-v="4"><span class="opt-k mono">04</span><strong>Avanzado</strong><small>Automatización, datos en tiempo real e IA</small></button>
+                    </div>
+                </fieldset>
+
+                <!-- Paso 4 -->
+                <fieldset class="dx-step" data-step="4">
+                    <legend>¿Cómo prefiere invertir y cuándo?</legend>
+                    <p class="dx-sub">Modelo de inversión</p>
+                    <div class="opt-grid opt-grid--4" data-name="modelo" data-mode="single">
+                        <button type="button" class="opt opt--sm" data-v="CAPEX"><strong>CAPEX</strong><small>Compra del equipo o sistema</small></button>
+                        <button type="button" class="opt opt--sm" data-v="OPEX"><strong>OPEX</strong><small>Pago mensual como servicio</small></button>
+                        <button type="button" class="opt opt--sm" data-v="Híbrido"><strong>Híbrido</strong><small>Una combinación de ambos</small></button>
+                        <button type="button" class="opt opt--sm" data-v="Aún no lo sé"><strong>No lo sé</strong><small>Quiero que me asesoren</small></button>
+                    </div>
+                    <p class="dx-sub">Plazo</p>
+                    <div class="opt-grid opt-grid--4" data-name="plazo" data-mode="single">
+                        <button type="button" class="opt opt--sm" data-v="Urgente (menos de 1 mes)"><strong>Urgente</strong><small>Menos de 1 mes</small></button>
+                        <button type="button" class="opt opt--sm" data-v="1 a 3 meses"><strong>1 a 3 meses</strong><small>Este trimestre</small></button>
+                        <button type="button" class="opt opt--sm" data-v="3 a 6 meses"><strong>3 a 6 meses</strong><small>Planificando</small></button>
+                        <button type="button" class="opt opt--sm" data-v="Explorando opciones"><strong>Explorando</strong><small>Sin fecha definida</small></button>
+                    </div>
+                </fieldset>
+
+                <!-- Paso 5 -->
+                <fieldset class="dx-step" data-step="5">
+                    <legend>¿A quién le enviamos el diagnóstico?</legend>
+                    <div class="f-row">
+                        <label class="f-field"><span>Nombre *</span><input type="text" id="dxNombre" autocomplete="name"></label>
+                        <label class="f-field"><span>Empresa o institución</span><input type="text" id="dxEmpresa" autocomplete="organization"></label>
+                    </div>
+                    <label class="f-field"><span>Teléfono o correo *</span><input type="text" id="dxContacto" autocomplete="email"></label>
+                    <p class="dx-note">Sus datos solo se usan para responderle. No se guardan en este sitio: el resumen se arma en su navegador y usted decide si lo envía.</p>
+                </fieldset>
+
+                <!-- Resultado -->
+                <div class="dx-result" id="dxResult" hidden>
+                    <div class="dx-score">
+                        <svg viewBox="0 0 120 120" class="gauge" aria-hidden="true">
+                            <circle cx="60" cy="60" r="52" class="g-track"/>
+                            <circle cx="60" cy="60" r="52" class="g-fill" id="gFill"/>
+                        </svg>
+                        <div class="g-num"><strong id="gNum">0</strong><span>/100</span></div>
+                    </div>
+                    <div class="dx-res-text">
+                        <span class="eyebrow">Su resultado</span>
+                        <h3 id="resNivel">Nivel</h3>
+                        <p id="resDesc"></p>
+                        <p class="dx-sub">Soluciones recomendadas para usted</p>
+                        <ul class="rec-list" id="recList"></ul>
+                        <div class="dx-res-actions">
+                            <button type="button" class="cta-button btn-wa" id="dxSend"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg> Enviar diagnóstico por WhatsApp</button>
+                            <button type="button" class="btn-outline" id="dxToQuote">Cotizar estas soluciones ↓</button>
+                        </div>
+                        <button type="button" class="dx-restart" id="dxRestart">↺ Repetir diagnóstico</button>
+                    </div>
+                </div>
+
+                <p class="f-error" id="dxError" role="alert" hidden></p>
+                <div class="dx-nav" id="dxNav">
+                    <button type="button" class="btn-outline" id="dxPrev" hidden>← Atrás</button>
+                    <button type="button" class="cta-button" id="dxNext">Siguiente →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ COTIZADOR ============ -->
+    <section id="cotizador">
+        <div class="container">
+            <div class="section-head">
+                <span class="eyebrow">Cotizador en línea</span>
+                <h2 class="section-title-dark reveal">Arme su cotización</h2>
+                <p class="section-sub reveal">Marque las soluciones que le interesan. Al final le armamos el mensaje y lo envía por WhatsApp a la persona que atiende ese tema.</p>
+            </div>
+
+            <div class="qt-groups" id="qtGroups"></div>
+
+            <div class="qt-bar" id="qtBar">
+                <div class="qt-bar-in">
+                    <div class="qt-sum">
+                        <span class="qt-pill mono" id="qtCount">0 seleccionadas</span>
+                        <span class="qt-names" id="qtNames">Marque al menos una solución</span>
+                    </div>
+                    <div class="qt-fields">
+                        <input type="text" id="qtNombre" placeholder="Su nombre" autocomplete="name" aria-label="Su nombre">
+                        <input type="text" id="qtEmpresa" placeholder="Empresa (opcional)" autocomplete="organization" aria-label="Empresa">
+                    </div>
+                    <button type="button" class="cta-button btn-wa" id="qtSend" disabled>Cotizar por WhatsApp →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-cta reveal">
+                <span class="eyebrow">¿Prefiere conversar?</span>
+                <h2 class="section-title-dark">Cuéntenos su caso directamente</h2>
+                <p class="section-sub">Si su necesidad no calza en las opciones, escríbanos. Le orientamos sin compromiso.</p>
+                <div class="cta-row-final"><a href="contacto.html" class="cta-button">Contáctenos →</a><a href="https://wa.me/50664656910?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto." class="cta-ghost" target="_blank" rel="noopener">Escribir por WhatsApp ↗</a></div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <aside aria-label="Contacto por WhatsApp"><a class="wa-float" href="https://wa.me/50664656910?text=Hola%2C%20le%20escribo%20desde%20el%20sitio%20web%20de%20Tech%20Advisors%20L.A.%20Me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Tech Advisors LA"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.200zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.700 6.700 0 0 1-3.300-2.900c-.3-.4.300-.4.800-1.400.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.200 5.300 5.300 0 0 0 1.100 2.800 12 12 0 0 0 4.600 4.100c1.700.7 2.400.8 3.200.7a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.2-.2-.5-.3z"/></svg><span>WhatsApp</span></a></aside>
+
+    <footer>
+        <div class="container">
+            <nav class="footer-links" aria-label="Páginas del sitio">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="transformacion-digital.html">Transformación digital</a>
+                <a href="soporte.html">Soporte</a>
+                <a href="asesoria.html">Asesoría</a>
+                <a href="software.html">Software</a>
+                <a href="diseno-web.html">Páginas web</a>
+                <a href="humand.html">Humand</a>
+                <a href="imotion.html">Computer Vision</a>
+                <a href="firma-digital.html">Firma Digital</a>
+                <a href="pos.html">POS</a>
+                <a href="rfid.html">RFID</a>
+                <a href="infraestructura.html">Cableado y cámaras</a>
+                <a href="automatizacion.html">Automatización</a>
+                <a href="energia.html">Energía</a>
+                <a href="agricultura.html">Agricultura</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="diagnostico.html">Diagnóstico</a>
+                <a href="privacidad.html">Privacidad</a>
+            </nav>
+            <p class="footer-brand">Tech Advisors L.A.</p>
+            <p>Razón Social: 3-101-860439 S.A. | Cédula Jurídica: 3-101-860439</p>
+            <p>&copy; 2026 Tech Advisors L.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script>
+    /* Diagnóstico digital y cotizador — Tech Advisors L.A. */
+    (function () {
+        'use strict';
+        var WA = { eric: { name: '', wa: '50664656910' }, mario: { name: 'Mario', wa: '50683835646' } };
+        function dl(o) { o.pagina = 'diagnostico.html'; (window.dataLayer = window.dataLayer || []).push(o); }
+        function openWA(to, text) { window.open('https://wa.me/' + to.wa + '?text=' + encodeURIComponent(text), '_blank', 'noopener'); }
+        var $ = function (id) { return document.getElementById(id); };
+
+        /* ---------- catálogo de soluciones ---------- */
+        var S = {
+            soporte:       { t: 'Soporte técnico', d: 'Windows y Apple, remoto y presencial', to: 'eric', url: 'soporte.html', tag: 'Servicio propio' },
+            transformacion:{ t: 'Transformación digital', d: 'Plataformas, automatización de procesos y datos', to: 'eric', url: 'transformacion-digital.html', tag: 'Servicio propio' },
+            asesoria:      { t: 'Asesoría estratégica', d: 'Hoja de ruta, modelos de negocio y networking', to: 'mario', url: 'asesoria.html', tag: 'Servicio propio' },
+            software:      { t: 'Software a la medida y chatbots con IA', d: 'Sistemas y asistentes hechos para su operación', to: 'mario', url: 'software.html', tag: 'Con Asesorías SyS' },
+            web:           { t: 'Páginas web y tiendas virtuales', d: 'Presencia digital y venta en línea 24/7', to: 'eric', url: 'diseno-web.html', tag: 'Servicio propio' },
+            humand:        { t: 'Humand · Gestión de personas', d: 'RR.HH., cultura y comunicación interna', to: 'eric', url: 'humand.html', tag: 'Representación' },
+            imotion:       { t: 'Computer Vision · iMotion', d: 'Inteligencia artificial sobre sus cámaras', to: 'eric', url: 'imotion.html', tag: 'Representación' },
+            signtrust:     { t: 'Firma digital · SIGN.TRUST®', d: 'Validez de sus documentos en el tiempo', to: 'eric', url: 'firma-digital.html', tag: 'Representación' },
+            pos:           { t: 'Punto de venta · POS', d: 'Facturación, inventario y factura electrónica', to: 'mario', url: 'pos.html', tag: 'Representación' },
+            infra:         { t: 'Cableado, cámaras y accesos', d: 'Redes, videovigilancia y control de acceso', to: 'eric', url: 'infraestructura.html', tag: 'Con NODO Latam' },
+            rfid:          { t: 'RFID y tags', d: 'Comercio y acceso a condominios', to: 'eric', url: 'rfid.html', tag: 'Con Smart Costa' },
+            automatizacion:{ t: 'Automatización · CIP y SIP', d: 'Instrumentación y procesos industriales', to: 'mario', url: 'automatizacion.html', tag: 'Con ControlSoft' },
+            energia:       { t: 'Gestión energética', d: 'Medición inteligente y paneles solares', to: 'mario', url: 'energia.html', tag: 'Servicio propio' },
+            agro:          { t: 'Agricultura inteligente', d: 'Sensores IoT y redes LoRaWAN', to: 'eric', url: 'agricultura.html', tag: 'Con Lain Holdings' }
+        };
+        var GROUPS = [
+            ['Tecnología para su negocio', ['soporte', 'transformacion', 'asesoria', 'software', 'web']],
+            ['Soluciones que representamos', ['humand', 'imotion', 'signtrust', 'pos']],
+            ['Infraestructura, industria y energía', ['infra', 'rfid', 'automatizacion', 'energia', 'agro']]
+        ];
+        var RETO_MAP = {
+            papel: ['transformacion', 'signtrust', 'software'],
+            clientes: ['software', 'web'],
+            datos: ['transformacion', 'imotion'],
+            ventas: ['web', 'pos'],
+            seguridad: ['infra', 'rfid', 'imotion'],
+            personal: ['humand'],
+            energia: ['energia'],
+            produccion: ['automatizacion', 'agro', 'imotion'],
+            soporte: ['soporte', 'infra']
+        };
+        var RETO_TXT = { papel: 'Procesos manuales y papel', clientes: 'Atención al cliente', datos: 'Decidir sin datos', ventas: 'Vender más', seguridad: 'Seguridad y accesos', personal: 'Gestión del personal', energia: 'Costos de energía', produccion: 'Control de producción', soporte: 'Equipos y soporte TI' };
+        var NIVEL_TXT = { 1: 'Básico', 2: 'En proceso', 3: 'Integrado', 4: 'Avanzado' };
+
+        /* ---------- botones de opción ---------- */
+        var state = { tipo: null, retos: [], nivel: null, modelo: null, plazo: null };
+        document.querySelectorAll('.opt-grid[data-name]').forEach(function (g) {
+            var name = g.dataset.name, multi = g.dataset.mode === 'multi', max = +g.dataset.max || 99;
+            g.querySelectorAll('.opt').forEach(function (b) {
+                b.setAttribute('aria-pressed', 'false');
+                b.addEventListener('click', function () {
+                    var v = b.dataset.v, on = b.getAttribute('aria-pressed') === 'true';
+                    if (multi) {
+                        if (!on && state[name].length >= max) { b.classList.remove('is-shake'); void b.offsetWidth; b.classList.add('is-shake'); showErr('Puede elegir hasta ' + max + ' opciones.'); return; }
+                        b.setAttribute('aria-pressed', String(!on));
+                        state[name] = on ? state[name].filter(function (x) { return x !== v; }) : state[name].concat(v);
+                    } else {
+                        g.querySelectorAll('.opt').forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+                        b.setAttribute('aria-pressed', 'true');
+                        state[name] = v;
+                        // avanzar solo en pasos de una sola pregunta
+                        var step = +b.closest('.dx-step').dataset.step;
+                        if (step === 1 || step === 3) setTimeout(function () { if (cur === step) go(step + 1); }, 320);
+                    }
+                    hideErr();
+                });
+            });
+        });
+
+        /* ---------- diagnóstico: pasos ---------- */
+        var dx = $('dx'), cur = 1, TOTAL = 5, steps = dx.querySelectorAll('.dx-step');
+        var err = $('dxError');
+        function showErr(m) { err.textContent = m; err.hidden = false; }
+        function hideErr() { err.hidden = true; }
+        function valid(n) {
+            if (n === 1 && !state.tipo) return 'Elija el tipo de organización.';
+            if (n === 2 && !state.retos.length) return 'Elija al menos un reto.';
+            if (n === 3 && !state.nivel) return 'Elija su nivel digital actual.';
+            if (n === 4 && (!state.modelo || !state.plazo)) return 'Elija un modelo de inversión y un plazo.';
+            if (n === 5) {
+                var bad = null;
+                [['dxNombre', 'su nombre'], ['dxContacto', 'un teléfono o correo']].forEach(function (f) {
+                    var el = $(f[0]), b = !el.value.trim();
+                    el.setAttribute('aria-invalid', b ? 'true' : 'false');
+                    if (b && !bad) { bad = 'Indique ' + f[1] + '.'; el.focus(); }
+                });
+                return bad;
+            }
+            return null;
+        }
+        function go(n) {
+            cur = n;
+            steps.forEach(function (s) { s.classList.toggle('is-active', +s.dataset.step === n); });
+            $('dxCount').textContent = 'Paso ' + n + ' de ' + TOTAL;
+            $('dxBar').style.width = (n / TOTAL * 100) + '%';
+            $('dxPrev').hidden = n === 1;
+            $('dxNext').textContent = n === TOTAL ? 'Ver mi resultado →' : 'Siguiente →';
+            hideErr();
+            dl({ event: 'diagnostico_paso', paso: n });
+        }
+        $('dxNext').addEventListener('click', function () {
+            var m = valid(cur);
+            if (m) { showErr(m); return; }
+            if (cur < TOTAL) { go(cur + 1); scrollToDx(); } else { result(); }
+        });
+        $('dxPrev').addEventListener('click', function () { if (cur > 1) go(cur - 1); });
+        ['dxNombre', 'dxEmpresa', 'dxContacto'].forEach(function (id) {
+            $(id).addEventListener('input', function (e) { if (e.target.value.trim()) e.target.setAttribute('aria-invalid', 'false'); });
+            $(id).addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); $('dxNext').click(); } });
+        });
+        function scrollToDx() {
+            var r = dx.getBoundingClientRect();
+            if (r.top < 70) window.scrollTo({ top: window.scrollY + r.top - 100, behavior: 'smooth' });
+        }
+
+        /* ---------- resultado ---------- */
+        var res = null;
+        function recommend() {
+            var score = {};
+            state.retos.forEach(function (r, i) { (RETO_MAP[r] || []).forEach(function (k, j) { score[k] = (score[k] || 0) + 10 - j - i * 0.5; }); });
+            if (state.nivel === '1' || state.modelo === 'Aún no lo sé') score.asesoria = (score.asesoria || 0) + 6;
+            if (state.tipo === 'Condominio o desarrollo inmobiliario') { score.infra = (score.infra || 0) + 3; score.rfid = (score.rfid || 0) + 3; }
+            if (state.tipo === 'Industria, planta o finca') { score.automatizacion = (score.automatizacion || 0) + 2; }
+            return Object.keys(score).sort(function (a, b) { return score[b] - score[a]; }).slice(0, 4);
+        }
+        function result() {
+            var base = { 1: 24, 2: 47, 3: 70, 4: 87 }[state.nivel];
+            var pts = Math.max(8, Math.min(96, base + (2 - state.retos.length) * 3));
+            var nivel, desc;
+            if (pts < 36) { nivel = 'Nivel inicial'; desc = 'Su organización tiene mucho por ganar con pasos sencillos. Digitalizar los procesos que hoy consumen más tiempo da resultados rápidos y medibles.'; }
+            else if (pts < 60) { nivel = 'Nivel en desarrollo'; desc = 'Ya tiene una base. El siguiente salto está en conectar sus sistemas y automatizar tareas repetitivas para que la información fluya sola.'; }
+            else if (pts < 80) { nivel = 'Nivel integrado'; desc = 'Sus procesos están ordenados. El valor ahora está en aprovechar sus datos: indicadores en tiempo real, inteligencia artificial y automatización.'; }
+            else { nivel = 'Nivel avanzado'; desc = 'Está a la vanguardia. Le ayudamos a escalar con IA aplicada, visión artificial e integraciones a la medida.'; }
+            var recs = recommend();
+            res = { pts: pts, nivel: nivel, recs: recs };
+
+            steps.forEach(function (s) { s.classList.remove('is-active'); });
+            $('dxNav').hidden = true; hideErr();
+            $('dxCount').textContent = 'Diagnóstico completo';
+            $('dxBar').style.width = '100%';
+            $('resNivel').textContent = nivel;
+            $('resDesc').textContent = desc;
+            var ul = $('recList'); ul.innerHTML = '';
+            recs.forEach(function (k, i) {
+                var s = S[k], li = document.createElement('li');
+                li.style.animationDelay = (0.5 + i * 0.12) + 's';
+                li.innerHTML = '<i></i><div><b></b><span></span></div><a>Ver detalle →</a>';
+                li.querySelector('b').textContent = s.t;
+                li.querySelector('span').textContent = s.d;
+                li.querySelector('a').href = s.url;
+                ul.appendChild(li);
+            });
+            $('dxResult').hidden = false;
+            // animar el medidor y el número
+            var C = 326.7, fill = $('gFill'), num = $('gNum');
+            requestAnimationFrame(function () { requestAnimationFrame(function () { fill.style.strokeDashoffset = String(C * (1 - pts / 100)); }); });
+            var t0 = performance.now();
+            (function tick(t) { var p = Math.min(1, (t - t0) / 1400), e = 1 - Math.pow(1 - p, 3); num.textContent = Math.round(pts * e); if (p < 1) requestAnimationFrame(tick); })(t0);
+            // llevar nombre y empresa al cotizador
+            if (!$('qtNombre').value) $('qtNombre').value = $('dxNombre').value.trim();
+            if (!$('qtEmpresa').value) $('qtEmpresa').value = $('dxEmpresa').value.trim();
+            markRec(recs);
+            scrollToDx();
+            dl({ event: 'diagnostico_resultado', nivel: nivel, puntaje: pts, tipo: state.tipo });
+        }
+        $('dxSend').addEventListener('click', function () {
+            var emp = $('dxEmpresa').value.trim();
+            var text = [
+                'Hola, le escribo desde el sitio web de Tech Advisors L.A. Completé el diagnóstico digital:',
+                '',
+                'Nombre: ' + $('dxNombre').value.trim(),
+                emp ? 'Empresa: ' + emp : null,
+                'Contacto: ' + $('dxContacto').value.trim(),
+                'Organización: ' + state.tipo,
+                'Retos: ' + state.retos.map(function (r) { return RETO_TXT[r]; }).join(', '),
+                'Nivel digital actual: ' + NIVEL_TXT[state.nivel],
+                'Resultado: ' + res.pts + '/100 (' + res.nivel + ')',
+                'Inversión: ' + state.modelo + ' · Plazo: ' + state.plazo,
+                '',
+                'Soluciones recomendadas: ' + res.recs.map(function (k) { return S[k].t; }).join(', ') + '.',
+                '',
+                'Me gustaría conversar sobre los siguientes pasos.'
+            ].filter(function (l) { return l !== null; }).join('\n');
+            dl({ event: 'diagnostico_enviar', nivel: res.nivel, puntaje: res.pts });
+            openWA(WA.eric, text);
+        });
+        $('dxToQuote').addEventListener('click', function () {
+            res.recs.forEach(function (k) { var c = document.querySelector('.qt-card[data-k="' + k + '"]'); if (c && c.getAttribute('aria-pressed') !== 'true') c.click(); });
+            $('cotizador').scrollIntoView({ behavior: 'smooth' });
+        });
+        $('dxRestart').addEventListener('click', function () {
+            state.tipo = state.nivel = state.modelo = state.plazo = null; state.retos = [];
+            dx.querySelectorAll('.opt').forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+            $('dxResult').hidden = true; $('dxNav').hidden = false;
+            $('gFill').style.strokeDashoffset = '326.7';
+            go(1); scrollToDx();
+        });
+
+        /* ---------- cotizador ---------- */
+        var sel = [];
+        var groups = $('qtGroups');
+        GROUPS.forEach(function (g, gi) {
+            var wrap = document.createElement('div'); wrap.className = 'qt-group';
+            var h = document.createElement('h3'); h.textContent = g[0]; wrap.appendChild(h);
+            var grid = document.createElement('div'); grid.className = 'qt-grid reveal-stagger';
+            g[1].forEach(function (k, i) {
+                var s = S[k], b = document.createElement('button');
+                b.type = 'button'; b.className = 'opt qt-card'; b.dataset.k = k; b.setAttribute('aria-pressed', 'false');
+                b.innerHTML = '<span class="opt-k mono"></span><strong></strong><small></small><span class="tag"></span>';
+                b.querySelector('.opt-k').textContent = String(gi + 1) + '.' + String(i + 1);
+                b.querySelector('strong').textContent = s.t;
+                b.querySelector('small').textContent = s.d;
+                b.querySelector('.tag').textContent = s.tag;
+                b.addEventListener('click', function () {
+                    var on = b.getAttribute('aria-pressed') === 'true';
+                    b.setAttribute('aria-pressed', String(!on));
+                    sel = on ? sel.filter(function (x) { return x !== k; }) : sel.concat(k);
+                    updateBar();
+                });
+                grid.appendChild(b);
+            });
+            wrap.appendChild(grid); groups.appendChild(wrap);
+        });
+        function markRec(keys) {
+            document.querySelectorAll('.qt-card').forEach(function (c) { c.classList.toggle('is-rec', keys.indexOf(c.dataset.k) > -1); });
+        }
+        function updateBar() {
+            var n = sel.length, pill = $('qtCount');
+            pill.textContent = n + (n === 1 ? ' seleccionada' : ' seleccionadas');
+            pill.classList.remove('bump'); void pill.offsetWidth; pill.classList.add('bump');
+            setTimeout(function () { pill.classList.remove('bump'); }, 250);
+            $('qtNames').textContent = n ? sel.map(function (k) { return S[k].t.split(' · ')[0]; }).join(' · ') : 'Marque al menos una solución';
+            $('qtSend').disabled = !n;
+        }
+        $('qtSend').addEventListener('click', function () {
+            if (!sel.length) return;
+            // si todo lo elegido lo atiende Mario, va a Mario; si no, a la línea de la empresa
+            var to = sel.every(function (k) { return S[k].to === 'mario'; }) ? WA.mario : WA.eric;
+            var nom = $('qtNombre').value.trim(), emp = $('qtEmpresa').value.trim();
+            var text = [
+                'Hola' + (to.name ? ' ' + to.name : '') + ', le escribo desde el sitio web de Tech Advisors L.A. Me interesa cotizar:',
+                ''
+            ].concat(sel.map(function (k) { return '• ' + S[k].t; })).concat([
+                '',
+                nom ? 'Nombre: ' + nom : null,
+                emp ? 'Empresa: ' + emp : null,
+                res ? 'Diagnóstico: ' + res.pts + '/100 (' + res.nivel + ')' : null
+            ]).filter(function (l) { return l !== null; }).join('\n').replace(/\n+$/, '');
+            dl({ event: 'cotizador_enviar', cantidad: sel.length, soluciones: sel.join(','), destino: to === WA.mario ? 'mario' : 'eric' });
+            openWA(to, text);
+        });
+        // ocultar el botón flotante de WhatsApp mientras se ve el cotizador (la barra ya tiene su propio botón)
+        var wf = document.querySelector('.wa-float');
+        if (wf && 'IntersectionObserver' in window) {
+            new IntersectionObserver(function (en) { wf.classList.toggle('is-away', en[0].isIntersecting); }, { rootMargin: '0px 0px -40% 0px' }).observe($('cotizador'));
+        }
+    })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+                navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+            }
+
+            // dropdown menus
+            const dds = document.querySelectorAll('.has-dd');
+            const closeAll = (except) => dds.forEach(d => {
+                if (d === except) return;
+                d.classList.remove('open');
+                d.querySelector('.dd-toggle').setAttribute('aria-expanded', 'false');
+            });
+            const canHover = window.matchMedia('(hover: hover) and (min-width: 769px)');
+            dds.forEach(d => {
+                const btn = d.querySelector('.dd-toggle');
+                let t;
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const willOpen = canHover.matches ? true : !d.classList.contains('open');
+                    closeAll(d);
+                    d.classList.toggle('open', willOpen);
+                    btn.setAttribute('aria-expanded', String(willOpen));
+                });
+                d.addEventListener('mouseenter', () => {
+                    if (!canHover.matches) return;
+                    clearTimeout(t); closeAll(d);
+                    d.classList.add('open'); btn.setAttribute('aria-expanded', 'true');
+                });
+                d.addEventListener('mouseleave', () => {
+                    if (!canHover.matches) return;
+                    t = setTimeout(() => { d.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }, 180);
+                });
+            });
+            document.addEventListener('click', (e) => { if (!e.target.closest('.has-dd')) closeAll(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+            // highlight current page
+            const here = location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.dd a').forEach(a => {
+                if (a.getAttribute('href') === here) {
+                    a.classList.add('current');
+                    a.closest('.has-dd').querySelector('.dd-toggle').classList.add('current');
+                }
+            });
+            if (typeof gsap === 'undefined') return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            gsap.registerPlugin(ScrollTrigger);
+            gsap.utils.toArray('.reveal').forEach(el => {
+                gsap.fromTo(el, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+            });
+            gsap.utils.toArray('.reveal-stagger').forEach(group => {
+                gsap.fromTo(group.children, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out', scrollTrigger: { trigger: group, start: 'top 88%' } });
+            });
+        });
+    </script>
+<script src="medicion.js" defer></script>
+</body>
+</html>
